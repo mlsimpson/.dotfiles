@@ -1,0 +1,6 @@
+bundler
+cheat
+pager
+rake
+rubygems-bundler
+rvm

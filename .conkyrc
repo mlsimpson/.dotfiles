@@ -1,0 +1,99 @@
+#!/usr/bin/conky -d -c
+##	.conkyrc configuration
+alignment top_right
+background yes
+border_width 1
+color0 555555
+color1 FCAF3E
+color2 slategray
+color3 a82553
+color4 5e1014
+color5 64574e
+color6 a7a7a7
+color7 8888CC
+color8 9d9c61
+color9 525276
+cpu_avg_samples 2
+default_color e1e1e1
+default_outline_color 000000
+default_shade_color 000000
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades yes
+gap_x 10
+gap_y 40
+max_specials 1024
+max_user_text 10000
+maximum_width 200
+minimum_size 200
+net_avg_samples 2
+no_buffers yes
+override_utf8_locale yes
+own_window yes
+own_window_colour 000000	# Black
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type override 	## normal
+pad_percents 2
+short_units yes
+stippled_borders 3
+text_buffer_size 8000
+total_run_times 0
+update_interval 1.0
+uppercase no
+use_spacer right
+use_xft yes
+xftalpha 0.75
+xftfont sans:size=9
+
+TEXT
+
+${voffset -20}${color2}${font led:size=10}SYSTEM ${font}$hr
+${color}${nodename} ${alignr}$kernel
+uptime${alignr}${uptime}
+file system${alignr}${fs_type}
+
+${color2}${font led:size=10}PROCESSES ${font}$hr
+${color}total ${alignr}$processes
+running ${alignr} $running_processes
+load average${alignr}${loadavg}
+${cpubar 3,100}
+
+${color7}TOP CPU${alignr}PID      %
+${offset 5}${color8}${top name 1}${alignr}${top pid 1}${top cpu 1}
+${offset 5}${color}${top name 2}${alignr}${top pid 2}${top cpu 2}
+${offset 5}${color}${top name 3}${alignr}${top pid 3}${top cpu 3}
+${offset 5}${color}${top name 4}${alignr}${top pid 4}${top cpu 4}
+${offset 5}${color}${top name 5}${alignr}${top pid 5}${top cpu 5}
+
+${color7}TOP MEM${alignr}PID      %
+${offset 5}${color8}${top_mem name 1}${alignr}${top pid 1}${top_mem mem 1}
+${offset 5}${color}${top_mem name 2}${alignr}${top pid 2}${top_mem mem 2}
+${offset 5}${color}${top_mem name 3}${alignr}${top pid 3}${top_mem mem 3}
+${offset 5}${color}${top_mem name 4}${alignr}${top pid 4}${top_mem mem 4}
+${offset 5}${color}${top_mem name 5}${alignr}${top pid 5}${top_mem mem 5}
+
+${color2}${font led:size=10}MEMORY ${font}$hr
+${color}ram  ${mem} / ${memmax} ${alignr} ${memperc}%
+${membar 3,100}
+${color}swap  ${swap} / ${swapmax} ${alignr} ${swapperc}%
+${swapbar 3,100}
+
+${color2}${font led:size=10}HDD ${font}$hr
+${color}${fs_used /} / ${fs_size /} ${alignr} ${fs_used_perc /}%
+${fs_bar 3,100 /}
+${color}${diskiograph 15,100}
+
+${color2}${font led:size=10}NETWORK ${font}$hr
+${color}local IP $alignr${addr eth0}
+${color}public IP $alignr${execi 60 ~/.conky/ip.sh}
+${color}gateway IP ${alignr}${gw_ip}
+
+${color}rx${alignr}${downspeed eth0}/s${color}
+${color}total${alignr}${totaldown eth0}
+${downspeedgraph eth0 15,100 color black}
+${color}tx${alignr}${upspeed eth0}/s${color}
+${color}total${alignr}${totalup eth0}
+${upspeedgraph eth0 15,100 color black}

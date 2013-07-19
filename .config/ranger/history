@@ -1,0 +1,5 @@
+shell ./cleanapps.sh
+shell ~/Applications/cleanapps.sh
+open_with
+
+delete

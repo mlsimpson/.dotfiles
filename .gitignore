@@ -1,0 +1,11 @@
+.irssi/fnotify
+.irssi/nickserv.auth
+*.pem
+*.key
+*.cer
+.irssi/away.log
+.cmus
+mobius.sh
+.beetsconfig
+.config/pianobar
+.irssi/fnotify
