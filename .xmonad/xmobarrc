@@ -1,0 +1,16 @@
+Config { font = "xft:InconsolataDz-10"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 89
+       , commands = [ Run Weather "KATL" ["-t"," <tempF>F","-L","50","-H","90","--normal","white","--high","red","--low","lightblue"] 600
+                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Date "%a %b %_d %l:%M" "date" 10
+                    , Run StdinReader
+                    , Run Battery ["-t", "<left>%","-L","27","-H","75","--low","#FF0000","--normal","#F9FF00","--high","#00FF00"] 60
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %cpu% | %memory% | %KATL% | %date%"
+       }

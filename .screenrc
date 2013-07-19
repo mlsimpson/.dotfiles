@@ -1,0 +1,5 @@
+defflow off
+escape ^Ww
+hardstatus string '%{= kG}[ %{G}%H %{g}[%{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]']
+# caption always "%{-b ..}%-w%{+b ..}[[%n%f*%t]]%{-}%+w"
+termcapinfo xterm*|xs|rxvt|terminal ti@:te@
