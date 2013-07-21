@@ -56,8 +56,7 @@ sub hilight {
   $stripped =~ s/"//g;
   if ($dest->{level} & (MSGLEVEL_HILIGHT|MSGLEVEL_MSGS)) {
     filewrite($dest->{target}. " " .$stripped );
-    system("growlnotify -t 'irssi' -m \"$stripped\"");
-    system("afplay ~/.irssi/chimes.mp3&");
+    system("notify-send -t 1000 \"$stripped\"");
   }
 }
 #--------------------------------------------------------------------

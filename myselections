@@ -148,6 +148,10 @@ chromium-bsu-data				install
 classicmenu-indicator				install
 clementine					install
 cli-common					install
+click						install
+click-dev					install
+click-doc					install
+clipit						install
 cmake						install
 cmake-data					install
 cmatrix						install
@@ -167,6 +171,9 @@ compizconfig-backend-gconf			install
 compizconfig-settings-manager			install
 console-setup					install
 consolekit					install
+cordova-ubuntu-2.8				install
+cordova-ubuntu-2.8-dev				install
+cordova-ubuntu-2.8-examples			install
 coreutils					install
 cowsay						install
 cpanminus					install
@@ -251,7 +258,6 @@ dos2unix					install
 dosbox						install
 dosfstools					install
 doxygen						install
-doxygen-latex					install
 dpkg						install
 dpkg-dev					install
 dput						install
@@ -324,7 +330,6 @@ fonts-khmeros-core				install
 fonts-lao					install
 fonts-liberation				install
 fonts-lklug-sinhala				install
-fonts-lmodern					install
 fonts-nanum					install
 fonts-opensymbol				install
 fonts-sil-abyssinica				install
@@ -332,7 +337,6 @@ fonts-sil-gentium				install
 fonts-sil-gentium-basic				install
 fonts-sil-padauk				install
 fonts-takao-pgothic				install
-fonts-texgyre					install
 fonts-thai-tlwg					install
 fonts-tibetan-machine				install
 fonts-tlwg-garuda				install
@@ -490,7 +494,6 @@ gksu						install
 glib-networking:i386				install
 glib-networking-common				install
 glib-networking-services			install
-glippy						install
 glippy-ubuntu-mono				install
 gmrun						install
 gngb						install
@@ -540,6 +543,8 @@ gnome-user-share				install
 gnomine						install
 gnucap						install
 gnupg						install
+gnupg-agent					install
+gnupg2						install
 gnuplot						install
 gnuplot-nox					install
 gnutls-bin					install
@@ -556,7 +561,6 @@ gpart						install
 gparted						install
 gpgv						install
 gpicview					install
-gpodder						install
 gpsim						install
 gputils						install
 gputils-common					install
@@ -698,6 +702,7 @@ intel-gpu-tools					install
 intltool					install
 intltool-debian					install
 iotop						install
+iperf						install
 iproute						install
 iptables					install
 iptraf						install
@@ -732,6 +737,7 @@ junit4						install
 kbd						install
 kerneloops-daemon				install
 keyboard-configuration				install
+keychain					install
 klibc-utils					install
 klystrack					install
 kmod						install
@@ -749,8 +755,6 @@ language-selector-common			install
 language-selector-gnome				install
 laptop-detect					install
 lastfm						install
-latex-beamer					install
-latex-xcolor					install
 launchpad-getkeys				install
 launchpad-integration				install
 ledit						install
@@ -802,7 +806,6 @@ libapache2-mod-wsgi				install
 libapache2-modsecurity				install
 libapparmor-perl				install
 libapparmor1					install
-libappindicator0.1-cil				install
 libappindicator1				install
 libappindicator3-1				install
 libapr1						install
@@ -816,7 +819,6 @@ libarchive-zip-perl				install
 libarchive12:i386				install
 libarchive13:i386				install
 libart-2.0-2:i386				install
-libart2.0-cil					install
 libasn1-8-heimdal:i386				install
 libasound2:i386					install
 libasound2-dev:i386				install
@@ -831,6 +833,7 @@ libasprintf-dev:i386				install
 libasprintf0c2:i386				install
 libass-dev:i386					install
 libass4:i386					install
+libassuan0:i386					install
 libasyncns0:i386				install
 libatasmart4:i386				install
 libatk-adaptor:i386				install
@@ -853,7 +856,6 @@ libaudit-common					install
 libaudit1:i386					install
 libautopilot-gtk:i386				install
 libautopilot-qt					install
-libav-tools					install
 libavahi-client-dev				install
 libavahi-client3:i386				install
 libavahi-common-data:i386			install
@@ -869,7 +871,6 @@ libavc1394-0:i386				install
 libavc1394-dev:i386				install
 libavcodec-extra-53:i386			install
 libavdevice53:i386				install
-libavfilter2:i386				install
 libavformat53:i386				install
 libavidemux0					install
 libavutil-extra-51:i386				install
@@ -1299,11 +1300,9 @@ libgnome-keyring0:i386				install
 libgnome-media-profiles-3.0-0			install
 libgnome-menu-3-0				install
 libgnome-menu2					install
-libgnome-vfs2.0-cil				install
 libgnome2-0:i386				install
 libgnome2-bin					install
 libgnome2-common				install
-libgnome2.24-cil				install
 libgnomecanvas2-0:i386				install
 libgnomecanvas2-common				install
 libgnomekbd-common				install
@@ -1497,6 +1496,8 @@ libjs-jquery-cookie				install
 libjs-jquery-form				install
 libjs-jquery-tipsy				install
 libjs-prototype					install
+libjs-sphinxdoc					install
+libjs-underscore				install
 libjson-glib-1.0-0:i386				install
 libjson-perl					install
 libjson-xs-perl					install
@@ -1518,6 +1519,7 @@ libkrb5-26-heimdal:i386				install
 libkrb5-3:i386					install
 libkrb5-dev					install
 libkrb5support0:i386				install
+libksba8:i386					install
 liblapack-dev					install
 liblapack3					install
 liblastfm-dev					install
@@ -1848,6 +1850,7 @@ libopengl-xscreensaver-perl			install
 libopenjpeg2:i386				install
 libopenobex1					install
 libopenvg1-mesa:i386				install
+libopts25					install
 libopus-dev					install
 libopus0					install
 liborbit2:i386					install
@@ -1891,7 +1894,10 @@ libparse-debcontrol-perl			install
 libparse-debianchangelog-perl			install
 libparted0debian1:i386				install
 libpathplan4					install
+libpcap-dev					install
+libpcap-ruby					install
 libpcap0.8:i386					install
+libpcap0.8-dev					install
 libpci3:i386					install
 libpciaccess0:i386				install
 libpcre3:i386					install
@@ -1941,7 +1947,6 @@ libproxy-dev:i386				install
 libproxy1:i386					install
 libproxy1-plugin-gsettings:i386			install
 libproxy1-plugin-networkmanager:i386		install
-libptexenc1					install
 libpth-dev					install
 libpth20					install
 libpthread-stubs0:i386				install
@@ -1987,11 +1992,13 @@ libqt4-xmlpatterns:i386				install
 libqt53d5:i386					install
 libqt5clucene5:i386				install
 libqt5concurrent5:i386				install
+libqt5contacts5:i386				install
 libqt5core5:i386				install
 libqt5dbus5:i386				install
 libqt5declarative5:i386				install
 libqt5designer5:i386				install
 libqt5designercomponents5:i386			install
+libqt5feedback5:i386				install
 libqt5gui5:i386					install
 libqt5help5:i386				install
 libqt5location5:i386				install
@@ -2015,9 +2022,11 @@ libqt5sql5:i386					install
 libqt5sql5-sqlite:i386				install
 libqt5svg5:i386					install
 libqt5svg5-dev					install
+libqt5systeminfo5:i386				install
 libqt5test5:i386				install
 libqt5v8-5:i386					install
 libqt5v8-5-dev					install
+libqt5versit5:i386				install
 libqt5webkit5:i386				install
 libqt5webkit5-dev				install
 libqt5webkit5-qmlwebkitplugin:i386		install
@@ -2032,7 +2041,6 @@ libqtdee2					install
 libqtgconf1					install
 libqtgui4:i386					install
 libqtwebkit-dev					install
-libqtwebkit-qmlwebkitplugin:i386		install
 libqtwebkit4:i386				install
 libquadmath0:i386				install
 libquicktime2:i386				install
@@ -2260,6 +2268,7 @@ libunicode-string-perl				install
 libunique-3.0-0					install
 libunistring0:i386				install
 libunity-2d-private0				install
+libunity-action-qt1:i386			install
 libunity-common					install
 libunity-core-6.0-5				install
 libunity-misc4					install
@@ -2295,6 +2304,7 @@ libva-glx1:i386					install
 libva-tpi1:i386					install
 libva-x11-1:i386				install
 libva1:i386					install
+libvala-0.18-0:i386				install
 libvamp-hostsdk3:i386				install
 libvcdinfo-dev					install
 libvcdinfo0					install
@@ -2409,6 +2419,7 @@ libxdamage-dev					install
 libxdamage1:i386				install
 libxdmcp-dev:i386				install
 libxdmcp6:i386					install
+libxdo2						install
 libxdot4					install
 libxerces2-java					install
 libxext-dev:i386				install
@@ -2522,7 +2533,6 @@ lirc						install
 lirc-x						install
 lltag						install
 lm-sensors					install
-lmodern						install
 locales						install
 lockfile-progs					install
 login						install
@@ -2535,7 +2545,6 @@ lshw						install
 lsof						install
 ltrace						install
 lua5.1						install
-luatex						install
 lvm2						install
 lxmenu-data					install
 lxpanel						install
@@ -2551,7 +2560,10 @@ mame-tools					install
 man-db						install
 manpages					install
 manpages-dev					install
+markdown					install
 mawk						install
+mc						install
+mc-data						install
 mcp-account-manager-uoa				install
 mcrypt						install
 mdf2iso						install
@@ -2671,6 +2683,7 @@ ntfs-config					install
 ntfsprogs					install
 ntop						install
 ntop-data					install
+ntp						install
 ntpdate						install
 nuvola-icon-theme				install
 nuvolaplayer					install
@@ -2703,6 +2716,7 @@ ostinato					install
 overlay-scrollbar				install
 overlay-scrollbar-gtk2:i386			install
 overlay-scrollbar-gtk3:i386			install
+owncloud					install
 p7zip						install
 p7zip-full					install
 p7zip-rar					install
@@ -2710,6 +2724,7 @@ paprefs						install
 parallel					install
 paris-traceroute				install
 parted						install
+pass						install
 passwd						install
 patch						install
 patchutils					install
@@ -2722,13 +2737,13 @@ perl						install
 perl-base					install
 perl-modules					install
 perlmagick					install
-pgf						install
 phonon:i386					install
 phonon-backend-gstreamer:i386			install
 php-apc						install
 php-gettext					install
 php-pear					install
 php-wikidiff2					install
+php-xml-parser					install
 php5						install
 php5-cli					install
 php5-common					install
@@ -2748,6 +2763,8 @@ php5-xmlrpc					install
 pianobar					install
 picard						install
 picard-plugins					install
+pinentry-curses					install
+pinentry-gtk2					install
 piwigo						install
 piwigo-mysql					install
 pkg-config					install
@@ -2774,7 +2791,6 @@ ppp						install
 pppconfig					install
 pppoeconf					install
 pptp-linux					install
-preview-latex-style				install
 printer-driver-c2esp				install
 printer-driver-foo2zjs				install
 printer-driver-gutenprint			install
@@ -2789,9 +2805,7 @@ printer-driver-sag-gdi				install
 printer-driver-splix				install
 procps						install
 projectm-data					install
-prosper						install
 protobuf-compiler				install
-ps2eps						install
 psmisc						install
 psutils						install
 pulseaudio					install
@@ -2842,7 +2856,6 @@ python-egenix-mxdatetime			install
 python-egenix-mxtools				install
 python-evdev					install
 python-eyed3					install
-python-feedparser				install
 python-fixtures					install
 python-fpconst					install
 python-gconf					install
@@ -2883,7 +2896,6 @@ python-markupsafe				install
 python-minimal					install
 python-musicbrainz2				install
 python-mutagen					install
-python-mygpoclient				install
 python-mysqldb					install
 python-nltk					install
 python-notify					install
@@ -2965,6 +2977,7 @@ python3-aptdaemon.pkcompat			install
 python3-brlapi					install
 python3-cairo					install
 python3-chardet					install
+python3-click					install
 python3-commandnotfound				install
 python3-crypto					install
 python3-dbus					install
@@ -3013,16 +3026,19 @@ qtcreator					install
 qtcreator-doc					install
 qtcreator-plugin-cordovaqt			install
 qtcreator-plugin-ubuntu				install
+qtdeclarative5-cordova-2.8-plugin		install
 qtdeclarative5-dev				install
 qtdeclarative5-dev-tools			install
 qtdeclarative5-folderlistmodel-plugin:i386	install
 qtdeclarative5-localstorage-plugin:i386		install
 qtdeclarative5-particles-plugin:i386		install
 qtdeclarative5-qtaudioengine-plugin:i386	install
+qtdeclarative5-qtfeedback-plugin:i386		install
 qtdeclarative5-qtmultimedia-plugin:i386		install
 qtdeclarative5-qtquick2-plugin:i386		install
 qtdeclarative5-qtsensors-plugin:i386		install
 qtdeclarative5-ubuntu-ui-toolkit-plugin:i386	install
+qtdeclarative5-unity-action-plugin:i386		install
 qtdeclarative5-window-plugin:i386		install
 qtdeclarative5-xmllistmodel-plugin:i386		install
 qtlocation5-dev					install
@@ -3093,9 +3109,10 @@ rsync						install
 rsyslog						install
 rtkit						install
 rtmpdump					install
-ruby						install
+ruby-pcap					install
 ruby1.8						install
 ruby1.9.1					install
+ruby1.9.1-dev					install
 samba-common					install
 samba-common-bin				install
 sane-utils					install
@@ -3134,6 +3151,7 @@ snort-common					install
 snort-common-libraries				install
 snort-doc					install
 snort-rules-default				install
+socat						install
 software-center					install
 software-center-aptdaemon-plugins		install
 software-properties-common			install
@@ -3156,7 +3174,6 @@ steam						install
 steam-launcher					install
 stella						install
 strace						install
-sublime-text					install
 subversion					install
 suckless-tools					install
 sudo						install
@@ -3199,24 +3216,7 @@ telepathy-salut					install
 telnet						install
 tesseract-ocr-eng				install
 testdisk					install
-tex-common					install
-tex-gyre					install
 texi2html					install
-texlive-base					install
-texlive-binaries				install
-texlive-common					install
-texlive-doc-base				install
-texlive-extra-utils				install
-texlive-font-utils				install
-texlive-fonts-recommended			install
-texlive-fonts-recommended-doc			install
-texlive-generic-recommended			install
-texlive-latex-base				install
-texlive-latex-extra				install
-texlive-latex-recommended			install
-texlive-luatex					install
-texlive-pictures				install
-texlive-pstricks				install
 thin-client-config-agent			install
 thunderbird					install
 thunderbird-globalmenu				install
@@ -3227,7 +3227,6 @@ tig						install
 time						install
 timidity					install
 timidity-daemon					install
-tipa						install
 tk						install
 tk-lib:i386					install
 tk8.5						install
@@ -3253,7 +3252,6 @@ ttf-dejavu-extra				install
 ttf-freefont					install
 ttf-indic-fonts-core				install
 ttf-liberation					install
-ttf-marvosym					install
 ttf-mscorefonts-installer			install
 ttf-punjabi-fonts				install
 ttf-sil-gentium-basic				install
@@ -3359,6 +3357,10 @@ usbutils					install
 util-linux					install
 uudeview					install
 uuid-runtime					install
+uzbl						install
+valac						install
+valac-0.18					install
+valac-0.18-vapi					install
 vbetool						install
 vim-common					install
 vim-gtk						install
@@ -3378,6 +3380,7 @@ vnstat						install
 vorbis-tools					install
 vsftpd						install
 w32codecs					install
+w3m						install
 wamerican					install
 watershed					install
 wbritish					install
@@ -3443,6 +3446,7 @@ xdg-user-dirs					install
 xdg-user-dirs-gtk				install
 xdg-utils					install
 xdiagnose					install
+xdotool						install
 xfonts-75dpi					install
 xfonts-base					install
 xfonts-encodings				install
@@ -3545,7 +3549,6 @@ znc-extra					install
 znc-perl					install
 znc-python					install
 znc-tcl						install
-zram-config					install
 zsdx						install
 zsh						install
 zsh-doc						install

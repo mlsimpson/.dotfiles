@@ -1,5 +1,7 @@
 CDDB
 Cheetah
+Django
+Fabric
 Flask
 GnuPGInterface
 Jinja2
@@ -12,6 +14,7 @@ PAM
 Pillow
 PyBluez
 PyYAML
+Pygments
 SOAPpy
 Twisted-Core
 Twisted-Names
@@ -28,6 +31,7 @@ bzr
 ccsm
 chardet
 classicmenu-indicator
+commando
 compizconfig-python
 configglue
 configobj
@@ -43,9 +47,11 @@ eyeD3
 feedparser
 fixtures
 fpconst
+fs
 fs-uae-launcher
-gpodder
+fswrap
 httplib2
+hyde
 indicator-weather
 iotop
 ipython
@@ -65,7 +71,6 @@ mod-python
 munkres
 musicbrainzngs
 mutagen
-mygpoclient
 nltk
 numpy
 oauth
@@ -108,9 +113,11 @@ requests
 rhythmbox-ubuntuone
 scapy
 scgi
+selenium
 sessioninstaller
 simplejson
 six
+smartypants
 software-center-aptd-plugins
 ssh-import-id
 system-service
@@ -118,6 +125,7 @@ testscenarios
 testtools
 ## FIXME: could not find svn URL in dependency_links for this package:
 trash-cli
+typogrify
 uTidylib
 ubuntu-tweak
 ubuntuone-couch

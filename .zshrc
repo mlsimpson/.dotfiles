@@ -418,4 +418,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # GPG
 eval $(cat ~/.gpg-agent-info)
+export GPG_AGENT_INFO
 GPG_TTY=$(tty)
+export GPG_TTY
