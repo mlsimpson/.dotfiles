@@ -15,8 +15,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# export ZSH_THEME="threv"
-source /home/threv/code/liquidprompt/liquidprompt
+export ZSH_THEME="threv"
+# source /home/threv/code/liquidprompt/liquidprompt
 
 # Comment this out to disable weekly auto-update checks
 # export DISABLE_AUTO_UPDATE="true"
@@ -29,14 +29,14 @@ source /home/threv/code/liquidprompt/liquidprompt
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(git python ruby ssh-agent zsh-syntax-highlighting pip cpanm perl command-not-found heroku npm django pass )
+plugins=(git ssh-agent zsh-syntax-highlighting pip pass )
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
 source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh
 #####
-. ~/.oh-my-zsh/custom/plugins/zsh-functional/functional.plugin.zsh
+# . ~/.oh-my-zsh/custom/plugins/zsh-functional/functional.plugin.zsh
 
 # Set LS_COLORS variable for cross-platform sanity.
 # Mac OS X uses $LSCOLORS, defined within the shell.
@@ -99,31 +99,36 @@ function most_useless_use_of_zsh {
   done
 }
 
-## Mayhaps this will shuffle a list of files?
-function shuffle () {
-
-  emulate -L zsh
-
-  setopt nullglob globdots rcexpandparam
-
-  RANDOM=`date +%s`
-  [[ $# -eq 0 ]] && set '*'
-
-  reply=()
-  reply=($*)
-  reply=($reply(e:'REPLY="${(l.5..0.)RANDOM} $REPLY"':))
-  reply=(${(o)reply})
-  reply=(${reply/#????? /})
-
-  print -l $reply
-
-  return 0
-}
+# http://stackoverflow.com/questions/7039130/bash-iterate-over-list-of-files-with-spaces?rq=1
+### Mayhaps this will shuffle a list of files?
+#function shuffle () {
+#
+#  emulate -L zsh
+#
+#  setopt nullglob globdots rcexpandparam
+#
+#  RANDOM=`date +%s`
+#  [[ $# -eq 0 ]] && set '*'
+#
+#  reply=()
+#  reply=($*)
+#  reply=($reply(e:'REPLY="${(l.5..0.)RANDOM} $REPLY"':))
+#  reply=(${(o)reply})
+#  reply=(${reply/#????? /})
+#
+#  print -l $reply
+#
+#  return 0
+#}
 
 ## PulseAudio volume control
 function vol(){
   pactl set-sink-volume 0 -- $1%
 }
+
+# Volume up & down for PulseAudio
+alias vup='pactl set-sink-volume 0 -- +10%'
+alias vdo='pactl set-sink-volume 0 -- -10%'
 
 #####
 # Set colors for man pages.
@@ -218,7 +223,7 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
-alias cpanm='cpanm --sudo'
+#alias cpanm='cpanm --sudo'
 alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
 
 alias gam='git commit -a -m'
@@ -241,7 +246,6 @@ alias lsd='ls -d */'
 alias lsds='ls -dS */'
 # Show only files, sorted by size
 alias lss='ls -aSh *(.)'
-alias larsh="ls -larSh"
 alias mkdir='mkdir -p'
 alias mpg123='mpg123 -v -C'
 alias npm='npm -g'
@@ -258,7 +262,7 @@ alias ttytter='ttytter -ansi'
 alias gcc="gcc -O2 -Wall -pedantic"
 
 # Create cscope.out in the current directory
-alias mcs="cscope -bcvR **/*.(c|h|cpp|cc)"
+#alias mcs="cscope -bcvR **/*.(c|h|cpp|cc)"
 
 # Update gems in one go
 alias newgems="gem update; gem cleanup"
@@ -284,20 +288,21 @@ for c in cp mv chmod chown rename rm; do
     alias $c="$c -v"
 done
 
+alias cp='cp -v -r'
+
 # List all executable files in PATH
 alias pathexec="print -l ${^path}/*(-*N) | less"
 
 alias tmux="tmux -u attach"
 
+# Always compress & encrypt ssh
+alias ssh="ssh -Cc arcfour,blowfish-cbc"
+
 # Linux:  Make htop refresh every second
 alias htop='htop -d 10'
 
-# Volume up & down for PulseAudio
-alias vup='pactl set-sink-volume 0 -- +10%'
-alias vdo='pactl set-sink-volume 0 -- -10%'
-
 # Silly random cowsay fun
-alias cowfun='fortune -a | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n;'
+#alias cowfun='fortune -a | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n;'
 
 # ps auxww | ack "thingy" alias
 alias psa='ps auxww | ack '
@@ -305,10 +310,10 @@ alias psa='ps auxww | ack '
 # "go" can't use libtcmalloc
 alias go="LD_PRELOAD=\"\" go"
 
-# c-x c-x => history menu
-autoload -Uz history-beginning-search-menu
-zle -N history-beginning-search-menu
-bindkey '^X^X' history-beginning-search-menu
+## c-x c-x => history menu
+#autoload -Uz history-beginning-search-menu
+#zle -N history-beginning-search-menu
+#bindkey '^X^X' history-beginning-search-menu
 
 ####
 # bindkey
@@ -316,7 +321,7 @@ bindkey '^X^X' history-beginning-search-menu
 bindkey "^[" undo
 
 # Pipe the current command through less
-bindkey -s "\el" " 2>&1|less^M"
+#bindkey -s "\el" " 2>&1|less^M"
 
 ####
 # export
@@ -374,7 +379,7 @@ unsetopt hist_verify
 unsetopt share_history
 unsetopt auto_name_dirs
 unsetopt nomatch
-# unsetopt correctall
+unsetopt correctall
 
 ####
 # zsh modules
@@ -391,14 +396,10 @@ unsetopt nomatch
 
 # Make less open tons of file types
 # Debian Linux:
-eval `lesspipe`
+# eval `lesspipe`
 # Mac:
 #   - requires brew install lesspipe
 # eval `/usr/local/bin/lesspipe.sh`
-
-# Commands below here are run on every login session
-# Print a fortune on every login window
-# fortune | cowsay | lolcat
 
 # Fucking sensible-browser won't fucking change, I don't get it.
 # yo firefox is faster to load nao
@@ -417,7 +418,7 @@ eval `lesspipe`
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # GPG
-eval $(cat ~/.gpg-agent-info)
+eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
 export GPG_AGENT_INFO
 GPG_TTY=$(tty)
 export GPG_TTY
