@@ -1,3 +1,4 @@
+BeautifulSoup
 CDDB
 Cheetah
 Django
@@ -5,6 +6,7 @@ Fabric
 Flask
 GnuPGInterface
 Jinja2
+Magic-file-extensions
 Mako
 Markdown
 MarkupSafe
@@ -16,6 +18,7 @@ PyBluez
 PyYAML
 Pygments
 SOAPpy
+SQLAlchemy
 Twisted-Core
 Twisted-Names
 Twisted-Web
@@ -35,21 +38,21 @@ commando
 compizconfig-python
 configglue
 configobj
+data-hacks
 debtagshw
 defer
 deluge
 dirspec
-distribute
 dtrx
 duplicity
 evdev
 eyeD3
 feedparser
-fixtures
 fpconst
 fs
 fs-uae-launcher
 fswrap
+html2text
 httplib2
 hyde
 indicator-weather
@@ -57,7 +60,6 @@ iotop
 ipython
 itsdangerous
 jockey
-junitxml
 keyring
 launchpadlib
 lazr.authentication
@@ -74,6 +76,7 @@ mutagen
 nltk
 numpy
 oauth
+oauth2
 oauthlib
 oneconf
 paramiko
@@ -96,6 +99,7 @@ pyinotify
 pylast
 pyserial
 pysmbc
+pysqlite
 python-apt
 python-dateutil
 python-debian
@@ -108,6 +112,7 @@ pyxdg
 quodlibet
 ranger
 regetron
+regex
 reportlab
 requests
 rhythmbox-ubuntuone
@@ -121,8 +126,6 @@ smartypants
 software-center-aptd-plugins
 ssh-import-id
 system-service
-testscenarios
-testtools
 ## FIXME: could not find svn URL in dependency_links for this package:
 trash-cli
 typogrify
@@ -131,6 +134,7 @@ ubuntu-tweak
 ubuntuone-couch
 ubuntuone-storage-protocol
 unity-lens-photos
+unity-singlet
 url
 urllib3
 virtkey

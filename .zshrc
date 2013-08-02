@@ -4,7 +4,7 @@
 #####
 
 # Link tcmalloc
-export LD_PRELOAD="/usr/lib/libtcmalloc_minimal.so.4"
+# export LD_PRELOAD="/usr/lib/libtcmalloc_minimal.so.4"
 
 #####
 # Oh-My-ZSH!
@@ -99,27 +99,26 @@ function most_useless_use_of_zsh {
   done
 }
 
-# http://stackoverflow.com/questions/7039130/bash-iterate-over-list-of-files-with-spaces?rq=1
-### Mayhaps this will shuffle a list of files?
-#function shuffle () {
-#
-#  emulate -L zsh
-#
-#  setopt nullglob globdots rcexpandparam
-#
-#  RANDOM=`date +%s`
-#  [[ $# -eq 0 ]] && set '*'
-#
-#  reply=()
-#  reply=($*)
-#  reply=($reply(e:'REPLY="${(l.5..0.)RANDOM} $REPLY"':))
-#  reply=(${(o)reply})
-#  reply=(${reply/#????? /})
-#
-#  print -l $reply
-#
-#  return 0
-#}
+# This shit works!!
+# reseed when needed:  rand; <command> *(o+rand[range])
+# range is unnecessary; used to specificy x files
+# USE LIKE THIS:
+# RANDOM=$(od -An -N2 -i /dev/random); <command>(o+rand[1,30])
+function rand {
+  REPLY=$RANDOM
+}
+
+# Convert coverart
+function coverart {
+  convert $1 -adaptive-resize 400x400 -adaptive-sharpen 0x1.0 cover.png
+  rm $1
+  optipng -o2 cover.png
+}
+
+# Search .allhistory
+function hhist {
+  ack $1 /home/threv/.allhistory
+}
 
 ## PulseAudio volume control
 function vol(){
@@ -308,7 +307,8 @@ alias htop='htop -d 10'
 alias psa='ps auxww | ack '
 
 # "go" can't use libtcmalloc
-alias go="LD_PRELOAD=\"\" go"
+# unneeded now since I don't immediately assume that in .zshrc
+# alias go="LD_PRELOAD=\"\" go"
 
 ## c-x c-x => history menu
 #autoload -Uz history-beginning-search-menu
