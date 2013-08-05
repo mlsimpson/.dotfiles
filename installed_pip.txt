@@ -1,4 +1,3 @@
-BeautifulSoup
 CDDB
 Cheetah
 Django
@@ -6,7 +5,6 @@ Fabric
 Flask
 GnuPGInterface
 Jinja2
-Magic-file-extensions
 Mako
 Markdown
 MarkupSafe
@@ -18,7 +16,6 @@ PyBluez
 PyYAML
 Pygments
 SOAPpy
-SQLAlchemy
 Twisted-Core
 Twisted-Names
 Twisted-Web
@@ -52,7 +49,6 @@ fpconst
 fs
 fs-uae-launcher
 fswrap
-html2text
 httplib2
 hyde
 indicator-weather
@@ -76,7 +72,6 @@ mutagen
 nltk
 numpy
 oauth
-oauth2
 oauthlib
 oneconf
 paramiko
@@ -99,7 +94,6 @@ pyinotify
 pylast
 pyserial
 pysmbc
-pysqlite
 python-apt
 python-dateutil
 python-debian
@@ -112,7 +106,6 @@ pyxdg
 quodlibet
 ranger
 regetron
-regex
 reportlab
 requests
 rhythmbox-ubuntuone
@@ -134,7 +127,6 @@ ubuntu-tweak
 ubuntuone-couch
 ubuntuone-storage-protocol
 unity-lens-photos
-unity-singlet
 url
 urllib3
 virtkey

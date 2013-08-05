@@ -422,3 +422,4 @@ eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
 export GPG_AGENT_INFO
 GPG_TTY=$(tty)
 export GPG_TTY
+alias weather='weather --imperial KFTY'

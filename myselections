@@ -1906,7 +1906,6 @@ libpiano0					install
 libpipeline1:i386				install
 libpixman-1-0:i386				install
 libpixman-1-dev					install
-libpkcs11-helper1:i386				install
 libplist1					install
 libplrpc-perl					install
 libplymouth2:i386				install
@@ -1947,15 +1946,16 @@ libpulsedsp:i386				install
 libpurple-bin					install
 libpurple0					install
 libpwquality1					install
-libpyside1.1:i386				install
 libpython-dev:i386				install
 libpython-stdlib:i386				install
 libpython2.7:i386				install
 libpython2.7-dev:i386				install
 libpython2.7-minimal:i386			install
 libpython2.7-stdlib:i386			install
+libpython3-dev:i386				install
 libpython3-stdlib:i386				install
 libpython3.3:i386				install
+libpython3.3-dev:i386				install
 libpython3.3-minimal:i386			install
 libpython3.3-stdlib:i386			install
 libqjson0:i386					install
@@ -2080,7 +2080,6 @@ libserf1:i386					install
 libservlet2.5-java				install
 libsgutils2-2					install
 libshairport1:i386				install
-libshiboken1.1:i386				install
 libshout3:i386					install
 libshout3-dev:i386				install
 libsidplay1					install
@@ -2331,7 +2330,6 @@ libx11-doc					install
 libx11-xcb-dev					install
 libx11-xcb1:i386				install
 libx264-123:i386				install
-libx264-129:i386				install
 libx86-1:i386					install
 libxalan2-java					install
 libxapian22					install
@@ -2728,6 +2726,7 @@ pinentry-gtk2					install
 piwigo						install
 piwigo-mysql					install
 pkg-config					install
+plexmediaserver					install
 plowshare4					install
 plymouth					install
 plymouth-label					install
@@ -2790,7 +2789,6 @@ python-apt					install
 python-apt-common				install
 python-aptdaemon				install
 python-aptdaemon.gtk3widgets			install
-python-beautifulsoup				install
 python-bluez					install
 python-bzrlib					install
 python-cairo					install
@@ -2815,7 +2813,6 @@ python-egenix-mxdatetime			install
 python-egenix-mxtools				install
 python-evdev					install
 python-eyed3					install
-python-feedparser				install
 python-fpconst					install
 python-gconf					install
 python-gdbm					install
@@ -2836,7 +2833,6 @@ python-gst0.10					install
 python-gst0.10-dev				install
 python-gtk2					install
 python-gtksourceview2				install
-python-html2text				install
 python-httplib2					install
 python-ibus					install
 python-imaging					install
@@ -2851,7 +2847,6 @@ python-libproxy					install
 python-libtorrent				install
 python-libxml2					install
 python-lxml					install
-python-magic					install
 python-mako					install
 python-markupsafe				install
 python-minimal					install
@@ -2862,7 +2857,6 @@ python-nltk					install
 python-notify					install
 python-numpy					install
 python-oauth					install
-python-oauth2					install
 python-oauthlib					install
 python-oneconf					install
 python-openssl					install
@@ -2882,15 +2876,9 @@ python-pycurl					install
 python-pygame					install
 python-pyinotify				install
 python-pyorbit					install
-python-pyside.qtcore				install
-python-pyside.qtgui				install
-python-pyside.qtnetwork				install
-python-pyside.qtwebkit				install
-python-pysqlite2				install
 python-pywapi					install
 python-qt4					install
 python-qt4-dbus					install
-python-regex					install
 python-renderpm					install
 python-reportlab				install
 python-reportlab-accel				install
@@ -2906,8 +2894,6 @@ python-six					install
 python-smbc					install
 python-soappy					install
 python-software-properties			install
-python-sqlalchemy				install
-python-sqlalchemy-ext				install
 python-support					install
 python-svn					install
 python-twisted-bin				install
@@ -2918,7 +2904,6 @@ python-ubuntu-sso-client			install
 python-ubuntuone-client				install
 python-ubuntuone-control-panel			install
 python-ubuntuone-storageprotocol		install
-python-unity-singlet				install
 python-urllib3					install
 python-utidylib					install
 python-virtkey					install
@@ -2952,6 +2937,7 @@ python3-crypto					install
 python3-dbus					install
 python3-debian					install
 python3-defer					install
+python3-dev					install
 python3-dirspec					install
 python3-distupgrade				install
 python3-gdbm:i386				install
@@ -2968,6 +2954,7 @@ python3-piston-mini-client			install
 python3-pkg-resources				install
 python3-problem-report				install
 python3-pyatspi					install
+python3-setuptools				install
 python3-six					install
 python3-software-properties			install
 python3-speechd					install
@@ -2976,6 +2963,7 @@ python3-virtkey					install
 python3-xdg					install
 python3-xkit					install
 python3.3					install
+python3.3-dev					install
 python3.3-minimal				install
 qdbus						install
 qjackctl					install
@@ -3323,6 +3311,8 @@ wamerican					install
 watershed					install
 wbritish					install
 wdiff						install
+weather-util					install
+weather-util-data				install
 webaccounts-extension-common			install
 wget						install
 whiptail					install
