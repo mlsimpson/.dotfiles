@@ -258,6 +258,10 @@ alias dtree='tree -aChd -L 1'
 alias ttytter='ttytter -ansi'
 
 # Quick alias for gcc options
+# use dis:
+# CHOST="i686-pc-linux-gnu"
+# CFLAGS="-march=pentium4 -O2 -pipe -fomit-frame-pointer"
+# CXXFLAGS="${CFLAGS}"
 alias gcc="gcc -O2 -Wall -pedantic"
 
 # Create cscope.out in the current directory
