@@ -104,9 +104,9 @@ function most_useless_use_of_zsh {
 # range is unnecessary; used to specificy x files
 # USE LIKE THIS:
 # RANDOM=$(od -An -N2 -i /dev/random); <command>(o+rand[1,30])
-function rand {
-  REPLY=$RANDOM
-}
+#function rand {
+#  REPLY=$RANDOM
+#}
 
 # Convert coverart
 function coverart {
@@ -125,6 +125,15 @@ function vol(){
   pactl set-sink-volume 0 -- $1%
 }
 
+function imv() {
+  local src dst
+  for src; do
+      [[ -e $src ]] || { print -u2 "$src does not exist"; continue }
+      dst=$src
+      vared dst
+      [[ $src != $dst ]] && mkdir -p $dst:h && mv -n $src $dst
+  done
+}
 # Volume up & down for PulseAudio
 alias vup='pactl set-sink-volume 0 -- +10%'
 alias vdo='pactl set-sink-volume 0 -- -10%'
@@ -174,7 +183,9 @@ zstyle ':completion:*:kill:*' force-list always
 zstyle ':completion:*:ssh:*' group-order 'users' 'hosts'
 
 # Set up colors, prompts, and messages
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' max-errors 2
 zstyle ':completion:*' prompt 'Found %e errors:'
@@ -185,13 +196,14 @@ zstyle ':completion:*:expand:*' tag-order all-expansions
 
 # formatting and messages
 zstyle ':completion:*' verbose yes
+zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*:descriptions' format '%F{red}%U%B%d%b%u%f'
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*' separate-sections 'yes'
 
-# match uppercase from lowercase
+# case insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Separate man page sections.  Neat.
@@ -206,8 +218,23 @@ zstyle ':completion:*:processes-names' command 'ps axho command'
 zstyle ':completion:*:urls' local 'www' '/var/www/htdocs' 'public_html'
 # zstyle '*' hosts $hosts
 
+# color code completion
+zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
+
 # Enable oh-my-zsh agent-forwarding
 zstyle :omz:plugins:ssh-agent agent-forwarding on
+
+# Force menu on C-x RET.
+zle -C complete-first complete-word _generic
+zstyle ':completion:complete-first:*' menu yes
+bindkey "^X^M" complete-first
+
+# Complete in history with M-/, M-,
+zstyle ':completion:history-words:*' list no
+zstyle ':completion:history-words:*' menu yes
+zstyle ':completion:history-words:*' remove-all-dups yes
+bindkey "\e/" _history-complete-older
+bindkey "\e," _history-complete-newer
 
 ####
 # alias
@@ -225,6 +252,9 @@ alias 9='cd -9'
 #alias cpanm='cpanm --sudo'
 alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
 
+alias cp='cp -r -v'
+
+# Git aliases
 alias gam='git commit -a -m'
 alias gap='git add -p'
 alias gcl='git clone'
@@ -245,6 +275,7 @@ alias lsd='ls -d */'
 alias lsds='ls -dS */'
 # Show only files, sorted by size
 alias lss='ls -aSh *(.)'
+alias larsh="ls -larSh"
 alias mkdir='mkdir -p'
 alias mpg123='mpg123 -v -C'
 alias npm='npm -g'
@@ -396,7 +427,11 @@ unsetopt correctall
 
 # Load zsh builtin functions
 # autoload -U zargs zmv zcalc tcp_open
-# autoload -U zargs
+autoload -U zmv
+
+autoload -Uz copy-earlier-word
+zle -N copy-earlier-word
+bindkey "^[m" copy-earlier-word
 
 # Make less open tons of file types
 # Debian Linux:
