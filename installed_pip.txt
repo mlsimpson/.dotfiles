@@ -10,6 +10,7 @@ altgraph
 argparse
 bdist-mpkg
 beets
+behave
 cssselect
 discogs-client
 distribute
@@ -32,6 +33,7 @@ munkres
 musicbrainzngs
 mutagen
 numpy
+parse
 pika
 py2app
 pyOpenSSL
@@ -75,6 +77,7 @@ python-gflags
 regetron
 requests
 rope
+selenium
 sh
 simplejson
 six

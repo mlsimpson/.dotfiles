@@ -1,5 +1,10 @@
 shell ./cleanapps.sh
 shell ~/Applications/cleanapps.sh
 open_with
-
 delete
+set_option preview_images=TRUE
+
+set_option preview_images true
+set_option preview_images
+set_option preview_images TRUE
+open_with 
