@@ -117,6 +117,7 @@
 ## defines how long various messages are supposed to be visible
 #
 #message_delay_time = "4"
+message_delay_time = "2"
 #
 ##### song format #####
 ##
