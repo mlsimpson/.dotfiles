@@ -256,6 +256,7 @@ message_delay_time = "2"
 ##
 #
 #song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b}"
+song_columns_list_format = "(7f)[green]{l} (30)[cyan]{a} (35)[]{t|f} (30)[red]{b}"
 #
 ##### various settings #####
 #
