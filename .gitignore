@@ -5,7 +5,8 @@
 *.cer
 .irssi/away.log
 .cmus
-mobius.sh
 .beetsconfig
 .config/pianobar
-.irssi/fnotify
+.config/fish
+.irssi/config
+.irssi/config.autosave
