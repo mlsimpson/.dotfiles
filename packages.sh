@@ -8,4 +8,4 @@ brew list > /Users/threv/.dotfiles/installed_brews.txt
 
 perl -MExtUtils::Installed -E 'say for ExtUtils::Installed->new->modules' > /Users/threv/.dotfiles/installed_cpan.txt
 
-npm list -g --parseable | awk 'BEGIN {FS = "/" }; {print $NF}' | uniq >! installed_npms.txt
+#npm list -g --parseable | awk 'BEGIN {FS = "/" }; {print $NF}' | uniq >! installed_npms.txt

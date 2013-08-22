@@ -1,5 +1,6 @@
 aalib
 ack
+adplug
 asciidoc
 astyle
 atk
@@ -94,6 +95,7 @@ lha
 libao
 libass
 libassuan
+libbinio
 libcaca
 libcdio
 libcue
@@ -127,7 +129,6 @@ little-cms2
 lua
 lynx
 lzo
-macvim
 mad
 markdown
 mcrypt
@@ -140,6 +141,7 @@ mpg123
 mtr
 multitail
 ncdu
+ncftp
 nettle
 ngrep
 nspr
