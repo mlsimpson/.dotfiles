@@ -341,6 +341,9 @@ alias htop='htop -d 10'
 # ps auxww | ack "thingy" alias
 alias psa='ps auxww | ack '
 
+# Boy, do I type mid3v2 a lot
+alias m32="mid3v2"
+
 # "go" can't use libtcmalloc
 # unneeded now since I don't immediately assume that in .zshrc
 # alias go="LD_PRELOAD=\"\" go"

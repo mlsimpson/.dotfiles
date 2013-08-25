@@ -12,6 +12,7 @@ editor
 fstream
 fstream-npm
 fstream-ignore
+github-url-from-git
 glob
 graceful-fs
 inherits
@@ -51,11 +52,9 @@ combined-stream
 delayed-stream
 hawk
 boom
-hoek
 cryptiles
 hoek
 sntp
-hoek
 http-signature
 asn1
 assert-plus
@@ -70,6 +69,7 @@ retry
 rimraf
 semver
 sha
+readable-stream
 slide
 tar
 uid-number

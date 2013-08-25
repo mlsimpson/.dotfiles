@@ -21,7 +21,6 @@ DBD::mysql
 DBI
 DateTime
 DateTime::Format::Builder
-DateTime::Format::Mail
 DateTime::Format::Strptime
 DateTime::TimeZone
 Devel::DProf

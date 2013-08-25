@@ -1,5 +1,10 @@
 cheat
+coderay
 json
+method_source
 pager
+pry
 rdoc
 rdoc-data
+showterm
+slop
