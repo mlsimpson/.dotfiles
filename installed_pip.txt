@@ -8,14 +8,17 @@ Unidecode
 Werkzeug
 altgraph
 argparse
+astroid
 bdist-mpkg
 beets
 behave
+cffi
 cssselect
 discogs-client
 distribute
 dpaster
 dtrx
+eyeD3
 gdata
 git-remote-helpers
 gntp
@@ -37,6 +40,7 @@ parse
 pika
 py2app
 pyOpenSSL
+pycparser
 pygame
 pylast
 pylint

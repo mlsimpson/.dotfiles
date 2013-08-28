@@ -66,9 +66,9 @@ gmp
 gnu-getopt
 gnu-sed
 gnupg
-gnupg2
 gnuplot
 gnutls
+gpg-agent
 gpgme
 graphviz
 gtk+
@@ -163,6 +163,7 @@ pg_top
 physfs
 pianobar
 pidof
+pinentry
 pixman
 pkg-config
 plowshare
