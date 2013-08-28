@@ -8,5 +8,4 @@
 .beetsconfig
 .config/pianobar
 .config/fish
-.irssi/config
 .irssi/config.autosave
