@@ -29,7 +29,7 @@ export ZSH_THEME="threv"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(git ssh-agent zsh-syntax-highlighting pip pass )
+plugins=(git ssh-agent zsh-syntax-highlighting pip pass npm )
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -225,16 +225,16 @@ zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # Force menu on C-x RET.
-zle -C complete-first complete-word _generic
-zstyle ':completion:complete-first:*' menu yes
-bindkey "^X^M" complete-first
+#zle -C complete-first complete-word _generic
+#zstyle ':completion:complete-first:*' menu yes
+#bindkey "^X^M" complete-first
 
 # Complete in history with M-/, M-,
-zstyle ':completion:history-words:*' list no
-zstyle ':completion:history-words:*' menu yes
-zstyle ':completion:history-words:*' remove-all-dups yes
-bindkey "\e/" _history-complete-older
-bindkey "\e," _history-complete-newer
+#zstyle ':completion:history-words:*' list no
+#zstyle ':completion:history-words:*' menu yes
+#zstyle ':completion:history-words:*' remove-all-dups yes
+#bindkey "\e/" _history-complete-older
+#bindkey "\e," _history-complete-newer
 
 ####
 # alias
@@ -302,7 +302,7 @@ alias mcs="cscope -bcvR **/*.(c|h|cpp|cc)"
 alias newgems="gem update; gem cleanup"
 
 # Update npm packages
-alias newnpm="npm update; npm cache clean"
+alias newnpm="sudo npm update; sudo npm cache clean"
 
 # Update CPAN packages
 alias newcpan="cpan-outdated -p | cpanm -i && rm -rf /home/threv/.cpanm/work"
@@ -361,8 +361,8 @@ bindkey "^[" undo
 # Pipe the current command through less
 #bindkey -s "\el" " 2>&1|less^M"
 
-bindkey "^R" history-incremental-pattern-search-backward
-bindkey "^S" history-incremental-pattern-search-forward
+#bindkey "^R" history-incremental-pattern-search-backward
+#bindkey "^S" history-incremental-pattern-search-forward
 ####
 # export
 
@@ -433,11 +433,11 @@ unsetopt correctall
 
 # Load zsh builtin functions
 # autoload -U zargs zmv zcalc tcp_open
-autoload -U zmv
-
-autoload -Uz copy-earlier-word
-zle -N copy-earlier-word
-bindkey "^[m" copy-earlier-word
+#autoload -U zmv
+#
+#autoload -Uz copy-earlier-word
+#zle -N copy-earlier-word
+#bindkey "^[m" copy-earlier-word
 
 # Make less open tons of file types
 # Debian Linux:
@@ -457,7 +457,7 @@ bindkey "^[m" copy-earlier-word
 # Set SDL-based games to use joystick mappings
 # export SDL_JOYSTICK_DEVICE=/dev/input/js0
 
-alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe"
+# alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

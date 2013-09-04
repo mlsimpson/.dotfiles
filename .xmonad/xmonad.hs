@@ -11,6 +11,7 @@ import System.IO
 
 myManageHook = composeAll
   [ className =? "Steam" --> doFloat
+  -- , className =? "steam" --> doFullFloat
   , manageDocks
   ]
 

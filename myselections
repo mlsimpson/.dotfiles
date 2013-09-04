@@ -140,11 +140,15 @@ checkinstall					install
 chkrootkit					install
 chromium-bsu					install
 chromium-bsu-data				install
+clamav						install
+clamav-base					install
+clamav-freshclam				install
 classicmenu-indicator				install
 clementine					install
 cli-common					install
 clipit						install
 cmake						install
+cmake-curses-gui				install
 cmake-data					install
 cmatrix						install
 cmatrix-xfont					install
@@ -720,6 +724,7 @@ jmeter-help					install
 jmeter-http					install
 jockey-common					install
 jockey-gtk					install
+joe						install
 joystick					install
 jstest-gtk					install
 junit4						install
@@ -945,6 +950,7 @@ libchromaprint-tools				install
 libchromaprint0:i386				install
 libck-connector0:i386				install
 libclalsadrv2					install
+libclamav6					install
 libclass-accessor-perl				install
 libclass-factory-util-perl			install
 libclass-inspector-perl				install
@@ -1008,6 +1014,7 @@ libcwidget3					install
 libcxsparse2.2.3				install
 libdaemon-dev					install
 libdaemon0					install
+libdaq0						install
 libdata-optlist-perl				install
 libdatetime-format-builder-perl			install
 libdatetime-format-iso8601-perl			install
@@ -1072,6 +1079,7 @@ libdrm-nouveau1a:i386				install
 libdrm-nouveau2:i386				install
 libdrm-radeon1:i386				install
 libdrm2:i386					install
+libdumbnet1					install
 libdv4:i386					install
 libdvbpsi-dev					install
 libdvbpsi7					install
@@ -1928,6 +1936,7 @@ libppl-c4:i386					install
 libppl12:i386					install
 libpq-dev					install
 libpq5						install
+libprelude2					install
 libprocps0:i386					install
 libprojectm2					install
 libprotobuf-lite7				install
@@ -2195,6 +2204,7 @@ libtinfo-dev:i386				install
 libtinfo5:i386					install
 libtinyxml2.6.2					install
 libtokyocabinet9:i386				install
+libtommath0					install
 libtool						install
 libtorrent-rasterbar7				install
 libtotem-plparser17				install
@@ -2602,6 +2612,9 @@ netbase						install
 netcat-openbsd					install
 nethogs						install
 netpbm						install
+netsurf						install
+netsurf-common					install
+netsurf-gtk					install
 network-manager					install
 network-manager-gnome				install
 network-manager-pptp				install
@@ -2642,6 +2655,7 @@ octave						install
 octave-common					install
 odbcinst					install
 odbcinst1debian2:i386				install
+oinkmaster					install
 onboard						install
 oneconf						install
 oneconf-common					install
@@ -3055,6 +3069,10 @@ sl						install
 slurm						install
 smarty						install
 sni-qt:i386					install
+snort						install
+snort-common					install
+snort-common-libraries				install
+snort-rules-default				install
 socat						install
 software-center					install
 software-center-aptdaemon-plugins		install
@@ -3066,8 +3084,6 @@ sox						install
 sp						install
 spectrum-roms					install
 speech-dispatcher				install
-spotify-client					install
-spotify-client-gnome-support			install
 sqlite3						install
 sqlite3-doc					install
 ssh-askpass-gnome				install
