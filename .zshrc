@@ -22,7 +22,7 @@ export ZSH_THEME="threv"
 # export DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# export DISABLE_AUTO_TITLE="true"
+#export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -125,15 +125,15 @@ function vol(){
   pactl set-sink-volume 0 -- $1%
 }
 
-function imv() {
-  local src dst
-  for src; do
-      [[ -e $src ]] || { print -u2 "$src does not exist"; continue }
-      dst=$src
-      vared dst
-      [[ $src != $dst ]] && mkdir -p $dst:h && mv -n $src $dst
-  done
-}
+#function imv() {
+#  local src dst
+#  for src; do
+#      [[ -e $src ]] || { print -u2 "$src does not exist"; continue }
+#      dst=$src
+#      vared dst
+#      [[ $src != $dst ]] && mkdir -p $dst:h && mv -n $src $dst
+#  done
+#}
 # Volume up & down for PulseAudio
 alias vup='pactl set-sink-volume 0 -- +10%'
 alias vdo='pactl set-sink-volume 0 -- -10%'
@@ -296,7 +296,7 @@ alias ttytter='ttytter -ansi'
 alias gcc="gcc -O2 -Wall -pedantic"
 
 # Create cscope.out in the current directory
-#alias mcs="cscope -bcvR **/*.(c|h|cpp|cc)"
+alias mcs="cscope -bcvR **/*.(c|h|cpp|cc)"
 
 # Update gems in one go
 alias newgems="gem update; gem cleanup"
@@ -305,7 +305,7 @@ alias newgems="gem update; gem cleanup"
 alias newnpm="npm update; npm cache clean"
 
 # Update CPAN packages
-alias newcpan="cpan-outdated -p | cpanm -i && rm -rf /Users/threv/.cpanm/work"
+alias newcpan="cpan-outdated -p | cpanm -i && rm -rf /home/threv/.cpanm/work"
 
 # Always start irssi in screen
 alias irssi="screen irssi"
@@ -361,6 +361,8 @@ bindkey "^[" undo
 # Pipe the current command through less
 #bindkey -s "\el" " 2>&1|less^M"
 
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
 ####
 # export
 
@@ -384,6 +386,7 @@ export MYSQL_PS1="\\d> "
 # export TERM=-256color
 
 # Save compiler headaches
+# Particularly w/cpan
 export ARCHFLAGS="-arch i386"
 export VERSIONER_PERL_PREFER_32_BIT="yes"
 
@@ -454,7 +457,7 @@ bindkey "^[m" copy-earlier-word
 # Set SDL-based games to use joystick mappings
 # export SDL_JOYSTICK_DEVICE=/dev/input/js0
 
-# alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe"
+alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -464,4 +467,5 @@ eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
 export GPG_AGENT_INFO
 GPG_TTY=$(tty)
 export GPG_TTY
+
 alias weather='weather --imperial KFTY'
