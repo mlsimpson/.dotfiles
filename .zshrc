@@ -404,7 +404,7 @@ export LC_CTYPE="en_US.UTF-8"
 
 ####
 # for vmail
-export VMAIL_VIM=vim
+#export VMAIL_VIM=vim
 
 ####
 # setopt
@@ -469,3 +469,4 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 alias weather='weather --imperial KFTY'
+export VMAIL_BROWSER='surf'
