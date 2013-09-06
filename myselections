@@ -1585,7 +1585,6 @@ libmatroska-dev:i386				install
 libmatroska5:i386				install
 libmcrypt-dev					install
 libmcrypt4					install
-libmcs-dev					install
 libmcs1						install
 libmeanwhile1					install
 libmenu-cache2					install
@@ -2464,12 +2463,12 @@ lintian						install
 linux-firmware					install
 linux-generic					install
 linux-generic-pae				install
-linux-headers-3.8.0-29				install
-linux-headers-3.8.0-29-generic			install
+linux-headers-3.8.0-30				install
+linux-headers-3.8.0-30-generic			install
 linux-headers-generic				install
 linux-headers-generic-pae			install
-linux-image-3.8.0-29-generic			install
-linux-image-extra-3.8.0-29-generic		install
+linux-image-3.8.0-30-generic			install
+linux-image-extra-3.8.0-30-generic		install
 linux-image-generic				install
 linux-image-generic-pae				install
 linux-libc-dev:i386				install
@@ -3063,6 +3062,7 @@ signon-plugin-oauth2				install
 signon-plugin-password				install
 signon-ui					install
 signond						install
+silversearcher-ag				install
 simh						install
 simple-scan					install
 sl						install
