@@ -153,13 +153,13 @@ man() {
 }
 
 # Display series of dots during completion
-expand-or-complete-with-dots() {
-  echo -n "\e[31m......\e[0m"
-  zle expand-or-complete
-  zle redisplay
-}
-zle -N expand-or-complete-with-dots
-bindkey "^I" expand-or-complete-with-dots
+#expand-or-complete-with-dots() {
+#  echo -n "\e[31m......\e[0m"
+#  zle expand-or-complete
+#  zle redisplay
+#}
+#zle -N expand-or-complete-with-dots
+#bindkey "^I" expand-or-complete-with-dots
 
 ####
 # Completion
@@ -404,7 +404,7 @@ export LC_CTYPE="en_US.UTF-8"
 
 ####
 # for vmail
-# export VMAIL_VIM=vim
+export VMAIL_VIM=vim
 
 ####
 # setopt
@@ -457,7 +457,7 @@ unsetopt correctall
 # Set SDL-based games to use joystick mappings
 # export SDL_JOYSTICK_DEVICE=/dev/input/js0
 
-# alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe"
+alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
