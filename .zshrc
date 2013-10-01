@@ -254,6 +254,8 @@ alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G))
 
 alias cp='cp -r -v'
 
+alias dca="deluge-console add"
+
 # Git aliases
 alias gam='git commit -a -m'
 alias gap='git add -p'
@@ -261,6 +263,7 @@ alias gcl='git clone'
 alias gd='git diff'
 alias grep='grep --color=always'
 alias gvim='gvim -f -geom 75x35'
+alias latr="ls -latr"
 alias less='less -mR'
 # VLESS=$(find /usr/share/vim -name 'less.sh')
 # if [ ! -z $VLESS ]; then
@@ -344,6 +347,9 @@ alias psa='ps auxww | ack '
 # Boy, do I type mid3v2 a lot
 alias m32="mid3v2"
 
+# for weather command
+alias weather='weather --imperial KFTY'
+
 # "go" can't use libtcmalloc
 # unneeded now since I don't immediately assume that in .zshrc
 # alias go="LD_PRELOAD=\"\" go"
@@ -405,6 +411,7 @@ export LC_CTYPE="en_US.UTF-8"
 ####
 # for vmail
 #export VMAIL_VIM=vim
+export VMAIL_BROWSER='midori'
 
 ####
 # setopt
@@ -457,7 +464,8 @@ unsetopt correctall
 # Set SDL-based games to use joystick mappings
 # export SDL_JOYSTICK_DEVICE=/dev/input/js0
 
-alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe"
+alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > /dev/null 2>&1 &"
+alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -468,5 +476,8 @@ export GPG_AGENT_INFO
 GPG_TTY=$(tty)
 export GPG_TTY
 
-alias weather='weather --imperial KFTY'
-export VMAIL_BROWSER='surf'
+# Fix Midori SSL errors
+WEBKIT_IGNORE_SSL_ERRORS="1"
+
+# Mail config
+MAIL=/home/threv/Mail
