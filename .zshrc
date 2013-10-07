@@ -125,6 +125,12 @@ function vol(){
   pactl set-sink-volume 0 -- $1%
 }
 
+# add to Todo-list
+function todo () {
+	echo "$*" >> ~/Documents/notes/todo_macbook.txt
+	cat Documents/notes/todo_macbook.txt | sort > tmp.txt && mv -v tmp.txt Documents/notes/todo_macbook.txt
+}
+
 #function imv() {
 #  local src dst
 #  for src; do
@@ -480,4 +486,4 @@ export GPG_TTY
 WEBKIT_IGNORE_SSL_ERRORS="1"
 
 # Mail config
-MAIL=/home/threv/Mail
+# MAIL=/home/threv/Mail
