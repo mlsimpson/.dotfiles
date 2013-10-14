@@ -273,6 +273,7 @@ message_delay_time = "2"
 #playlist_shorten_total_times = "no"
 #
 #playlist_separate_albums = "no"
+playlist_separate_albums = "yes"
 #
 playlist_display_mode = "columns" (classic/columns)
 #
