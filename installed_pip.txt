@@ -53,6 +53,7 @@ httplib2
 hyde
 indicator-weather
 iotop
+ipdb
 ipython
 itsdangerous
 jockey

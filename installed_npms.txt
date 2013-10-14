@@ -151,7 +151,6 @@ sigmund
 graceful-fs
 lru-cache
 normalize-package-data
-github-url-from-git
 semver
 request
 aws-sign

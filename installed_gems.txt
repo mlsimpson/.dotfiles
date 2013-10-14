@@ -1,5 +1,6 @@
 blockenspiel
 cheat
+chunky_png
 coderay
 highline
 json

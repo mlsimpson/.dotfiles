@@ -10,9 +10,7 @@ import XMonad.Layout.NoBorders -- Make a given layout display without borders.
 import System.IO
 
 myManageHook = composeAll
-  [ className =? "Steam" --> doFloat
-  -- , className =? "steam" --> doFullFloat
-  , manageDocks
+  [ manageDocks
   ]
 
 main = do
