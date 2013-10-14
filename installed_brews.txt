@@ -36,6 +36,7 @@ djview4
 djvu2pdf
 djvulibre
 docbook
+docbook-xsl
 dos2unix
 einstein
 esound
@@ -59,7 +60,6 @@ gdbm
 gdk-pixbuf
 gettext
 ghostscript
-gist
 git
 glib
 gmp
@@ -111,6 +111,7 @@ libmatroska
 libmikmod
 libmpdclient
 libogg
+liboil
 libsamplerate
 libsndfile
 libtasn1
@@ -133,8 +134,10 @@ mad
 markdown
 mcrypt
 midnight-commander
+mkclean
 mkvtoolnix
 mobile-shell
+mp3gain
 mp4v2
 mpc
 mpg123
@@ -208,6 +211,7 @@ taglib
 task
 tesseract
 texi2html
+the_silver_searcher
 theora
 tig
 tmux-iterm2
@@ -220,8 +224,8 @@ vorbis-tools
 w3m
 watch
 wget
-wxmac
 x264
+xmlto
 xmp
 xvid
 xz

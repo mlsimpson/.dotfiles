@@ -10,7 +10,6 @@ altgraph
 argparse
 astroid
 bdist-mpkg
-beets
 behave
 cffi
 cssselect
