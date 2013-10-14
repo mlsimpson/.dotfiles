@@ -1,6 +1,10 @@
 bundler
+bundler-unload
 cheat
+gist
+json
 pager
+polyglot
 rake
 rubygems-bundler
 rvm
