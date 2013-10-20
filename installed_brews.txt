@@ -130,6 +130,7 @@ little-cms2
 lua
 lynx
 lzo
+macvim
 mad
 markdown
 mcrypt
