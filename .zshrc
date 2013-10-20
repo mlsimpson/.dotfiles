@@ -474,7 +474,7 @@ alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > 
 alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+#export PATH="/usr/local/heroku/bin:$PATH"
 
 # GPG
 eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
@@ -487,3 +487,4 @@ WEBKIT_IGNORE_SSL_ERRORS="1"
 
 # Mail config
 # MAIL=/home/threv/Mail
+alias rpi='ssh pi@raspberrypi'

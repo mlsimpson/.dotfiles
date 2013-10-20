@@ -378,7 +378,7 @@ map <Leader>pre :!open %<CR><CR>
 " Mapped to <Leader>?
 function! NSearchGoogleForWord()
   let s:wordUnderCursor = expand("<cword>")
-  let s:cmd = "silent !open 'http://www.google.com/search\?\q='" . s:wordUnderCursor
+  let s:cmd = "silent !links 'http://www.google.com/search\?\q='" . s:wordUnderCursor
   " let s:cmd = "silent !chromium-browser 'http://www.google.com/search\?\q='" . s:wordUnderCursor
   execute s:cmd
 endfunction
@@ -436,7 +436,7 @@ au BufWinEnter *.txt if &ft == 'help' | if &columns > 156 | wincmd H | else | wi
 " let g:TextileOS="Linux"
 " let g:TextileBrowser="/usr/bin/chromium-browser"
 " OS X
-let g:TextileBrowser="Google Chrome"
+" let g:TextileBrowser="Google Chrome"
 
 " gundo support
 map <Leader>gun :GundoToggle<CR>
