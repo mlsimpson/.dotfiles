@@ -29,7 +29,7 @@ export ZSH_THEME="threv"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(git ssh-agent zsh-syntax-highlighting pip pass npm )
+plugins=(ssh-agent zsh-syntax-highlighting pass)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -53,6 +53,9 @@ source $ZSH/oh-my-zsh.sh
 # Path stuff
 # Customize to your needs...
 # export PATH=$PATH:~:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin
+
+# Locale
+export LC_CTYPE="en_US.UTF-8"
 
 ####
 # Functions
@@ -84,29 +87,25 @@ source $ZSH/oh-my-zsh.sh
 ####
 # Mandelbrot pattern generation
 # Displays floating point abilites of zsh
-function most_useless_use_of_zsh {
-  local lines columns colour a b p q i pnew
-  ((columns=COLUMNS-1, lines=LINES-1, colour=0))
-  for ((b=-1.5; b<=1.5; b+=3.0/lines)) do
-    for ((a=-2.0; a<=1; a+=3.0/columns)) do
-      for ((p=0.0, q=0.0, i=0; p*p+q*q < 4 && i < 32; i++)) do
-        ((pnew=p*p-q*q+a, q=2*p*q+b, p=pnew))
-      done
-      ((colour=(i/4)%8))
-      echo -n "\\e[4${colour}m "
-    done
-    echo
-  done
-}
+#function most_useless_use_of_zsh {
+#  local lines columns colour a b p q i pnew
+#  ((columns=COLUMNS-1, lines=LINES-1, colour=0))
+#  for ((b=-1.5; b<=1.5; b+=3.0/lines)) do
+#    for ((a=-2.0; a<=1; a+=3.0/columns)) do
+#      for ((p=0.0, q=0.0, i=0; p*p+q*q < 4 && i < 32; i++)) do
+#        ((pnew=p*p-q*q+a, q=2*p*q+b, p=pnew))
+#      done
+#      ((colour=(i/4)%8))
+#      echo -n "\\e[4${colour}m "
+#    done
+#    echo
+#  done
+#}
 
 # This shit works!!
-# reseed when needed:  rand; <command> *(o+rand[range])
-# range is unnecessary; used to specificy x files
-# USE LIKE THIS:
-# RANDOM=$(od -An -N2 -i /dev/random); <command>(o+rand[1,30])
-#function rand {
-#  REPLY=$RANDOM
-#}
+# Random file list generation
+# the [1,x] can be omitted to get *all* files
+# RANDOM=$RANDOM; command glob(oe:'REPLY=$RANDOM':[1,x])
 
 # Convert coverart
 function coverart {
@@ -125,6 +124,10 @@ function vol(){
   pactl set-sink-volume 0 -- $1%
 }
 
+# Volume up & down for PulseAudio
+alias vup='pactl set-sink-volume 0 -- +10%'
+alias vdo='pactl set-sink-volume 0 -- -10%'
+
 # add to Todo-list
 function todo () {
 	echo "$*" >> ~/Documents/notes/todo_macbook.txt
@@ -140,9 +143,6 @@ function todo () {
 #      [[ $src != $dst ]] && mkdir -p $dst:h && mv -n $src $dst
 #  done
 #}
-# Volume up & down for PulseAudio
-alias vup='pactl set-sink-volume 0 -- +10%'
-alias vdo='pactl set-sink-volume 0 -- -10%'
 
 #####
 # Set colors for man pages.
@@ -298,7 +298,6 @@ alias dtree='tree -aChd -L 1'
 alias ttytter='ttytter -ansi'
 
 # Quick alias for gcc options
-# use dis:
 # CHOST="i686-pc-linux-gnu"
 # CFLAGS="-march=pentium4 -O2 -pipe -fomit-frame-pointer"
 # CXXFLAGS="${CFLAGS}"
@@ -331,10 +330,8 @@ for c in cp mv chmod chown rename rm; do
     alias $c="$c -v"
 done
 
-alias cp='cp -v -r'
-
 # List all executable files in PATH
-alias pathexec="print -l ${^path}/*(-*N) | less"
+#alias pathexec="print -l ${^path}/*(-*N) | less"
 
 alias tmux="tmux -u attach"
 
@@ -356,9 +353,11 @@ alias m32="mid3v2"
 # for weather command
 alias weather='weather --imperial KFTY'
 
-# "go" can't use libtcmalloc
-# unneeded now since I don't immediately assume that in .zshrc
-# alias go="LD_PRELOAD=\"\" go"
+alias rpi='ssh pi@raspberrypi'
+
+# Wine aliases
+alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > /dev/null 2>&1 &"
+alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
 
 ## c-x c-x => history menu
 #autoload -Uz history-beginning-search-menu
@@ -406,8 +405,6 @@ export VERSIONER_PERL_PREFER_32_BIT="yes"
 # export PIP_RESPECT_VIRTUALENV=true
 # export PIP_REQUIRE_VIRTUALENV=true
 
-export LC_CTYPE="en_US.UTF-8"
-
 ####
 # autojump support
 # [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
@@ -446,7 +443,7 @@ unsetopt correctall
 
 # Load zsh builtin functions
 # autoload -U zargs zmv zcalc tcp_open
-#autoload -U zmv
+# autoload -U zmv
 #
 #autoload -Uz copy-earlier-word
 #zle -N copy-earlier-word
@@ -459,22 +456,12 @@ unsetopt correctall
 #   - requires brew install lesspipe
 # eval `/usr/local/bin/lesspipe.sh`
 
-# Fucking sensible-browser won't fucking change, I don't get it.
-# yo firefox is faster to load nao
-# export BROWSER=google-chrome
-
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Maybe this isn't needed?
 # source $HOME/.rvm/scripts/rvm
 
 # Set SDL-based games to use joystick mappings
 # export SDL_JOYSTICK_DEVICE=/dev/input/js0
-
-alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > /dev/null 2>&1 &"
-alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
-
-### Added by the Heroku Toolbelt
-#export PATH="/usr/local/heroku/bin:$PATH"
 
 # GPG
 eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
@@ -487,4 +474,3 @@ WEBKIT_IGNORE_SSL_ERRORS="1"
 
 # Mail config
 # MAIL=/home/threv/Mail
-alias rpi='ssh pi@raspberrypi'
