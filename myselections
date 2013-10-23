@@ -97,7 +97,6 @@ bash						install
 bash-completion					install
 bb						install
 bc						install
-beneath-a-steel-sky				install
 bind9-host					install
 binfmt-support					install
 binutils					install
@@ -311,7 +310,6 @@ firefox-locale-en				install
 fish						install
 flac						install
 flashplugin-installer				install
-flight-of-the-amazon-queen			install
 fluid-soundfont-gm				install
 fluid-soundfont-gs				install
 fluidsynth					install
@@ -866,13 +864,13 @@ libavalon-framework-java			install
 libavc1394-0:i386				install
 libavc1394-dev:i386				install
 libavcodec-extra-53:i386			install
-libavcodec55-ffmpeg:i386			install
+libavcodec55:i386				install
 libavdevice53:i386				install
 libavformat53:i386				install
-libavformat55-ffmpeg:i386			install
+libavformat55:i386				install
 libavidemux0					install
 libavutil-extra-51:i386				install
-libavutil52-ffmpeg:i386				install
+libavutil52:i386				install
 libbackport-util-concurrent-java		install
 libbamf3-1:i386					install
 libbasicusageenvironment0			install
@@ -898,9 +896,7 @@ libboost-date-time-dev				install
 libboost-date-time1.49-dev			install
 libboost-date-time1.49.0			install
 libboost-iostreams1.49.0			install
-libboost-program-options1.49.0			deinstall
 libboost-python1.49.0				install
-libboost-regex1.49.0				deinstall
 libboost-serialization1.49-dev			install
 libboost-serialization1.49.0			install
 libboost-system1.49.0				install
@@ -947,10 +943,10 @@ libccolamd2.7.1					install
 libcdaudio1					install
 libcddb2					install
 libcddb2-dev					install
-libcdio-cdda-dev				install
+libcdio-cdda-dev:i386				install
 libcdio-cdda1:i386				install
-libcdio-dev					install
-libcdio-paranoia-dev				install
+libcdio-dev:i386				install
+libcdio-paranoia-dev:i386			install
 libcdio-paranoia1:i386				install
 libcdio13:i386					install
 libcdparanoia0:i386				install
@@ -1341,6 +1337,8 @@ libgnutlsxx27:i386				install
 libgoa-1.0-0:i386				install
 libgoa-1.0-common				install
 libgomp1:i386					install
+libgoogle-perftools-dev				install
+libgoogle-perftools4				install
 libgpac-dev:i386				install
 libgpac2:i386					install
 libgpg-error-dev				install
@@ -1484,7 +1482,7 @@ libisccc90					install
 libisccfg82					install
 libisccfg90					install
 libiso9660-8:i386				install
-libiso9660-dev					install
+libiso9660-dev:i386				install
 libisoburn1					install
 libisofs6					install
 libitm1:i386					install
@@ -1956,7 +1954,7 @@ libpopt0:i386					install
 libportaudio2:i386				install
 libportmidi-dev					install
 libportmidi0					install
-libpostproc52:i386				install
+libpostproc-extra-52:i386			install
 libppl-c4:i386					install
 libppl12:i386					install
 libpq-dev					install
@@ -2168,7 +2166,6 @@ libssh2-1:i386					install
 libssh2-1-dev					install
 libssl-dev					install
 libssl-doc					install
-libssl0.9.8:i386				deinstall
 libssl1.0.0:i386				install
 libstartup-notification0:i386			install
 libstdc++6:i386					install
@@ -2183,7 +2180,7 @@ libsvga1-dev					install
 libsvn1:i386					install
 libswing-layout-java				install
 libswitch-perl					install
-libswscale2:i386				install
+libswscale-extra-2:i386				install
 libsync-menu1:i386				install
 libsyncdaemon-1.0-1				install
 libsys-hostname-long-perl			install
@@ -2496,12 +2493,12 @@ lintian						install
 linux-firmware					install
 linux-generic					install
 linux-generic-pae				install
-linux-headers-3.8.0-31				install
-linux-headers-3.8.0-31-generic			install
+linux-headers-3.8.0-32				install
+linux-headers-3.8.0-32-generic			install
 linux-headers-generic				install
 linux-headers-generic-pae			install
-linux-image-3.8.0-31-generic			install
-linux-image-extra-3.8.0-31-generic		install
+linux-image-3.8.0-32-generic			install
+linux-image-extra-3.8.0-32-generic		install
 linux-image-generic				install
 linux-image-generic-pae				install
 linux-libc-dev:i386				install
@@ -2728,8 +2725,7 @@ pavucontrol					install
 pciutils					install
 pcmanfm						install
 pcmciautils					install
-pcsxr-unstable					install
-pcsxr-unstable-spu-sdl				install
+pcsxr						install
 perl						install
 perl-base					install
 perl-modules					install
@@ -3032,6 +3028,7 @@ r-doc-html					install
 r-recommended					install
 racket						install
 racket-common					install
+racket-doc					install
 radeontool					install
 ranger						install
 rar						install
@@ -3082,8 +3079,6 @@ scala-library					install
 schism						install
 screen						install
 scrot						install
-scummvm						install
-scummvm-data					install
 seahorse					install
 sed						install
 sensible-utils					install
@@ -3346,7 +3341,6 @@ wdiff						install
 weather-util					install
 weather-util-data				install
 webaccounts-extension-common			install
-wesnoth-1.10-core				deinstall
 wget						install
 whiptail					install
 whois						install

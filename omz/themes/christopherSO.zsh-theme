@@ -16,4 +16,4 @@ zstyle ':vcs_info:*' enable git
 }
 
 precmd () { vcs_info }
-PROMPT='%F{5}[%F{2}%{$fg[white]%}%n%{$fg[cyan]%}@%{$fg[white]%}%m%F{5}] %F{2}%~ ${vcs_info_msg_0_}%{$fg_bold[red]%}➜ %{$reset_color%}'
+PROMPT='%F{5}[%F{2}%{$fg[white]%}%n%{$fg[cyan]%}@%{$fg[white]%}%m%F{5}] %{$fg[cyan]%}%~ ${vcs_info_msg_0_}%{$fg_bold[red]%}➜ %{$reset_color%}'

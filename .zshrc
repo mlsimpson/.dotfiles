@@ -15,7 +15,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="threv"
+export ZSH_THEME="christopherSO"
 # source /home/threv/code/liquidprompt/liquidprompt
 
 # Comment this out to disable weekly auto-update checks
@@ -258,7 +258,6 @@ alias 9='cd -9'
 #alias cpanm='cpanm --sudo'
 alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
 
-alias cp='cp -r -v'
 
 alias dca="deluge-console add"
 
@@ -329,6 +328,8 @@ alias irssi="screen irssi"
 for c in cp mv chmod chown rename rm; do
     alias $c="$c -v"
 done
+
+alias cp='cp -r -v'
 
 # List all executable files in PATH
 #alias pathexec="print -l ${^path}/*(-*N) | less"
