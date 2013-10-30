@@ -354,8 +354,6 @@ alias m32="mid3v2"
 # for weather command
 alias weather='weather --imperial KFTY'
 
-alias rpi='ssh pi@raspberrypi'
-
 # Wine aliases
 alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > /dev/null 2>&1 &"
 alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
@@ -475,3 +473,4 @@ WEBKIT_IGNORE_SSL_ERRORS="1"
 
 # Mail config
 # MAIL=/home/threv/Mail
+alias mpcsnes='mpc --port 6601'
