@@ -634,6 +634,8 @@ gwibber-service-identica			install
 gwibber-service-twitter				install
 gxine						install
 gzip						install
+handbrake-cli					install
+handbrake-gtk					install
 hardening-includes				install
 hardinfo					install
 haxe						install
@@ -723,6 +725,8 @@ jmeter-help					install
 jmeter-http					install
 jockey-common					install
 jockey-gtk					install
+john						install
+john-data					install
 joystick					install
 jstest-gtk					install
 junit4						install
@@ -795,6 +799,7 @@ libapache2-mod-python				install
 libapache2-mod-ruby				install
 libapache2-mod-scgi				install
 libapache2-mod-wsgi				install
+libapache2-mod-xsendfile			install
 libapache2-modsecurity				install
 libapparmor-perl				install
 libapparmor1					install
@@ -895,8 +900,10 @@ libbonoboui2-common				install
 libboost-date-time-dev				install
 libboost-date-time1.49-dev			install
 libboost-date-time1.49.0			install
+libboost-filesystem1.49.0			install
 libboost-iostreams1.49.0			install
 libboost-python1.49.0				install
+libboost-regex1.49.0				install
 libboost-serialization1.49-dev			install
 libboost-serialization1.49.0			install
 libboost-system1.49.0				install
@@ -1365,6 +1372,7 @@ libgsm1:i386					install
 libgssapi-krb5-2:i386				install
 libgssapi3-heimdal:i386				install
 libgssdp-1.0-3					install
+libgssglue1:i386				install
 libgssrpc4:i386					install
 libgstreamer-plugins-bad0.10-0:i386		install
 libgstreamer-plugins-bad1.0-0:i386		install
@@ -1820,6 +1828,7 @@ libnettle4:i386					install
 libnewt0.52					install
 libnfnetlink0					install
 libnfs1:i386					install
+libnfsidmap2:i386				install
 libnice10:i386					install
 libnih-dbus1:i386				install
 libnih1:i386					install
@@ -2226,6 +2235,7 @@ libtimezonemap1					install
 libtinfo-dev:i386				install
 libtinfo5:i386					install
 libtinyxml2.6.2					install
+libtirpc1:i386					install
 libtokyocabinet9:i386				install
 libtomcat7-java					install
 libtommath0					install
@@ -2567,6 +2577,8 @@ mjpegtools					install
 mjpegtools-gtk					install
 mkclean						install
 mkvalidator					install
+mkvtoolnix					install
+mkvtoolnix-gui					install
 mlocate						install
 mobile-broadband-provider-info			install
 moc						install
@@ -2650,6 +2662,8 @@ network-manager-openvpn				install
 network-manager-openvpn-gnome			install
 network-manager-pptp				install
 network-manager-pptp-gnome			install
+nfs-common					install
+nfs-kernel-server				install
 ngrep						install
 ngspice						install
 nload						install
@@ -2753,6 +2767,8 @@ php5-odbc					install
 php5-sqlite					install
 php5-xmlrpc					install
 pianobar					install
+picard						install
+picard-plugins					install
 pinentry-curses					install
 pinentry-gtk2					install
 piwigo						install
@@ -2798,6 +2814,7 @@ protobuf-compiler				install
 psmisc						install
 pstoedit					install
 psutils						install
+puddletag					install
 pulseaudio					install
 pulseaudio-module-bluetooth			install
 pulseaudio-module-gconf				install
@@ -2906,6 +2923,7 @@ python-pycurl					install
 python-pygame					install
 python-pyinotify				install
 python-pyorbit					install
+python-pyparsing				install
 python-pywapi					install
 python-qt4					install
 python-qt4-dbus					install
@@ -3058,6 +3076,7 @@ rlwrap						install
 roadfighter					install
 roadfighter-data				install
 roarclients					install
+rpcbind						install
 rpm						install
 rpm-common					install
 rpm2cpio					install

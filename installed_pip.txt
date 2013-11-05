@@ -81,6 +81,7 @@ pexpect
 piston-mini-client
 protobuf
 psutil
+puddletag
 pyOpenSSL
 pyacoustid
 pybloomfiltermmap
@@ -93,6 +94,7 @@ pygobject
 pygpgme
 pyinotify
 pylast
+pyparsing
 pyserial
 pysmbc
 python-apt

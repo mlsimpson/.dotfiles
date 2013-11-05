@@ -28,7 +28,7 @@
 #
 #mpd_host = "localhost"
 #
-#mpd_port = "6600"
+mpd_port = "6601"
 #
 #mpd_music_dir = ""
 #
