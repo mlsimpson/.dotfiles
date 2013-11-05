@@ -1,6 +1,7 @@
 bundler
 bundler-unload
 cheat
+executable-hooks
 gist
 json
 pager

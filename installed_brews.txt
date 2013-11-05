@@ -38,6 +38,7 @@ djvulibre
 docbook
 docbook-xsl
 dos2unix
+doxygen
 einstein
 esound
 faac
@@ -68,6 +69,7 @@ gnu-sed
 gnupg
 gnuplot
 gnutls
+gobject-introspection
 gpg-agent
 gpgme
 graphviz
@@ -109,7 +111,6 @@ libidn
 libksba
 libmatroska
 libmikmod
-libmpdclient
 libogg
 liboil
 libsamplerate
@@ -140,13 +141,13 @@ mkvtoolnix
 mobile-shell
 mp3gain
 mp4v2
-mpc
 mpg123
 mtr
 multitail
 ncdu
 ncftp
 nettle
+newt
 ngrep
 nspr
 opencore-amr
@@ -172,6 +173,7 @@ pixman
 pkg-config
 plowshare
 poppler
+popt
 privoxy
 proctools
 protobuf
@@ -215,7 +217,7 @@ texi2html
 the_silver_searcher
 theora
 tig
-tmux-iterm2
+tmux
 tree
 ttytter
 txt2tags
