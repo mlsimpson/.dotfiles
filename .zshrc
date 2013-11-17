@@ -417,19 +417,12 @@ export VMAIL_BROWSER='midori'
 
 ####
 # setopt
-setopt glob
-setopt globdots
-setopt pushdminus
+setopt glob globdots pushdminus multios extendedglob
 # If you really do want to clobber a file, you can use the >! operator. To make things easier in this case, the > is stored in the history list as a >!
 # setopt noclobber
 # Pipe to multiple outputs
-setopt multios
 
-unsetopt hist_verify
-unsetopt share_history
-unsetopt auto_name_dirs
-unsetopt nomatch
-unsetopt correctall
+unsetopt hist_verify share_history auto_name_dirs nomatch correctall
 
 ####
 # zsh modules

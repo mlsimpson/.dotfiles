@@ -12,7 +12,6 @@ MySQL-python
 Nautilus-scripts-manager
 PAM
 Pillow
-PyBluez
 PyYAML
 Pygments
 SOAPpy
@@ -40,6 +39,7 @@ debtagshw
 defer
 deluge
 dirspec
+doge
 dtrx
 duplicity
 evdev
@@ -140,6 +140,7 @@ wxPython
 wxPython-common
 xdiagnose
 xkit
+yenc
 yolk
 youtube-dl
 zope.interface

@@ -16,6 +16,7 @@ fstream-npm
 fstream-ignore
 inherits
 github-url-from-git
+github-url-from-username-repo
 glob
 inherits
 graceful-fs
