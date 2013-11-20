@@ -455,9 +455,6 @@ command! -bang WQ wq<bang>
 " Requires patched fonts for Powerline; renders nifty font images
 let g:Powerline_symbols = 'fancy'
 
-" Stops Command-T from searching VMWare host directory
-set wildignore=host/**
-
 " Remap Ctrl+(directions) to sane values
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -474,12 +471,8 @@ set shortmess=I
 iabbrev ssig --<cr>Matt Simpson<cr>msimpson.cmpe04@gtalumni.org
 
 " Highlight current line
-set cul
+"set cul
 
-" Disable viminfo
-" set viminfo=
-
-"
 " Smart in-line manpages with 'K' in command mode
 " Thanks to users.softlab.ntua.gr/~ttsiod/myvim.html
 "
