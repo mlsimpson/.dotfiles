@@ -467,4 +467,5 @@ WEBKIT_IGNORE_SSL_ERRORS="1"
 # Mail config
 # MAIL=/home/threv/Mail
 alias mpcs='mpc --port 6601'
+alias mpcv='mpc --port 6602'
 alias ncmpcpps=ncmpcpp\ -c\ /home/threv/.ncmpcpp/config.snes
