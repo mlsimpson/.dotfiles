@@ -116,7 +116,7 @@ function coverart {
 
 # Search .allhistory
 function hhist {
-  ack $1 /home/threv/.allhistory
+  ag --no-numbers $1 /home/threv/.allhistory
 }
 
 ## PulseAudio volume control
