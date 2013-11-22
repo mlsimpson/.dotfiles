@@ -417,7 +417,7 @@ export VMAIL_BROWSER='midori'
 
 ####
 # setopt
-setopt glob globdots pushdminus multios extendedglob
+setopt glob globdots pushdminus multios extendedglob braceccl
 # If you really do want to clobber a file, you can use the >! operator. To make things easier in this case, the > is stored in the history list as a >!
 # setopt noclobber
 # Pipe to multiple outputs
