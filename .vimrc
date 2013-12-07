@@ -113,42 +113,42 @@ call pathogen#infect()
 " Breaks vim-powerline after first save
 au! BufWritePost $MYVIMRC source %
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Parenthesis/bracket expanding
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Parenthesis/bracket expanding
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""
+"" Visual Mode:  Wrap the selection in:
+"" &1:  Parentheses
+"" &2:  Square Brackets
+"" &3:  Curly Braces
+"" &4:  Indented curly brace block
+"" &5:  Prepend each line with ruby comments, aka '# '
+"" &$ or &e:  Double Quotes
+"" &q:  Single Quotes
+"vnoremap &1 <esc>`>a)<esc>`<i(<esc>
+"vnoremap &2 <esc>`>a]<esc>`<i[<esc>
+"vnoremap &3 <esc>`>a}<esc>`<i{<esc>
+"vnoremap &4 ><esc>`>o<BS>}<esc>`<O{<esc>
+"vnoremap &5 :s/^/# /<CR> :noh<CR>
+"vnoremap &$ <esc>`>a"<esc>`<i"<esc>
+"vnoremap &q <esc>`>a'<esc>`<i'<esc>
+"vnoremap &e <esc>`>a"<esc>`<i"<esc>
 "
-" Visual Mode:  Wrap the selection in:
-" &1:  Parentheses
-" &2:  Square Brackets
-" &3:  Curly Braces
-" &4:  Indented curly brace block
-" &5:  Prepend each line with ruby comments, aka '# '
-" &$ or &e:  Double Quotes
-" &q:  Single Quotes
-vnoremap &1 <esc>`>a)<esc>`<i(<esc>
-vnoremap &2 <esc>`>a]<esc>`<i[<esc>
-vnoremap &3 <esc>`>a}<esc>`<i{<esc>
-vnoremap &4 ><esc>`>o<BS>}<esc>`<O{<esc>
-vnoremap &5 :s/^/# /<CR> :noh<CR>
-vnoremap &$ <esc>`>a"<esc>`<i"<esc>
-vnoremap &q <esc>`>a'<esc>`<i'<esc>
-vnoremap &e <esc>`>a"<esc>`<i"<esc>
-
-" Insert Mode:  Create the following, and begin insertion in the middle of:
-" &1:  Parentheses
-" &2:  Square Brackets
-" &3:  Curly Braces
-" &4:  Indented curly brace block
-" &e:  Double Quotes
-" &q:  Single Quotes
-" &t:  Diagonal Brackets
-inoremap &1 ()<esc>i
-inoremap &2 []<esc>i
-inoremap &3 {}<esc>i
-inoremap &4 {<esc>o}<esc>O
-inoremap &q ''<esc>i
-inoremap &e ""<esc>i
-inoremap &t <><esc>i
+"" Insert Mode:  Create the following, and begin insertion in the middle of:
+"" &1:  Parentheses
+"" &2:  Square Brackets
+"" &3:  Curly Braces
+"" &4:  Indented curly brace block
+"" &e:  Double Quotes
+"" &q:  Single Quotes
+"" &t:  Diagonal Brackets
+"inoremap &1 ()<esc>i
+"inoremap &2 []<esc>i
+"inoremap &3 {}<esc>i
+"inoremap &4 {<esc>o}<esc>O
+"inoremap &q ''<esc>i
+"inoremap &e ""<esc>i
+"inoremap &t <><esc>i
 
 " Autocomplete Parentheses & Brackets
 " Insert Mode:
@@ -372,27 +372,27 @@ map <Leader>pre :!open %<CR><CR>
 "
 " nnoremap <Leader>uw :call UnderlineCurrentWord()<CR>
 
-" Search google for word under the cursor
-" First line:  Mac OS X specific
-" Second line:  Ubuntu + Chrome specific
-" Mapped to <Leader>?
-function! NSearchGoogleForWord()
-  let s:wordUnderCursor = expand("<cword>")
-  let s:cmd = "silent !links 'http://www.google.com/search\?\q='" . s:wordUnderCursor
-  " let s:cmd = "silent !chromium-browser 'http://www.google.com/search\?\q='" . s:wordUnderCursor
-  execute s:cmd
-endfunction
+"" Search google for word under the cursor
+"" First line:  Mac OS X specific
+"" Second line:  Ubuntu + Chrome specific
+"" Mapped to <Leader>?
+"function! NSearchGoogleForWord()
+"  let s:wordUnderCursor = expand("<cword>")
+"  let s:cmd = "silent !links 'http://www.google.com/search\?\q='" . s:wordUnderCursor
+"  " let s:cmd = "silent !chromium-browser 'http://www.google.com/search\?\q='" . s:wordUnderCursor
+"  execute s:cmd
+"endfunction
 
 nnoremap <Leader>? :call NSearchGoogleForWord()<CR><CR>
 
-" Git stuff
-function! Typicalgit()
-  exe ":!git add ."
-  let s:gitmessage = input('Enter commit message:  ')
-  exe ':!git commit -am "' . s:gitmessage . '"'
-  exe ":!git push"
-endfunction
-map <Leader>git :call Typicalgit()<CR>
+"" Git stuff
+"function! Typicalgit()
+"  exe ":!git add ."
+"  let s:gitmessage = input('Enter commit message:  ')
+"  exe ':!git commit -am "' . s:gitmessage . '"'
+"  exe ":!git push"
+"endfunction
+"map <Leader>git :call Typicalgit()<CR>
 
 " NOTE:  I am making omnicomplete happen either via ., ->, or ::
 " Otherwise, I must use <c-x><c-o> to do it
@@ -473,39 +473,39 @@ iabbrev ssig --<cr>Matt Simpson<cr>msimpson.cmpe04@gtalumni.org
 " Highlight current line
 "set cul
 
-" Smart in-line manpages with 'K' in command mode
-" Thanks to users.softlab.ntua.gr/~ttsiod/myvim.html
-"
-fun! ReadMan()
-  " Assign current word under cursor to a script variable:
-  let s:man_word = expand('<cword>')
-  " Open a new window:
-  :exe ":wincmd n"
-  " Read in the manpage for man_word (col -b is for formatting):
-  :exe ":r!man " . s:man_word . " | col -b"
-  " Goto first line...
-  :exe ":goto"
-  " and delete it:
-  :exe ":delete"
-  " finally set file type to 'man':
-  :exe ":set filetype=man"
-  " lines set to 20
-  :resize 20
-endfun
-" Map the K key to the ReadMan function:
-noremap K :call ReadMan()<CR>
+"" Smart in-line manpages with 'K' in command mode
+"" Thanks to users.softlab.ntua.gr/~ttsiod/myvim.html
+""
+"fun! ReadMan()
+"  " Assign current word under cursor to a script variable:
+"  let s:man_word = expand('<cword>')
+"  " Open a new window:
+"  :exe ":wincmd n"
+"  " Read in the manpage for man_word (col -b is for formatting):
+"  :exe ":r!man " . s:man_word . " | col -b"
+"  " Goto first line...
+"  :exe ":goto"
+"  " and delete it:
+"  :exe ":delete"
+"  " finally set file type to 'man':
+"  :exe ":set filetype=man"
+"  " lines set to 20
+"  :resize 20
+"endfun
+"" Map the K key to the ReadMan function:
+"noremap K :call ReadMan()<CR>
 
-" Clear all registers
-fun! Clearregs()
-  let regs = '0123456789abcdefghijklmnopqrstuvwxyz'
-  let i = 0
-  while i < strlen(regs)
-    exe "normal! q" . regs[i] . "q"
-    let i = i+1
-  endwhile
-  unlet i
-  unlet regs
-endfun
+"" Clear all registers
+"fun! Clearregs()
+"  let regs = '0123456789abcdefghijklmnopqrstuvwxyz'
+"  let i = 0
+"  while i < strlen(regs)
+"    exe "normal! q" . regs[i] . "q"
+"    let i = i+1
+"  endwhile
+"  unlet i
+"  unlet regs
+"endfun
 
 command! -bar Clearregs :call Clearregs()
 
