@@ -258,7 +258,6 @@ alias 9='cd -9'
 #alias cpanm='cpanm --sudo'
 alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
 
-
 alias dca="deluge-console add"
 
 # Git aliases
@@ -346,7 +345,7 @@ alias htop='htop -d 10'
 #alias cowfun='fortune -a | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n;'
 
 # ps auxww | ack "thingy" alias
-alias psa='ps auxww | ack '
+alias psa='ps auxww | ag '
 
 # Boy, do I type mid3v2 a lot
 alias m32="mid3v2"
@@ -358,6 +357,11 @@ alias weather='weather --imperial KFTY'
 alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > /dev/null 2>&1 &"
 alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
 
+alias mpcs='mpc --port 6601'
+alias mpcv='mpc --port 6602'
+alias ncmpcpps=ncmpcpp\ -c\ /home/threv/.ncmpcpp/config.snes
+alias clipit="clipit 2> /dev/null"
+#
 ## c-x c-x => history menu
 #autoload -Uz history-beginning-search-menu
 #zle -N history-beginning-search-menu
@@ -466,6 +470,3 @@ WEBKIT_IGNORE_SSL_ERRORS="1"
 
 # Mail config
 # MAIL=/home/threv/Mail
-alias mpcs='mpc --port 6601'
-alias mpcv='mpc --port 6602'
-alias ncmpcpps=ncmpcpp\ -c\ /home/threv/.ncmpcpp/config.snes
