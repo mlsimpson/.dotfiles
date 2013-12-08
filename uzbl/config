@@ -475,4 +475,10 @@ sync_spawn_exec @scripts_dir/load_cookies.sh @data_home/uzbl/session-cookies.txt
 #set uri = uzbl.org/doesitwork/@COMMIT
 set uri = uzbl.org/keybindings.php
 
+# Custom bookmarklets
+@cbind ;scroll = script /home/threv/.config/uzbl/autoscroll.js
+@cbind ;read = script /home/threv/.config/uzbl/readnow.js
+@cbind ;del = script /home/threv/.config/uzbl/delicious.js
+@cbind ;ttrss = script /home/threv/.config/uzbl/ttrss.js
+
 # vim: set fdm=syntax:
