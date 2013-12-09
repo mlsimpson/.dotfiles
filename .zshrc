@@ -29,7 +29,7 @@ export ZSH_THEME="christopherSO"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass)
+plugins=(ssh-agent zsh-syntax-highlighting pass git)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -134,15 +134,9 @@ function todo () {
 	cat Documents/notes/todo_macbook.txt | sort > tmp.txt && mv -v tmp.txt Documents/notes/todo_macbook.txt
 }
 
-#function imv() {
-#  local src dst
-#  for src; do
-#      [[ -e $src ]] || { print -u2 "$src does not exist"; continue }
-#      dst=$src
-#      vared dst
-#      [[ $src != $dst ]] && mkdir -p $dst:h && mv -n $src $dst
-#  done
-#}
+function mdless () {
+  pandoc -s -f markdown -t man $1 | groff -T utf8 -man | less
+}
 
 #####
 # Set colors for man pages.
