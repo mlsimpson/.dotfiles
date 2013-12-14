@@ -51,9 +51,7 @@ sub priv_msg {
 #--------------------------------------------------------------------
 sub hilight {
   my ($dest, $text, $stripped) = @_;
-  $stripped =~ s/("|\\)/\\$1/g;
-  $stripped =~ s/("|'|`)//g;
-  $stripped =~ s/"//g;
+  $stripped =~ s/("|\\|\$|`)/\\$1/g;
   if ($dest->{level} & (MSGLEVEL_HILIGHT|MSGLEVEL_MSGS)) {
     filewrite($dest->{target}. " " .$stripped );
     system("notify-send -t 1000 \"$stripped\"");
