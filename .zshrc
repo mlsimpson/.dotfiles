@@ -354,6 +354,7 @@ alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/fooba
 
 alias mpcs='mpc --port 6601'
 alias mpcv='mpc --port 6602'
+alias mpcn='mpc --port 6603'
 alias ncmpcpps=ncmpcpp\ -c\ /home/threv/.ncmpcpp/config.snes
 alias clipit="clipit 2> /dev/null"
 #
