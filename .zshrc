@@ -356,7 +356,7 @@ alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/fooba
 alias clipit="clipit 2> /dev/null"
 
 # check Downloads dir
-alias latrd="ls -latrd /mnt/Elements/Downloads/"
+alias latrd="ls -latr /mnt/Elements/Downloads/"
 
 ## c-x c-x => history menu
 #autoload -Uz history-beginning-search-menu
