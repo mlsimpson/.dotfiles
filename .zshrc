@@ -352,12 +352,12 @@ alias weather='weather --imperial KFTY'
 alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > /dev/null 2>&1 &"
 alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
 
-alias mpcs='mpc --port 6601'
-alias mpcv='mpc --port 6602'
-alias mpcn='mpc --port 6603'
-alias ncmpcpps=ncmpcpp\ -c\ /home/threv/.ncmpcpp/config.snes
+# clipit alias to suppress messages
 alias clipit="clipit 2> /dev/null"
-#
+
+# check Downloads dir
+alias latrd="ls -latrd /mnt/Elements/Downloads"
+
 ## c-x c-x => history menu
 #autoload -Uz history-beginning-search-menu
 #zle -N history-beginning-search-menu
