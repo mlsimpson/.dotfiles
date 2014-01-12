@@ -2,6 +2,8 @@ lib
 npm
 abbrev
 ansi
+ansicolors
+ansistyles
 archy
 block-stream
 inherits
@@ -130,6 +132,7 @@ npmlog
 once
 opener
 osenv
+path-is-inside
 read
 mute-stream
 read-installed
@@ -154,8 +157,7 @@ lru-cache
 normalize-package-data
 semver
 request
-aws-sign
-cookie-jar
+aws-sign2
 forever-agent
 form-data
 async
@@ -176,6 +178,8 @@ mime
 node-uuid
 oauth-sign
 qs
+tough-cookie
+punycode
 tunnel-agent
 retry
 rimraf
@@ -186,5 +190,6 @@ readable-stream
 slide
 tar
 inherits
+text-table
 uid-number
 which
