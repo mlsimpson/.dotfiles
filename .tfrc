@@ -1,4 +1,3 @@
 /set isize=1
-/more on
 /addworld sloth slothmud.org 6101
 /addworld sdf mud.sdf.org 4000
