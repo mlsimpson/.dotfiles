@@ -3,7 +3,7 @@
 /addworld -Tlp sloth slothmud.org 6101
 /addworld -Tlp sdf mud.sdf.org 4000
 
-/set drink water
+/set drink waterskin
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; movement
