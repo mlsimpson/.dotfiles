@@ -1,3 +1,176 @@
 /set isize=1
+
 /addworld -Tlp sloth slothmud.org 6101
 /addworld -Tlp sdf mud.sdf.org 4000
+
+/set drink water
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; movement
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+/def -mregexp -t"^The (\S+) to the (\S+) seems to be closed\." = \
+   open %P1 %P2 %; /set barrier %P1 %; /set barrierdir %P2
+
+/def -mregexp -t"^The (\S+) (\S+)wards seems to be closed\." = \
+   open %P1 %P2 %; /set barrier %P1 %; /set barrierdir %P2
+
+/def -mregexp -t"^It seems to be locked\." = \
+   pick %barrier %barrierdir
+
+/def -mregexp -t"^You board" = /set boat 1 %; where
+
+/def -mregexp -t"^The ship has arrived at*" = \
+   /if ({boat} == 1) \
+      /if ({sleeping} == 1) \
+         wake %; stand %; \
+      /endif %; \
+      exit %; \
+      /set boat 0 %; \
+      cast 'word of recall' %; \
+   /endif
+
+/def -mregexp -t"^(.+) arrives at the dock, ties up and puts out a plank\." = \
+   /if ({boat} == 1) \
+      /if ({sleeping} == 1) \
+         wake %; stand %; \
+      /endif %; \
+      exit %; \
+      /set boat 0 %; \
+   /endif
+
+; tracking
+/def -mregexp -t"^Tracks to (.+) lead (\S+)ward" = \
+   %P2 %; \
+   /if ({stab} == 1) \
+      /bstab %; \
+   /endif
+
+/def -mregexp -t"^The white aura around your body fades\." = \
+   /if ({group} == 1) \
+      gt *** lites out *** %; \
+   /endif %; \
+   /if ({autobuff} == 1) \
+      /if ({sleeping} == 0) \
+         /if ({reading} == 0) \
+            cast 'sanctuary' %; \
+         /endif %; \
+      /endif %; \
+   /endif
+
+/def -p1 -mregexp -t"^You start glowing" = \
+   /if ({group} == 1) \
+      gt *** lites on *** %; \
+   /endif
+
+/def -p1 -mregexp -t"^You are surrounded by a radiant light." = \
+   /if ({group} == 1) \
+      gt *** lites on *** %; \
+   /endif
+
+/def -p1 -mregexp -t"^The radiant sphere around your body fades" = \
+   /if ({group} == 1) \
+      gt *** lites out *** %; \
+   /endif
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; refills
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+/def -mregexp -t"^A pool of water gushes from a fountain*" = fill %drink
+/def -mregexp -t"^A large wishing well\, with a bench*" = fill %drink
+/def -mregexp -t"^A large fountain is here gurgling out an*" = fill %drink
+/def -mregexp -t"^The large central well of Settlestone*" = fill %drink
+/def -mregexp -t"^A stone well stands in the middle of the*" = fill %drink
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; combat
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+/set autowarcry 1
+/set warcry "biggie smalls is the illest!"
+
+/def -mregexp -ag -t"^You miss (.+) with your (.+)"
+/def -mregexp -ag -t"^(.+) misses (.+) with (his|her|its) (.+)"
+
+/def -mregexp -t"^You are knocked off your feet*" = stand
+/def -mregexp -t"^You try to stand\, but are beaten back" = stand
+/def -mregexp -t"^You attempt to (.+) but bounce off" = stand
+/def -mregexp -t"^(.+) disarms you with a quick parry\." = wield %weapon
+
+/def -mregexp -t"^Total exp for kill is *" = \
+   /set target null %; \
+   /if ({autowarcry} == 1) \
+      warcry %mywarcry %; \
+   /endif
+
+/set hammer 0
+/def hammer = \
+   /if ({hammer} == 1) \
+      rem hammer %; \
+      wield %weapon %; \
+      /set hammer 0 %; \
+   /else \
+      rem %weapon %; \
+      wield hammer %; \
+      /set hammer 1 %; \
+   /endif
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; food & drink
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+/set sleeping 0
+/set reading 0
+
+/def -mregexp -t"^You are hungry\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      eat food %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^You are starting to get a little peckish\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      eat food %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^You are thirsty\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      drink %drink %; drink %drink %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^Your throat is starting to get dry\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      drink %drink %; drink %drink %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
