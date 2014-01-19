@@ -1,4 +1,6 @@
 /set isize=1
+/require spedwalk.tf
+/speedwalk on
 
 /addworld -Tlp sloth slothmud.org 6101
 /addworld -Tlp sdf mud.sdf.org 4000
