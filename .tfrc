@@ -83,6 +83,7 @@
 /def -mregexp -t"^A large stone fountain is*" = fill %drink
 /def -mregexp -t"^The large central well of Settlestone*" = fill %drink
 /def -mregexp -t"^A stone well stands in the middle of the*" = fill %drink
+/def -mregexp -t"^You feel less protected" = cast 'armor'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; combat
