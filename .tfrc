@@ -80,6 +80,7 @@
 /def -mregexp -t"^A pool of water gushes from a fountain*" = fill %drink
 /def -mregexp -t"^A large wishing well\, with a bench*" = fill %drink
 /def -mregexp -t"^A large fountain is here gurgling out an*" = fill %drink
+/def -mregexp -t"^A large stone fountain is*" = fill %drink
 /def -mregexp -t"^The large central well of Settlestone*" = fill %drink
 /def -mregexp -t"^A stone well stands in the middle of the*" = fill %drink
 
@@ -87,7 +88,7 @@
 ; combat
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-/set autowarcry 1
+/set autowarcry 0
 /set warcry "biggie smalls is the illest!"
 
 /def -mregexp -ag -t"^You miss (.+) with your (.+)"
