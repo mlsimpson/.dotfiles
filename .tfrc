@@ -87,8 +87,11 @@
 /def -mregexp -t"^A stone well stands in the middle of the*" = fill %drink
 /def -mregexp -t"^A bronze statue of dragon*" = fill %drink
 /def -mregexp -t"^You feel less protected" = cast 'armor'
+
 /def -mregexp -t"^You go to sleep." = /set sleeping 1
 /def -mregexp -t"^You wake, and sit up." = /set sleeping 0 %; stand
+
+/def -mregexp -t"^Welcome to the land of SlothMUD*" = /localecho on
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; combat
