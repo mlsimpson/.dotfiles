@@ -190,7 +190,7 @@
       wake %; stand %; \
    /endif %; \
    /if ({reading} == 0) \
-      cast armor %; \
+      cast 'armor' %; \
    /endif %; \
    /if ({wassleeping} == 1) \
       /let wassleeping 0 %; \
