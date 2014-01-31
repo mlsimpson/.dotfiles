@@ -32,6 +32,15 @@
       cast 'word of recall' %; \
    /endif
 
+/def -mregexp -t"^(.+) gracefully lands and folds its wings*" = \
+   /if ({boat} == 1) \
+      /if ({sleeping} == 1) \
+         wake %; stand %; \
+      /endif %; \
+      exit %; \
+      /set boat 0 %; \
+   /endif
+
 /def -mregexp -t"^(.+) arrives at the dock, ties up and puts out a plank\." = \
    /if ({boat} == 1) \
       /if ({sleeping} == 1) \
