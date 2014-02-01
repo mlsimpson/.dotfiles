@@ -116,6 +116,9 @@
 /def -mregexp -t"^You attempt to (.+) but bounce off" = stand
 /def -mregexp -t"^(.+) disarms you with a quick parry\." = wield %weapon
 
+/def -mregexp -t"^(.+)Your front line collapses*" = \
+    man back
+
 /def -mregexp -t"^Total exp for kill is *" = \
    /set target null %; \
    /if ({autowarcry} == 1) \
@@ -192,6 +195,10 @@
       /let wassleeping 0 %; \
       sleep %; \
    /endif
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; magic replenish
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 /def -mregexp -t"^You feel less protected\." = \
    /if ({sleeping} == 1) \
