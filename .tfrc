@@ -206,6 +206,19 @@
       sleep %; \
    /endif
 
+/def -mregexp -t"^Your fly spell just wore off*" = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'fly' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
 /def -mregexp -t"^The detect magic wears off\." = \
    /if ({sleeping} == 1) \
       /let wassleeping 1 %; \
