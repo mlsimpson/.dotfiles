@@ -116,8 +116,7 @@
 /def -mregexp -t"^You attempt to (.+) but bounce off" = stand
 /def -mregexp -t"^(.+) disarms you with a quick parry\." = wield %weapon
 
-/def -mregexp -t"^(.+)Your front line collapses*" = \
-    man back
+/def -mregexp -t"^Your front line collapses*" = man back
 
 /def -mregexp -t"^Total exp for kill is *" = \
    /set target null %; \
