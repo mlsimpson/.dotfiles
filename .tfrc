@@ -22,6 +22,8 @@
 
 /def -mregexp -t"^You board" = /set boat 1 %; where
 
+/def -mregexp -t"^Group.*is led by*" = /set group 1
+
 /def -mregexp -t"^The ship has arrived at*" = \
    /if ({boat} == 1) \
       /if ({sleeping} == 1) \
@@ -95,6 +97,7 @@
 /def -mregexp -t"^The large central well of Settlestone*" = fill %drink
 /def -mregexp -t"^A stone well stands in the middle of the*" = fill %drink
 /def -mregexp -t"^A bronze statue of dragon*" = fill %drink
+/def -mregexp -t"^A large wishing well*" = fill %drink
 
 /def -mregexp -t"^You go to sleep." = /set sleeping 1
 /def -mregexp -t"^You wake, and sit up." = /set sleeping 0 %; stand
