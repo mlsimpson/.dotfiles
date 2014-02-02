@@ -24,6 +24,8 @@
 
 /def -mregexp -t"^Group.*is led by*" = /set group 1
 
+/def -mregexp -t"^The Dreamweaver quietly closes the ledger\." = sign ledger
+
 /def -mregexp -t"^The ship has arrived at*" = \
    /if ({boat} == 1) \
       /if ({sleeping} == 1) \
