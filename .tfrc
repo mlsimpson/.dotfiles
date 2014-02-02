@@ -217,7 +217,7 @@
       sleep %; \
    /endif
 
-/def -mregexp -t"^Your fly spell is about to*" = \
+/def -mregexp -t"^The 'fly' spell on you is about to wear off\." = \
    /if ({sleeping} == 1) \
       /let wassleeping 1 %; \
       wake %; stand %; \
