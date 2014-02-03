@@ -101,8 +101,11 @@
 /def -mregexp -t"^A bronze statue of dragon*" = fill %drink
 /def -mregexp -t"^A large wishing well*" = fill %drink
 
-/def -mregexp -t"^You go to sleep." = /set sleeping 1
-/def -mregexp -t"^You wake, and sit up." = /set sleeping 0 %; stand
+/def -mregexp -t"^You go to sleep\." = /set sleeping 1
+/def -mregexp -t"^You wake, and sit up\." = /set sleeping 0 %; stand
+
+/def -mregexp -t"^You sit down and rest your tired bones\." = /set sleeping 1
+/def -mregexp -t"^You stop resting, and stand up\." = /set sleeping 0 %; stand
 
 /def -mregexp -t"^Welcome to the land of SlothMUD*" = /localecho on
 
