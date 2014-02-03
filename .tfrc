@@ -244,6 +244,7 @@
    /if ({wassleeping} == 1) \
       /let wassleeping 0 %; \
       sleep %; \
+   /endif
 
 /def -mregexp -t"^The detect magic wears off\." = \
    /if ({sleeping} == 1) \
