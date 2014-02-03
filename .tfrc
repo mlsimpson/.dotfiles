@@ -230,6 +230,18 @@
       sleep %; \
    /endif
 
+/def -mregexp -t"^Your fly spell just wore off*" = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'fly' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+
 /def -mregexp -t"^The detect magic wears off\." = \
    /if ({sleeping} == 1) \
       /let wassleeping 1 %; \
@@ -289,6 +301,32 @@
    /endif %; \
    /if ({reading} == 0) \
       cast 'magic lantern' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^You sense the blue in your vision disappear\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'detect good' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^You sense the red in your vision disappear\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'detect evil' %; \
    /endif %; \
    /if ({wassleeping} == 1) \
       /let wassleeping 0 %; \
