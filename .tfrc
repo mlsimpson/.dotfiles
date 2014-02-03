@@ -22,6 +22,10 @@
 
 /def -mregexp -t"^You board" = /set boat 1 %; where
 
+/def -mregexp -t"^Group.*is led by*" = /set group 1
+
+/def -mregexp -t"^The Dreamweaver quietly closes the ledger\." = sign ledger
+
 /def -mregexp -t"^The ship has arrived at*" = \
    /if ({boat} == 1) \
       /if ({sleeping} == 1) \
@@ -95,6 +99,7 @@
 /def -mregexp -t"^The large central well of Settlestone*" = fill %drink
 /def -mregexp -t"^A stone well stands in the middle of the*" = fill %drink
 /def -mregexp -t"^A bronze statue of dragon*" = fill %drink
+/def -mregexp -t"^A large wishing well*" = fill %drink
 
 /def -mregexp -t"^You go to sleep." = /set sleeping 1
 /def -mregexp -t"^You wake, and sit up." = /set sleeping 0 %; stand
@@ -115,6 +120,8 @@
 /def -mregexp -t"^You try to stand\, but are beaten back" = stand
 /def -mregexp -t"^You attempt to (.+) but bounce off" = stand
 /def -mregexp -t"^(.+) disarms you with a quick parry\." = wield %weapon
+
+/def -mregexp -t"^Your front line collapses*" = man back
 
 /def -mregexp -t"^Total exp for kill is *" = \
    /set target null %; \
@@ -193,6 +200,10 @@
       sleep %; \
    /endif
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; magic replenish
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 /def -mregexp -t"^You feel less protected\." = \
    /if ({sleeping} == 1) \
       /let wassleeping 1 %; \
@@ -200,6 +211,19 @@
    /endif %; \
    /if ({reading} == 0) \
       cast 'armor' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^The 'fly' spell on you is about to wear off\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'fly' %; \
    /endif %; \
    /if ({wassleeping} == 1) \
       /let wassleeping 0 %; \
@@ -226,6 +250,46 @@
    /endif %; \
    /if ({reading} == 0) \
       cast 'detect invisibility' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^You have become exposed to evil\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'protection from evil' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^You suddenly feel less faithful\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'shield of faith' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+; sdf
+/def -mregexp -t"^Your skin feels soft again\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'metalic skin' %; \
    /endif %; \
    /if ({wassleeping} == 1) \
       /let wassleeping 0 %; \
