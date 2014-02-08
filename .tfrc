@@ -101,8 +101,11 @@
 /def -mregexp -t"^A bronze statue of dragon*" = fill %drink
 /def -mregexp -t"^A large wishing well*" = fill %drink
 
-/def -mregexp -t"^You go to sleep." = /set sleeping 1
-/def -mregexp -t"^You wake, and sit up." = /set sleeping 0 %; stand
+/def -mregexp -t"^You go to sleep\." = /set sleeping 1
+/def -mregexp -t"^You wake, and sit up\." = /set sleeping 0 %; stand
+
+/def -mregexp -t"^You sit down and rest your tired bones\." = /set sleeping 1
+/def -mregexp -t"^You stop resting, and stand up\." = /set sleeping 0 %; stand
 
 /def -mregexp -t"^Welcome to the land of SlothMUD*" = /localecho on
 
@@ -217,7 +220,20 @@
       sleep %; \
    /endif
 
-/def -mregexp -t"^The 'fly' spell on you is about to wear off\." = \
+/def -mregexp -t"^The \'fly\' spell on you is about to wear off\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'fly' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^Your fly spell just wore off*" = \
    /if ({sleeping} == 1) \
       /let wassleeping 1 %; \
       wake %; stand %; \
@@ -282,7 +298,47 @@
       sleep %; \
    /endif
 
+/def -mregexp -t"^It is pitch black*" = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'magic lantern' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^You sense the blue in your vision disappear\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'detect good' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
+/def -mregexp -t"^You sense the red in your vision disappear\." = \
+   /if ({sleeping} == 1) \
+      /let wassleeping 1 %; \
+      wake %; stand %; \
+   /endif %; \
+   /if ({reading} == 0) \
+      cast 'detect evil' %; \
+   /endif %; \
+   /if ({wassleeping} == 1) \
+      /let wassleeping 0 %; \
+      sleep %; \
+   /endif
+
 ; sdf
+
 /def -mregexp -t"^Your skin feels soft again\." = \
    /if ({sleeping} == 1) \
       /let wassleeping 1 %; \
