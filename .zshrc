@@ -358,6 +358,9 @@ alias clipit="clipit 2> /dev/null"
 # check Downloads dir
 alias latrd="ls -latr /mnt/Elements/Downloads/"
 
+# when running locate, check if file on disk
+alias locate="locate -e"
+
 ## c-x c-x => history menu
 #autoload -Uz history-beginning-search-menu
 #zle -N history-beginning-search-menu
