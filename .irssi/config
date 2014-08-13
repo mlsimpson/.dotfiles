@@ -24,11 +24,6 @@ servers = (
   { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
   { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
-  { address = "107.170.20.195"; chatnet = "EFNet"; port = "6692"; },
-  { address = "107.170.20.195"; chatnet = "CMG"; port = "6690"; },
-  { address = "107.170.20.195"; chatnet = "Freenode"; port = "6693"; },
-  { address = "107.170.20.195"; chatnet = "Esper"; port = "6694"; },
-  { address = "107.170.20.195"; chatnet = "Bitlbee"; port = "6667"; }
 );
 
 chatnets = {
@@ -315,13 +310,14 @@ settings = {
     awl_display_key_active = "$Q%w|$N%n $H%U%8$C%n$S";
     awl_display_nokey = "[$N]$H$C$S";
     notifier_on_nick = "0";
-    notifier_on_regex =
+    notifier_on_regex = "";
     notifier_on_privmsg = "1";
     notifier_channel_regex = "0";
   };
   "irc/dcc" = { dcc_autoresume = "yes"; dcc_autoget = "yes"; };
 };
 hilights = (
+  { text = "psa"; nick = "yes"; word = "yes"; }
 );
 ignores = (
   { level = "MODES"; channels = ( "&bitlbee" ); },
