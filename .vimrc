@@ -158,7 +158,7 @@ inoremap [ []<Left>
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
 inoremap { {}<Left>
 inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-" Visual Mode:
+"" Visual Mode:
 vnoremap ( s()<Esc>P<Right>%
 vnoremap [ s[]<Esc>P<Right>%
 " vnoremap { s{}<Esc>P<Right>%
@@ -260,10 +260,10 @@ inoremap # x<C-H>#
 nnoremap / /\v
 vnoremap / /\v
 
-"" OMNICOMPLETE
-"" Enable OmniComplete
-" set ofu=syntaxcomplete#Complete
-" autocmd FileType python set omnifunc=pythoncomplete#Complete
+" OMNICOMPLETE
+" Enable OmniComplete
+ set ofu=syntaxcomplete#Complete
+ autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " configure tags - add additional tags here
 " set tags+=~/.vim/tags/c
@@ -275,44 +275,44 @@ vnoremap / /\v
 " map <Leader>tags :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 " set tags=./tags;/
 
-"" OmniCppComplete
-"let OmniCpp_NamespaceSearch = 2
-"let OmniCpp_GlobalScopeSearch = 1
-"let OmniCpp_ShowAccess = 1
-"let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-"let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-"let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-"let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-"" automatically open and close the popup menu / preview window
-"au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-"" This is overwritten by ide.vim
-"" I disabled it, though.
-"set completeopt=menuone,menu,preview
-"
-"" Popup menu colorscheme
-"highlight Pmenu ctermbg=13 guibg=LightGray
-"highlight PmenuSel ctermbg=7 guibg=DarkBlue guifg=White
-"highlight PmenuSbar ctermbg=7 guibg=DarkGray
-"highlight PmenuThumb guibg=Black
-"
-"" cscope support
-"if has('cscope')
-"  set cscopetag cscopeverbose
-"
-"  if has('quickfix')
-"    set cscopequickfix=s-,c-,d-,i-,t-,e-
-"  endif
-"
-"  cnoreabbrev csa cs add
-"  cnoreabbrev csf cs find
-"  cnoreabbrev csk cs kill
-"  cnoreabbrev csr cs reset
-"  cnoreabbrev css cs show
-"  cnoreabbrev csh cs help
-"
-"  " command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
-"endif
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 2
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+" This is overwritten by ide.vim
+" I disabled it, though.
+set completeopt=menuone,menu,preview
+
+" Popup menu colorscheme
+highlight Pmenu ctermbg=13 guibg=LightGray
+highlight PmenuSel ctermbg=7 guibg=DarkBlue guifg=White
+highlight PmenuSbar ctermbg=7 guibg=DarkGray
+highlight PmenuThumb guibg=Black
+
+" cscope support
+if has('cscope')
+  set cscopetag cscopeverbose
+
+  if has('quickfix')
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+  endif
+
+  cnoreabbrev csa cs add
+  cnoreabbrev csf cs find
+  cnoreabbrev csk cs kill
+  cnoreabbrev csr cs reset
+  cnoreabbrev css cs show
+  cnoreabbrev csh cs help
+
+  " command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+endif
 
 " Set autowrite=on
 " Write the contents of the file, if it has been modified, on
@@ -431,13 +431,6 @@ au BufWinEnter *.txt if &ft == 'help' | if &columns > 156 | wincmd H | else | wi
 " Start indent-guides on startup
 " let g:indent_guides_enable_on_vim_startup = 1
 
-" textile.vim support
-" Debian
-" let g:TextileOS="Linux"
-" let g:TextileBrowser="/usr/bin/chromium-browser"
-" OS X
-" let g:TextileBrowser="Google Chrome"
-
 " gundo support
 " map <Leader>gun :GundoToggle<CR>
 
@@ -514,3 +507,5 @@ command! -bar Clearregs :call Clearregs()
 
 " Don't automatically insert comments on a new line in vim, zsh mode
 au FileType vim,zsh,sh setlocal formatoptions-=r
+
+let g:airline_theme = "simple"

@@ -15,7 +15,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="christopherSO"
+#export ZSH_THEME="christopherSO"
+export ZSH_THEME="half-life"
 # source /home/threv/code/liquidprompt/liquidprompt
 
 # Comment this out to disable weekly auto-update checks
@@ -361,6 +362,9 @@ alias latrd="ls -latr /mnt/Elements/Downloads/"
 # when running locate, check if file on disk
 alias locate="locate -e"
 
+# byobu alias
+alias byobu="TERM=xterm-256color byobu"
+
 ## c-x c-x => history menu
 #autoload -Uz history-beginning-search-menu
 #zle -N history-beginning-search-menu
@@ -463,9 +467,6 @@ eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
 export GPG_AGENT_INFO
 GPG_TTY=$(tty)
 export GPG_TTY
-
-# Fix Midori SSL errors
-WEBKIT_IGNORE_SSL_ERRORS="1"
 
 # Mail config
 # MAIL=/home/threv/Mail
