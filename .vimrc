@@ -457,7 +457,10 @@ command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
 
 " Requires patched fonts for Powerline; renders nifty font images
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'fancy'
+
+" airline font
+let g:airline_powerline_fonts = 1
 
 " Stops Command-T from searching VMWare host directory
 set wildignore=host/**
@@ -525,3 +528,6 @@ command! -bar Clearregs :call Clearregs()
 
 " Don't automatically insert comments on a new line in vim, zsh mode
 au FileType vim,zsh,sh setlocal formatoptions-=r
+
+" Disable automatic loading of showmarks
+let g:showmarks_enable=0
