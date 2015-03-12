@@ -113,7 +113,7 @@ function coverart {
   convert $1 -adaptive-resize 400x400 -adaptive-sharpen 0x1.0 cover.png
   rm $1
   optipng -o2 cover.png
-  pngout cover.png -f5
+  #pngout cover.png -f5
 }
 
 # Search .allhistory
@@ -281,7 +281,7 @@ alias lss='ls -aSh *(.)'
 alias larsh="ls -larSh"
 alias mkdir='mkdir -p'
 alias mpg123='mpg123 -v -C'
-alias npm='npm -g'
+#alias npm='npm -g'
 alias perldoc='perldoc -t'
 alias pgrep='nocorrect pgrep -l'
 alias pkill='nocorrect pkill'
