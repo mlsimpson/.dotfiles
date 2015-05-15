@@ -6,6 +6,7 @@ set ruler         " show the cursor position all the time
 set number        " enable line numbering
 syntax on         " enable syntax highlighting
 set confirm       " confirm if :q or :e entered w/out save
+set colorcolumn=80
 
 " Setting this on Terminal.app makes everything blink like hell.
 set t_Co=256
