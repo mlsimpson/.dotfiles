@@ -3,9 +3,6 @@
 # Don't forget to install mouseterm for vim!
 #####
 
-# Link tcmalloc
-# export LD_PRELOAD="/usr/lib/libtcmalloc_minimal.so.4"
-
 #####
 # Oh-My-ZSH!
 # Path to oh-my-zsh configuration.
@@ -15,9 +12,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#export ZSH_THEME="christopherSO"
 export ZSH_THEME="half-life"
-# source /home/threv/code/liquidprompt/liquidprompt
 
 # Comment this out to disable weekly auto-update checks
 # export DISABLE_AUTO_UPDATE="true"
@@ -61,27 +56,6 @@ export LC_CTYPE="en_US.UTF-8"
 ####
 # Functions
 #
-
-# # GNOME specific
-# # View man pages in evince
-#function gman () {
-#  man -t $1 | ps2pdf - $1.pdf; evince $1.pdf &> /dev/null &; sleep 3; rm $1.pdf
-#}
-#
-## # View info pages in evince
-#function ginfo () {
-#  info --subnodes -o $1.txt $1; a2ps --borders=0 -1 -B -P pdf $1.txt; sed -i 's/Courier/Helvetica/g' $1.pdf; evince $1.pdf &> /dev/null &; sleep 3; rm $1.pdf; rm $1.txt
-#}
-
-# # 'card' helper
-# # requires a2ps package
-# function ccard () {
-#   card $1 -- -1 -Ppdf -B --border=0; evince card.pdf &> /dev/null &; sleep 3; rm card.pdf
-# }
-# # View ls in PDF format
-# function lspdf (){
-# ls -la | a2ps -Ppdf | evince stdin.pdf &> /dev/null &; sleep 3; rm stdin.pdf
-# }
 
 ####
 # ZSH General functions
@@ -231,6 +205,11 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 #zstyle ':completion:complete-first:*' menu yes
 #bindkey "^X^M" complete-first
 
+## c-x c-x => history menu
+autoload -Uz history-beginning-search-menu
+zle -N history-beginning-search-menu
+bindkey '^X^X' history-beginning-search-menu
+
 # Complete in history with M-/, M-,
 #zstyle ':completion:history-words:*' list no
 #zstyle ':completion:history-words:*' menu yes
@@ -365,11 +344,6 @@ alias locate="locate -e"
 # byobu alias
 alias byobu="TERM=xterm-256color byobu"
 
-## c-x c-x => history menu
-#autoload -Uz history-beginning-search-menu
-#zle -N history-beginning-search-menu
-#bindkey '^X^X' history-beginning-search-menu
-
 ####
 # bindkey
 # Esc = undo
@@ -393,8 +367,8 @@ export PAGER=less
 # Set mail dir
 # export MAIL="/var/mail/threv"
 
-export HISTSIZE=2000
-export SAVEHIST=3000
+export HISTSIZE=5000
+export SAVEHIST=10000
 
 # MySQL Prompt
 export MYSQL_PS1="\\d> "
@@ -415,7 +389,7 @@ export VERSIONER_PERL_PREFER_32_BIT="yes"
 # autojump support
 # [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 # For Linux
-. /usr/share/autojump/autojump.sh
+. /usr/local/bin/z.sh
 
 ####
 # for vmail
@@ -467,6 +441,3 @@ eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
 export GPG_AGENT_INFO
 GPG_TTY=$(tty)
 export GPG_TTY
-
-# Mail config
-# MAIL=/home/threv/Mail
