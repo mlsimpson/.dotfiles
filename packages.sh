@@ -6,6 +6,6 @@ gem list --no-versions | sed -e '/^(*|$)/d' > /home/threv/.dotfiles/installed_ge
 
 perl -MExtUtils::Installed -E 'say for ExtUtils::Installed->new->modules' > /home/threv/.dotfiles/installed_cpan.txt
 
-npm list -g --parseable | awk 'BEGIN {FS = "/" }; {print $NF}' | uniq >!  /home/threv/.dotfiles/installed_npms.txt
+#npm list -g --parseable | awk 'BEGIN {FS = "/" }; {print $NF}' | uniq >!  /home/threv/.dotfiles/installed_npms.txt
 
 dpkg --get-selections >! /home/threv/.dotfiles/myselections
