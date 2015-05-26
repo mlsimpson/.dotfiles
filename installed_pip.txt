@@ -131,6 +131,7 @@ pyparsing
 pyrelic
 pyserial
 pysmbc
+Pyste
 python-apt
 python-dateutil
 python-debian
