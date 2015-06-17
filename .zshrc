@@ -25,7 +25,7 @@ export ZSH_THEME="half-life"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass git fuck)
+plugins=(ssh-agent zsh-syntax-highlighting pass git fuck task)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -200,17 +200,17 @@ zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 # Enable oh-my-zsh agent-forwarding
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-# Force menu on C-x RET.
+## Force menu on C-x RET.
 #zle -C complete-first complete-word _generic
 #zstyle ':completion:complete-first:*' menu yes
 #bindkey "^X^M" complete-first
 
 ## c-x c-x => history menu
-autoload -Uz history-beginning-search-menu
-zle -N history-beginning-search-menu
-bindkey '^X^X' history-beginning-search-menu
+#autoload -Uz history-beginning-search-menu
+#zle -N history-beginning-search-menu
+#bindkey '^X^X' history-beginning-search-menu
 
-# Complete in history with M-/, M-,
+## Complete in history with M-/, M-,
 #zstyle ':completion:history-words:*' list no
 #zstyle ':completion:history-words:*' menu yes
 #zstyle ':completion:history-words:*' remove-all-dups yes
@@ -291,9 +291,6 @@ alias newcpan="cpan-outdated -p | cpanm -i && rm -rf /home/threv/.cpanm/work"
 # Always start irssi in screen
 alias irssi="screen irssi"
 
-# Quickly reload conky
-# alias rconk="killall -SIGUSR1 conky"
-
 # Easy start/stop pgsql
 # alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 # alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
@@ -311,7 +308,7 @@ alias cp='cp -r -v'
 alias tmux="tmux -u attach"
 
 # Always compress & encrypt ssh
-alias ssh="ssh -Cc arcfour,blowfish-cbc"
+# alias ssh="ssh -Cc arcfour,blowfish-cbc"
 
 # Linux:  Make htop refresh every second
 alias htop='htop -d 10'
