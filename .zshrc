@@ -114,6 +114,12 @@ function mdless () {
   pandoc -s -f markdown -t man $1 | groff -T utf8 -man | less
 }
 
+# Capitalize first letter of each word in filename
+function capitalize () {
+  rename 's/\b(\w)/\u$1/g' *
+  rename 's/Mp3/mp3/' *
+}
+
 #####
 # Set colors for man pages.
 man() {
