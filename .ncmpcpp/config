@@ -479,7 +479,7 @@ main_window_color = "blue"
 #color2 = "green"
 #
 #main_window_highlight_color = "yellow"
-main_window_highlight_color = "blue"
+main_window_highlight_color = "cyan"
 #
 #progressbar_color = "default"
 #
