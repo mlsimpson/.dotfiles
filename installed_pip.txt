@@ -4,12 +4,12 @@ anyjson
 audioread
 autopilot
 bcdoc
-beets
 behave
 billiard
 bzr
 bzr-etckeeper
 ccsm
+CDDB
 celery
 cffi
 characteristic
@@ -110,7 +110,6 @@ ply
 protobuf
 psutil
 publicsuffix
-puddletag
 pyacoustid
 pyasn1
 pyasn1-modules
@@ -127,7 +126,6 @@ pyinotify
 pylast
 pymad
 pyOpenSSL
-pyparsing
 pyrelic
 pyserial
 pysmbc
@@ -145,6 +143,7 @@ pytz
 pywapi
 pyxdg
 PyYAML
+quodlibet
 ranger
 redis
 regetron
