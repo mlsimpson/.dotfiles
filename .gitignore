@@ -5,7 +5,6 @@
 *.cer
 .irssi/away.log
 .config/
-.cmus/
 .xmonad/xmonad-i386-linux
 .xmonad/xmonad.errors
 .xmonad/xmonad.hi
