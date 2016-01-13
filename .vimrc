@@ -263,8 +263,9 @@ vnoremap / /\v
 
 " OMNICOMPLETE
 " Enable OmniComplete
- set ofu=syntaxcomplete#Complete
- autocmd FileType python set omnifunc=pythoncomplete#Complete
+"set completefunc=syntaxcomplete#Complete
+set ofu=syntaxcomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " configure tags - add additional tags here
 " set tags+=~/.vim/tags/c
@@ -510,3 +511,21 @@ command! -bar Clearregs :call Clearregs()
 au FileType vim,zsh,sh setlocal formatoptions-=r
 
 let g:airline_theme = "simple"
+
+" Change cursor if in tmux
+if exists('$ITERM_PROFILE')
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>[3 q"
+    let &t_EI = "\<Esc>[0 q"
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+end
+
+" Ack.vim -> ag
+let g:ackprg = 'ag --vimgrep'
+
+" Persistent undo
+set undofile
+set undodir=~/.vim/undodir
