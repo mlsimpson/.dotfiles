@@ -1,5 +1,6 @@
 http://181fm-edge1.cdnstream.com/181-90salt_128k.mp3
 http://181fm-edge1.cdnstream.com/181-awesome80s_128k.mp3
+http://5143.live.streamtheworld.com/WWWQH2_SC
 http://ice.somafm.com/cliqhop
 http://static.7.93.40.188.clients.your-server.de:8000/;stream/1
 http://itori.animenfo.com:443/
