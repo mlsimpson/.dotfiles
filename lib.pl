@@ -61,6 +61,7 @@ http://stream.wbai.org:8000/wbai_128
 http://stream0.wfmu.org/freeform-128k
 http://pubint.ic.llnwd.net/stream/pubint_wras2
 http://streaming.wrek.org:8000/wrek_live-128kb
+http://streaming.wrek.org:8000/hd2/128kb.mp3
 http://gpb.streamguys1.com/gpb-atlanta-mp3
 http://94.23.49.211:8000
 http://momingmy.tk:8000/music.ogg
