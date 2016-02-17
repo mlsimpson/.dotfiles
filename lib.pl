@@ -47,6 +47,7 @@ http://ice.somafm.com/sonicuniverse
 http://ice.somafm.com/spacestation
 http://185.2.138.236:8014/stream
 http://s7.viastreaming.net:7030/
+http://threv.net:8000/
 http://107.170.20.195:8005
 http://107.170.20.195:8006
 http://107.170.20.195:8004
