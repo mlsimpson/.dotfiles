@@ -54,6 +54,7 @@ http://107.170.20.195:8004
 http://107.170.20.195:8002
 http://107.170.20.195:8003
 http://107.170.20.195:8001
+http://stream1.radiostyle.ru:8001/tunguska
 http://stream0.wfmu.org/ubu
 http://ice.somafm.com/u80s
 http://3083.live.streamtheworld.com:3690/WVEEFM_SC
