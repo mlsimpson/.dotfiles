@@ -51,6 +51,7 @@ sub do_notifier {
   my ($server, $title, $data) = @_;
     $data =~ s/["';]//g;
     system("afplay ~/.irssi/chimes.mp3&");
+    #system("reattach-to-user-namespace terminal-notifier -message '$data' -title '$title' >> /dev/null 2>&1");
     system("terminal-notifier -message '$data' -title '$title' >> /dev/null 2>&1");
     return 1
 }
