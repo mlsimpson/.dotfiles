@@ -404,7 +404,7 @@ my %filters = (
 	'types' => \@all_server_types,
 	'sub' => sub {
 		my ($param, $signal,$parammessage,$server,$channelname,$nickname,$address,$condition,$extra) = @_;
-		
+
 		if (!defined($server)) {
 			return 0;
 		}
@@ -422,7 +422,7 @@ my %filters = (
 	'types' => \@allchan_types,
 	'sub' => sub {
 		my ($param, $signal,$parammessage,$server,$channelname,$nickname,$address,$condition,$extra) = @_;
-		
+
 		if (!defined($channelname) || !defined($server)) {
 			return 0;
 		}
@@ -554,26 +554,26 @@ sub check_signal_message {
 	my $message = ($parammessage == -1) ? '' : $signal->[$parammessage];
 
 	return if (!$triggers_by_type{$condition});
-	
+
 	if ($recursion_depth > 10) {
 		Irssi::print("Trigger error: Maximum recursion depth reached, aborting trigger.", MSGLEVEL_CLIENTERROR);
 		return;
 	}
 	$recursion_depth++;
 
-TRIGGER:	
+TRIGGER:
 	foreach my $trigger (@{$triggers_by_type{$condition}}) {
 		# check filters
 		foreach my $trigfilter (@{$trigger->{'filters'}}) {
 			if (! ($trigfilter->[2]($trigfilter->[1], $signal,$parammessage,$server,$channelname,$nickname,$address,$condition,$extra))) {
-			
+
 				next TRIGGER;
 			}
 		}
-		
+
 		# check regexp (and keep matches in @- and @+, so don't make a this a {block})
 		next if ($trigger->{'compregexp'} && ($parammessage == -1 || $message !~ m/$trigger->{'compregexp'}/));
-		
+
 		# if we got this far, it fully matched, and we need to do the replace/command/stop/once
 		my $expands = $extra;
 		$expands->{'M'} = $message,;
@@ -590,12 +590,12 @@ TRIGGER:
 			$message =~ s/$trigger->{'compregexp'}/do_expands($trigger->{'compreplace'},$expands,$message)/ge;
 			$changed = 1;
 		}
-		
+
 		if ($trigger->{'command'}) { # it's a (nonempty) -command
 			my $command = $trigger->{'command'};
 			# $1 = the stuff behind the $ we want to expand: a number, or a character from %expands
 			$command = do_expands($command, $expands, $message);
-			
+
 			if (defined($server)) {
 				if (defined($channelname) && $server->channel_find($channelname)) {
 					$context = $server->channel_find($channelname);
@@ -605,7 +605,7 @@ TRIGGER:
 			} else {
 				$context = undef;
 			}
-			
+
 			if (defined($context)) {
 				$context->command("eval $command");
 			} else {
@@ -616,11 +616,11 @@ TRIGGER:
 		if ($trigger->{'debug'}) {
 			print("DEBUG: trigger $condition pmesg=$parammessage message=$message server=$server->{tag} channel=$channelname nick=$nickname address=$address " . join(' ',map {$_ . '=' . $extra->{$_}} keys(%$extra)));
 		}
-		
+
 		if ($trigger->{'stop'}) {
 			$stopped = 1;
 		}
-		
+
 		if ($trigger->{'once'}) {
 			# find this trigger in the real trigger list, and remove it
 			for (my $realindex=0; $realindex < scalar(@triggers); $realindex++) {
@@ -654,7 +654,7 @@ sub do_expands {
 	my @plus = @+;
 	my @min = @-;
 	my $p = \@plus; my $m = \@min;
-	$inthis =~ s/\$(\\*(\d+|[^0-9x{]|x[0-9a-fA-F][0-9a-fA-F]|{.*?}))/expand_and_escape($1,$expands,$m,$p,$from)/ge;	
+	$inthis =~ s/\$(\\*(\d+|[^0-9x{]|x[0-9a-fA-F][0-9a-fA-F]|{.*?}))/expand_and_escape($1,$expands,$m,$p,$from)/ge;
 	return $inthis;
 }
 
@@ -713,7 +713,7 @@ sub get_flags {
 	my ($chatnet, $channel, $nick, $address) = @_;
 	my $flags;
 	no strict 'refs';
-	if (defined %{ 'Irssi::Script::people::' }) {
+	if ( %{ 'Irssi::Script::people::' }) {
 		if (defined ($channel)) {
 			$flags = (&{ 'Irssi::Script::people::find_local_flags' }($chatnet,$channel,$nick,$address));
 		} else {
@@ -722,7 +722,7 @@ sub get_flags {
 		$flags = join('',keys(%{$flags}));
 	} else {
 		my $shasta;
-		if (defined %{ 'Irssi::Script::friends_shasta::' }) {
+		if ( %{ 'Irssi::Script::friends_shasta::' }) {
 			$shasta = 'friends_shasta';
 		} elsif (defined &{ 'Irssi::Script::friends::get_idx' }) {
 			$shasta = 'friends';
@@ -756,7 +756,7 @@ $mask_to_regexp{'*'} = '(.*)';
 sub compile_trigger {
 	my ($trigger) = @_;
 	my $regexp;
-	
+
 	if ($trigger->{'regexp'}) {
 		$regexp = $trigger->{'regexp'};
 	} elsif ($trigger->{'pattern'}) {
@@ -766,13 +766,13 @@ sub compile_trigger {
 		delete $trigger->{'compregexp'};
 		return;
 	}
-	
+
 	if ($trigger->{'nocase'}) {
 		$regexp = '(?i)' . $regexp;
 	}
-	
+
 	$trigger->{'compregexp'} = qr/$regexp/;
-	
+
 	if(defined($trigger->{'replace'})) {
 		(my $replace = $trigger->{'replace'}) =~ s/\$/\$\$/g;
 		$trigger->{'compreplace'} = Irssi::parse_special($replace);
@@ -797,7 +797,7 @@ ALLTYPES:
 					push @{$triggers_by_type{$type}}, ($trigger);
 				}
 			}
-			
+
 			foreach my $type ($trigger->{'all'} ? @notall_types : @trigger_types) {
 				if ($trigger->{$type}) {
 					push @{$triggers_by_type{$type}}, ($trigger);
@@ -805,7 +805,7 @@ ALLTYPES:
 			}
 		}
 	}
-	
+
 	foreach my $signal (@signals) {
 		my $should_bind = 0;
 		foreach my $type (@{$signal->{'types'}}) {
@@ -884,10 +884,10 @@ sub cmd_load {
 				return;
 			}
 			my @old_triggers = @$rep;
-		
-			for (my $index=0;$index < scalar(@old_triggers);$index++) { 
+
+			for (my $index=0;$index < scalar(@old_triggers);$index++) {
 				my $trigger = $old_triggers[$index];
-	
+
 				if ($file_version lt '0.6.1') {
 					# convert old names: notices => pubnotices, actions => pubactions
 					foreach $oldname ('notices','actions') {
@@ -909,13 +909,13 @@ sub cmd_load {
 					delete $trigger->{'modifiers'};
 					$converted = 1;
 				}
-				
+
 				if (defined($trigger->{'replace'}) && ! $trigger->{'regexp'}) {
 					Irssi::print("Trigger: trigger ".($index+1)." had -replace but no -regexp, removed it");
 					splice (@old_triggers,$index,1);
 					$index--; # nr of next trigger now is the same as this one was
 				}
-				
+
 				# convert to text with compat, and then to new trigger hash
 				$text = to_string($trigger,1);
 				my @args = &shellwords($text . ' a');
@@ -963,13 +963,13 @@ sub param_to_string {
 sub to_string {
 	my ($trigger, $compat) = @_;
 	my $string;
-	
+
 	foreach my $switch (@trigger_switches) {
 		if ($trigger->{$switch}) {
 			$string .= '-'.$switch.' ';
 		}
 	}
-	
+
 	if ($compat) {
 		foreach my $filter (keys(%filters)) {
 			if ($trigger->{$filter}) {
@@ -1011,7 +1011,7 @@ sub find_trigger {
 sub cmd_add {
 	my ($data, $server, $item) = @_;
 	my @args = shellwords($data . ' a');
-	
+
 	my $trigger = parse_options({}, @args);
 	if ($trigger) {
 		push @triggers, $trigger;
@@ -1040,12 +1040,12 @@ sub cmd_change {
 sub parse_options {
 	my ($thetrigger,@args) = @_;
 	my ($trigger, $option);
-	
+
 	if (pop(@args) ne 'a') {
 		Irssi::print("Syntax error, probably missing a closing quote", MSGLEVEL_CLIENTERROR);
 		return undef;
 	}
-	
+
 	%$trigger = %$thetrigger; # make a copy to prevent changing the given trigger if args doesn't parse
 ARGS:	for (my $arg = shift @args; $arg; $arg = shift @args) {
 		# expand abbreviated options, put in $option
@@ -1091,13 +1091,13 @@ ARGS:	for (my $arg = shift @args; $arg; $arg = shift @args) {
 				next ARGS;
 			}
 		}
-		
+
 		# -<filter> <value>
 		if ($filters{$option}) {
 			push @{$trigger->{'filters'}}, [$option, shift @args, $filters{$option}->{'sub'}];
 			next ARGS;
 		}
-		
+
 		# -<nofilter>
 		if ($option =~ /^no(.*)$/ && $filters{$1}) {
 			my $filter = $1;
@@ -1105,7 +1105,7 @@ ARGS:	for (my $arg = shift @args; $arg; $arg = shift @args) {
 			@{$trigger->{'filters'}} = grep( $_->[0] ne $filter, @{$trigger->{'filters'}} );
 		}
 	}
-	
+
 	if (defined($trigger->{'replace'}) && ! $trigger->{'regexp'} && !$trigger->{'pattern'}) {
 		Irssi::print("Trigger error: Can't have -replace without -regexp", MSGLEVEL_CLIENTERROR);
 		return undef;
@@ -1115,14 +1115,14 @@ ARGS:	for (my $arg = shift @args; $arg; $arg = shift @args) {
 		Irssi::print("Trigger error: Can't have -pattern and -regexp in same trigger", MSGLEVEL_CLIENTERROR);
 		return undef;
 	}
-	
+
 	# remove types that are implied by -all
 	if ($trigger->{'all'}) {
 		foreach my $type (@all_types) {
 			delete $trigger->{$type};
 		}
 	}
-	
+
 	# remove types for which the filters don't apply
 	foreach my $type (@trigger_types) {
 		if ($trigger->{$type}) {
@@ -1146,7 +1146,7 @@ ARGS:	for (my $arg = shift @args; $arg; $arg = shift @args) {
 	if (!$has_a_type && !$trigger->{'all'}) {
 		Irssi::print("Warning: this trigger doesn't trigger on any type of message. you probably want to add -publics or -all");
 	}
-	
+
 	compile_trigger($trigger);
 	%$thetrigger = %$trigger; # copy changes to real trigger
 	return $thetrigger;
