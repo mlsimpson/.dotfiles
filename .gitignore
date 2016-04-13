@@ -1,11 +1,1 @@
-.irssi/fnotify
-.irssi/nickserv.auth
-*.pem
-*.key
-*.cer
-.irssi/away.log
-.cmus
-.beetsconfig
-.config/pianobar
-.config/fish
-.irssi/config.autosave
+.netrwhist

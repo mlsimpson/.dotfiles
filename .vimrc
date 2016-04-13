@@ -546,3 +546,7 @@ end
 
 " Ack.vim -> ag
 let g:ackprg = 'ag --vimgrep'
+
+" Persistent undo
+set undofile
+set undodir=~/.vim/undodir
