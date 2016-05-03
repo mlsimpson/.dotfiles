@@ -28,6 +28,7 @@ http://ice.somafm.com/groovesalad
 http://ice.somafm.com/illstreet
 http://54.67.67.67/in-my-house
 http://live-aacplus-64.kexp.org/kexp64.aac
+http://95.143.216.164:8082/
 http://5403.live.streamtheworld.com/KROQFM_SC
 http://ice.somafm.com/lush
 http://54.67.67.67/main
