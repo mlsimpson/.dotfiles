@@ -23,6 +23,7 @@ http://ice1.somafm.com/defcon-128.mp3
 http://ice1.somafm.com/digitalis-128-aac
 http://streaming.radionomy.com/DKFMShoegazeRadio?ad=radionoweb
 http://ice.somafm.com/doomed
+http://streaming.radionomy.com/DRIVE
 http://ice1.somafm.com/dronezone-128.mp3
 http://ice1.somafm.com/dubstep-128-mp3
 http://ice1.somafm.com/earwaves-128.mp3
@@ -47,7 +48,6 @@ http://playingtheclassics.game-host.org:8000/
 http://ice.somafm.com/poptron
 http://stream0.wfmu.org/do-or-diy
 http://listen.radiohyrule.com:8000/listen
-http://212.53.138.66:8230/
 http://content.radiosega.net:8006/live
 http://radio.realitycheckbbs.org:8000/
 http://54.77.136.103:8000/resonance
@@ -57,6 +57,7 @@ http://stream.rpgamers.net:8000/rpgn
 http://stream.getmyip.com
 http://oscar.scenesat.com:8000/scenesatmax
 http://ice.somafm.com/secretagent
+http://108.178.13.122:8311/stream
 http://relay1.slayradio.org:8000/
 http://sc13.shoutcaststreaming.us:8194
 http://ice.somafm.com/indiepop
@@ -85,6 +86,7 @@ http://pubint.ic.llnwd.net/stream/pubint_wras2
 http://streaming.wrek.org:8000/wrek_live-128kb
 http://streaming.wrek.org:8000/hd2/128kb.mp3
 http://www.wvum.org:9010/stream/
+http://212.53.138.66:8230/
 http://94.23.49.211:8000
 http://syl.mooo.com:9000/stream
 http://kohina.radio.ethz.ch/kohina.ogg
