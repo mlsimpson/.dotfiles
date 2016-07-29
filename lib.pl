@@ -21,7 +21,6 @@ http://textville.net:80/chiptune.mp3
 http://slacker.cvgm.net/cvgm192
 http://ice1.somafm.com/defcon-128.mp3
 http://ice1.somafm.com/digitalis-128-aac
-http://streaming.radionomy.com/DKFMShoegazeRadio?ad=radionoweb
 http://ice.somafm.com/doomed
 http://streaming.radionomy.com/DRIVE
 http://ice1.somafm.com/dronezone-128.mp3
@@ -37,6 +36,7 @@ http://live-aacplus-64.kexp.org/kexp64.aac
 http://95.143.216.164:8082/
 http://5403.live.streamtheworld.com/KROQFM_SC
 http://broadcast.rbmaradio.net/levitation-festival
+http://74.208.145.88:8000/128.mp3
 http://ice.somafm.com/lush
 http://broadcast.rbmaradio.net/main
 http://94.23.240.167:7756/
@@ -53,6 +53,7 @@ http://radio.realitycheckbbs.org:8000/
 http://54.77.136.103:8000/resonance
 http://gyusyabu.ddo.jp:8000/
 http://relay.exequo.org:8000/rinseradio
+http://streaming.radionomy.com/DKFMShoegazeRadio?ad=radionoweb
 http://stream.rpgamers.net:8000/rpgn
 http://stream.getmyip.com
 http://oscar.scenesat.com:8000/scenesatmax
