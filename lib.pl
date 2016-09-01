@@ -12,8 +12,8 @@ http://itori.animenfo.com:443/
 http://199.195.194.140:9000/stream2
 http://ice1.somafm.com/bagel-128.mp3
 http://ice.somafm.com/beatblender
-http://50.7.173.162:8032/
-http://50.7.173.162:8089/
+http://38.107.243.18:8026/
+http://184.95.47.178:9112/
 http://184.95.62.170:9026/
 http://ice1.somafm.com/bootliquor-128-aac
 http://www.lmp.d2g.com:8003/
