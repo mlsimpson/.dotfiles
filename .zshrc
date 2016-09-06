@@ -347,6 +347,9 @@ alias locate="locate -e"
 # byobu alias
 alias byobu="TERM=xterm-256color byobu"
 
+# start gdb in tui mode
+alias gdb="gdb -tui"
+
 ####
 # bindkey
 # Esc = undo
