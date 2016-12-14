@@ -37,6 +37,7 @@ http://95.143.216.164:8082/
 http://5403.live.streamtheworld.com/KROQFM_SC
 http://broadcast.rbmaradio.net/levitation-festival
 http://74.208.145.88:8000/128.mp3
+http://listen.moe:9999/stream
 http://ice.somafm.com/lush
 http://broadcast.rbmaradio.net/main
 http://94.23.240.167:7756/
