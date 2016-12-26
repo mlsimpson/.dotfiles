@@ -237,7 +237,7 @@ alias 8='cd -8'
 alias 9='cd -9'
 
 #alias cpanm='cpanm --sudo'
-alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
+alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G T)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
 
 alias dca="deluge-console add"
 
@@ -295,7 +295,7 @@ alias newnpm="sudo npm update; sudo npm cache clean"
 alias newcpan="cpan-outdated -p | cpanm -i && rm -rf /home/threv/.cpanm/work"
 
 # Always start irssi in screen
-alias irssi="screen irssi"
+# alias irssi="screen irssi"
 
 # Easy start/stop pgsql
 # alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
@@ -339,7 +339,7 @@ alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/fooba
 alias clipit="clipit 2> /dev/null"
 
 # check Downloads dir
-alias latrd="ls -latr /mnt/Elements/Downloads/"
+alias latrd="ls -latr /media/threv/Recovery/Downloads/"
 
 # when running locate, check if file on disk
 alias locate="locate -e"
@@ -349,6 +349,10 @@ alias byobu="TERM=xterm-256color byobu"
 
 # start gdb in tui mode
 alias gdb="gdb -tui"
+
+alias weather="curl -s wttr.in/Atlanta"
+
+alias rcopy="sudo rsync -av --info=progress2"
 
 ####
 # bindkey
