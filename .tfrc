@@ -1,9 +1,11 @@
 /set isize=1
 /require spedwalk.tf
+/require map.tf
 /speedwalk on
+/more on
 
 /addworld -Tlp sloth slothmud.org 6101
-/addworld -Tlp sdf mud.sdf.org 4000
+;/addworld -Tlp sdf mud.sdf.org 4000
 
 /set drink waterskin
 
@@ -100,6 +102,7 @@
 /def -mregexp -t"^A stone well stands in the middle of the*" = fill %drink
 /def -mregexp -t"^A bronze statue of dragon*" = fill %drink
 /def -mregexp -t"^A large wishing well*" = fill %drink
+/def -mregexp -t"^Water flows from*" = fill %drink
 
 /def -mregexp -t"^You go to sleep\." = /set sleeping 1
 /def -mregexp -t"^You wake, and sit up\." = /set sleeping 0 %; stand
@@ -351,3 +354,6 @@
       /let wassleeping 0 %; \
       sleep %; \
    /endif
+
+/def k = kick
+/def sac = sac corpse
