@@ -228,7 +228,7 @@ alias tmux="tmux -u attach"
 
 alias weather="curl -s wttr.in/Atlanta  | head -n 38 | tail -n -37"
 
-alias gitclog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --al"
+alias gitclog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 # Always compress & encrypt ssh
 #alias ssh="ssh -Cc arcfour,blowfish-cbc"
