@@ -268,6 +268,7 @@ vnoremap / /\v
 " Enable OmniComplete
 set ofu=syntaxcomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType ruby set omnifunc=rubycomplete#Complete
 
 " configure tags - add additional tags here
 " set tags+=~/.vim/tags/c
