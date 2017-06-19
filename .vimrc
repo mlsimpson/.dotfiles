@@ -216,6 +216,8 @@ set completeopt=longest,menuone,preview
 " inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 " inoremap <expr> <c-n> pumvisible() ? "\<lt>c-n>" : "\<lt>c-n>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
 " inoremap <expr> <m-;> pumvisible() ? "\<lt>c-n>" : "\<lt>c-x>\<lt>c-o>\<lt>c-n>\<lt>c-p>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 " Space will toggle folds!
 nnoremap <space> za
@@ -268,7 +270,9 @@ vnoremap / /\v
 " Enable OmniComplete
 set ofu=syntaxcomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 
 " configure tags - add additional tags here
 " set tags+=~/.vim/tags/c
