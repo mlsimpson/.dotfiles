@@ -27,7 +27,7 @@ export ZSH_THEME="half-life.custom"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass fuck brew vagrant docker python golang )
+plugins=(ssh-agent zsh-syntax-highlighting pass fuck brew vagrant docker python golang zsh-autosuggestions npm)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -166,6 +166,11 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 #bindkey '^X^X' history-beginning-search-menu
 
 ####
+# rbenv
+
+eval "$(rbenv init -)"
+
+####
 # alias
 
 # Overwriting oh-my-zsh directory completion to suit pushdminus
@@ -184,6 +189,8 @@ alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G))
 # Git aliases
 alias gam='git commit -a -m'
 alias grep='grep --color=always'
+alias gitclog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias gitsync="git checkout master; git reset --hard upstream/master; git push origin master --force"
 
 # ANSI color for less, always
 alias less='less -mRFX'
@@ -227,8 +234,6 @@ alias cp='cp -r -v'
 alias tmux="tmux -u attach"
 
 alias weather="curl -s wttr.in/Atlanta  | head -n 38 | tail -n -37"
-
-alias gitclog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 # Always compress & encrypt ssh
 #alias ssh="ssh -Cc arcfour,blowfish-cbc"
@@ -303,6 +308,7 @@ alias t.n="ssh threv@threv.net"
 alias m32=mid3v2
 alias cb='ssh threv@192.168.1.135'
 alias ps="ps aux"
+alias ssh='TERM=xterm-256color ssh'
 
 function wttr(){
  curl wttr.in/$1
@@ -315,3 +321,11 @@ function neustar(){
   local num=$(echo $revnum | sed 's/.\{1\}/&./g')
   dig +short "$num"e164enum.net IN NAPTR @156.154.59.228
 }
+
+export FDS_PROFILE=$HOME/Documents/Pindrop/forked/fds-tests/profiles/localhost.yml
+export PTEST_ARTIFACT_DIR=$HOME/Documents/Pindrop/forked/screenshots
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
