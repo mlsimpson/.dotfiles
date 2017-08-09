@@ -92,11 +92,13 @@ colors:
   # Default colors
   primary:
     background: '0x000000'
-    foreground: '0x3AD34B'
+    #foreground: '0x3AD34B'
+    foreground: '0x00CC00'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x3AD34B'
+    #text: '0x3AD34B'
+    text: '0x00CC00'
     cursor: '0xFFF900'
 
   # Normal colors
@@ -112,7 +114,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '0x515151'
+    black:   '0x444444'
     red:     '0xFF0000'
     green:   '0x00D900'
     yellow:  '0xE5E500'
