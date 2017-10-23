@@ -2,6 +2,7 @@ http://181fm-edge1.cdnstream.com/181-90salt_128k.mp3
 http://181fm-edge1.cdnstream.com/181-awesome80s_128k.mp3
 http://199.101.51.168:8006
 http://uk2.internet-radio.com:31491/
+http://radio.stereoscenic.com/asp-s
 http://itori.animenfo.com:443/
 http://ice1.somafm.com/bagel-128.mp3
 http://ice.somafm.com/beatblender
