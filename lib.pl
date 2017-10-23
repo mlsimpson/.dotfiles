@@ -73,4 +73,5 @@ http://stream0.wfmu.org/freeform-128k
 http://15903.live.streamtheworld.com:3690/WRASFM_SC
 http://streaming.wrek.org:8000/wrek_live-128kb
 http://streaming.wrek.org:8000/hd2/128kb.mp3
+http://ns319459.ip-91-121-67.eu:8000
 http://kohina.radio.ethz.ch/kohina.ogg
