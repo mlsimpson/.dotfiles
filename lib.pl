@@ -25,6 +25,7 @@ http://ice.somafm.com/illstreet
 http://stream5.jungletrain.net:8000/
 http://live-aacplus-64.kexp.org/kexp64.aac
 http://95.143.216.164:8082/
+http://london-dedicated.myautodj.com:8862/stream
 http://ice.somafm.com/lush
 http://broadcast.rbmaradio.net/main
 http://ice.somafm.com/missioncontrol
@@ -36,6 +37,7 @@ http://content.radiosega.net:8006/live
 http://radio.realitycheckbbs.org:8000/
 http://54.77.136.103:8000/resonance
 http://gyusyabu.ddo.jp:8000/
+http://5.189.161.211:8080/
 http://stream.rpgamers.net:8000/rpgn
 http://stream.getmyip.com
 http://ice.somafm.com/secretagent
