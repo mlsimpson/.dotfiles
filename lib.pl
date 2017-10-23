@@ -15,6 +15,7 @@ http://coverstream.rainwave.cc:8000/covers.mp3
 http://slacker.cvgm.net/cvgm192
 http://ice1.somafm.com/defcon-128.mp3
 http://ice1.somafm.com/digitalis-128-aac
+http://relay.sonixcast.com:8724/stream.mp3
 http://ice1.somafm.com/dronezone-128.mp3
 http://ice1.somafm.com/dubstep-128-mp3
 http://ice1.somafm.com/earwaves-128.mp3
@@ -31,6 +32,7 @@ http://broadcast.rbmaradio.net/main
 http://ice.somafm.com/missioncontrol
 http://nectarine.ers35.net:8000/necta192.mp3
 http://ocrstream.rainwave.cc:8000/ocremix.mp3
+http://listen1.mixlr.com/083477fe2828230d2030313b4a765994
 http://stream0.wfmu.org/do-or-diy
 http://listen.radiohyrule.com:8000/listen
 http://content.radiosega.net:8006/live
