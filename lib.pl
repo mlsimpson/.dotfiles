@@ -13,6 +13,7 @@ http://chipstream.rainwave.cc:8000/chiptune.mp3
 http://ice.somafm.com/cliqhop
 http://coverstream.rainwave.cc:8000/covers.mp3
 http://slacker.cvgm.net/cvgm192
+http://ice1.somafm.com/deepspaceone-128-mp3
 http://ice1.somafm.com/defcon-128.mp3
 http://ice1.somafm.com/digitalis-128-aac
 http://relay.sonixcast.com:8724/stream.mp3
