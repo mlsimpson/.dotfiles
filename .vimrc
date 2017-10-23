@@ -225,6 +225,9 @@ set ttymouse=xterm
 " Set colorscheme
 colorscheme ir_black
 
+" Comments are italic
+highlight Comment cterm=italic
+
 " Yank text to the OS X clipboard
 set clipboard=unnamed
 noremap <leader>y "*y
@@ -266,6 +269,7 @@ vnoremap / /\v
 "set completefunc=syntaxcomplete#Complete
 set ofu=syntaxcomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType ruby set omnifunc=rubycomplete#Complete
 
 " configure tags - add additional tags here
 " set tags+=~/.vim/tags/c
@@ -528,4 +532,17 @@ let g:ackprg = 'ag --vimgrep'
 
 " Persistent undo
 set undofile
+set undolevels=10000
 set undodir=~/.vim/undodir
+
+" Disable Jedi completion for youcompleteme
+let g:jedi#completions_enabled = 0
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
