@@ -25,7 +25,7 @@ export ZSH_THEME="half-life"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass git fuck task)
+plugins=(ssh-agent zsh-syntax-highlighting pass git fuck task zsh-autosuggestions)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -49,6 +49,9 @@ source $ZSH/oh-my-zsh.sh
 # Path stuff
 # Customize to your needs...
 # export PATH=$PATH:~:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin
+
+# ffs
+setxkbmap -option ctrl:nocaps
 
 # Locale
 export LC_CTYPE="en_US.UTF-8"
@@ -336,10 +339,10 @@ alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > 
 alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
 
 # clipit alias to suppress messages
-alias clipit="clipit 2> /dev/null"
+#alias clipit="clipit 2> /dev/null"
 
 # check Downloads dir
-alias latrd="ls -latr /media/threv/Recovery/Downloads/"
+alias latrd="ls -latr /var/lib/deluge/Downloads"
 
 # when running locate, check if file on disk
 alias locate="locate -e"
@@ -352,8 +355,11 @@ alias gdb="gdb -tui"
 
 alias weather="curl -s wttr.in/Atlanta"
 
-alias rcopy="sudo rsync -av --info=progress2"
+alias rcopy="rsync -av --info=progress2"
 
+alias wine32="WINEARCH=win32 wine"
+
+alias cleanpkgs="dpkg -l | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge"
 ####
 # bindkey
 # Esc = undo
@@ -406,6 +412,9 @@ export VERSIONER_PERL_PREFER_32_BIT="yes"
 #export VMAIL_VIM=vim
 export VMAIL_BROWSER='midori'
 
+# Don't send stuff to MS
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 ####
 # setopt
 setopt glob globdots pushdminus multios extendedglob braceccl
@@ -451,3 +460,7 @@ eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
 export GPG_AGENT_INFO
 GPG_TTY=$(tty)
 export GPG_TTY
+
+#virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh 2>&1 /dev/null
