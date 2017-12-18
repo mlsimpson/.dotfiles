@@ -18,6 +18,7 @@ http://slacker.cvgm.net/cvgm192
 http://trace.dnbradio.com:8000/dnbradio_darkstep.mp3
 http://ice1.somafm.com/deepspaceone-128-mp3
 http://ice1.somafm.com/defcon-128.mp3
+http://dg.darkonline.org:8080/listen
 http://ice1.somafm.com/digitalis-128-aac
 http://relay.sonixcast.com:8724/stream.mp3
 http://ildnb1.dnbradio.com:8000/dnbradio_main.mp3
@@ -57,6 +58,7 @@ http://ice.somafm.com/brfm
 http://ice.somafm.com/sonicuniverse
 http://ice.somafm.com/spacestation
 http://listen.sub.fm/hi
+http://64.71.77.150:8000/stream
 http://185.80.220.12:8054/stream
 http://ice1.somafm.com/silent-128-aac
 http://s7.viastreaming.net:7030/
