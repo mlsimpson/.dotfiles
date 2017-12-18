@@ -28,7 +28,6 @@ http://ice.somafm.com/illstreet
 http://stream5.jungletrain.net:8000/
 http://live-aacplus-64.kexp.org/kexp64.aac
 http://95.143.216.164:8082/
-http://london-dedicated.myautodj.com:8862/stream
 http://ice.somafm.com/lush
 http://broadcast.rbmaradio.net/main
 http://ice.somafm.com/missioncontrol
@@ -67,9 +66,11 @@ http://stream1.radiostyle.ru:8001/tunguska
 http://stream0.wfmu.org/ubu
 http://ice.somafm.com/u80s
 http://broadcast.rbmaradio.net/united-states-bass
+http://london-dedicated.myautodj.com:8862/stream
 http://radio.vgmradio.com:8040/stream
 http://stream.wbai.org:8000/wbai_128
 http://stream0.wfmu.org/freeform-128k
+http://199.195.194.140:8375/stream
 http://15903.live.streamtheworld.com:3690/WRASFM_SC
 http://streaming.wrek.org:8000/wrek_live-128kb
 http://streaming.wrek.org:8000/hd2/128kb.mp3
