@@ -40,6 +40,7 @@ http://content.radiosega.net:8006/live
 http://radio.realitycheckbbs.org:8000/
 http://54.77.136.103:8000/resonance
 http://gyusyabu.ddo.jp:8000/
+http://streamer.dgen.net:8000/rinseradio
 http://5.189.161.211:8080/
 http://stream.rpgamers.net:8000/rpgn
 http://stream.getmyip.com
