@@ -14,10 +14,12 @@ http://chipstream.rainwave.cc:8000/chiptune.mp3
 http://ice.somafm.com/cliqhop
 http://coverstream.rainwave.cc:8000/covers.mp3
 http://slacker.cvgm.net/cvgm192
+http://trace.dnbradio.com:8000/dnbradio_darkstep.mp3
 http://ice1.somafm.com/deepspaceone-128-mp3
 http://ice1.somafm.com/defcon-128.mp3
 http://ice1.somafm.com/digitalis-128-aac
 http://relay.sonixcast.com:8724/stream.mp3
+http://ildnb1.dnbradio.com:8000/dnbradio_main.mp3
 http://ice1.somafm.com/dronezone-128.mp3
 http://ice1.somafm.com/dubstep-128-mp3
 http://ice1.somafm.com/earwaves-128.mp3
