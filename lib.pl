@@ -33,6 +33,7 @@ http://broadcast.rbmaradio.net/main
 http://ice.somafm.com/missioncontrol
 http://nectarine.ers35.net:8000/necta192.mp3
 http://ocrstream.rainwave.cc:8000/ocremix.mp3
+http://listen.one.hiphop/live
 http://listen1.mixlr.com/083477fe2828230d2030313b4a765994
 http://stream0.wfmu.org/do-or-diy
 http://listen.radiohyrule.com:8000/listen
