@@ -39,7 +39,7 @@ http://ice.somafm.com/missioncontrol
 http://nectarine.ers35.net:8000/necta192.mp3
 http://ocrstream.rainwave.cc:8000/ocremix.mp3
 http://listen.one.hiphop/live
-http://listen1.mixlr.com/083477fe2828230d2030313b4a765994
+http://listen1.mixlr.com/e8c0994d2d9c6eac29e19fa8ad0d9003
 http://stream0.wfmu.org/do-or-diy
 http://listen.radiohyrule.com:8000/listen
 http://content.radiosega.net:8006/live
