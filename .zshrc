@@ -244,11 +244,11 @@ alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G T
 
 alias dca="deluge-console add"
 
-# Git aliases
 alias gam='git commit -a -m'
 alias gap='git add -p'
 alias gcl='git clone'
 alias gd='git diff'
+alias gitclog='git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all'
 alias grep='grep --color=always'
 alias gvim='gvim -f -geom 75x35'
 alias latr="ls -latr"
