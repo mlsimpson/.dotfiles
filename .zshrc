@@ -6,7 +6,7 @@
 #####
 # Oh-My-ZSH!
 # Path to oh-my-zsh configuration.
-export ZSH=/Users/msimpson/.oh-my-zsh
+export ZSH=/Users/mattsimpson/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -71,6 +71,21 @@ function coverart {
 # Search .allhistory
 function hhist {
   ag --no-numbers $1 /Users/msimpson/.allhistory
+}
+
+# du -sh sorted
+# Graciously provided by b8sell
+# https://github.com/b8sell/bash_stuff/blob/master/dush
+dush() {
+  du -kd1 "$@" | sort -n | while read size fname;
+    do for unit in k M G T P E Z Y;
+      do if [ $size -lt 1024 ];
+        then echo -e "${size}${unit}\t${fname}";
+        break;
+      fi;
+    size=$((size/1024));
+    done;
+  done
 }
 
 #####
@@ -168,7 +183,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 ####
 # rbenv
 
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 ####
 # alias
@@ -267,6 +282,9 @@ export ARCHFLAGS="-arch i386 -arch x86_64"
 #export ARCHFLAGS="-arch i386"
 export VERSIONER_PERL_PREFER_32_BIT="no"
 
+# PERL5LIB
+export PERL5LIB=/usr/local/Cellar/perl/5.26.1/lib/perl5/site_perl/5.26.1
+
 # PIP virtual environment
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUALENV=true
@@ -278,7 +296,7 @@ export EDITOR=vim
 ####
 # autojump support
 #[[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-. /usr/local/opt/z/etc/profile.d/z.sh
+. /usr/local/bin/z.sh
 
 ####
 # setopt
@@ -306,26 +324,15 @@ export GPG_TTY
 
 alias t.n="ssh threv@threv.net"
 alias m32=mid3v2
-alias cb='ssh threv@192.168.1.135'
+alias cb='ssh threv@192.168.1.118'
 alias ps="ps aux"
 alias ssh='TERM=xterm-256color ssh'
 
 function wttr(){
  curl wttr.in/$1
 }
-####
-# pindrop
 
-function neustar(){
-  local revnum=$(echo $1 | rev)
-  local num=$(echo $revnum | sed 's/.\{1\}/&./g')
-  dig +short "$num"e164enum.net IN NAPTR @156.154.59.228
-}
-
-export FDS_PROFILE=$HOME/Documents/Pindrop/forked/fds-tests/profiles/localhost.yml
-export PTEST_ARTIFACT_DIR=$HOME/Documents/Pindrop/forked/screenshots
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
