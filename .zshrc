@@ -98,6 +98,21 @@ function hhist {
   ag --no-numbers $1 /home/threv/.allhistory
 }
 
+# du -sh sorted
+# Graciously provided by b8sell
+# https://github.com/b8sell/bash_stuff/blob/master/dush
+dush() {
+  du -kd1 "$@" | sort -n | while read size fname;
+    do for unit in k M G T P E Z Y;
+      do if [ $size -lt 1024 ];
+        then echo -e "${size}${unit}\t${fname}";
+        break;
+      fi;
+    size=$((size/1024));
+    done;
+  done
+}
+
 ## PulseAudio volume control
 function vol(){
   pactl set-sink-volume 0 -- $1%
@@ -248,7 +263,7 @@ alias gam='git commit -a -m'
 alias gap='git add -p'
 alias gcl='git clone'
 alias gd='git diff'
-alias gitclog='git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all'
+alias gitclog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias grep='grep --color=always'
 alias gvim='gvim -f -geom 75x35'
 alias latr="ls -latr"
