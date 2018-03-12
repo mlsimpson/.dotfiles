@@ -219,7 +219,8 @@ nnoremap <space> za
 
 " Use mouse
 " NOTE:  For Terminal.app, a SIMBL Plugin is needed
-set mouse=a
+" set mouse=a
+set mouse=r
 set ttymouse=xterm
 
 " Set colorscheme
@@ -534,9 +535,25 @@ let g:ackprg = 'ag --vimgrep'
 set undofile
 set undolevels=10000
 set undodir=~/.vim/undodir
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undo')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile
+endif
 
 " Disable Jedi completion for youcompleteme
 let g:jedi#completions_enabled = 0
+
+" Seed ycm's identifier database with the keywords of the programming language
+" being written.
+let g:ycm_seed_identifiers_with_syntax = 1
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
