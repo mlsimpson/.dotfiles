@@ -230,6 +230,9 @@ set ttymouse=xterm
 " Set colorscheme
 colorscheme ir_black
 
+" Comments are italic
+highlight Comment cterm=italic
+
 " Yank text to the OS X clipboard
 set clipboard=unnamed
 noremap <leader>y "*y
@@ -555,3 +558,31 @@ let g:ackprg = 'ag --vimgrep'
 " Persistent undo
 set undofile
 set undodir=~/.vim/undodir
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undo')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile
+endif
+
+" Disable Jedi completion for youcompleteme
+let g:jedi#completions_enabled = 0
+
+" Seed ycm's identifier database with the keywords of the programming language
+" being written.
+let g:ycm_seed_identifiers_with_syntax = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
