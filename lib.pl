@@ -5,6 +5,7 @@ http://181fm-edge1.cdnstream.com/181-awesome80s_128k.mp3
 http://listen.181fm.com/181-beatles_128k.mp3?cb=898254.mp3
 http://ice.somafm.com/cliqhop
 http://dg.darkonline.org:8080/listen
+http://radio.stereoscenic.com/ama-s
 http://199.101.51.168:8006
 http://relay-nyc.gameowls.com:80/all.mp3
 http://uk2.internet-radio.com:31491/
