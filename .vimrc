@@ -2,7 +2,7 @@
 set nocompatible  " Use Vim defaults instead of 100% vi compatibility
 " set modelines=0   " Don't check any lines for set commands
 set modeline
-set modelines=1
+set modelines=2
 set backspace=2   " more powerful backspacing
 set ruler         " show the cursor position all the time
 set number        " enable line numbering
@@ -10,7 +10,7 @@ syntax on         " enable syntax highlighting
 set confirm       " confirm if :q or :e entered w/out save
 set colorcolumn=80
 
-" Setting this on Terminal.app makes everything blink like hell.
+" Setting this on Terminal.app USED TO make everything blink like hell.
 set t_Co=256
 
 " Don't write backup file if vim is being called by "crontab -e"
@@ -40,7 +40,8 @@ inoremap <C-U> <C-G>u<C-U>
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
-filetype plugin indent on
+filetype indent on
+filetype plugin on
 
 " Keep textwidth to 78 characters on all files
 " Display visible right margin marker
