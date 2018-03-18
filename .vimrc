@@ -470,7 +470,7 @@ set pastetoggle=<F2>
 set shortmess=I
 
 " Set signature
-iabbrev ssig --<cr>Matt Simpson<cr>msimpson.cmpe04@gtalumni.org
+iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
 
 " Highlight current line
 "set cul
@@ -565,3 +565,8 @@ let g:NERDCompactSexyComs = 1
 
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
+" Ultisnips
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger='‘'
