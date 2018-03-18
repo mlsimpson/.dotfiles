@@ -570,3 +570,6 @@ let g:NERDTrimTrailingWhitespace = 1
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger='‘'
+
+" more Go syntax highlighting
+let g:go_highlight_types = 1
