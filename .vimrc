@@ -594,3 +594,6 @@ let g:UltiSnipsExpandTrigger='‘'
 
 " Set signature
 iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
+
+" more Go syntax highlighting
+let g:go_highlight_types = 1
