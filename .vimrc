@@ -1,6 +1,8 @@
 " Configuration file for vim
 set nocompatible  " Use Vim defaults instead of 100% vi compatibility
-set modelines=0   " Don't check any lines for set commands
+"jset modelines=0   " Don't check any lines for set commands
+set modeline
+set modelines=1   " Don't check any lines for set commands
 set backspace=2   " more powerful backspacing
 set ruler         " show the cursor position all the time
 set number        " enable line numbering
