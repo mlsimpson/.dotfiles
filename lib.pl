@@ -40,6 +40,7 @@ http://ice.somafm.com/missioncontrol
 http://nectarine.ers35.net:8000/necta192.mp3
 http://textville.net:80/ocremix.mp3
 http://listen.one.hiphop/live
+http://playingtheclassics.hopto.org:8000/listen
 http://listen1.mixlr.com/e8c0994d2d9c6eac29e19fa8ad0d9003
 http://stream0.wfmu.org/do-or-diy
 http://listen.radiohyrule.com:8000/listen
