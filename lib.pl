@@ -63,6 +63,7 @@ http://listen.sub.fm/hi
 http://ice1.somafm.com/suburbsofgoa-128-mp3
 http://64.71.77.150:8000/stream
 http://185.80.220.12:8054/stream
+http://s7.viastreaming.net:7030/
 http://107.170.20.195:8005
 http://107.170.20.195:8006
 http://107.170.20.195:8004
