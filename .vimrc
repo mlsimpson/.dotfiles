@@ -65,6 +65,11 @@ augroup vimrcEx
         \   exe "normal! g`\"" |
         \ endif
 
+  " Auto delete trailing whitespace on lines when opening or saving a file
+  autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+  autocmd QuickFixCmdPost * call MySuppress()
+  autocmd BufReadPost quickfix setlocal wrap | setlocal linebreak
+
 augroup END
 
 " Convenient command to see the difference between the current buffer and the
@@ -170,9 +175,6 @@ vnoremap [ s[]<Esc>P<Right>%
 " Map ctrl-n to toggle NERDTree Plugin
 nmap <silent> <c-n> :NERDTreeToggle<CR>
 
-" Auto delete trailing whitespace on lines when opening or saving a file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-
 " Cool tab completion stuff
 " command-line completion operates in enhanced mode
 set wildmenu
@@ -273,10 +275,17 @@ vnoremap / /\v
 " OMNICOMPLETE
 " Enable OmniComplete
 set ofu=syntaxcomplete#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
-autocmd FileType ruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+augroup omnicomplete
+  autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
+  autocmd FileType ruby set omnifunc=rubycomplete#Complete
+  autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+  " FileType based compilation support from within vim
+  autocmd FileType c setlocal makeprg=gcc\ -O2\ -Wall\ -pedantic\ -o\ %<\ %
+  autocmd FileType ruby setlocal makeprg=ruby\ -w\ %
+  autocmd FileType php setlocal makeprg=php\ %
+  autocmd FileType python setlocal makeprg=python\ %
+augroup END
 
 " configure tags - add additional tags here
 " set tags+=~/.vim/tags/c
@@ -334,12 +343,6 @@ endif
 " '{A-Z0-9}, or `{A-Z0-9} command takes one to another file.
 set autowrite
 
-" FileType based compilation support from within vim
-autocmd FileType c setlocal makeprg=gcc\ -O2\ -Wall\ -pedantic\ -o\ %<\ %
-autocmd FileType ruby setlocal makeprg=ruby\ -w\ %
-autocmd FileType php setlocal makeprg=php\ %
-autocmd FileType python setlocal makeprg=python\ %
-
 """""
 " c-support compilation & linking flags
 " Set this when compiling >1 Object.
@@ -356,10 +359,6 @@ function! MySuppress()
   :redraw!
   exe ":botright cwindow 7"
 endfunction
-
-autocmd QuickFixCmdPost * call MySuppress()
-
-autocmd BufReadPost quickfix setlocal wrap | setlocal linebreak
 
 """""
 " Preview current file in default application
