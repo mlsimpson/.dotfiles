@@ -23,7 +23,6 @@ http://slacker.cvgm.net/cvgm192
 http://ice1.somafm.com/deepspaceone-128-mp3
 http://ice1.somafm.com/defcon-128.mp3
 http://ice1.somafm.com/digitalis-128-aac
-http://relay.sonixcast.com:8724/stream.mp3
 http://174.138.40.222:8000
 http://ice1.somafm.com/dronezone-128.mp3
 http://ice1.somafm.com/dubstep-128-mp3
@@ -41,8 +40,6 @@ http://nectarine.ers35.net:8000/necta192.mp3
 http://textville.net:80/ocremix.mp3
 http://listen.one.hiphop/live
 http://playingtheclassics.hopto.org:8000/listen
-http://listen1.mixlr.com/e8c0994d2d9c6eac29e19fa8ad0d9003
-http://stream0.wfmu.org/do-or-diy
 http://listen.radiohyrule.com:8000/listen
 http://content.radiosega.net:8006/live
 http://radio.realitycheckbbs.org:8000/
@@ -67,7 +64,6 @@ http://185.80.220.12:8054/stream
 http://s7.viastreaming.net:7030/
 http://107.170.20.195:8005
 http://107.170.20.195:8006
-http://107.170.20.195:8004
 http://107.170.20.195:8002
 http://107.170.20.195:8003
 http://107.170.20.195:8001
