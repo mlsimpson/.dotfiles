@@ -2,7 +2,7 @@
 set nocompatible  " Use Vim defaults instead of 100% vi compatibility
 " set modelines=0   " Don't check any lines for set commands
 set modeline
-set modelines=1
+set modelines=2
 set backspace=2   " more powerful backspacing
 set ruler         " show the cursor position all the time
 set number        " enable line numbering
@@ -10,7 +10,7 @@ syntax on         " enable syntax highlighting
 set confirm       " confirm if :q or :e entered w/out save
 set colorcolumn=80
 
-" Setting this on Terminal.app makes everything blink like hell.
+" Setting this on Terminal.app USED TO make everything blink like hell.
 set t_Co=256
 
 " Don't write backup file if vim is being called by "crontab -e"
@@ -40,7 +40,8 @@ inoremap <C-U> <C-G>u<C-U>
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
-filetype plugin indent on
+filetype indent on
+filetype plugin on
 
 " Keep textwidth to 78 characters on all files
 " Display visible right margin marker
@@ -63,6 +64,11 @@ augroup vimrcEx
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
         \ endif
+
+  " Auto delete trailing whitespace on lines when opening or saving a file
+  autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+  autocmd QuickFixCmdPost * call MySuppress()
+  autocmd BufReadPost quickfix setlocal wrap | setlocal linebreak
 
 augroup END
 
@@ -169,9 +175,6 @@ vnoremap [ s[]<Esc>P<Right>%
 " Map ctrl-n to toggle NERDTree Plugin
 nmap <silent> <c-n> :NERDTreeToggle<CR>
 
-" Auto delete trailing whitespace on lines when opening or saving a file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-
 " Cool tab completion stuff
 " command-line completion operates in enhanced mode
 set wildmenu
@@ -230,6 +233,9 @@ set ttymouse=xterm
 " Set colorscheme
 colorscheme ir_black
 
+" Comments are italic
+highlight Comment cterm=italic
+
 " Yank text to the OS X clipboard
 set clipboard=unnamed
 noremap <leader>y "*y
@@ -269,10 +275,17 @@ vnoremap / /\v
 " OMNICOMPLETE
 " Enable OmniComplete
 set ofu=syntaxcomplete#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
-autocmd FileType ruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+augroup omnicomplete
+  autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
+  autocmd FileType ruby set omnifunc=rubycomplete#Complete
+  autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+  " FileType based compilation support from within vim
+  autocmd FileType c setlocal makeprg=gcc\ -O2\ -Wall\ -pedantic\ -o\ %<\ %
+  autocmd FileType ruby setlocal makeprg=ruby\ -w\ %
+  autocmd FileType php setlocal makeprg=php\ %
+  autocmd FileType python setlocal makeprg=python\ %
+augroup END
 
 " configure tags - add additional tags here
 " set tags+=~/.vim/tags/c
@@ -330,12 +343,6 @@ endif
 " '{A-Z0-9}, or `{A-Z0-9} command takes one to another file.
 set autowrite
 
-" FileType based compilation support from within vim
-autocmd FileType c setlocal makeprg=gcc\ -O2\ -Wall\ -pedantic\ -o\ %<\ %
-autocmd FileType ruby setlocal makeprg=ruby\ -w\ %
-autocmd FileType php setlocal makeprg=php\ %
-autocmd FileType python setlocal makeprg=python\ %
-
 """""
 " c-support compilation & linking flags
 " Set this when compiling >1 Object.
@@ -352,10 +359,6 @@ function! MySuppress()
   :redraw!
   exe ":botright cwindow 7"
 endfunction
-
-autocmd QuickFixCmdPost * call MySuppress()
-
-autocmd BufReadPost quickfix setlocal wrap | setlocal linebreak
 
 """""
 " Preview current file in default application
@@ -555,3 +558,41 @@ let g:ackprg = 'ag --vimgrep'
 " Persistent undo
 set undofile
 set undodir=~/.vim/undodir
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undo')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile
+endif
+
+" Disable Jedi completion for youcompleteme
+let g:jedi#completions_enabled = 0
+
+" Seed ycm's identifier database with the keywords of the programming language
+" being written.
+let g:ycm_seed_identifiers_with_syntax = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Ultisnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger='‘'
+
+" Set signature
+iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
+
+" more Go syntax highlighting
+let g:go_highlight_types = 1
