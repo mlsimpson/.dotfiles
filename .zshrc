@@ -98,10 +98,15 @@ function hhist {
   ag --no-numbers $1 /home/threv/.allhistory
 }
 
+# git reup
+function gitreup {
+  find . -name .git -type d -print0 | while read -d $'\0' g; do echo "$g"; cd "$g/.."; git fetch upstream master; git pull; git submodule update --init --recursive; cd -; done
+}
+
 # du -sh sorted
 # Graciously provided by b8sell
 # https://github.com/b8sell/bash_stuff/blob/master/dush
-dush() {
+function dush() {
   du -kd1 "$@" | sort -n | while read size fname;
     do for unit in k M G T P E Z Y;
       do if [ $size -lt 1024 ];
@@ -126,10 +131,6 @@ alias vdo='pactl set-sink-volume 0 -- -10%'
 function todo () {
 	echo "$*" >> ~/Documents/notes/todo_macbook.txt
 	cat Documents/notes/todo_macbook.txt | sort > tmp.txt && mv -v tmp.txt Documents/notes/todo_macbook.txt
-}
-
-function mdless () {
-  pandoc -s -f markdown -t man $1 | groff -T utf8 -man | less
 }
 
 # Capitalize first letter of each word in filename
@@ -409,8 +410,8 @@ export MYSQL_PS1="\\d> "
 
 # Save compiler headaches
 # Particularly w/cpan
-export ARCHFLAGS="-arch i386"
-export VERSIONER_PERL_PREFER_32_BIT="yes"
+#export ARCHFLAGS="-arch i386"
+#export VERSIONER_PERL_PREFER_32_BIT="yes"
 
 # PIP virtual environment
 # export PIP_RESPECT_VIRTUALENV=true
@@ -479,3 +480,9 @@ export GPG_TTY
 #virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh 2>&1 /dev/null
+
+export PATH=/home/threv/.nimble/bin:$PATH
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/threv/.sdkman"
+[[ -s "/home/threv/.sdkman/bin/sdkman-init.sh" ]] && source "/home/threv/.sdkman/bin/sdkman-init.sh"
