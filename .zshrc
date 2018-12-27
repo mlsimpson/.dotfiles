@@ -426,7 +426,7 @@ export MYSQL_PS1="\\d> "
 ####
 # for vmail
 #export VMAIL_VIM=vim
-export VMAIL_BROWSER='midori'
+#export VMAIL_BROWSER='midori'
 
 # Don't send stuff to MS
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
