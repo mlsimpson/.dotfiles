@@ -1,5 +1,5 @@
 function vim ($File){
-  $File = $File -replace “\\”, “/”
+  $File = $File -replace "\\", "/"
   bash -c "vim $File"
 }
 
