@@ -121,6 +121,8 @@ http://64.71.77.150:8000/stream
 http://185.80.220.12:8054/stream
 #EXTINF:,The Spinning Stream: Nintendo Music Radio
 http://s7.viastreaming.net:7030/
+#EXTINF:,The Lot Radio
+http://thelot.out.airtime.pro:8000/thelot_b
 #EXTINF:,threv.net music
 http://threv.net:8000/
 #EXTINF:,threvolution adlib stream
