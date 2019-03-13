@@ -100,7 +100,7 @@ function hhist {
 
 # git reup
 function gitreup {
-  find . -name .git -type d -print0 | while read -d $'\0' g; do echo "$g"; cd "$g/.."; git fetch upstream master; git pull; git submodule update --init --recursive; cd -; done
+  find . -name .git -print -execdir git pull \;
 }
 
 # du -sh sorted
