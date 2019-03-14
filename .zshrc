@@ -100,9 +100,7 @@ function hhist {
 
 # git reup
 function gitreup {
-  find . -name .git -print -execdir git fetch \;
-  find . -name .git -print -execdir git pull \;
-  find . -name .git -print -execdir git submodule update --init --recursive \;
+  find . -name .git -print -execdir git fetch \; -execdir git pull \; -execdir git submodule update --init --recursive \;
 }
 
 # du -sh sorted
