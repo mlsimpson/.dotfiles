@@ -557,6 +557,9 @@ let g:jedi#completions_enabled = 0
 " being written.
 let g:ycm_seed_identifiers_with_syntax = 1
 
+" Set global ycm conf
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
@@ -569,7 +572,17 @@ let g:NERDTrimTrailingWhitespace = 1
 " Ultisnips
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger='‘'
+"let g:UltiSnipsExpandTrigger='‘'
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " more Go syntax highlighting
 let g:go_highlight_types = 1
