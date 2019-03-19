@@ -478,11 +478,14 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 #virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh 2>&1 /dev/null
+#export WORKON_HOME=~/.virtualenvs
+#source /usr/local/bin/virtualenvwrapper.sh 2>&1 /dev/null
 
 export PATH=/home/threv/.nimble/bin:$PATH
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/threv/.sdkman"
 [[ -s "/home/threv/.sdkman/bin/sdkman-init.sh" ]] && source "/home/threv/.sdkman/bin/sdkman-init.sh"
+
+# necessary for systemd-run --user --scope
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
