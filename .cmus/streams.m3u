@@ -137,6 +137,8 @@ http://107.170.20.195:8002/
 http://107.170.20.195:8003/
 #EXTINF:,threvolution snes stream
 http://107.170.20.195:8001/
+#EXTINF:,TildeRadio
+http://radio.tildeverse.org:8000/radio.mp3
 #EXTINF:,TUNGUSKA
 http://stream1.radiostyle.ru:8001/tunguska
 #EXTINF:,UbuWeb Radio Stream
