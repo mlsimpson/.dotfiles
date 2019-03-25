@@ -4,3 +4,5 @@ function vim ($File){
 }
 
 Set-PSReadLineOption -EditMode Emacs
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+Import-Module PSVirtualBox
