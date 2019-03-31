@@ -7,14 +7,14 @@ http://181fm-edge1.cdnstream.com/181-awesome80s_128k.mp3
 http://listen.181fm.com/181-beatles_128k.mp3?cb=898254.mp3
 #EXTINF:,Abnormally Dead Air - Radio from the Grave
 http://199.101.51.168:8006/
-#EXTINF:,Rainwave - all
-http://relay-nyc.gameowls.com/all.mp3
 #EXTINF:,a.m. ambient
 http://radio.stereoscenic.com/ama-s
 #EXTINF:,Ambient Sleeping Pill
 http://radio.stereoscenic.com/asp-s
 #EXTINF:,AnimeNfo Radio
 http://itori.animenfo.com:443/
+#EXTINF:,aNONradio
+http://anonradio.net:8000/anonradio
 #EXTINF:,BAGeLRadio: What alternative rock radio should sound like. [SomaFM]
 http://ice1.somafm.com/bagel-128.mp3
 #EXTINF:,Beat Blender: A late night blend of deep-house & downtempo chill. [SomaFM]
@@ -29,12 +29,8 @@ http://184.95.62.170:9026/
 http://ice1.somafm.com/bootliquor-128-aac
 #EXTINF:,CGM UK DemoScene Radio
 http://www.lmp.d2g.com:8003/
-#EXTINF:,Rainwave - chiptune
-http://textville.net/chiptune.mp3
 #EXTINF:,<-- cliqhop --> blips'n'bleeps backed w/beats. [SomaFM]
 http://ice.somafm.com/cliqhop
-#EXTINF:,Rainwave - covers
-http://textville.net/covers.mp3
 #EXTINF:,#DARKSTEP - DnBRadio Channel - the heaviest in techstep, crossbreed, hardcore
 http://trace.dnbradio.com:8000/dnbradio_darkstep.mp3
 #EXTINF:,Deep Space One: Deep ambient electronic and space music. [SomaFM]
@@ -45,8 +41,6 @@ http://ice1.somafm.com/defcon-128.mp3
 http://dg.darkonline.org:8080/listen
 #EXTINF:,Digitalis: Digitally affected analog rock to calm the agitated heart. [SomaFM]
 http://ice1.somafm.com/digitalis-128-aac
-#EXTINF:,aNONradio
-http://anonradio.net:8000/anonradio
 #EXTINF:,#DNBRADIO - Main Channel - Fressh Drum n Bass, Jungle
 http://ildnb1.dnbradio.com:8000/dnbradio_main.mp3
 #EXTINF:,drijstream
@@ -57,8 +51,6 @@ http://ice1.somafm.com/dronezone-128.mp3
 http://ice1.somafm.com/dubstep-128-mp3
 #EXTINF:,Final Fantasy Radio
 http://finalfantasystation.com:8000/stream.mp3
-#EXTINF:,Rainwave - game
-http://textville.net/game.mp3
 #EXTINF:,Groove Salad: a nicely chilled plate of ambient beats and grooves. [SomaFM]
 http://ice.somafm.com/groovesalad
 #EXTINF:,Ill Street Lounge: Classic bachelor pad, playful exotica, and vintage music of tomorrow. [SomaFM]
@@ -69,22 +61,32 @@ http://stream5.jungletrain.net:8000/
 http://live-aacplus-64.kexp.org/kexp64.aac
 #EXTINF:,Keygen-FM
 http://95.143.216.164:8082/
+#EXTINF:,Kohina
+https://kohina.duckdns.org/icecast/stream.ogg
 #EXTINF:,Lush: Mostly female vocals with an electronic influence. [SomaFM]
 http://ice.somafm.com/lush
-#EXTINF:,RBMA Radio - main
-http://broadcast.rbmaradio.net/main
 #EXTINF:,Mission Control: Celebrating NASA and space explorers everywhere. [SomaFM]
 http://ice.somafm.com/missioncontrol
 #EXTINF:,Nectarine Demoscene Radio
 http://nectarine.ers35.net:8000/necta192.mp3
-#EXTINF:,Rainwave - ocremix
-http://textville.net/ocremix.mp3
 #EXTINF:,One Love Hip Hop Radio
 http://listen.one.hiphop/live
 #EXTINF:,Radio Hyrule
 http://listen.radiohyrule.com:8000/listen
 #EXTINF:,RadioSEGA
 http://content.radiosega.net:8006/live
+#EXTINF:,Rainwave - all
+http://relay-nyc.gameowls.com/all.mp3
+#EXTINF:,Rainwave - chiptune
+http://textville.net/chiptune.mp3
+#EXTINF:,Rainwave - covers
+http://textville.net/covers.mp3
+#EXTINF:,Rainwave - game
+http://textville.net/game.mp3
+#EXTINF:,Rainwave - ocremix
+http://textville.net/ocremix.mp3
+#EXTINF:,RBMA Radio - main
+http://broadcast.rbmaradio.net/main
 #EXTINF:,realitycheckBBS Radio
 http://radio.realitycheckbbs.org:8000/
 #EXTINF:,Resonance 104.4FM
@@ -165,5 +167,3 @@ http://streaming.wrek.org:8000/wrek_live-128kb
 http://streaming.wrek.org:8000/hd2/128kb.mp3
 #EXTINF:,XWave Radio
 http://ns319459.ip-91-121-67.eu:8000/
-#EXTINF:,Kohina
-https://kohina.duckdns.org/icecast/stream.ogg
