@@ -63,6 +63,8 @@ http://stream5.jungletrain.net:8000/
 http://live-aacplus-64.kexp.org/kexp64.aac
 #EXTINF:,Keygen-FM
 http://95.143.216.164:8082/
+#EXTINF:,KXCI 91.3 FM
+http://icecastorigin.streamon.fm:1500/KXCI-64k-m.mp3
 #EXTINF:,Kohina
 https://kohina.duckdns.org/icecast/stream.ogg
 #EXTINF:,Lush: Mostly female vocals with an electronic influence. [SomaFM]
