@@ -53,6 +53,8 @@ http://174.138.40.222:8000/
 http://ice1.somafm.com/dronezone-128.mp3
 #EXTINF:-1,Dub Step Beyond: Dubstep, Dub, and Deep Bass. May damage speakers at high volume. [SomaFM]
 http://ice1.somafm.com/dubstep-128-mp3
+#EXTINF:-1,Favorites - Classical Minnesota Public Radio
+https://favorites.stream.publicradio.org/favorites.mp3?cb=9932342365
 #EXTINF:-1,Final Fantasy Radio
 http://finalfantasystation.com:8000/stream.mp3
 #EXTINF:-1,Groove Salad: a nicely chilled plate of ambient beats and grooves. [SomaFM]
