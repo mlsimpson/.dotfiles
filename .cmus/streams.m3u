@@ -77,6 +77,8 @@ http://ice.somafm.com/lush
 http://ice.somafm.com/missioncontrol
 #EXTINF:-1,Nectarine Demoscene Radio
 http://nectarine.ers35.net:8000/necta192.mp3
+#EXTINF:-1,nightride
+https://stream.nightride.fm/nightride.m4a
 #EXTINF:-1,One Love Hip Hop Radio
 http://listen.one.hiphop/live
 #EXTINF:-1,Radio Hyrule
