@@ -25,7 +25,7 @@ export ZSH_THEME="half-life"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass git fuck task zsh-autosuggestions)
+plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -273,7 +273,6 @@ alias less='less -mR'
 # if [ ! -z $VLESS ]; then
 #   alias less=$VLESS
 # fi
-alias lltag='lltag --id3v2'
 # Overwrite oh-my-zsh's lsa behavior (remove the -l flag)
 alias lsa='ls -ah'
 # Show only directories
@@ -315,6 +314,8 @@ alias newcpan="cpan-outdated -p | cpanm -i && rm -rf /home/threv/.cpanm/work"
 
 # Always start irssi in screen
 # alias irssi="screen irssi"
+
+alias screen="systemd-run --user --scope screen"
 
 # Easy start/stop pgsql
 # alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
