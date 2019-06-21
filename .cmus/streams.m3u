@@ -83,8 +83,10 @@ http://ice.somafm.com/missioncontrol
 http://nectarine.ers35.net:8000/necta192.mp3
 #EXTINF:-1,nightride
 https://stream.nightride.fm/nightride.m4a
-#EXTINF:-1,NTS Radio
+#EXTINF:-1,NTS Radio 1
 https://stream-relay-geo.ntslive.net/stream?client=NTSWebApp&t=1561130538011
+#EXTINF:-1,NTS Radio 2
+https://stream-relay-geo.ntslive.net/stream2?client=NTSWebApp&t=1561130774212
 #EXTINF:-1,One Love Hip Hop Radio
 http://listen.one.hiphop/live
 #EXTINF:-1,Radio Hyrule
