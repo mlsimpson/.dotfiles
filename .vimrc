@@ -589,5 +589,5 @@ let g:go_highlight_types = 1
 
 " vim-gutentags
 set statusline+=%{gutentags#statusline()}
-let g:gutentags_define_advanced_commands = 1
+"let g:gutentags_define_advanced_commands = 1
 "let g:gutentags_project_root = ['Makefile']
