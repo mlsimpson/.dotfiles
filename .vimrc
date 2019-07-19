@@ -226,7 +226,14 @@ set mouse=r
 set ttymouse=xterm
 
 " Set colorscheme
-colorscheme ir_black
+if has('gui_running')
+    " GUI colors
+    set background=dark
+    colorscheme solarized
+else
+    " Non-GUI (terminal) colors
+    colorscheme ir_black
+endif
 
 " Comments are italic
 highlight Comment cterm=italic
