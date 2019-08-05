@@ -113,6 +113,8 @@ http://54.77.136.103:8000/resonance
 http://gyusyabu.ddo.jp:8000/
 #EXTINF:-1,Rinse FM
 http://streamer.dgen.net:8000/rinseradio
+#EXTINF:-1,Roland Radio - Your Amstrad CPC chipsound radio
+http://streaming.rolandradio.net/rolandradio
 #EXTINF:-1,Roots Legacy Radio Dub UK & Reggae
 http://rootslegacy.fr:8080/stream/1/
 #EXTINF:-1,RPGN Radio
