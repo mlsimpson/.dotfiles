@@ -19,6 +19,8 @@ http://itori.animenfo.com:443/
 http://anonradio.net:8000/anonradio
 #EXTINF:-1,BAGeLRadio: What alternative rock radio should sound like. [SomaFM]
 http://ice1.somafm.com/bagel-128.mp3
+#EXTINF:-1,BBC Radio 1
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p
 #EXTINF:-1,Beat Blender: A late night blend of deep-house & downtempo chill. [SomaFM]
 http://ice.somafm.com/beatblender
 #EXTINF:-1,Big B Radio #CPOP | www.bigbradio.net
