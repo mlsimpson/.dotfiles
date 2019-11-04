@@ -63,6 +63,8 @@ https://favorites.stream.publicradio.org/favorites.mp3?cb=9932342365
 http://finalfantasystation.com:8000/stream.mp3
 #EXTINF:-1,Groove Salad: a nicely chilled plate of ambient beats and grooves. [SomaFM]
 http://ice.somafm.com/groovesalad
+#EXTINF:-1,Ichiban Rock and Soul from WFMU
+http://stream0.wfmu.org/ichiban
 #EXTINF:-1,Ill Street Lounge: Classic bachelor pad, playful exotica, and vintage music of tomorrow. [SomaFM]
 http://ice.somafm.com/illstreet
 #EXTINF:-1,jungletrain.net - 24/7 drum and bass
@@ -125,6 +127,8 @@ http://192.111.140.6:9772/stream
 http://sc.scenesat.com:8000
 #EXTINF:-1,Secret Agent: The soundtrack for your stylish, mysterious, dangerous life. For Spys and P.I.'s too! [SomaFM]
 http://ice.somafm.com/secretagent
+#EXTINF:-1,Sheena's Jungle Room
+http://stream0.wfmu.org/sheena
 #EXTINF:-1,SLAY Radio
 http://relay1.slayradio.org:8000/
 #EXTINF:-1,Sleepbot Environmental Broadcast --- -- - sleep sleep sleep - -- --- sleepbot.com/seb/
