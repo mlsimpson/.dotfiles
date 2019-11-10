@@ -1,4 +1,6 @@
 #EXTM3U
+#EXTINF:-1,1.FM - Amsterdam Trance Radio
+http://sc-atr.1.fm:7700/
 #EXTINF:-1,181.FM 90s Alternative
 http://181fm-edge1.cdnstream.com/181-90salt_128k.mp3
 #EXTINF:-1,181.FM Awesome 80s
@@ -49,6 +51,8 @@ http://ice1.somafm.com/defcon-128.mp3
 http://dg.darkonline.org:8080/listen
 #EXTINF:-1,Digitalis: Digitally affected analog rock to calm the agitated heart. [SomaFM]
 http://ice1.somafm.com/digitalis-128-aac
+#EXTINF:-1,Discover Trance Radio
+http://paris.discovertrance.com:8006/
 #EXTINF:-1,#DNBRADIO - Main Channel - Fresh Drum n Bass, Jungle
 http://ildnb1.dnbradio.com:8000/dnbradio_main.mp3
 #EXTINF:-1,drijstream
