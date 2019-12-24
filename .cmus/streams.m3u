@@ -100,15 +100,15 @@ http://listen.radiohyrule.com:8000/listen
 #EXTINF:-1,RadioSEGA
 http://content.radiosega.net:8006/live
 #EXTINF:-1,Rainwave - all
-http://relay-nyc.gameowls.com/all.mp3
+http://allstream.rainwave.cc:8000/all.mp3
 #EXTINF:-1,Rainwave - chiptune
-http://textville.net/chiptune.mp3
+http://chipstream.rainwave.cc:8000/chiptune.mp3
 #EXTINF:-1,Rainwave - covers
-http://textville.net/covers.mp3
+http://coverstream.rainwave.cc:8000/covers.mp3
 #EXTINF:-1,Rainwave - game
-http://textville.net/game.mp3
+http://gamestream.rainwave.cc:8000/game.mp3
 #EXTINF:-1,Rainwave - ocremix
-http://textville.net/ocremix.mp3
+http://ocrstream.rainwave.cc:8000/ocremix.mp3
 #EXTINF:-1,realitycheckBBS Radio
 http://radio.realitycheckbbs.org:8000/
 #EXTINF:-1,Resonance 104.4FM
