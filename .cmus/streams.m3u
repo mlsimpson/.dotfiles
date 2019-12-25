@@ -23,6 +23,18 @@ http://anonradio.net:8000/anonradio
 http://ice1.somafm.com/bagel-128.mp3
 #EXTINF:-1,BBC Radio 1
 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p
+#EXTINF:-1,BBC Radio 1 Extra
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1xtra_mf_p
+#EXTINF:-1,BBC Radio 3
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p
+#EXTINF:-1,BBC Radio 4 Extra
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4extra_mf_p
+#EXTINF:-1,BBC Radio 4 FM
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4fm_mf_q
+#EXTINF:-1,BBC 6 Music
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_q
+#EXTINF:-1,BBC World Service News Internet
+http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-einws
 #EXTINF:-1,Beat Blender: A late night blend of deep-house & downtempo chill. [SomaFM]
 http://ice.somafm.com/beatblender
 #EXTINF:-1,Big B Radio #CPOP | www.bigbradio.net
