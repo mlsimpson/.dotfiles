@@ -25,7 +25,7 @@ export ZSH_THEME="half-life"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions)
+plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions obliquestrategies)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -55,6 +55,21 @@ setxkbmap -option ctrl:nocaps
 
 # Locale
 export LC_CTYPE="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_PAPER="en_US.UTF-8"
+export LC_NAME="en_US.UTF-8"
+export LC_ADDRESS="en_US.UTF-8"
+export LC_TELEPHONE="en_US.UTF-8"
+export LC_MEASUREMENT="en_US.UTF-8"
+export LC_IDENTIFICATION="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 ####
 # Functions
