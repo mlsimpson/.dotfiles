@@ -392,6 +392,14 @@ alias rcopy="rsync -av --info=progress2"
 alias wine32="WINEARCH=win32 wine"
 
 alias cleanpkgs="dpkg -l | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge"
+
+#mpc
+alias mpcs="mpc -p 6601"
+alias mpcv="mpc -p 6602"
+alias mpcn="mpc -p 6603"
+alias mpch="mpc -p 6604"
+alias mpcg="mpc -p 6605"
+
 ####
 # bindkey
 # Esc = undo
