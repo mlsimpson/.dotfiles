@@ -1,92 +1,209 @@
-http://trace.dnbradio.com:8000/dnbradio_darkstep.mp3
-http://dg.darkonline.org:8080/listen
-http://ice.somafm.com/cliqhop
+#EXTM3U
+#EXTINF:-1,1.FM - Amsterdam Trance Radio
 http://sc-atr.1.fm:7700/
+#EXTINF:-1,181.FM 90s Alternative
 http://181fm-edge1.cdnstream.com/181-90salt_128k.mp3
+#EXTINF:-1,181.FM Awesome 80s
 http://181fm-edge1.cdnstream.com/181-awesome80s_128k.mp3
+#EXTINF:-1,181.FM Beatles
 http://listen.181fm.com/181-beatles_128k.mp3?cb=898254.mp3
-http://radio.stereoscenic.com/ama-s
+#EXTINF:-1,Abnormally Dead Air - Radio from the Grave
 http://199.101.51.168:8006/
-http://allstream.rainwave.cc:8000/all.mp3
+#EXTINF:-1,Akihabara Radio
+http://176.31.241.17:8814/mp3
+#EXTINF:-1,a.m. ambient
+http://radio.stereoscenic.com/ama-s
+#EXTINF:-1,Ambient Sleeping Pill
 http://radio.stereoscenic.com/asp-s
+#EXTINF:-1,AnimeNfo Radio
+http://itori.animenfo.com:443/
+#EXTINF:-1,aNONradio
 http://anonradio.net:8000/anonradio
+#EXTINF:-1,BAGeLRadio: What alternative rock radio should sound like. [SomaFM]
 http://ice1.somafm.com/bagel-128.mp3
+#EXTINF:-1,BBC Radio 1
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p
+#EXTINF:-1,BBC Radio 1 Extra
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1xtra_mf_p
+#EXTINF:-1,BBC Radio 3
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p
+#EXTINF:-1,BBC Radio 4 Extra
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4extra_mf_p
+#EXTINF:-1,BBC Radio 4 FM
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4fm_mf_q
+#EXTINF:-1,BBC 6 Music
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_q
+#EXTINF:-1,BBC World Service News Internet
+http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-einws
+#EXTINF:-1,Beat Blender: A late night blend of deep-house & downtempo chill. [SomaFM]
 http://ice.somafm.com/beatblender
-https://antares.dribbcast.com/proxy/cpop?mp=/s
-https://antares.dribbcast.com/proxy/jpop?mp=/s
-https://antares.dribbcast.com/proxy/kpop?mp=/s
+#EXTINF:-1,Big B Radio #CPOP | www.bigbradio.net
+http://64.71.79.181:6065/stream
+#EXTINF:-1,Big B Radio #JPOP | www.bigbradio.net
+http://64.71.79.181:6045/stream
+#EXTINF:-1,Big B Radio #KPOP | www.bigbradio.net
+http://64.71.79.181:8042/;
+#EXTINF:-1,Bitreich Radio
 http://bitreich.org:3232/live
+#EXTINF:-1,Boot Liquor: Americana roots music for Cowhands, Cowpokes, and Cowtippers. [SomaFM]
 http://ice1.somafm.com/bootliquor-128-aac
+#EXTINF:-1,CGM UK DemoScene Radio
 http://www.lmp.d2g.com:8003/
-http://chipstream.rainwave.cc:8000/chiptune.mp3
-http://coverstream.rainwave.cc:8000/covers.mp3
-http://ice1.somafm.com/deepspaceone-128-mp3
-http://ice1.somafm.com/defcon-128.mp3
-http://ice1.somafm.com/digitalis-128-aac
-http://paris.discovertrance.com:8006/
-http://ildnb1.dnbradio.com:8000/dnbradio_main.mp3
-http://ice1.somafm.com/dronezone-128.mp3
+#EXTINF:-1,<-- cliqhop --> blips'n'bleeps backed w/beats. [SomaFM]
+http://ice.somafm.com/cliqhop
+#EXTINF:-1,#DARKSTEP - DnBRadio Channel - the heaviest in techstep, crossbreed, hardcore
+http://trace.dnbradio.com:8000/dnbradio_darkstep.mp3
+#EXTINF:-1,Darth Radio - The Galactic Sith Radio [128kbps ogg/vorbis]
 http://www.darthradio.tk:8001/dstream
+#EXTINF:-1,Deep Space One: Deep ambient electronic and space music. [SomaFM]
+http://ice1.somafm.com/deepspaceone-128-mp3
+#EXTINF:-1,Def Con Radio: SomaFM's special mix for Def Con [SomaFM]
+http://ice1.somafm.com/defcon-128.mp3
+#EXTINF:-1,[ DigitalGunfire.com ] - INDUSTRIAL, EBM, AND SYNTHPOP 24/7
+http://dg.darkonline.org:8080/listen
+#EXTINF:-1,Digitalis: Digitally affected analog rock to calm the agitated heart. [SomaFM]
+http://ice1.somafm.com/digitalis-128-aac
+#EXTINF:-1,Discover Trance Radio
+http://paris.discovertrance.com:8006/
+#EXTINF:-1,#DNBRADIO - Main Channel - Fresh Drum n Bass, Jungle
+http://ildnb1.dnbradio.com:8000/dnbradio_main.mp3
+#EXTINF:-1,drijstream
+http://174.138.40.222:8000/
+#EXTINF:-1,Drone Zone: Atmospheric ambient space music. Serve Best Chilled. Safe with most medications. [SomaFM]
+http://ice1.somafm.com/dronezone-128.mp3
+#EXTINF:-1,Dub Step Beyond: Dubstep, Dub, and Deep Bass. May damage speakers at high volume. [SomaFM]
 http://ice1.somafm.com/dubstep-128-mp3
+#EXTINF:-1,Favorites - Classical Minnesota Public Radio
 https://favorites.stream.publicradio.org/favorites.mp3?cb=9932342365
-http://gamestream.rainwave.cc:8000/game.mp3
+#EXTINF:-1,Final Fantasy Radio
+http://finalfantasystation.com:8000/stream.mp3
+#EXTINF:-1,Groove Salad: a nicely chilled plate of ambient beats and grooves. [SomaFM]
 http://ice.somafm.com/groovesalad
+#EXTINF:-1,Ichiban Rock and Soul from WFMU
 http://stream0.wfmu.org/ichiban
+#EXTINF:-1,Ill Street Lounge: Classic bachelor pad, playful exotica, and vintage music of tomorrow. [SomaFM]
 http://ice.somafm.com/illstreet
+#EXTINF:-1,jungletrain.net - 24/7 drum and bass
 http://stream5.jungletrain.net:8000/
+#EXTINF:-1,KEXP.ORG 90.3FM - where the music matters
 http://live-aacplus-64.kexp.org/kexp64.aac
+#EXTINF:-1,Keygen-FM
 http://95.143.216.164:8082/
-https://kohina.duckdns.org/icecast/stream.ogg
+#EXTINF:-1,KXCI 91.3 FM
 http://icecastorigin.streamon.fm:1500/KXCI-64k-m.mp3
+#EXTINF:-1,Kohina
+https://kohina.duckdns.org/icecast/stream.ogg
+#EXTINF:-1,Lush: Mostly female vocals with an electronic influence. [SomaFM]
 http://ice.somafm.com/lush
+#EXTINF:-1,Mission Control: Celebrating NASA and space explorers everywhere. [SomaFM]
 http://ice.somafm.com/missioncontrol
+#EXTINF:-1,Nectarine Demoscene Radio
 http://nectarine.ers35.net:8000/necta192.mp3
+#EXTINF:-1,nightride
 https://stream.nightride.fm/nightride.m4a
+#EXTINF:-1,NTS Radio 1
 https://stream-relay-geo.ntslive.net/stream?client=NTSWebApp&t=1561130538011
+#EXTINF:-1,NTS Radio 2
 https://stream-relay-geo.ntslive.net/stream2?client=NTSWebApp&t=1561130774212
-http://ocrstream.rainwave.cc:8000/ocremix.mp3
+#EXTINF:-1,One Love Hip Hop Radio
 http://listen.one.hiphop/live
+#EXTINF:-1,Radio Hyrule
 http://listen.radiohyrule.com:8000/listen
+#EXTINF:-1,RadioSEGA
 http://content.radiosega.net:8006/live
+#EXTINF:-1,Rainwave - all
+http://allstream.rainwave.cc:8000/all.mp3
+#EXTINF:-1,Rainwave - chiptune
+http://chipstream.rainwave.cc:8000/chiptune.mp3
+#EXTINF:-1,Rainwave - covers
+http://coverstream.rainwave.cc:8000/covers.mp3
+#EXTINF:-1,Rainwave - game
+http://gamestream.rainwave.cc:8000/game.mp3
+#EXTINF:-1,Rainwave - ocremix
+http://ocrstream.rainwave.cc:8000/ocremix.mp3
+#EXTINF:-1,realitycheckBBS Radio
 http://radio.realitycheckbbs.org:8000/
+#EXTINF:-1,Resonance 104.4FM
 http://stream.resonance.fm:8000/resonance
+#EXTINF:-1,Retro PC GAME Streaming Radio for Gyusyabu
 http://gyusyabu.ddo.jp:8000/
+#EXTINF:-1,Rinse FM
 http://206.189.117.157:8000/stream
+#EXTINF:-1,Roland Radio - Your Amstrad CPC chipsound radio
 http://streaming.rolandradio.net/rolandradio
+#EXTINF:-1,Roots Legacy Radio Dub UK & Reggae
 http://rootslegacy.fr:8080/stream/1/
+#EXTINF:-1,RPGN Radio
 http://stream.rpgamers.net:8000/rpgn
+#EXTINF:-1,Sanctuary Radio's Retro 80s Channel
 http://192.111.140.6:9772/stream2
+#EXTINF:-1,Sanctuary Radio Dark Electro Channel
 http://192.111.140.6:9772/stream
-http://sc.scenesat.com:8000/
+#EXTINF:-1,SceneSat Radio
+http://sc.scenesat.com:8000
+#EXTINF:-1,Secret Agent: The soundtrack for your stylish, mysterious, dangerous life. For Spys and P.I.'s too! [SomaFM]
 http://ice.somafm.com/secretagent
+#EXTINF:-1,Sheena's Jungle Room
 http://stream0.wfmu.org/sheena
+#EXTINF:-1,SLAY Radio
 http://relay1.slayradio.org:8000/
+#EXTINF:-1,Sleepbot Environmental Broadcast --- -- - sleep sleep sleep - -- --- sleepbot.com/seb/
 http://sc13.shoutcaststreaming.us:8194/
+#EXTINF:-1,SomaFM presents: Indie Pop Rocks! [SomaFM]
 http://ice.somafm.com/indiepop
+#EXTINF:-1,SomaFM's Black Rock FM: From the Playa to the world, where every Saturday night is Burn Night [SomaFM]
 http://ice.somafm.com/brfm
+#EXTINF:-1,Sonic Universe. Nu Jazz plus avant-garde Euro Jazz: Transcending the boundaries of jazz with experimental takes on tradition. [SomaFM]
 http://ice.somafm.com/sonicuniverse
+#EXTINF:-1,Space Station Soma: Tune in, turn on, space out. Ambient and mid-tempo electronica. [SomaFM]
 http://ice.somafm.com/spacestation
+#EXTINF:-1,Sub FM
 http://subfm.radioca.st/Sub.FM
+#EXTINF:-1,Suburbs of Goa: Desi-influenced Asian world beats. [SomaFM]
 http://ice1.somafm.com/suburbsofgoa-128-mp3
+#EXTINF:-1,THE EBM-Radio.com
 http://64.71.77.150:8000/stream
+#EXTINF:-1,The Lot Radio
 http://thelot.out.airtime.pro:8000/thelot_b
+#EXTINF:-1,The SID Station
 http://185.80.220.12:8054/stream
+#EXTINF:-1,The Spinning Stream: Nintendo Music Radio
 http://s7.viastreaming.net:7030/
-http://threv.net:8000/
-http://threv.net:8005/
-http://threv.net:8002/
-http://threv.net:8003/
-http://threv.net:8001/
-http://threv.net:8004/
+#EXTINF:-1,threv.net music
+http://threv.net:8000
+#EXTINF:-1,threv.net gb
+http://threv.net:8005
+#EXTINF:-1,threv.net genesis
+http://threv.net:8002
+#EXTINF:-1,threv.net nes
+http://threv.net:8003
+#EXTINF:-1,threv.net snes
+http://threv.net:8001
+#EXTINF:-1,threv.net tg16-msx
+http://threv.net:8004
+#EXTINF:-1,TildeRadio
 http://radio.tildeverse.org:8000/radio.mp3
+#EXTINF:-1,TUNGUSKA
 http://stream1.radiostyle.ru:8001/tunguska
+#EXTINF:-1,UbuWeb Radio Stream
+http://stream0.wfmu.org/ubu
+#EXTINF:-1,Underground Eighties: UK Synthpop and a bit of New Wave. [SomaFM]
 http://ice.somafm.com/u80s
+#EXTINF:-1,UrbanMusicDaily.net
 http://london-dedicated.myautodj.com:8862/stream
+#EXTINF:-1,VGM Radio
 http://radio.vgmradio.com:8040/stream
+#EXTINF:-1,WBAI Live 128k Stereo Stream
 http://stream.wbai.org:8000/wbai_128
+#EXTINF:-1,WFMU Freeform Radio
 http://stream0.wfmu.org/freeform-128k
+#EXTINF:-1,World Wide Bluegrass
 http://199.195.194.140:8375/stream
+#EXTINF:-1,WRASFM
 http://17533.live.streamtheworld.com:3690/WRASFM_SC
+#EXTINF:-1,WREK Atlanta 91.1fm - Georgia Tech Student Radio, 128kbit
 http://streaming.wrek.org:8000/wrek_live-128kb
+#EXTINF:-1,WREK Atlanta HD-2
 http://streaming.wrek.org:8000/hd2/128kb.mp3
+#EXTINF:-1,XWave Radio
 http://ns319459.ip-91-121-67.eu:8000/
