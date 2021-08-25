@@ -96,7 +96,9 @@ endtry
 set expandtab
 
 " # spaces to use for each step of (auto)indent
-set shiftwidth=2
+" set shiftwidth=2
+set shiftwidth=4
+set shiftround
 
 " # spaces a tab uses
 set tabstop=2
