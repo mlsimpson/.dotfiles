@@ -1,8 +1,0 @@
-# Only search case if pattern case is mixed
---smart-case
-# Follow symlinks
---follow
-# Lexically sort files
---sort-files
-# Always color, even when piping
---color

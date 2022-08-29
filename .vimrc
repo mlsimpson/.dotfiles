@@ -1,8 +1,8 @@
 " Configuration file for vim
 set nocompatible  " Use Vim defaults instead of 100% vi compatibility
-" set modelines=0   " Don't check any lines for set commands
+"jset modelines=0   " Don't check any lines for set commands
 set modeline
-set modelines=2
+set modelines=1   " Don't check any lines for set commands
 set backspace=2   " more powerful backspacing
 set ruler         " show the cursor position all the time
 set number        " enable line numbering
@@ -10,7 +10,7 @@ syntax on         " enable syntax highlighting
 set confirm       " confirm if :q or :e entered w/out save
 set colorcolumn=80
 
-" Setting this on Terminal.app USED TO make everything blink like hell.
+" Setting this on Terminal.app makes everything blink like hell.
 set t_Co=256
 
 " Don't write backup file if vim is being called by "crontab -e"
@@ -40,8 +40,7 @@ inoremap <C-U> <C-G>u<C-U>
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 
 " Keep textwidth to 78 characters on all files
 " Display visible right margin marker
@@ -64,11 +63,6 @@ augroup vimrcEx
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
         \ endif
-
-  " Auto delete trailing whitespace on lines when opening or saving a file
-  autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-  autocmd QuickFixCmdPost * call MySuppress()
-  autocmd BufReadPost quickfix setlocal wrap | setlocal linebreak
 
 augroup END
 
@@ -102,7 +96,9 @@ endtry
 set expandtab
 
 " # spaces to use for each step of (auto)indent
-set shiftwidth=2
+" set shiftwidth=2
+set shiftwidth=4
+set shiftround
 
 " # spaces a tab uses
 set tabstop=2
@@ -122,42 +118,42 @@ call pathogen#infect()
 " Breaks vim-powerline after first save
 au! BufWritePost $MYVIMRC source %
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Parenthesis/bracket expanding
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Parenthesis/bracket expanding
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""
+"" Visual Mode:  Wrap the selection in:
+"" &1:  Parentheses
+"" &2:  Square Brackets
+"" &3:  Curly Braces
+"" &4:  Indented curly brace block
+"" &5:  Prepend each line with ruby comments, aka '# '
+"" &$ or &e:  Double Quotes
+"" &q:  Single Quotes
+"vnoremap &1 <esc>`>a)<esc>`<i(<esc>
+"vnoremap &2 <esc>`>a]<esc>`<i[<esc>
+"vnoremap &3 <esc>`>a}<esc>`<i{<esc>
+"vnoremap &4 ><esc>`>o<BS>}<esc>`<O{<esc>
+"vnoremap &5 :s/^/# /<CR> :noh<CR>
+"vnoremap &$ <esc>`>a"<esc>`<i"<esc>
+"vnoremap &q <esc>`>a'<esc>`<i'<esc>
+"vnoremap &e <esc>`>a"<esc>`<i"<esc>
 "
-" Visual Mode:  Wrap the selection in:
-" &1:  Parentheses
-" &2:  Square Brackets
-" &3:  Curly Braces
-" &4:  Indented curly brace block
-" &5:  Prepend each line with ruby comments, aka '# '
-" &$ or &e:  Double Quotes
-" &q:  Single Quotes
-vnoremap &1 <esc>`>a)<esc>`<i(<esc>
-vnoremap &2 <esc>`>a]<esc>`<i[<esc>
-vnoremap &3 <esc>`>a}<esc>`<i{<esc>
-vnoremap &4 ><esc>`>o<BS>}<esc>`<O{<esc>
-vnoremap &5 :s/^/# /<CR> :noh<CR>
-vnoremap &$ <esc>`>a"<esc>`<i"<esc>
-vnoremap &q <esc>`>a'<esc>`<i'<esc>
-vnoremap &e <esc>`>a"<esc>`<i"<esc>
-
-" Insert Mode:  Create the following, and begin insertion in the middle of:
-" &1:  Parentheses
-" &2:  Square Brackets
-" &3:  Curly Braces
-" &4:  Indented curly brace block
-" &e:  Double Quotes
-" &q:  Single Quotes
-" &t:  Diagonal Brackets
-inoremap &1 ()<esc>i
-inoremap &2 []<esc>i
-inoremap &3 {}<esc>i
-inoremap &4 {<esc>o}<esc>O
-inoremap &q ''<esc>i
-inoremap &e ""<esc>i
-inoremap &t <><esc>i
+"" Insert Mode:  Create the following, and begin insertion in the middle of:
+"" &1:  Parentheses
+"" &2:  Square Brackets
+"" &3:  Curly Braces
+"" &4:  Indented curly brace block
+"" &e:  Double Quotes
+"" &q:  Single Quotes
+"" &t:  Diagonal Brackets
+"inoremap &1 ()<esc>i
+"inoremap &2 []<esc>i
+"inoremap &3 {}<esc>i
+"inoremap &4 {<esc>o}<esc>O
+"inoremap &q ''<esc>i
+"inoremap &e ""<esc>i
+"inoremap &t <><esc>i
 
 " Autocomplete Parentheses & Brackets
 " Insert Mode:
@@ -167,13 +163,16 @@ inoremap [ []<Left>
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
 inoremap { {}<Left>
 inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-" Visual Mode:
+"" Visual Mode:
 vnoremap ( s()<Esc>P<Right>%
 vnoremap [ s[]<Esc>P<Right>%
 " vnoremap { s{}<Esc>P<Right>%
 
 " Map ctrl-n to toggle NERDTree Plugin
 nmap <silent> <c-n> :NERDTreeToggle<CR>
+
+" Auto delete trailing whitespace on lines when opening or saving a file
+autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Cool tab completion stuff
 " command-line completion operates in enhanced mode
@@ -212,26 +211,31 @@ inoremap <??    <?php echo  ?><Left><Left><Left>
 inoremap <?     <?php  ?><Left><Left><Left>
 
 " Autocomplete menu fixing
-" set dictionary+=/usr/share/dict/words
-" set dictionary+=/usr/share/dict/web2a
+" set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 set complete-=k complete+=k
 set completeopt=longest,menuone,preview
 " inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 " inoremap <expr> <c-n> pumvisible() ? "\<lt>c-n>" : "\<lt>c-n>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
 " inoremap <expr> <m-;> pumvisible() ? "\<lt>c-n>" : "\<lt>c-x>\<lt>c-o>\<lt>c-n>\<lt>c-p>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
-inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
-inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 " Space will toggle folds!
 nnoremap <space> za
 
 " Use mouse
 " NOTE:  For Terminal.app, a SIMBL Plugin is needed
-set mouse=a
+" set mouse=a
+set mouse=r
 set ttymouse=xterm
 
 " Set colorscheme
-colorscheme ir_black
+if has('gui_running')
+    " GUI colors
+    set background=dark
+    colorscheme solarized
+else
+    " Non-GUI (terminal) colors
+    colorscheme ir_black
+endif
 
 " Comments are italic
 highlight Comment cterm=italic
@@ -274,18 +278,10 @@ vnoremap / /\v
 
 " OMNICOMPLETE
 " Enable OmniComplete
+"set completefunc=syntaxcomplete#Complete
 set ofu=syntaxcomplete#Complete
-augroup omnicomplete
-  autocmd FileType python set omnifunc=pythoncomplete#Complete
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
-  autocmd FileType ruby set omnifunc=rubycomplete#Complete
-  autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
-  " FileType based compilation support from within vim
-  autocmd FileType c setlocal makeprg=gcc\ -O2\ -Wall\ -pedantic\ -o\ %<\ %
-  autocmd FileType ruby setlocal makeprg=ruby\ -w\ %
-  autocmd FileType php setlocal makeprg=php\ %
-  autocmd FileType python setlocal makeprg=python\ %
-augroup END
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType ruby set omnifunc=rubycomplete#Complete
 
 " configure tags - add additional tags here
 " set tags+=~/.vim/tags/c
@@ -343,6 +339,12 @@ endif
 " '{A-Z0-9}, or `{A-Z0-9} command takes one to another file.
 set autowrite
 
+" FileType based compilation support from within vim
+autocmd FileType c setlocal makeprg=gcc\ -O2\ -Wall\ -pedantic\ -o\ %<\ %
+autocmd FileType ruby setlocal makeprg=ruby\ -w\ %
+autocmd FileType php setlocal makeprg=php\ %
+autocmd FileType python setlocal makeprg=python\ %
+
 """""
 " c-support compilation & linking flags
 " Set this when compiling >1 Object.
@@ -359,6 +361,10 @@ function! MySuppress()
   :redraw!
   exe ":botright cwindow 7"
 endfunction
+
+autocmd QuickFixCmdPost * call MySuppress()
+
+autocmd BufReadPost quickfix setlocal wrap | setlocal linebreak
 
 """""
 " Preview current file in default application
@@ -384,27 +390,27 @@ map <Leader>pre :!open %<CR><CR>
 "
 " nnoremap <Leader>uw :call UnderlineCurrentWord()<CR>
 
-" Search google for word under the cursor
-" First line:  Mac OS X specific
-" Second line:  Ubuntu + Chrome specific
-" Mapped to <Leader>?
-function! NSearchGoogleForWord()
-  let s:wordUnderCursor = expand("<cword>")
-  let s:cmd = "silent !open 'http://www.google.com/search\?\q='" . s:wordUnderCursor
-  " let s:cmd = "silent !chromium-browser 'http://www.google.com/search\?\q='" . s:wordUnderCursor
-  execute s:cmd
-endfunction
+"" Search google for word under the cursor
+"" First line:  Mac OS X specific
+"" Second line:  Ubuntu + Chrome specific
+"" Mapped to <Leader>?
+"function! NSearchGoogleForWord()
+"  let s:wordUnderCursor = expand("<cword>")
+"  let s:cmd = "silent !links 'http://www.google.com/search\?\q='" . s:wordUnderCursor
+"  " let s:cmd = "silent !chromium-browser 'http://www.google.com/search\?\q='" . s:wordUnderCursor
+"  execute s:cmd
+"endfunction
 
 nnoremap <Leader>? :call NSearchGoogleForWord()<CR><CR>
 
-" Git stuff
-function! Typicalgit()
-  exe ":!git add ."
-  let s:gitmessage = input('Enter commit message:  ')
-  exe ':!git commit -am "' . s:gitmessage . '"'
-  exe ":!git push"
-endfunction
-map <Leader>git :call Typicalgit()<CR>
+"" Git stuff
+"function! Typicalgit()
+"  exe ":!git add ."
+"  let s:gitmessage = input('Enter commit message:  ')
+"  exe ':!git commit -am "' . s:gitmessage . '"'
+"  exe ":!git push"
+"endfunction
+"map <Leader>git :call Typicalgit()<CR>
 
 " NOTE:  I am making omnicomplete happen either via ., ->, or ::
 " Otherwise, I must use <c-x><c-o> to do it
@@ -430,7 +436,6 @@ map <Leader>tb :TagbarToggle<CR>
 " set statusline+=%= " right align
 " set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
-" Ensure 'last window' always has statusline
 set laststatus=2
 
 " Added from https://github.com/gmarik/vimfiles/blob/master/vimrc
@@ -443,13 +448,6 @@ au BufWinEnter *.txt if &ft == 'help' | if &columns > 156 | wincmd H | else | wi
 
 " Start indent-guides on startup
 " let g:indent_guides_enable_on_vim_startup = 1
-
-" textile.vim support
-" Debian
-" let g:TextileOS="Linux"
-" let g:TextileBrowser="/usr/bin/chromium-browser"
-" OS X
-" let g:TextileBrowser="Google Chrome"
 
 " gundo support
 " map <Leader>gun :GundoToggle<CR>
@@ -466,13 +464,7 @@ command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
 
 " Requires patched fonts for Powerline; renders nifty font images
-"let g:Powerline_symbols = 'fancy'
-
-" airline font
-let g:airline_powerline_fonts = 1
-
-" Stops Command-T from searching VMWare host directory
-set wildignore=host/**
+let g:Powerline_symbols = 'fancy'
 
 " Remap Ctrl+(directions) to sane values
 map <C-h> <C-w>h
@@ -487,48 +479,44 @@ set pastetoggle=<F2>
 set shortmess=I
 
 " Set signature
-iabbrev ssig --<cr>Matt Simpson<cr>msimpson.cmpe04@gtalumni.org
+iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
 
 " Highlight current line
-set cul
+"set cul
 
-" Disable viminfo
-" set viminfo=
+"" Smart in-line manpages with 'K' in command mode
+"" Thanks to users.softlab.ntua.gr/~ttsiod/myvim.html
+""
+"fun! ReadMan()
+"  " Assign current word under cursor to a script variable:
+"  let s:man_word = expand('<cword>')
+"  " Open a new window:
+"  :exe ":wincmd n"
+"  " Read in the manpage for man_word (col -b is for formatting):
+"  :exe ":r!man " . s:man_word . " | col -b"
+"  " Goto first line...
+"  :exe ":goto"
+"  " and delete it:
+"  :exe ":delete"
+"  " finally set file type to 'man':
+"  :exe ":set filetype=man"
+"  " lines set to 20
+"  :resize 20
+"endfun
+"" Map the K key to the ReadMan function:
+"noremap K :call ReadMan()<CR>
 
-"
-" Smart in-line manpages with 'K' in command mode
-" Thanks to users.softlab.ntua.gr/~ttsiod/myvim.html
-"
-fun! ReadMan()
-  " Assign current word under cursor to a script variable:
-  let s:man_word = expand('<cword>')
-  " Open a new window:
-  :exe ":wincmd n"
-  " Read in the manpage for man_word (col -b is for formatting):
-  :exe ":r!man " . s:man_word . " | col -b"
-  " Goto first line...
-  :exe ":goto"
-  " and delete it:
-  :exe ":delete"
-  " finally set file type to 'man':
-  :exe ":set filetype=man"
-  " lines set to 20
-  :resize 20
-endfun
-" Map the K key to the ReadMan function:
-noremap K :call ReadMan()<CR>
-
-" Clear all registers
-fun! Clearregs()
-  let regs = '0123456789abcdefghijklmnopqrstuvwxyz'
-  let i = 0
-  while i < strlen(regs)
-    exe "normal! q" . regs[i] . "q"
-    let i = i+1
-  endwhile
-  unlet i
-  unlet regs
-endfun
+"" Clear all registers
+"fun! Clearregs()
+"  let regs = '0123456789abcdefghijklmnopqrstuvwxyz'
+"  let i = 0
+"  while i < strlen(regs)
+"    exe "normal! q" . regs[i] . "q"
+"    let i = i+1
+"  endwhile
+"  unlet i
+"  unlet regs
+"endfun
 
 command! -bar Clearregs :call Clearregs()
 
@@ -538,8 +526,7 @@ command! -bar Clearregs :call Clearregs()
 " Don't automatically insert comments on a new line in vim, zsh mode
 au FileType vim,zsh,sh setlocal formatoptions-=r
 
-" Disable automatic loading of showmarks
-let g:showmarks_enable=0
+let g:airline_theme = "simple"
 
 " Change cursor if in tmux
 if exists('$ITERM_PROFILE')
@@ -557,6 +544,7 @@ let g:ackprg = 'ag --vimgrep'
 
 " Persistent undo
 set undofile
+set undolevels=10000
 set undodir=~/.vim/undodir
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
@@ -578,6 +566,9 @@ let g:jedi#completions_enabled = 0
 " being written.
 let g:ycm_seed_identifiers_with_syntax = 1
 
+" Set global ycm conf
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
@@ -588,11 +579,24 @@ let g:NERDCompactSexyComs = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 " Ultisnips
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger='‘'
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger='‘'
 
-" Set signature
-iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " more Go syntax highlighting
 let g:go_highlight_types = 1
+
+" vim-gutentags
+set statusline+=%{gutentags#statusline()}
+"let g:gutentags_define_advanced_commands = 1
+"let g:gutentags_project_root = ['Makefile']
