@@ -600,3 +600,6 @@ let g:go_highlight_types = 1
 set statusline+=%{gutentags#statusline()}
 "let g:gutentags_define_advanced_commands = 1
 "let g:gutentags_project_root = ['Makefile']
+
+" show whitespace with :set list
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
