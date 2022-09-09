@@ -224,8 +224,8 @@ nnoremap <space> za
 " Use mouse
 " NOTE:  For Terminal.app, a SIMBL Plugin is needed
 " set mouse=a
-set mouse=r
-set ttymouse=xterm
+"set mouse=r
+"set ttymouse=xterm
 
 " Set colorscheme
 if has('gui_running')
