@@ -513,3 +513,6 @@ export SDKMAN_DIR="/home/threv/.sdkman"
 
 # necessary for systemd-run --user --scope
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
+xhost +local:
+
+alias rm='rm -v -i'
