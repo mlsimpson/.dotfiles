@@ -440,7 +440,7 @@ export SAVEHIST=10000
 
 ####
 # setopt
-setopt glob globdots pushdminus multios extendedglob braceccl share_history
+setopt glob globdots pushdminus multios extendedglob braceccl inc_append_history # share_history
 # If you really do want to clobber a file, you can use the >! operator. To make things easier in this case, the > is stored in the history list as a >!
 # setopt noclobber
 # Pipe to multiple outputs
