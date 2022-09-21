@@ -445,7 +445,7 @@ setopt glob globdots pushdminus multios extendedglob braceccl inc_append_history
 # setopt noclobber
 # Pipe to multiple outputs
 
-unsetopt hist_verify auto_name_dirs nomatch correctall
+unsetopt hist_verify auto_name_dirs nomatch correctall share_history
 
 ####
 # zsh modules
