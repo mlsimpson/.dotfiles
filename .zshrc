@@ -502,7 +502,6 @@ alias ssh='ssh -X'
 alias t.n='ssh threv@threv.net'
 alias cb='ssh -Y threv@192.168.1.76'
 alias pry="/usr/local/bin/pry --simple-prompt"
-alias ipython='ipython3'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -520,7 +519,9 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-source ~/.rvm/scripts/rvm
+# source ~/.rvm/scripts/rvm
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+eval "$(rbenv init - zsh)"
 
 hash -d themis=/mnt/c/Users/threv/Documents/Themis
 alias rm="rm -v -i"
