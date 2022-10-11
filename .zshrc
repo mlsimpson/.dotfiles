@@ -400,6 +400,7 @@ alias mpcn="mpc -p 6603"
 alias mpch="mpc -p 6604"
 alias mpcg="mpc -p 6605"
 alias mpcd="mpc -p 6607"
+alias mpca="mpc -p 6608"
 
 ####
 # bindkey
