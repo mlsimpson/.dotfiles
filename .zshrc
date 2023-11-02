@@ -524,4 +524,9 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(rbenv init - zsh)"
 
 hash -d themis=/mnt/c/Users/threv/Documents/Themis
+hash -d steampunk=/mnt/c/Users/threv/Documents/Steampunk
+
 alias rm="rm -v -i"
+alias faketre="ls -R ../ | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/  /' -e 's/-/|/'"
+
+alias code="/mnt/c/Users/threv/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
