@@ -518,3 +518,25 @@ export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
 xhost +local:
 
 alias rm='rm -v -i'
+
+function media_sum() {
+  mi="/usr/bin/mediainfo"
+  tot_sz=$(
+    for sn in "$@"; do
+      if [[ -e $sn ]]; then
+        sz=$(
+          $mi --Inform="General;%Duration% + " "$sn" 2>/dev/null |
+            sed 's/\+[^0-9]*\(+\|$\)/\1/g;s/^[^0-9]*\+//;' | bc
+        )
+      else
+        sz=$(
+          $mi --Inform="General;%Duration% + " $sn 2>/dev/null |
+            sed 's/\+[^0-9]*\(+\|$\)/\1/g;s/^[^0-9]*\+//;' | bc
+        )
+      fi
+      echo "${sn}: $(h $sz)h$(m $sz)m" >&2;
+      echo -en "$sz + ";
+    done | sed 's/\+[^0-9]*\(+\|$\)/\1/g;s/^[^0-9]*\+//;s/$/\n/' | bc
+  );
+  echo "Total: $(h $tot_sz)h$(m $tot_sz)m";
+}
