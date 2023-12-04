@@ -402,6 +402,12 @@ alias mpcg="mpc -p 6605"
 alias mpcd="mpc -p 6607"
 alias mpca="mpc -p 6608"
 
+# This will list all directories starting from the current one, split each
+# line by the character "/", select field number "2" (each line starts with
+# "./", so your first field would be ".") and then only outputs unique lines,
+# and a count how often this unique line appears (-c parameter).
+alias mostdirs="find . -type d | cut -d/ -f 2 | uniq -c | sort -g"
+
 ####
 # bindkey
 # Esc = undo
