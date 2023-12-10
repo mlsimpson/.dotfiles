@@ -502,6 +502,7 @@ alias ssh='ssh -X'
 alias t.n='ssh threv@threv.net'
 alias cb='ssh -Y threv@192.168.1.76'
 alias pry="/usr/local/bin/pry --simple-prompt"
+alias ipython="ipython --colors Linux"
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
