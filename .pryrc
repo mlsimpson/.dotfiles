@@ -1,3 +1,5 @@
+require 'pry-doc'
+
 # === EDITOR ===
 Pry.editor = 'vi'
 require 'awesome_print'
@@ -10,8 +12,8 @@ Pry.commands.alias_command 'n', 'next' rescue nil
 # === CUSTOM PROMPT ===
 # This prompt shows the ruby version (useful for RVM)
 # Pry.prompt = [proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
-#BLACK = "\001\e[0;30m\002"
-#WHITE = "\001\e[0m\002"
+BLACK = "\001\e[0;30m\002"
+WHITE = "\001\e[0m\002"
 #Pry.prompt = [
 #    proc { |target_self, nest_level, pry|
 #      line_num = pry.input_array.size
@@ -112,10 +114,10 @@ end
 # === COLOR CUSTOMIZATION ===
 # Everything below this line is for customizing colors, you have to use the ugly
 # color codes, but such is life.
-CodeRay.scan("example", :ruby).term # just to load necessary files
+#CodeRay.scan("example", :ruby).term # just to load necessary files
 # Token colors pulled from: https://github.com/rubychan/coderay/blob/master/lib/coderay/encoders/terminal.rb
 
-$LOAD_PATH << File.dirname(File.realpath(__FILE__))
+#$LOAD_PATH << File.dirname(File.realpath(__FILE__))
 
 # In CodeRay >= 1.1.0 token colors are defined as pre-escaped ANSI codes
 #if Gem::Version.new(CodeRay::VERSION) >= Gem::Version.new('1.1.0')
