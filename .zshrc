@@ -504,6 +504,8 @@ alias cb='ssh -Y threv@192.168.1.76'
 alias pry="/usr/local/bin/pry --simple-prompt"
 alias ipython="ipython --colors Linux"
 
+alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsigned -r 4k - test.wav trim 0 10"
+
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
