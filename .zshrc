@@ -29,6 +29,9 @@ plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions obl
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
+# source homebrew completions
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh
 #####
