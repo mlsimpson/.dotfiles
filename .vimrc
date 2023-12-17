@@ -193,11 +193,12 @@ nnoremap f: q:
 nnoremap q: 1
 " Nifty Tab stuff
 " Next Tab
-nnoremap <silent> <c-h> :tabnext<CR>
+" nnoremap <silent> <c-h> :tabnext<CR>
 " Previous Tab
-nnoremap <silent> <c-l> :tabprevious<CR>
+" nnoremap <silent> <c-l> :tabprevious<CR>
 " New Tab
-nnoremap <silent> <c-t> :tabnew<CR>
+" Note - this interferes with default c-t, 'jump to previous tag'
+" nnoremap <silent> <c-t> :tabnew<CR>
 
 " Search mappings:  These will make it so that going to the next one in a
 " search will center the line it's found in.
