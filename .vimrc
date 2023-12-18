@@ -1,17 +1,24 @@
 " Configuration file for vim
-set nocompatible  " Use Vim defaults instead of 100% vi compatibility
-"jset modelines=0   " Don't check any lines for set commands
+syntax on          " enable syntax highlighting
+set nocompatible   " Use Vim defaults instead of 100% vi compatibility
 set modeline
-set modelines=1   " Don't check any lines for set commands
-set backspace=2   " more powerful backspacing
-set ruler         " show the cursor position all the time
-set number        " enable line numbering
-syntax on         " enable syntax highlighting
-set confirm       " confirm if :q or :e entered w/out save
-set colorcolumn=80
+"set modelines=1    " Don't check any lines for set commands
+"set backspace=2    " more powerful backspacing - this is already set below
+set ruler          " show the cursor position all the time
+set number         " enable line numbering
+set relativenumber " Line numbers on left hand of screen are relative to current line
+set confirm        " confirm if :q or :e entered w/out save
+set textwidth=78   " Keep textwidth to 78 characters on all files
+set colorcolumn=80 " vertical line at 80 chars
 
 " Setting this on Terminal.app makes everything blink like hell.
 set t_Co=256
+
+" Enable file type detection.
+" Use the default filetype settings, so that mail gets 'tw' set to 72,
+" 'cindent' is on in C files, etc.
+" Also load indent files, to automatically do language-dependent indenting.
+filetype plugin indent on
 
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup
@@ -35,16 +42,6 @@ map Q gq
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
-
-" Enable file type detection.
-" Use the default filetype settings, so that mail gets 'tw' set to 72,
-" 'cindent' is on in C files, etc.
-" Also load indent files, to automatically do language-dependent indenting.
-filetype plugin indent on
-
-" Keep textwidth to 78 characters on all files
-" Display visible right margin marker
-set textwidth=78
 
 " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
@@ -101,7 +98,7 @@ set shiftwidth=4
 set shiftround
 
 " # spaces a tab uses
-set tabstop=2
+set tabstop=4
 
 " <Tab> at the start of a line inserts <shiftwidth> spaces
 set smarttab
@@ -120,16 +117,16 @@ au! BufWritePost $MYVIMRC source %
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Parenthesis/bracket expanding
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""
-"" Visual Mode:  Wrap the selection in:
-"" &1:  Parentheses
-"" &2:  Square Brackets
-"" &3:  Curly Braces
-"" &4:  Indented curly brace block
-"" &5:  Prepend each line with ruby comments, aka '# '
-"" &$ or &e:  Double Quotes
-"" &q:  Single Quotes
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Visual Mode:  Wrap the selection in:
+" &1:  Parentheses
+" &2:  Square Brackets
+" &3:  Curly Braces
+" &4:  Indented curly brace block
+" &5:  Prepend each line with ruby comments, aka '# '
+" &$ or &e:  Double Quotes
+" &q:  Single Quotes
 "vnoremap &1 <esc>`>a)<esc>`<i(<esc>
 "vnoremap &2 <esc>`>a]<esc>`<i[<esc>
 "vnoremap &3 <esc>`>a}<esc>`<i{<esc>
@@ -139,14 +136,14 @@ au! BufWritePost $MYVIMRC source %
 "vnoremap &q <esc>`>a'<esc>`<i'<esc>
 "vnoremap &e <esc>`>a"<esc>`<i"<esc>
 "
-"" Insert Mode:  Create the following, and begin insertion in the middle of:
-"" &1:  Parentheses
-"" &2:  Square Brackets
-"" &3:  Curly Braces
-"" &4:  Indented curly brace block
-"" &e:  Double Quotes
-"" &q:  Single Quotes
-"" &t:  Diagonal Brackets
+" Insert Mode:  Create the following, and begin insertion in the middle of:
+" &1:  Parentheses
+" &2:  Square Brackets
+" &3:  Curly Braces
+" &4:  Indented curly brace block
+" &e:  Double Quotes
+" &q:  Single Quotes
+" &t:  Diagonal Brackets
 "inoremap &1 ()<esc>i
 "inoremap &2 []<esc>i
 "inoremap &3 {}<esc>i
@@ -157,19 +154,19 @@ au! BufWritePost $MYVIMRC source %
 
 " Autocomplete Parentheses & Brackets
 " Insert Mode:
-"inoremap (  ()<Left>
-"inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-"inoremap [ []<Left>
-"inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-"inoremap { {}<Left>
-"inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-""" Visual Mode:
-"vnoremap ( s()<Esc>P<Right>%
-"vnoremap [ s[]<Esc>P<Right>%
+inoremap (  ()<Left>
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+inoremap [ []<Left>
+inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+inoremap { {}<Left>
+inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+" Visual Mode:
+vnoremap ( s()<Esc>P<Right>%
+vnoremap [ s[]<Esc>P<Right>%
 " vnoremap { s{}<Esc>P<Right>%
 
 " Map ctrl-n to toggle NERDTree Plugin
-nmap <silent> <c-n> :NERDTreeToggle<CR>
+nnoremap <silent> <c-n> :NERDTreeToggle<CR>
 
 " Auto delete trailing whitespace on lines when opening or saving a file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
@@ -202,10 +199,10 @@ nnoremap q: 1
 
 " Search mappings:  These will make it so that going to the next one in a
 " search will center the line it's found in.
-nmap N Nzz
-nmap n nzz
-xmap N Nzz
-xmap n nzz
+nnoremap N Nzz
+nnoremap n nzz
+xnoremap N Nzz
+xnoremap n nzz
 
 " PHP short tag remapping
 inoremap <??    <?php echo  ?><Left><Left><Left>
@@ -225,8 +222,8 @@ nnoremap <space> za
 " Use mouse
 " NOTE:  For Terminal.app, a SIMBL Plugin is needed
 " set mouse=a
-" set mouse=r
-" set ttymouse=xterm
+"set mouse=r
+"set ttymouse=xterm
 
 " Set colorscheme
 if has('gui_running')
@@ -242,12 +239,12 @@ endif
 highlight Comment cterm=italic
 
 " Yank text to the OS X clipboard
-set clipboard=unnamed
-noremap <leader>y "*y
-noremap <leader>yy "*Y
+" set clipboard=unnamed
+" noremap <leader>y "*y
+" noremap <leader>yy "*Y
 
 " Preserve indentation while pasting text from the OS X clipboard
-noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+" noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 " The current buffer can be put to the background without writing to disk.
 " When a background buffer becomes current again, marks and undo-history are
@@ -267,8 +264,6 @@ runtime macros/matchit.vim
 
 set runtimepath+=$HOME/.vim
 
-" Line numbers on left hand of screen are relative to current line
-set relativenumber
 
 " avoid auto-indenting pound signs
 inoremap # x<C-H>#
@@ -295,14 +290,14 @@ autocmd FileType ruby set omnifunc=rubycomplete#Complete
 " set tags=./tags;/
 
 " OmniCppComplete
-"let OmniCpp_NamespaceSearch = 2
-"let OmniCpp_GlobalScopeSearch = 1
-"let OmniCpp_ShowAccess = 1
-"let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-"let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-"let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-"let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+let OmniCpp_NamespaceSearch = 2
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 " This is overwritten by ide.vim
@@ -372,7 +367,7 @@ autocmd BufReadPost quickfix setlocal wrap | setlocal linebreak
 " Useful for previewing HTML pages
 " Mac OS X specific
 " Mapped to <Leader>pre
-map <Leader>pre :!open %<CR><CR>
+"map <Leader>pre :!open %<CR><CR>
 
 " Underline current word
 " function! UnderlineCurrentWord()
@@ -391,20 +386,20 @@ map <Leader>pre :!open %<CR><CR>
 "
 " nnoremap <Leader>uw :call UnderlineCurrentWord()<CR>
 
-"" Search google for word under the cursor
-"" First line:  Mac OS X specific
-"" Second line:  Ubuntu + Chrome specific
-"" Mapped to <Leader>?
+" Search google for word under the cursor
+" First line:  Mac OS X specific
+" Second line:  Ubuntu + Chrome specific
+" Mapped to <Leader>?
 "function! NSearchGoogleForWord()
 "  let s:wordUnderCursor = expand("<cword>")
 "  let s:cmd = "silent !links 'http://www.google.com/search\?\q='" . s:wordUnderCursor
-"  " let s:cmd = "silent !chromium-browser 'http://www.google.com/search\?\q='" . s:wordUnderCursor
+"  let s:cmd = "silent !chromium-browser 'http://www.google.com/search\?\q='" . s:wordUnderCursor
 "  execute s:cmd
 "endfunction
 
-nnoremap <Leader>? :call NSearchGoogleForWord()<CR><CR>
+" nnoremap <Leader>? :call NSearchGoogleForWord()<CR><CR>
 
-"" Git stuff
+" Git stuff
 "function! Typicalgit()
 "  exe ":!git add ."
 "  let s:gitmessage = input('Enter commit message:  ')
@@ -416,8 +411,8 @@ nnoremap <Leader>? :call NSearchGoogleForWord()<CR><CR>
 " NOTE:  I am making omnicomplete happen either via ., ->, or ::
 " Otherwise, I must use <c-x><c-o> to do it
 " Supertab
-" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-" let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = "context"
 
 " Tagbar
 map <Leader>tb :TagbarToggle<CR>
@@ -465,7 +460,7 @@ command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
 
 " Requires patched fonts for Powerline; renders nifty font images
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 
 " Remap Ctrl+(directions) to sane values
 map <C-h> <C-w>h
@@ -485,29 +480,29 @@ iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
 " Highlight current line
 "set cul
 
-"" Smart in-line manpages with 'K' in command mode
-"" Thanks to users.softlab.ntua.gr/~ttsiod/myvim.html
-""
+" Smart in-line manpages with 'K' in command mode
+" Thanks to users.softlab.ntua.gr/~ttsiod/myvim.html
+"
 "fun! ReadMan()
-"  " Assign current word under cursor to a script variable:
+   " Assign current word under cursor to a script variable:
 "  let s:man_word = expand('<cword>')
-"  " Open a new window:
+   " Open a new window:
 "  :exe ":wincmd n"
-"  " Read in the manpage for man_word (col -b is for formatting):
+   " Read in the manpage for man_word (col -b is for formatting):
 "  :exe ":r!man " . s:man_word . " | col -b"
-"  " Goto first line...
+   " Goto first line...
 "  :exe ":goto"
-"  " and delete it:
+   " and delete it:
 "  :exe ":delete"
-"  " finally set file type to 'man':
+   " finally set file type to 'man':
 "  :exe ":set filetype=man"
-"  " lines set to 20
+   " lines set to 20
 "  :resize 20
 "endfun
-"" Map the K key to the ReadMan function:
+" Map the K key to the ReadMan function:
 "noremap K :call ReadMan()<CR>
 
-"" Clear all registers
+" Clear all registers
 "fun! Clearregs()
 "  let regs = '0123456789abcdefghijklmnopqrstuvwxyz'
 "  let i = 0
@@ -519,7 +514,7 @@ iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
 "  unlet regs
 "endfun
 
-command! -bar Clearregs :call Clearregs()
+" command! -bar Clearregs :call Clearregs()
 
 " Format a long line of JSON in Visual Mode
 " noremap <Leader>j !python -m json.tool<CR>:setf json<CR>
@@ -541,7 +536,7 @@ if exists('$ITERM_PROFILE')
 end
 
 " Ack.vim -> ag
-let g:ackprg = 'ag --vimgrep'
+" let g:ackprg = 'ag --vimgrep'
 
 " Persistent undo
 set undofile
@@ -561,14 +556,14 @@ if has('persistent_undo')
 endif
 
 " Disable Jedi completion for youcompleteme
-let g:jedi#completions_enabled = 0
+" let g:jedi#completions_enabled = 0
 
 " Seed ycm's identifier database with the keywords of the programming language
 " being written.
-let g:ycm_seed_identifiers_with_syntax = 1
+" let g:ycm_seed_identifiers_with_syntax = 1
 
 " Set global ycm conf
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -585,22 +580,28 @@ let g:NERDTrimTrailingWhitespace = 1
 "let g:UltiSnipsExpandTrigger='‘'
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " more Go syntax highlighting
 let g:go_highlight_types = 1
 
 " vim-gutentags
-set statusline+=%{gutentags#statusline()}
+" set statusline+=%{gutentags#statusline()}
 "let g:gutentags_define_advanced_commands = 1
 "let g:gutentags_project_root = ['Makefile']
 
 " show whitespace with :set list
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+" unhighlight search term
+nnoremap <leader>h :nohlsearch<CR>
+
+" delete to black hole register
+nnoremap <leader>d "_d
