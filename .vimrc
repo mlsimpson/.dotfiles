@@ -224,6 +224,8 @@ nnoremap <space> za
 " set mouse=a
 "set mouse=r
 "set ttymouse=xterm
+set mouse=nvi
+set mousemodel=popup_setpos
 
 " Set colorscheme
 if has('gui_running')
