@@ -103,7 +103,7 @@ set tabstop=4
 " <Tab> at the start of a line inserts <shiftwidth> spaces
 set smarttab
 
-set si " Do smart indenting when starting a new line
+set smartindent " Do smart indenting when starting a new line
 "set wrap
 set nowrap
 
