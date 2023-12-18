@@ -1,10 +1,10 @@
 " Configuration file for vim
 syntax on          " enable syntax highlighting
-set nocompatible   " Use Vim defaults instead of 100% vi compatibility
+"set nocompatible   " Use Vim defaults instead of 100% vi compatibility
 set modeline
 "set modelines=1    " Don't check any lines for set commands
 "set backspace=2    " more powerful backspacing - this is already set below
-set ruler          " show the cursor position all the time
+"set ruler          " show the cursor position all the time
 set number         " enable line numbering
 set relativenumber " Line numbers on left hand of screen are relative to current line
 set confirm        " confirm if :q or :e entered w/out save
@@ -14,11 +14,14 @@ set colorcolumn=80 " vertical line at 80 chars
 " Setting this on Terminal.app makes everything blink like hell.
 set t_Co=256
 
+" nvim-qt font
+set guifont=Hack:h10
+
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
-filetype plugin indent on
+"filetype plugin indent on
 
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup
@@ -26,15 +29,15 @@ au BufWrite /private/tmp/crontab.* set nowritebackup
 au BufWrite /private/etc/pw.* set nowritebackup
 
 " allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+"set backspace=indent,eol,start
 
 " Set hlsearch on - highlights search terms
-set hlsearch
+"set hlsearch
 
 set nobackup      " do not keep a backup file
-set history=1000  " keep 1000 lines of command line history
+"set history=1000  " keep 1000 lines of command line history
 set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
+"set incsearch     " do incremental searching
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -101,7 +104,7 @@ set shiftround
 set tabstop=4
 
 " <Tab> at the start of a line inserts <shiftwidth> spaces
-set smarttab
+"set smarttab
 
 set si " Do smart indenting when starting a new line
 "set wrap
@@ -109,7 +112,7 @@ set nowrap
 
 " Pathogen
 " Greatly eased Vim plugin management
-call pathogen#infect()
+"call pathogen#infect()
 
 " Auto-reload this file when saving changes
 " Breaks vim-powerline after first save
@@ -173,7 +176,7 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Cool tab completion stuff
 " command-line completion operates in enhanced mode
-set wildmenu
+"set wildmenu
 " Complete till longest common string, and start wildmenu
 set wildmode=list:longest,full
 
@@ -221,19 +224,19 @@ nnoremap <space> za
 
 " Use mouse
 " NOTE:  For Terminal.app, a SIMBL Plugin is needed
-" set mouse=a
+"set mouse=a
 "set mouse=r
 "set ttymouse=xterm
 
 " Set colorscheme
-if has('gui_running')
-    " GUI colors
-    set background=dark
-    colorscheme solarized
-else
-    " Non-GUI (terminal) colors
-    colorscheme ir_black
-endif
+"if has('gui_running')
+"    " GUI colors
+"    set background=dark
+"    colorscheme solarized
+"else
+"    " Non-GUI (terminal) colors
+"    colorscheme ir_black
+"endif
 
 " Comments are italic
 highlight Comment cterm=italic
@@ -249,7 +252,7 @@ highlight Comment cterm=italic
 " The current buffer can be put to the background without writing to disk.
 " When a background buffer becomes current again, marks and undo-history are
 " remembered.
-set hidden
+"set hidden
 
 " Change the leader from \ to ,
 let g:C_MapLeader  = ','
@@ -541,9 +544,9 @@ end
 " Persistent undo
 "set undofile
 set undolevels=10000
-"set undodir=~/.vim/undodir
+#set undodir=~/.confing/nvim/undodir
 " Put plugins and dictionaries in this dir (also on Windows)
-let vimDir = '$HOME/.vim'
+let vimDir = '$HOME/.config/nvim'
 let &runtimepath.=','.vimDir
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
@@ -605,3 +608,6 @@ nnoremap <leader>h :nohlsearch<CR>
 
 " delete to black hole register
 nnoremap <leader>d "_d
+
+" <ESC> to quit terminal mode
+tnoremap <Esc> <C-\><C-n>
