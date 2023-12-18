@@ -503,18 +503,18 @@ iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
 "noremap K :call ReadMan()<CR>
 
 " Clear all registers
-"fun! Clearregs()
-"  let regs = '0123456789abcdefghijklmnopqrstuvwxyz'
-"  let i = 0
-"  while i < strlen(regs)
-"    exe "normal! q" . regs[i] . "q"
-"    let i = i+1
-"  endwhile
-"  unlet i
-"  unlet regs
-"endfun
+fun! Clearregs()
+  let regs = '0123456789abcdefghijklmnopqrstuvwxyz'
+  let i = 0
+  while i < strlen(regs)
+    exe "normal! q" . regs[i] . "q"
+    let i = i+1
+  endwhile
+  unlet i
+  unlet regs
+endfun
 
-" command! -bar Clearregs :call Clearregs()
+command! -bar Clearregs :call Clearregs()
 
 " Format a long line of JSON in Visual Mode
 " noremap <Leader>j !python -m json.tool<CR>:setf json<CR>
