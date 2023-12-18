@@ -1,0 +1,5 @@
+[user]
+	email = maui@threv.net
+	name = Maui Threv
+[core]
+	excludesfile = ~/.gitignore
