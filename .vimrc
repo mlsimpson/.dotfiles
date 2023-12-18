@@ -514,7 +514,7 @@ fun! Clearregs()
   unlet regs
 endfun
 
- command! -bar Clearregs :call Clearregs()
+command! -bar Clearregs :call Clearregs()
 
 " Format a long line of JSON in Visual Mode
 " noremap <Leader>j !python -m json.tool<CR>:setf json<CR>
