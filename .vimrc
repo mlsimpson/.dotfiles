@@ -99,11 +99,12 @@ set shiftround
 
 " # spaces a tab uses
 set tabstop=4
+set softtabstop=4
 
 " <Tab> at the start of a line inserts <shiftwidth> spaces
 set smarttab
 
-set si " Do smart indenting when starting a new line
+set smartindent " Do smart indenting when starting a new line
 "set wrap
 set nowrap
 
@@ -224,6 +225,8 @@ nnoremap <space> za
 " set mouse=a
 "set mouse=r
 "set ttymouse=xterm
+set mouse=nvi
+set mousemodel=popup_setpos
 
 " Set colorscheme
 if has('gui_running')
@@ -605,3 +608,4 @@ nnoremap <leader>h :nohlsearch<CR>
 
 " delete to black hole register
 nnoremap <leader>d "_d
+
