@@ -99,6 +99,7 @@ set shiftround
 
 " # spaces a tab uses
 set tabstop=4
+set softtabstop=4
 
 " <Tab> at the start of a line inserts <shiftwidth> spaces
 set smarttab
