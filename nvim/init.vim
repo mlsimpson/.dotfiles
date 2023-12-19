@@ -104,16 +104,16 @@ set nowrap
 " https://github.com/junegunn/vim-plug
 call plug#begin("$HOME/.config/nvim/plugged")
 "Plug 'dracula/vim'
-"Plug 'scrooloose/nerdtree'
-"Plug 'ryanoasis/vim-devicons'
-"Plug 'preservim/nerdcommenter'
-"Plug 'tpope/vim-surround'
-Plug 'romgrk/barbar.nvim'
-"Plug 'preservim/tagbar'
-"Plug 'preservim/vim-indent-guides'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-"Plug 'mhinz/vim-startify'
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-surround'
+"Plug 'romgrk/barbar.nvim'
+Plug 'preservim/tagbar'
+Plug 'preservim/vim-indent-guides'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Auto-reload this file when saving changes
