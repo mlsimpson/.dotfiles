@@ -608,3 +608,15 @@ nnoremap <leader>h :nohlsearch<CR>
 
 " delete to black hole register
 nnoremap <leader>d "_d
+
+" change cursor back to terminal setting on exit
+" | Digit | Result                 |
+" |-------|------------------------|
+" | 1     | Blinking block         |
+" | 2     | Steady block (default) |
+" | 3     | Blinking underscore    |
+" | 4     | Steady underscore      |
+" | 5     | Blinking bar           |
+" | 6     | Steady bar             |
+autocmd VimLeave * silent !echo -ne "\e[5 q"
+
