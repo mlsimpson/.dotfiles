@@ -544,7 +544,7 @@ alias faketre="ls -R ../ | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' 
 
 alias code="/mnt/c/Users/threv/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 
-RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+alias rg="RIPGREP_CONFIG_PATH=/home/threv/.dotfiles/.ripgreprc rg"
 
 # make the cursor blink like i want god damn it
 echo -ne "\e[5 q"
