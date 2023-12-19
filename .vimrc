@@ -541,13 +541,14 @@ if exists('$ITERM_PROFILE')
   endif
 end
 
-" Ack.vim -> ag
-" let g:ackprg = 'rg --vimgrep'
+" https://codeinthehole.com/tips/vim-lists/
+if executable('rg')
+    set grepprg=rg\ --vimgrep
+    set grepformat=%f:%l:%c:%m
+endif
 
 " Persistent undo
-"set undofile
 set undolevels=10000
-"set undodir=~/.vim/undodir
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
 let &runtimepath.=','.vimDir
