@@ -551,6 +551,8 @@ function media_sum() {
   echo "Total: $(h $tot_sz)h$(m $tot_sz)m";
 }
 
+RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
 # make the cursor blink like i want god damn it
 echo -ne "\e[5 q"
 
