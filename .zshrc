@@ -543,3 +543,7 @@ alias rm="rm -v -i"
 alias faketre="ls -R ../ | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/  /' -e 's/-/|/'"
 
 alias code="/mnt/c/Users/threv/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+
+# make the cursor blink like i want god damn it
+echo -ne "\e[5 q"
+
