@@ -225,8 +225,10 @@ nnoremap <space> za
 " set mouse=a
 "set mouse=r
 "set ttymouse=xterm
-set mouse=nvi
-set mousemodel=popup_setpos
+" Disabling this since I just want to focus on the terminal when I click back
+" into it, not move my cursor to wherever I clicked
+"set mouse=nvi
+"set mousemodel=popup_setpos
 
 " Set colorscheme
 if has('gui_running')
@@ -538,13 +540,14 @@ if exists('$ITERM_PROFILE')
   endif
 end
 
-" Ack.vim -> ag
-" let g:ackprg = 'ag --vimgrep'
+" https://codeinthehole.com/tips/vim-lists
+if executable('rg')
+    set grepprg=rg\ --vimgrep
+    set grepformat=%f:%l:%c:%m
+endif
 
 " Persistent undo
-set undofile
 set undolevels=10000
-set undodir=~/.vim/undodir
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
 let &runtimepath.=','.vimDir
