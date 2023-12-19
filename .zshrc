@@ -550,3 +550,7 @@ function media_sum() {
   );
   echo "Total: $(h $tot_sz)h$(m $tot_sz)m";
 }
+
+# make the cursor blink like i want god damn it
+echo -ne "\e[5 q"
+

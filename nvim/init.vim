@@ -103,15 +103,17 @@ set nowrap
 " vim-plug
 " https://github.com/junegunn/vim-plug
 call plug#begin("$HOME/.config/nvim/plugged")
-Plug 'dracula/vim'
-Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'preservim/nerdcommenter'
-Plug 'preservim/tagbar'
-Plug 'preservim/vim-indent-guides'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mhinz/vim-startify'
+"Plug 'dracula/vim'
+"Plug 'scrooloose/nerdtree'
+"Plug 'ryanoasis/vim-devicons'
+"Plug 'preservim/nerdcommenter'
+"Plug 'tpope/vim-surround'
+Plug 'romgrk/barbar.nvim'
+"Plug 'preservim/tagbar'
+"Plug 'preservim/vim-indent-guides'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Auto-reload this file when saving changes
@@ -480,7 +482,7 @@ iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
 " Highlight current line
 "set cul
 
-" Smart in-line manpages with 'K' in command mode
+" Smart in-line manpages with 'et' in command mode
 " Thanks to users.softlab.ntua.gr/~ttsiod/myvim.html
 "
 "fun! ReadMan()
@@ -590,4 +592,20 @@ nnoremap <leader>h :nohlsearch<CR>
 
 " delete to black hole register
 nnoremap <leader>d "_d
+
+" https://neovim.io/doc/user/faq.html
+au VimEnter,VimResume * set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+    \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+    \,sm:block-blinkwait175-blinkoff150-blinkon175
+
+" change cursor back to terminal setting on exit
+" | Digit | Result                 |
+" |-------|------------------------|
+" | 1     | Blinking block         |
+" | 2     | Steady block (default) |
+" | 3     | Blinking underscore    |
+" | 4     | Steady underscore      |
+" | 5     | Blinking bar           |
+" | 6     | Steady bar             |
+au VimLeave,VimSuspend * set guicursor=a:ver25-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
 
