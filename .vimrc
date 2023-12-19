@@ -510,13 +510,16 @@ iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
 
 " Clear all registers
 fun! Clearregs()
-  let regs = '0123456789abcdefghijklmnopqrstuvwxyz'
-  let i = 0
-  while i < strlen(regs)
-    exe "normal! q" . regs[i] . "q"
-    let i = i+1
-  endwhile
-  unlet i
+  let regs = split('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/-"', '\zs')
+  for r in regs
+    call setreg(r, [])
+  endfor
+  "let i = 0
+  "while i < strlen(regs)
+  "  exe "normal! q" . regs[i] . "q"
+  "  let i = i+1
+  "endwhile
+  "unlet i
   unlet regs
 endfun
 
