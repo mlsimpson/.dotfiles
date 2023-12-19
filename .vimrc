@@ -225,8 +225,11 @@ nnoremap <space> za
 " set mouse=a
 "set mouse=r
 "set ttymouse=xterm
-set mouse=nvi
-set mousemodel=popup_setpos
+
+" Disabling this b/c clicking back into terminal puts the mouse where I
+" clicked rather than simply focusing on the terminal like I want
+"set mouse=nvi
+"set mousemodel=popup_setpos
 
 " Set colorscheme
 if has('gui_running')
@@ -609,3 +612,17 @@ nnoremap <leader>h :nohlsearch<CR>
 " delete to black hole register
 nnoremap <leader>d "_d
 
+" Use a line cursor within insert mode and a block cursor everywhere else.
+"let &t_SI = "\e[5 q"
+"let &t_EI = "\e[1 q"
+
+" change cursor back to terminal setting on exit
+" | Digit | Result                 |
+" |-------|------------------------|
+" | 1     | Blinking block         |
+" | 2     | Steady block (default) |
+" | 3     | Blinking underscore    |
+" | 4     | Steady underscore      |
+" | 5     | Blinking bar           |
+" | 6     | Steady bar             |
+"autocmd VimLeave * silent !echo -ne "\e[5 q"
