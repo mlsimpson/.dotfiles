@@ -25,7 +25,7 @@ export ZSH_THEME="half-life-threv"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions rbenv ag colored-man-pages colorize)
+plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions ag colored-man-pages colorize)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -287,13 +287,13 @@ alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G T
 
 #alias dca="deluge-console add"
 
-alias gam='git commit -a -m'
-alias gap='git add -p'
+#alias gam='git commit -a -m' # clobbers omz git plugin
+#alias gap='git add -p' # clobbers omz git plugin
 alias gcl='git clone'
 alias gd='git diff'
 alias gitclog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias grep='grep --color=always'
-alias gvim='gvim -f -geom 75x35'
+#alias gvim='gvim -f -geom 75x35'
 alias latr="ls -latr"
 alias less='less -mR'
 # VLESS=$(find /usr/share/vim -name 'less.sh')
