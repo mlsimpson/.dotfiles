@@ -171,6 +171,12 @@ function capitalize () {
 #    man "$@"
 #}
 
+# with colored-man-pages omz plugin, this works
+less_termcap[md]="${fg_bold[white]}"
+less_termcap[md]="${fg_bold[white]}"
+less_termcap[so]="${bg_bold[white]}${fg_bold[grey]}"
+less_termcap[us]="${fg[cyan]}"
+
 # Display series of dots during completion
 expand-or-complete-with-dots() {
   echo -n "\e[31m......\e[0m"
