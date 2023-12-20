@@ -559,5 +559,5 @@ alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
 print_oblique | figlet -f slant
 
 # make the cursor blink like i want god damn it
-echo -ne "\e[5 q"
+#echo -ne "\e[5 q"
 
