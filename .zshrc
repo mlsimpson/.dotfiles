@@ -171,6 +171,9 @@ man() {
     man "$@"
 }
 
+# show percentage of man page viewed
+export MANPAGER='less -s -M +Gg'
+
 # Display series of dots during completion
 expand-or-complete-with-dots() {
   echo -n "\e[31m......\e[0m"
