@@ -25,7 +25,7 @@ export ZSH_THEME="half-life"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions obliquestrategies)
+plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions obliquestrategies colorize)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -552,6 +552,8 @@ function media_sum() {
 }
 
 alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
+
+print_oblique | figlet -f slant
 
 # make the cursor blink like i want god damn it
 echo -ne "\e[5 q"
