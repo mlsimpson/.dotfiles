@@ -171,6 +171,9 @@ function capitalize () {
 #    man "$@"
 #}
 
+# view percentage of man page viewed
+export MANPAGER='less -s -M +Gg'
+
 # with colored-man-pages omz plugin, this works
 less_termcap[md]="${fg_bold[white]}"
 less_termcap[md]="${fg_bold[white]}"
