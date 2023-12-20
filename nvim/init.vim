@@ -596,6 +596,7 @@ nnoremap <leader>h :nohlsearch<CR>
 " delete to black hole register
 nnoremap <leader>d "_d
 
+" blinking bar cursor
 " https://neovim.io/doc/user/faq.html
 au VimEnter,VimResume * set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
     \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
