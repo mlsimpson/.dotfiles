@@ -25,7 +25,7 @@ export ZSH_THEME="half-life"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions obliquestrategies colorize)
+plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions obliquestrategies colorize fast-syntax-highlighting fzf-tab zsh-completions)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -35,7 +35,7 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh
 #####
-# . ~/.oh-my-zsh/custom/plugins/zsh-functional/functional.plugin.zsh
+. ~/.oh-my-zsh/custom/plugins/zsh-functional/functional.plugin.zsh
 
 # Set LS_COLORS variable for cross-platform sanity.
 # Mac OS X uses $LSCOLORS, defined within the shell.
