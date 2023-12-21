@@ -39,8 +39,8 @@ set incsearch     " do incremental searching
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo, so
+" that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
 " Put these in an autocmd group, so that we can delete them easily.
@@ -80,7 +80,7 @@ set novisualbell
 set t_vb=
 
 " Command timeout length in ms
-set tm=500
+set tm=1000
 
 set encoding=utf8
 try
@@ -176,7 +176,8 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " command-line completion operates in enhanced mode
 set wildmenu
 " Complete till longest common string, and start wildmenu
-set wildmode=list:longest,full
+set wildmode=longest,full
+set wildoptions=pum,tagfile
 
 " Make searches case-insensitive (only if searching with all lowercase)
 set ignorecase
@@ -189,6 +190,7 @@ nnoremap JJJJ <Nop>
 " Remap command history to f:
 nnoremap f: q:
 nnoremap q: 1
+
 " Nifty Tab stuff
 " Next Tab
 " nnoremap <silent> <c-h> :tabnext<CR>
@@ -269,7 +271,6 @@ runtime macros/matchit.vim
 
 set runtimepath+=$HOME/.vim
 
-
 " avoid auto-indenting pound signs
 inoremap # x<C-H>#
 
@@ -305,9 +306,6 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-" This is overwritten by ide.vim
-" I disabled it, though.
-set completeopt=menuone,menu,preview
 
 " Popup menu colorscheme
 highlight Pmenu ctermbg=13 guibg=LightGray
@@ -533,15 +531,15 @@ au FileType vim,zsh,sh setlocal formatoptions-=r
 let g:airline_theme = "simple"
 
 " Change cursor if in tmux
-if exists('$ITERM_PROFILE')
-  if exists('$TMUX')
-    let &t_SI = "\<Esc>[3 q"
-    let &t_EI = "\<Esc>[0 q"
-  else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  endif
-end
+"if exists('$ITERM_PROFILE')
+"  if exists('$TMUX')
+"    let &t_SI = "\<Esc>[3 q"
+"    let &t_EI = "\<Esc>[0 q"
+"  else
+"    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"  endif
+"end
 
 " https://codeinthehole.com/tips/vim-lists
 if executable('rg')
