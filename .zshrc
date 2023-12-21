@@ -246,26 +246,6 @@ zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 # Enable oh-my-zsh agent-forwarding
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-## Force menu on C-x RET.
-#zle -C complete-first complete-word _generic
-#zstyle ':completion:complete-first:*' menu yes
-#bindkey "^X^M" complete-first
-
-## c-x c-x => history menu
-#autoload -Uz history-beginning-search-menu
-#zle -N history-beginning-search-menu
-#bindkey '^X^X' history-beginning-search-menu
-
-## Complete in history with M-/, M-,
-#zstyle ':completion:history-words:*' list no
-#zstyle ':completion:history-words:*' menu yes
-#zstyle ':completion:history-words:*' remove-all-dups yes
-#bindkey "\e/" _history-complete-older
-#bindkey "\e," _history-complete-newer
-
-####
-# alias
-
 # Overwriting oh-my-zsh directory completion to suit pushdminus
 alias 2='cd -2'
 alias 3='cd -3'
