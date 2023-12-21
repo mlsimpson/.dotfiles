@@ -104,7 +104,7 @@ set nowrap
 " https://github.com/junegunn/vim-plug
 call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'dracula/vim'
-    Plug 'neovim/nvim-lspconfig'
+    "Plug 'neovim/nvim-lspconfig'
     "Plug 'hrsh9th/nvim-cmp'
     Plug 'scrooloose/nerdtree'
     Plug 'ryanoasis/vim-devicons'
