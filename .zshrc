@@ -25,7 +25,7 @@ export ZSH_THEME="half-life-threv"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions ag colored-man-pages colorize)
+plugins=(ssh-agent pass git fuck zsh-autosuggestions ripgrep colored-man-pages colorize fast-syntax-highlighting fzf-tab zsh-completions)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -35,26 +35,7 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh
 #####
-# . ~/.oh-my-zsh/custom/plugins/zsh-functional/functional.plugin.zsh
-
-# Set LS_COLORS variable for cross-platform sanity.
-# Mac OS X uses $LSCOLORS, defined within the shell.
-# I like this better.
-# Thanks to Mikachu from #zsh on irc.freenode.net
-# LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32'
-# LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;47:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
-# export LS_COLORS
-# This is necessary for GNU dircolors on Debian-based systems
-# d=.dircolors
-# test -r $d && eval "$(dircolors $d)"
-# ZLS_COLORS=$LS_COLORS
-
-# Path stuff
-# Customize to your needs...
-# export PATH=$PATH:~:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin
-
-# ffs
-#setxkbmap -option ctrl:nocaps
+. ~/.oh-my-zsh/custom/plugins/zsh-functional/functional.plugin.zsh
 
 # Locale
 export LC_CTYPE="en_US.UTF-8"
@@ -136,40 +117,11 @@ function dush() {
   done
 }
 
-## PulseAudio volume control
-#function vol(){
-#  pactl set-sink-volume 0 -- $1%
-#}
-
-# Volume up & down for PulseAudio
-#alias vup='pactl set-sink-volume 0 -- +10%'
-#alias vdo='pactl set-sink-volume 0 -- -10%'
-
-# add to Todo-list
-#function todo () {
-#	echo "$*" >> ~/Documents/notes/todo_macbook.txt
-#	cat Documents/notes/todo_macbook.txt | sort > tmp.txt && mv -v tmp.txt Documents/notes/todo_macbook.txt
-#}
-
 # Capitalize first letter of each word in filename
 function capitalize () {
   rename 's/\b(\w)/\u$1/g' *
   rename 's/Mp3/mp3/' *
 }
-
-#####
-# Set colors for man pages.
-#man() {
-#  env \
-#    LESS_TERMCAP_mb=$(printf "\e[1;37m") \
-#    LESS_TERMCAP_md=$(printf "\e[1;37m") \
-#    LESS_TERMCAP_me=$(printf "\e[0m") \
-#    LESS_TERMCAP_se=$(printf "\e[0m") \
-#    LESS_TERMCAP_so=$(printf "\e[1;47;30m") \
-#    LESS_TERMCAP_ue=$(printf "\e[0m") \
-#    LESS_TERMCAP_us=$(printf "\e[0;36m") \
-#    man "$@"
-#}
 
 # view percentage of man page viewed
 export MANPAGER='less -s -M +Gg'
@@ -252,23 +204,6 @@ zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 # Enable oh-my-zsh agent-forwarding
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-## Force menu on C-x RET.
-#zle -C complete-first complete-word _generic
-#zstyle ':completion:complete-first:*' menu yes
-#bindkey "^X^M" complete-first
-
-## c-x c-x => history menu
-#autoload -Uz history-beginning-search-menu
-#zle -N history-beginning-search-menu
-#bindkey '^X^X' history-beginning-search-menu
-
-## Complete in history with M-/, M-,
-#zstyle ':completion:history-words:*' list no
-#zstyle ':completion:history-words:*' menu yes
-#zstyle ':completion:history-words:*' remove-all-dups yes
-#bindkey "\e/" _history-complete-older
-#bindkey "\e," _history-complete-newer
-
 ####
 # alias
 
@@ -281,14 +216,8 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
-
 #alias cpanm='cpanm --sudo'
 alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G T)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
-
-#alias dca="deluge-console add"
-
-#alias gam='git commit -a -m' # clobbers omz git plugin
-#alias gap='git add -p' # clobbers omz git plugin
 alias gcl='git clone'
 alias gd='git diff'
 alias gitclog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
@@ -296,11 +225,6 @@ alias grep='grep --color=always'
 #alias gvim='gvim -f -geom 75x35'
 alias latr="ls -latr"
 alias less='less -mR'
-# VLESS=$(find /usr/share/vim -name 'less.sh')
-# if [ ! -z $VLESS ]; then
-#   alias less=$VLESS
-# fi
-#alias lltag='lltag --id3v2'
 # Overwrite oh-my-zsh's lsa behavior (remove the -l flag)
 alias lsa='ls -ah'
 # Show only directories
@@ -318,126 +242,50 @@ alias pgrep='nocorrect pgrep -l'
 alias pkill='nocorrect pkill'
 alias ri='ri -f ansi'
 alias scp='scp -r'
-#alias tree='tree -aCh'
-#alias dtree='tree -aChd -L 1'
-#alias ttytter='ttytter -ansi'
-
-# Quick alias for gcc options
-# CHOST="i686-pc-linux-gnu"
-# CFLAGS="-march=pentium4 -O2 -pipe -fomit-frame-pointer"
-# CXXFLAGS="${CFLAGS}"
-#alias gcc="gcc -O2 -Wall -pedantic"
-
-# Create cscope.out in the current directory
-#alias mcs="cscope -bcvR **/*.(c|h|cpp|cc)"
-
-# Update gems in one go
-#alias newgems="gem update; gem cleanup"
-
-# Update npm packages
-#alias newnpm="sudo npm update; sudo npm cache clean"
-
-# Update CPAN packages
-#alias newcpan="cpan-outdated -p | cpanm -i && rm -rf /home/threv/.cpanm/work"
-
-# Always start irssi in screen
-# alias irssi="screen irssi"
-
-# Easy start/stop pgsql
-# alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-# alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-
+alias tree='tree -aCh'
+alias dtree='tree -aChd -L 1'
 # Make GNU fileutils more verbose
 for c in cp mv chmod chown rename rm; do
     alias $c="$c -v"
 done
-
 alias cp='cp -r -v'
-
-# List all executable files in PATH
-#alias pathexec="print -l ${^path}/*(-*N) | less"
-
 alias tmux="tmux -u attach"
-
-# Always compress & encrypt ssh
-# alias ssh="ssh -Cc arcfour,blowfish-cbc"
-
-# Linux:  Make htop refresh every second
 alias htop='htop -d 10'
-
-# Silly random cowsay fun
-#alias cowfun='fortune -a | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n;'
-
 # ps auxww | ack "thingy" alias
 alias psa='ps auxww | ag '
-
-# Boy, do I type mid3v2 a lot
-#alias m32="mid3v2"
-
-# for weather command
-#alias weather='weather --imperial KFTY'
-
-# Wine aliases
-#alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > /dev/null 2>&1 &"
-#alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
-
-# clipit alias to suppress messages
-#alias clipit="clipit 2> /dev/null"
-
-# check Downloads dir
-#alias latrd="ls -latr /var/lib/deluge/Downloads"
-
 # when running locate, check if file on disk
 alias locate="locate -e"
-
 # start gdb in tui mode
 alias gdb="gdb -tui"
-
 alias weather="curl -s wttr.in/Atlanta"
-
 alias rcopy="rsync -av --info=progress2"
+alias ssh='ssh -X'
+alias t.n='ssh threv@threv.net'
+alias cb='ssh -Y threv@192.168.1.76'
+alias pry="/usr/local/bin/pry --simple-prompt"
+alias ipython="ipython --colors Linux"
+alias rm="rm -v -i"
+alias faketre="ls -R ../ | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/  /' -e 's/-/|/'"
+alias code="/mnt/c/Users/threv/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+alias rg="RIPGREP_CONFIG_PATH=/home/threv/.dotfiles/.ripgreprc rg"
 
-#alias cleanpkgs="dpkg -l | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge"
 ####
 # bindkey
 # Esc = undo
 bindkey "^[" undo
 
-# Pipe the current command through less
-#bindkey -s "\el" " 2>&1|less^M"
-
-#bindkey "^R" history-incremental-pattern-search-backward
-#bindkey "^S" history-incremental-pattern-search-forward
 ####
 # export
-
 # Editor = vim
 export EDITOR=vim
-
 # Sets ANSI color for man pages, and the pager in general.  Also ensures % display on bottom.
 export PAGER=less
 # export PAGER=vimpager
-
-# Set mail dir
-# export MAIL="/var/mail/threv"
-
 export HISTSIZE=5000
 export SAVEHIST=10000
-
-# MySQL Prompt
-#export MYSQL_PS1="\\d> "
-
-# Linux stuff
-# export TERM=-256color
-
-# Save compiler headaches
-# Particularly w/cpan
-#export ARCHFLAGS="-arch i386"
-#export VERSIONER_PERL_PREFER_32_BIT="yes"
-
-# PIP virtual environment
-# export PIP_RESPECT_VIRTUALENV=true
-# export PIP_REQUIRE_VIRTUALENV=true
+#export DISPLAY=localhost:0.0
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+export "LIBGL_ALWAYS_INDIRECT=1"
 
 ####
 # autojump support
@@ -446,17 +294,10 @@ export SAVEHIST=10000
 . /usr/local/bin/z.sh
 
 ####
-# for vmail
-#export VMAIL_VIM=vim
-#export VMAIL_BROWSER='midori'
-
-####
 # setopt
 setopt glob globdots pushdminus multios extendedglob braceccl inc_append_history # share_history
 # If you really do want to clobber a file, you can use the >! operator. To make things easier in this case, the > is stored in the history list as a >!
 # setopt noclobber
-# Pipe to multiple outputs
-
 unsetopt hist_verify auto_name_dirs nomatch correctall share_history
 
 ####
@@ -476,45 +317,12 @@ unsetopt hist_verify auto_name_dirs nomatch correctall share_history
 #zle -N copy-earlier-word
 #bindkey "^[m" copy-earlier-word
 
-# Make less open tons of file types
-# Debian Linux:
-# eval `lesspipe`
-# Mac:
-#   - requires brew install lesspipe
-# eval `/usr/local/bin/lesspipe.sh`
-
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-# Maybe this isn't needed?
-# source $HOME/.rvm/scripts/rvm
-
-# Set SDL-based games to use joystick mappings
-# export SDL_JOYSTICK_DEVICE=/dev/input/js0
-
 # GPG
 eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
 export GPG_AGENT_INFO
 GPG_TTY=$(tty)
 export GPG_TTY
 
-#virtualenvwrapper
-#export WORKON_HOME=~/.virtualenvs
-#source /usr/local/bin/virtualenvwrapper.sh 2>&1 /dev/null
-
-#export PATH=/home/threv/.nimble/bin:$PATH
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#export SDKMAN_DIR="/home/threv/.sdkman"
-#[[ -s "/home/threv/.sdkman/bin/sdkman-init.sh" ]] && source "/home/threv/.sdkman/bin/sdkman-init.sh"
-
-#export DISPLAY=localhost:0.0
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-export "LIBGL_ALWAYS_INDIRECT=1"
-
-alias ssh='ssh -X'
-alias t.n='ssh threv@threv.net'
-alias cb='ssh -Y threv@192.168.1.76'
-alias pry="/usr/local/bin/pry --simple-prompt"
-alias ipython="ipython --colors Linux"
 
 # https://www.commandlinefu.com/commands/view/29556/speak-spell-esque-glitch-sounds
 alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsigned -r 4k - test.wav trim 0 10"
@@ -530,7 +338,6 @@ function randminor {
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 #autoload -U add-zsh-hook
 #load-nvmrc() {
 #  if [[ -f .nvmrc && -r .nvmrc ]]; then
@@ -547,13 +354,6 @@ function randminor {
 #export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 hash -d steampunk=/mnt/c/Users/threv/Documents/Steampunk
-
-alias rm="rm -v -i"
-alias faketre="ls -R ../ | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/  /' -e 's/-/|/'"
-
-alias code="/mnt/c/Users/threv/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
-
-alias rg="RIPGREP_CONFIG_PATH=/home/threv/.dotfiles/.ripgreprc rg"
 
 # make the cursor blink like i want god damn it
 echo -ne "\e[5 q"
