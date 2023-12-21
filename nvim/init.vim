@@ -181,9 +181,9 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Cool tab completion stuff
 " command-line completion operates in enhanced mode
-set wildmenu
+"set wildmenu
 " Complete till longest common string, and start wildmenu
-set wildmode=list:longest,full
+set wildmode=longest,full
 
 " Make searches case-insensitive (only if searching with all lowercase)
 set ignorecase
