@@ -237,8 +237,7 @@ set mousemodel=popup_setpos
 
 " Set colorscheme
 "colorscheme dracula
-"colorscheme ir_black
-colorscheme darkblue
+colorscheme ir_black
 let g:airline_theme = "simple"
 "let g:airline_theme='dracula'
 
