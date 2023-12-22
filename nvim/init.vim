@@ -176,8 +176,8 @@ nnoremap <space> za
 
 " Use mouse
 " NOTE:  For Terminal.app, a SIMBL Plugin is needed
-"set mouse=nvi
-"set mousemodel=popup_setpos
+set mouse=nvi
+set mousemodel=popup_setpos
 
 " Set colorscheme
 "colorscheme dracula
@@ -283,8 +283,8 @@ autocmd BufReadPost quickfix setlocal wrap | setlocal linebreak
 " NOTE:  I am making omnicomplete happen either via ., ->, or ::
 " Otherwise, I must use <c-x><c-o> to do it
 " Supertab
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+"let g:SuperTabDefaultCompletionType = "context"
 
 " Tagbar
 map <Leader>tb :TagbarToggle<CR>
