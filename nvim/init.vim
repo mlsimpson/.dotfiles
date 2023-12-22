@@ -11,7 +11,7 @@ set colorcolumn=80 " vertical line at 80 chars
 set t_Co=256
 
 " font config for gvim
-set guifont=Hack\ Nerd\ Font\ Mono:h10
+set guifont=Ubuntu\ Mono:h10
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
