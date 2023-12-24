@@ -25,7 +25,7 @@ export ZSH_THEME="half-life"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions obliquestrategies colorize fast-syntax-highlighting fzf-tab zsh-completions)
+plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions obliquestrategies colorize fast-syntax-highlighting zsh-completions)
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -124,17 +124,17 @@ function gitreup {
 # du -sh sorted
 # Graciously provided by b8sell
 # https://github.com/b8sell/bash_stuff/blob/master/dush
-function dush() {
-  du -kd1 "$@" | sort -n | while read size fname;
-    do for unit in k M G T P E Z Y;
-      do if [ $size -lt 1024 ];
-        then echo -e "${size}${unit}\t${fname}";
-        break;
-      fi;
-    size=$((size/1024));
-    done;
-  done
-}
+#function dush() {
+#  du -kd1 "$@" | sort -n | while read size fname;
+#    do for unit in k M G T P E Z Y;
+#      do if [ $size -lt 1024 ];
+#        then echo -e "${size}${unit}\t${fname}";
+#        break;
+#      fi;
+#    size=$((size/1024));
+#    done;
+#  done
+#}
 
 ## PulseAudio volume control
 function vol(){
