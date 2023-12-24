@@ -105,22 +105,27 @@ function gitreup {
 # du -sh sorted
 # Graciously provided by b8sell
 # https://github.com/b8sell/bash_stuff/blob/master/dush
-function dush() {
-  du -kd1 "$@" | sort -n | while read size fname;
-    do for unit in k M G T P E Z Y;
-      do if [ $size -lt 1024 ];
-        then echo -e "${size}${unit}\t${fname}";
-        break;
-      fi;
-    size=$((size/1024));
-    done;
-  done
-}
+#function dush() {
+#  du -kd1 "$@" | sort -n | while read size fname;
+#    do for unit in k M G T P E Z Y;
+#      do if [ $size -lt 1024 ];
+#        then echo -e "${size}${unit}\t${fname}";
+#        break;
+#      fi;
+#    size=$((size/1024));
+#    done;
+#  done
+#}
 
 # Capitalize first letter of each word in filename
 function capitalize () {
   rename 's/\b(\w)/\u$1/g' *
   rename 's/Mp3/mp3/' *
+}
+
+# Add artist to mobius.txt
+function mobius () {
+    echo "$1" >> notes/mobius.txt
 }
 
 # view percentage of man page viewed
@@ -138,6 +143,7 @@ expand-or-complete-with-dots() {
   zle expand-or-complete
   zle redisplay
 }
+
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
 
