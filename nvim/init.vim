@@ -114,6 +114,7 @@ call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'romgrk/barbar.nvim'
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
+    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'mhinz/vim-startify'

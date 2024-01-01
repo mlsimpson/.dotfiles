@@ -397,6 +397,8 @@ let g:NERDTrimTrailingWhitespace = 1
 " more Go syntax highlighting
 let g:go_highlight_types = 1
 
+let g:python_highlight_all = 1
+
 " unhighlight search term
 nnoremap <leader>h :nohlsearch<CR>
 
