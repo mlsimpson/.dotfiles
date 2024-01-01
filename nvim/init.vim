@@ -11,7 +11,8 @@ set colorcolumn=80 " vertical line at 80 chars
 set t_Co=256
 
 " font config for gvim
-set guifont=Ubuntu\ Mono:h10
+"set guifont=Ubuntu\ Mono:h10
+set guifont=Liberation\ Mono:h10
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -107,13 +108,14 @@ call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'neovim/nvim-lspconfig'
     "Plug 'hrsh9th/nvim-cmp'
     Plug 'scrooloose/nerdtree'
-    "Plug 'ryanoasis/vim-devicons'
+    Plug 'ryanoasis/vim-devicons'
     Plug 'preservim/nerdcommenter'
     Plug 'tpope/vim-surround'
     Plug 'machakann/vim-highlightedyank'
     "Plug 'romgrk/barbar.nvim'
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
+    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'mhinz/vim-startify'
