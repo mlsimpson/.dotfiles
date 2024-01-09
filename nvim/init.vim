@@ -110,16 +110,21 @@ call plug#begin("$HOME/.config/nvim/plugged")
     Plug 'scrooloose/nerdtree'
     Plug 'ryanoasis/vim-devicons'
     Plug 'preservim/nerdcommenter'
-    Plug 'tpope/vim-surround'
-    Plug 'machakann/vim-highlightedyank'
-    "Plug 'romgrk/barbar.nvim'
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
+    Plug 'tpope/vim-surround'
+    "Plug 'machakann/vim-highlightedyank'
+    "Plug 'romgrk/barbar.nvim'
     Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+    Plug 'dense-analysis/ale'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'mhinz/vim-startify'
 call plug#end()
+
+au TextYankPost * silent! lua vim.highlight.on_yank()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Parenthesis/bracket expanding
@@ -368,6 +373,15 @@ nnoremap <leader>h :nohlsearch<CR>
 
 " delete to black hole register
 nnoremap <leader>d "_d
+
+" map fzf
+nnoremap <C-p> :<C-u>FZF<CR>
+
+" ALE config
+let g:ale_fixers = {
+\    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\    'python': ['ruff'],
+\}
 
 " blinking bar cursor
 " https://neovim.io/doc/user/faq.html

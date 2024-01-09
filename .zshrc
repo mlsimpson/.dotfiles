@@ -122,23 +122,20 @@ function capitalize () {
   rename 's/\b(\w)/\u$1/g' *
   rename 's/Mp3/mp3/' *
 }
-
 # Add artist to mobius.txt
 function mobius () {
     echo "$1" >> notes/mobius.txt
 }
-
-# view percentage of man page viewed
-export MANPAGER='less -s -M +Gg'
-
-# with colored-man-pages omz plugin, this works
-less_termcap[md]="${fg_bold[white]}"
-less_termcap[md]="${fg_bold[white]}"
-less_termcap[so]="${bg_bold[white]}${fg_bold[grey]}"
-less_termcap[us]="${fg[cyan]}"
+# https://blog.robertelder.org/bash-one-liner-compose-music/
+function randmajor () {
+    cat /dev/urandom | hexdump -v -e '/1 "%u\n"' | awk '{ split("0,2,4,5,7,9,11,12",a,","); for (i = 0; i < 1; i+= 0.0001) printf("%08X\n", 100*sin(1382*exp((a[$1 % 8]/12)*log(2))*i)) }' | xxd -r -p | sox -t raw -r 44.1k -c 1 -e unsigned -b 16 - test.wav trim 0 15
+}
+function randminor {
+    cat /dev/urandom | hexdump -v -e '/1 "%u\n"' | awk '{ split("0,2,3,5,7,8,10,12",a,","); for (i = 0; i < 1; i+= 0.0001) printf("%08X\n", 100*sin(1382*exp((a[$1 % 8]/12)*log(2))*i)) }' | xxd -r -p | sox -t raw -r 44.1k -c 1 -e unsigned -b 16 - test.wav trim 0 15
+}
 
 # Display series of dots during completion
-expand-or-complete-with-dots() {
+function expand-or-complete-with-dots () {
   echo -n "\e[31m......\e[0m"
   zle expand-or-complete
   zle redisplay
@@ -212,7 +209,6 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 ####
 # alias
-
 # Overwriting oh-my-zsh directory completion to suit pushdminus
 alias 2='cd -2'
 alias 3='cd -3'
@@ -274,6 +270,9 @@ alias rm="rm -v -i"
 alias faketre="ls -R ../ | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/  /' -e 's/-/|/'"
 alias code="/mnt/c/Users/threv/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 alias rg="RIPGREP_CONFIG_PATH=/home/threv/.dotfiles/.ripgreprc rg"
+alias lsd="lsd --group-directories-first --hyperlink=auto"
+# https://www.commandlinefu.com/commands/view/29556/speak-spell-esque-glitch-sounds
+alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsigned -r 4k - test.wav trim 0 10"
 
 ####
 # bindkey
@@ -292,6 +291,19 @@ export SAVEHIST=10000
 #export DISPLAY=localhost:0.0
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 export "LIBGL_ALWAYS_INDIRECT=1"
+# GPG
+eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
+export GPG_AGENT_INFO
+GPG_TTY=$(tty)
+export GPG_TTY
+# view percentage of man page viewed
+export MANPAGER='less -s -M +Gg'
+
+# with colored-man-pages omz plugin, this works
+less_termcap[md]="${fg_bold[white]}"
+less_termcap[md]="${fg_bold[white]}"
+less_termcap[so]="${bg_bold[white]}${fg_bold[grey]}"
+less_termcap[us]="${fg[cyan]}"
 
 ####
 # autojump support
@@ -322,24 +334,6 @@ unsetopt hist_verify auto_name_dirs nomatch correctall share_history
 #autoload -Uz copy-earlier-word
 #zle -N copy-earlier-word
 #bindkey "^[m" copy-earlier-word
-
-# GPG
-eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
-export GPG_AGENT_INFO
-GPG_TTY=$(tty)
-export GPG_TTY
-
-
-# https://www.commandlinefu.com/commands/view/29556/speak-spell-esque-glitch-sounds
-alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsigned -r 4k - test.wav trim 0 10"
-# https://blog.robertelder.org/bash-one-liner-compose-music/
-function randmajor {
-    cat /dev/urandom | hexdump -v -e '/1 "%u\n"' | awk '{ split("0,2,4,5,7,9,11,12",a,","); for (i = 0; i < 1; i+= 0.0001) printf("%08X\n", 100*sin(1382*exp((a[$1 % 8]/12)*log(2))*i)) }' | xxd -r -p | sox -t raw -r 44.1k -c 1 -e unsigned -b 16 - test.wav trim 0 15
-}
-
-function randminor {
-    cat /dev/urandom | hexdump -v -e '/1 "%u\n"' | awk '{ split("0,2,3,5,7,8,10,12",a,","); for (i = 0; i < 1; i+= 0.0001) printf("%08X\n", 100*sin(1382*exp((a[$1 % 8]/12)*log(2))*i)) }' | xxd -r -p | sox -t raw -r 44.1k -c 1 -e unsigned -b 16 - test.wav trim 0 15
-}
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
