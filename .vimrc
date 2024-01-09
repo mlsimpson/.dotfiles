@@ -399,6 +399,12 @@ let g:go_highlight_types = 1
 
 let g:python_highlight_all = 1
 
+" ALE config
+let g:ale_fixers = {
+\    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\    'python': ['ruff'],
+\}
+
 " unhighlight search term
 nnoremap <leader>h :nohlsearch<CR>
 

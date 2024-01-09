@@ -83,7 +83,7 @@ export LC_ALL="en_US.UTF-8"
 ####
 # Mandelbrot pattern generation
 # Displays floating point abilites of zsh
-#function most_useless_use_of_zsh {
+#function most_useless_use_of_zsh () {
 #  local lines columns colour a b p q i pnew
 #  ((columns=COLUMNS-1, lines=LINES-1, colour=0))
 #  for ((b=-1.5; b<=1.5; b+=3.0/lines)) do
@@ -104,7 +104,7 @@ export LC_ALL="en_US.UTF-8"
 # RANDOM=$RANDOM; command glob(oe:'REPLY=$RANDOM':[1,x])
 
 # Convert coverart
-function coverart {
+function coverart () {
   convert $1 -adaptive-resize 400x400 -adaptive-sharpen 0x1.0 cover.png
   rm $1
   optipng -o2 cover.png
@@ -112,12 +112,12 @@ function coverart {
 }
 
 # Search .allhistory
-function hhist {
+function hhist () {
   ag --no-numbers $1 /home/threv/.allhistory
 }
 
 # git reup
-function gitreup {
+function gitreup () {
   find . -maxdepth 2 -name .git -print -execdir git fetch \; -execdir git pull \; -execdir git submodule update --init --recursive \;
 }
 
@@ -137,13 +137,9 @@ function gitreup {
 #}
 
 ## PulseAudio volume control
-function vol(){
+function vol () {
   pactl set-sink-volume 0 -- $1%
 }
-
-# Volume up & down for PulseAudio
-alias vup='pactl set-sink-volume 0 -- +10%'
-alias vdo='pactl set-sink-volume 0 -- -10%'
 
 # add to Todo-list
 function todo () {
@@ -159,7 +155,7 @@ function capitalize () {
 
 #####
 # Set colors for man pages.
-man() {
+function man () {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;37m") \
     LESS_TERMCAP_md=$(printf "\e[1;37m") \
@@ -175,13 +171,35 @@ man() {
 export MANPAGER='less -s -M +Gg'
 
 # Display series of dots during completion
-expand-or-complete-with-dots() {
+function expand-or-complete-with-dots () {
   echo -n "\e[31m......\e[0m"
   zle expand-or-complete
   zle redisplay
 }
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
+
+#function media_sum() {
+#  mi="/usr/bin/mediainfo"
+#  tot_sz=$(
+#    for sn in "$@"; do
+#      if [[ -e $sn ]]; then
+#        sz=$(
+#          $mi --Inform="General;%Duration% + " "$sn" 2>/dev/null |
+#            sed 's/\+[^0-9]*\(+\|$\)/\1/g;s/^[^0-9]*\+//;' | bc
+#        )
+#      else
+#        sz=$(
+#          $mi --Inform="General;%Duration% + " $sn 2>/dev/null |
+#            sed 's/\+[^0-9]*\(+\|$\)/\1/g;s/^[^0-9]*\+//;' | bc
+#        )
+#      fi
+#      echo "${sn}: $(h $sz)h$(m $sz)m" >&2;
+#      echo -en "$sz + ";
+#    done | sed 's/\+[^0-9]*\(+\|$\)/\1/g;s/^[^0-9]*\+//;s/$/\n/' | bc
+#  );
+#  echo "Total: $(h $tot_sz)h$(m $tot_sz)m";
+#}
 
 ####
 # Completion
@@ -246,6 +264,8 @@ zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 # Enable oh-my-zsh agent-forwarding
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
+####
+# aliases
 # Overwriting oh-my-zsh directory completion to suit pushdminus
 alias 2='cd -2'
 alias 3='cd -3'
@@ -255,7 +275,6 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
-
 #alias cpanm='cpanm --sudo'
 alias duf='du -kd1 | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G T)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
 
@@ -295,91 +314,67 @@ alias scp='scp -r'
 alias tree='tree -aCh'
 alias dtree='tree -aChd -L 1'
 alias ttytter='ttytter -ansi'
-
+# Volume up & down for PulseAudio
+alias vup='pactl set-sink-volume 0 -- +10%'
+alias vdo='pactl set-sink-volume 0 -- -10%'
 # Quick alias for gcc options
 # CHOST="i686-pc-linux-gnu"
 # CFLAGS="-march=pentium4 -O2 -pipe -fomit-frame-pointer"
 # CXXFLAGS="${CFLAGS}"
 alias gcc="gcc -O2 -Wall -pedantic"
-
 # Create cscope.out in the current directory
 alias mcs="cscope -bcvR **/*.(c|h|cpp|cc)"
-
 # Update gems in one go
 alias newgems="gem update; gem cleanup"
-
 # Update npm packages
 alias newnpm="sudo npm update; sudo npm cache clean"
-
 # Update CPAN packages
 alias newcpan="cpan-outdated -p | cpanm -i && rm -rf /home/threv/.cpanm/work"
-
 # Always start irssi in screen
 # alias irssi="screen irssi"
-
+# necessary for systemd
 alias screen="systemd-run --user --scope screen"
-
 # Easy start/stop pgsql
 # alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 # alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-
 # Make GNU fileutils more verbose
 for c in cp mv chmod chown rename rm; do
     alias $c="$c -v"
 done
-
 alias cp='cp -r -v'
-
+alias rm='rm -v -i'
+alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
 # List all executable files in PATH
 #alias pathexec="print -l ${^path}/*(-*N) | less"
-
 alias tmux="tmux -u attach"
-
 # Always compress & encrypt ssh
 # alias ssh="ssh -Cc arcfour,blowfish-cbc"
-
 # Linux:  Make htop refresh every second
 alias htop='htop -d 10'
-
 # Silly random cowsay fun
 #alias cowfun='fortune -a | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n;'
-
 # ps auxww | ack "thingy" alias
 alias psa='ps auxww | ag '
-
 # Boy, do I type mid3v2 a lot
 alias m32="mid3v2"
-
 # for weather command
-alias weather='weather --imperial KFTY'
-
+alias weather="curl -s wttr.in/Atlanta"
 # Wine aliases
 alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > /dev/null 2>&1 &"
 alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
-
 # clipit alias to suppress messages
 #alias clipit="clipit 2> /dev/null"
-
 # check Downloads dir
 alias latrd="ls -latr /var/lib/deluge/Downloads"
-
 # when running locate, check if file on disk
 alias locate="locate -e"
-
 # byobu alias
 alias byobu="TERM=xterm-256color byobu"
-
 # start gdb in tui mode
 alias gdb="gdb -tui"
-
-alias weather="curl -s wttr.in/Atlanta"
-
 alias rcopy="rsync -av --info=progress2"
-
 alias wine32="WINEARCH=win32 wine"
-
 alias cleanpkgs="dpkg -l | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge"
-
 #mpc
 alias mpcs="mpc -p 6601"
 alias mpcv="mpc -p 6602"
@@ -388,53 +383,66 @@ alias mpch="mpc -p 6604"
 alias mpcg="mpc -p 6605"
 alias mpcd="mpc -p 6607"
 alias mpca="mpc -p 6608"
-
 # This will list all directories starting from the current one, split each
 # line by the character "/", select field number "2" (each line starts with
 # "./", so your first field would be ".") and then only outputs unique lines,
 # and a count how often this unique line appears (-c parameter).
 alias mostdirs="find . -type d | cut -d/ -f 2 | uniq -c | sort -g"
+alias lsd="lsd --group-directories-first --hyperlink=auto"
+alias ipython="ipython --colors Linux"
 
 ####
 # bindkey
 # Esc = undo
 bindkey "^[" undo
-
 # Pipe the current command through less
 #bindkey -s "\el" " 2>&1|less^M"
-
 #bindkey "^R" history-incremental-pattern-search-backward
 #bindkey "^S" history-incremental-pattern-search-forward
+
 ####
 # export
-
 # Editor = vim
 export EDITOR=vim
-
 # Sets ANSI color for man pages, and the pager in general.  Also ensures % display on bottom.
 export PAGER=less
 # export PAGER=vimpager
-
 # Set mail dir
 # export MAIL="/var/mail/threv"
-
 export HISTSIZE=5000
 export SAVEHIST=10000
-
 # MySQL Prompt
 export MYSQL_PS1="\\d> "
-
+# Don't send stuff to MS
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 # Linux stuff
 # export TERM=-256color
-
 # Save compiler headaches
 # Particularly w/cpan
 #export ARCHFLAGS="-arch i386"
 #export VERSIONER_PERL_PREFER_32_BIT="yes"
-
 # PIP virtual environment
 # export PIP_RESPECT_VIRTUALENV=true
 # export PIP_REQUIRE_VIRTUALENV=true
+export PATH=/home/threv/.nimble/bin:$PATH
+
+# GPG
+eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
+export GPG_AGENT_INFO
+GPG_TTY=$(tty)
+export GPG_TTY
+
+#virtualenvwrapper
+#export WORKON_HOME=~/.virtualenvs
+#source /usr/local/bin/virtualenvwrapper.sh 2>&1 /dev/null
+
+# necessary for systemd-run --user --scope
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
+xhost +local:
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/threv/.sdkman"
+[[ -s "/home/threv/.sdkman/bin/sdkman-init.sh" ]] && source "/home/threv/.sdkman/bin/sdkman-init.sh"
 
 ####
 # autojump support
@@ -446,9 +454,6 @@ export MYSQL_PS1="\\d> "
 # for vmail
 #export VMAIL_VIM=vim
 #export VMAIL_BROWSER='midori'
-
-# Don't send stuff to MS
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 ####
 # setopt
@@ -490,52 +495,8 @@ unsetopt hist_verify share_history auto_name_dirs nomatch correctall
 # Set SDL-based games to use joystick mappings
 # export SDL_JOYSTICK_DEVICE=/dev/input/js0
 
-# GPG
-eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
-export GPG_AGENT_INFO
-GPG_TTY=$(tty)
-export GPG_TTY
-
-#virtualenvwrapper
-#export WORKON_HOME=~/.virtualenvs
-#source /usr/local/bin/virtualenvwrapper.sh 2>&1 /dev/null
-
-export PATH=/home/threv/.nimble/bin:$PATH
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/threv/.sdkman"
-[[ -s "/home/threv/.sdkman/bin/sdkman-init.sh" ]] && source "/home/threv/.sdkman/bin/sdkman-init.sh"
-
-# necessary for systemd-run --user --scope
-export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
-xhost +local:
-
-alias rm='rm -v -i'
-
-function media_sum() {
-  mi="/usr/bin/mediainfo"
-  tot_sz=$(
-    for sn in "$@"; do
-      if [[ -e $sn ]]; then
-        sz=$(
-          $mi --Inform="General;%Duration% + " "$sn" 2>/dev/null |
-            sed 's/\+[^0-9]*\(+\|$\)/\1/g;s/^[^0-9]*\+//;' | bc
-        )
-      else
-        sz=$(
-          $mi --Inform="General;%Duration% + " $sn 2>/dev/null |
-            sed 's/\+[^0-9]*\(+\|$\)/\1/g;s/^[^0-9]*\+//;' | bc
-        )
-      fi
-      echo "${sn}: $(h $sz)h$(m $sz)m" >&2;
-      echo -en "$sz + ";
-    done | sed 's/\+[^0-9]*\(+\|$\)/\1/g;s/^[^0-9]*\+//;s/$/\n/' | bc
-  );
-  echo "Total: $(h $tot_sz)h$(m $tot_sz)m";
-}
-
-alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
-
+# print random oblique strategy w/figlet when starting shell
+# requires oblique-strategies zsh custom plugin
 print_oblique | figlet -f slant
 
 # make the cursor blink like i want god damn it
