@@ -390,6 +390,7 @@ alias mpca="mpc -p 6608"
 alias mostdirs="find . -type d | cut -d/ -f 2 | uniq -c | sort -g"
 alias lsd="lsd --group-directories-first --hyperlink=auto"
 alias ipython="ipython --colors Linux"
+alias allexec="print -rC1 -- $commands"
 
 ####
 # bindkey
