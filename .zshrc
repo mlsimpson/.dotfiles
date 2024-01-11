@@ -330,7 +330,7 @@ unsetopt hist_verify auto_name_dirs nomatch correctall share_history
 
 # Load zsh builtin functions
 # autoload -U zargs zmv zcalc tcp_open
-# autoload -U zmv
+autoload -U zmv
 #
 #autoload -Uz copy-earlier-word
 #zle -N copy-earlier-word
