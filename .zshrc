@@ -3,6 +3,8 @@
 # Don't forget to install mouseterm for vim!
 #####
 
+# https://unix.stackexchange.com/questions/117331/in-zsh-how-can-i-dump-all-configuration
+
 #####
 # Oh-My-ZSH!
 # Path to oh-my-zsh configuration.
