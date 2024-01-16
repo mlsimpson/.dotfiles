@@ -124,6 +124,10 @@ function capitalize () {
   rename 's/\b(\w)/\u$1/g' *
   rename 's/Mp3/mp3/' *
 }
+# print all commands in $PATH
+function allexec () {
+    print -rC1 -- $commands
+}
 # Add artist to mobius.txt
 function mobius () {
     echo "$1" >> notes/mobius.txt
@@ -275,7 +279,6 @@ alias rg="RIPGREP_CONFIG_PATH=/home/threv/.dotfiles/.ripgreprc rg"
 alias lsd="lsd --group-directories-first --hyperlink=auto"
 # https://www.commandlinefu.com/commands/view/29556/speak-spell-esque-glitch-sounds
 alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsigned -r 4k - test.wav trim 0 10"
-alias allexec="print -rC1 -- $commands"
 
 ####
 # bindkey
