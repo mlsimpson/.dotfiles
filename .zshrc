@@ -181,6 +181,11 @@ function expand-or-complete-with-dots () {
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
 
+# print all commands in $PATH
+function allexec () {
+    print -rC1 -- $commands
+}
+
 #function media_sum() {
 #  mi="/usr/bin/mediainfo"
 #  tot_sz=$(
@@ -392,7 +397,6 @@ alias mpca="mpc -p 6608"
 alias mostdirs="find . -type d | cut -d/ -f 2 | uniq -c | sort -g"
 alias lsd="lsd --group-directories-first --hyperlink=auto"
 alias ipython="ipython --colors Linux"
-alias allexec="print -rC1 -- $commands"
 
 ####
 # bindkey
