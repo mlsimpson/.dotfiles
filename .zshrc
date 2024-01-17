@@ -431,7 +431,8 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 # PIP virtual environment
 # export PIP_RESPECT_VIRTUALENV=true
 # export PIP_REQUIRE_VIRTUALENV=true
-export PATH=/home/threv/.nimble/bin:$PATH
+#export PATH=/home/threv/.nimble/bin:$PATH
+export PATH=$PATH:.
 
 # GPG
 eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
