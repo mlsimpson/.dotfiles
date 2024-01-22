@@ -392,8 +392,8 @@ nnoremap <leader>h :nohlsearch<CR>
 nnoremap <leader>d "_d
 
 " Use a line cursor within insert mode and a blinking block cursor everywhere else.
-"let &t_SI = "\e[5 q"
-"let &t_EI = "\e[1 q"
+let &t_SI = "\e[3 q"
+let &t_EI = "\e[1 q"
 
 " change cursor back to terminal setting on exit
 " | Digit | Result                 |
@@ -404,5 +404,5 @@ nnoremap <leader>d "_d
 " | 4     | Steady underscore      |
 " | 5     | Blinking bar           |
 " | 6     | Steady bar             |
-"autocmd VimLeave * silent !echo -ne "\e[5 q"
+autocmd VimLeave * silent !echo -ne "\e[3 q"
 
