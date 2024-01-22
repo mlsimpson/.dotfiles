@@ -385,7 +385,7 @@ let g:ale_fixers = {
 
 " blinking bar cursor
 " https://neovim.io/doc/user/faq.html
-au VimEnter,VimResume * set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+au VimEnter,VimResume * set guicursor=n-v-c:block,i-ci-ve:hor50,r-cr:hor50,o:hor50
     \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
     \,sm:block-blinkwait175-blinkoff150-blinkon175
 
@@ -398,5 +398,5 @@ au VimEnter,VimResume * set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor
 " | 4     | Steady underscore      |
 " | 5     | Blinking bar           |
 " | 6     | Steady bar             |
-au VimLeave,VimSuspend * set guicursor=a:ver25-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+au VimLeave,VimSuspend * set guicursor=a:hor50-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
 

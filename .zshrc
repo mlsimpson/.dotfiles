@@ -363,5 +363,5 @@ autoload -U zmv
 hash -d steampunk=/mnt/c/Users/threv/Documents/Steampunk
 
 # make the cursor blink like i want god damn it
-echo -ne "\e[5 q"
+echo -ne "\e[3 q"
 
