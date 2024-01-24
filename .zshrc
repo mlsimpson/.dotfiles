@@ -363,6 +363,8 @@ autoload -U zmv
 
 hash -d steampunk=/mnt/c/Users/threv/Documents/Steampunk
 
+RPROMPT="[%{$fg[cyan]%}%D{%m/%y/%f} | %D{%L:%M:%S}]"
+
 # make the cursor blink like i want god damn it
 echo -ne "\e[3 q"
 
