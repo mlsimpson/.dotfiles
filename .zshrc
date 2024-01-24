@@ -508,6 +508,8 @@ autoload -U zmv
 # requires oblique-strategies zsh custom plugin
 print_oblique | figlet -f slant
 
+RPROMPT="[%{$fg[cyan]%}%D{%m/%y/%f} | %D{%L:%M:%S}]"
+
 # make the cursor blink like i want god damn it
 #echo -ne "\e[5 q"
 
