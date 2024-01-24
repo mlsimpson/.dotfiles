@@ -277,6 +277,7 @@ alias faketre="ls -R ../ | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' 
 alias code="/mnt/c/Users/threv/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 alias rg="RIPGREP_CONFIG_PATH=/home/threv/.dotfiles/.ripgreprc rg"
 alias lsd="lsd --group-directories-first --hyperlink=auto"
+alias eza="eza --group-directories-first --icons=auto"
 # https://www.commandlinefu.com/commands/view/29556/speak-spell-esque-glitch-sounds
 alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsigned -r 4k - test.wav trim 0 10"
 
