@@ -398,6 +398,7 @@ alias mostdirs="find . -type d | cut -d/ -f 2 | uniq -c | sort -g"
 alias lsd="lsd --group-directories-first --hyperlink=auto"
 alias eza="eza --group-directories-first --icons=auto"
 alias ipython="ipython --colors Linux"
+#alias history="history -iD"
 
 ####
 # bindkey
@@ -508,7 +509,7 @@ autoload -U zmv
 # requires oblique-strategies zsh custom plugin
 print_oblique | figlet -f slant
 
-RPROMPT="[%{$fg[cyan]%}%D{%m/%y/%f} | %D{%L:%M:%S}]"
+RPROMPT="[%{$fg[cyan]%}%D{%m/%y/%f} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%{$reset_color%}]"
 
 # make the cursor blink like i want god damn it
 #echo -ne "\e[5 q"
