@@ -280,6 +280,7 @@ alias lsd="lsd --group-directories-first --hyperlink=auto"
 alias eza="eza --group-directories-first --icons=auto"
 # https://www.commandlinefu.com/commands/view/29556/speak-spell-esque-glitch-sounds
 alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsigned -r 4k - test.wav trim 0 10"
+#alias history="history -iD"
 
 ####
 # bindkey
@@ -363,7 +364,7 @@ autoload -U zmv
 
 hash -d steampunk=/mnt/c/Users/threv/Documents/Steampunk
 
-RPROMPT="[%{$fg[cyan]%}%D{%m/%y/%f} | %D{%L:%M:%S}]"
+RPROMPT="[%{$fg[cyan]%}%D{%m/%y/%f} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%{$reset_color%}]"
 
 # make the cursor blink like i want god damn it
 echo -ne "\e[3 q"
