@@ -182,7 +182,7 @@ zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
 
 # print all commands in $PATH
-function allexec () {
+function allexec1 () {
     print -rC1 -- $commands
 }
 
@@ -399,6 +399,7 @@ alias lsd="lsd --group-directories-first --hyperlink=auto"
 alias eza="eza --group-directories-first --icons=auto"
 alias ipython="ipython --colors Linux"
 #alias history="history -iD"
+alias allexec="compgen -c | sort -u"
 
 ####
 # bindkey
