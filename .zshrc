@@ -128,7 +128,6 @@ function capitalize () {
 function allexec1 () {
     print -rC1 -- $commands
 }
-
 # Add artist to mobius.txt
 function mobius () {
     echo "$1" >> notes/mobius.txt
@@ -370,4 +369,4 @@ RPROMPT="[%{$fg[cyan]%}%D{%m/%y/%f} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%
 
 # make the cursor blink like i want god damn it
 echo -ne "\e[3 q"
-)
+
