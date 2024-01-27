@@ -125,9 +125,10 @@ function capitalize () {
   rename 's/Mp3/mp3/' *
 }
 # print all commands in $PATH
-function allexec () {
+function allexec1 () {
     print -rC1 -- $commands
 }
+
 # Add artist to mobius.txt
 function mobius () {
     echo "$1" >> notes/mobius.txt
@@ -281,6 +282,7 @@ alias eza="eza --group-directories-first --icons=auto"
 # https://www.commandlinefu.com/commands/view/29556/speak-spell-esque-glitch-sounds
 alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsigned -r 4k - test.wav trim 0 10"
 #alias history="history -iD"
+alias allexec="compgen -c | sort -u"
 
 ####
 # bindkey
@@ -368,4 +370,4 @@ RPROMPT="[%{$fg[cyan]%}%D{%m/%y/%f} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%
 
 # make the cursor blink like i want god damn it
 echo -ne "\e[3 q"
-
+)
