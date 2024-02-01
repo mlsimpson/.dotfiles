@@ -510,7 +510,11 @@ autoload -U zmv
 # requires oblique-strategies zsh custom plugin
 print_oblique | figlet -f slant
 
-RPROMPT="[%{$fg[cyan]%}%D{%m/%y/%f} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%{$reset_color%}]"
+# date/time right prompt
+RPROMPT="[%{$fg[cyan]%}%D{%m/%d/%y} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%{$reset_color%}]"
+
+# Use starship prompt
+# eval "$(starship init zsh)"
 
 # make the cursor blink like i want god damn it
 #echo -ne "\e[5 q"
