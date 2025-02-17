@@ -27,7 +27,7 @@ export ZSH_THEME="half-life-threv"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent pass git fuck zsh-autosuggestions ripgrep colored-man-pages colorize fast-syntax-highlighting zsh-completions fzf) # fzf-tab F-Sy-H
+plugins=(ssh-agent pass git fuck zsh-autosuggestions colored-man-pages colorize fast-syntax-highlighting zsh-completions fzf) # fzf-tab F-Sy-H ripgrep
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -302,8 +302,9 @@ export PAGER=less
 export HISTSIZE=5000
 export SAVEHIST=10000
 #export DISPLAY=localhost:0.0
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-export "LIBGL_ALWAYS_INDIRECT=1"
+#export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+export DISPLAY=$(ip route list default | awk '{print $3}'):0
+export LIBGL_ALWAYS_INDIRECT=1
 # GPG
 eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
 export GPG_AGENT_INFO
