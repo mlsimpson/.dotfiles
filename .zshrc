@@ -27,7 +27,7 @@ export ZSH_THEME="half-life"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent zsh-syntax-highlighting pass git fuck zsh-autosuggestions obliquestrategies colorize fast-syntax-highlighting zsh-completions fzf) # fzf-tab F-Sy-H
+plugins=(ssh-agent pass git fuck zsh-autosuggestions obliquestrategies colorize fast-syntax-highlighting zsh-completions fzf) # fzf-tab F-Sy-H
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
