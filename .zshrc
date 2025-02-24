@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #####
 # Threv's .zshrc
 # Don't forget to install mouseterm for vim!
