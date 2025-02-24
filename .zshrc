@@ -121,8 +121,8 @@ function gitreup {
 
 # Capitalize first letter of each word in filename
 function capitalize () {
-  rename 's/\b(\w)/\u$1/g' *
-  rename 's/Mp3/mp3/' *
+  prename 's/\b(\w)/\u$1/g' *
+  prename 's/Mp3/mp3/' *
 }
 # print all commands in $PATH
 function allexec1 () {
@@ -257,7 +257,7 @@ alias scp='scp -r'
 alias tree='tree -aCh'
 alias dtree='tree -aChd -L 1'
 # Make GNU fileutils more verbose
-for c in cp mv chmod chown rename rm; do
+for c in cp mv chmod chown prename rm; do
     alias $c="$c -v"
 done
 alias cp='cp -r -v'
