@@ -1,4 +1,4 @@
-" Configuration file for vim
+"" Configuration file for vim
 syntax on          " enable syntax highlighting
 set modeline
 set number         " enable line numbering
@@ -104,24 +104,50 @@ set nowrap
 " https://github.com/junegunn/vim-plug
 call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'dracula/vim'
-    "Plug 'neovim/nvim-lspconfig'
+    "Plug 'folke/tokyonight.nvim'
+    Plug 'rebelot/kanagawa.nvim'
+    Plug 'neovim/nvim-lspconfig'
     "Plug 'hrsh9th/nvim-cmp'
-    Plug 'scrooloose/nerdtree'
-    Plug 'ryanoasis/vim-devicons'
+    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+    "Plug 'ryanoasis/vim-devicons'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
+    Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.8' }
+    Plug 'lewis6991/gitsigns.nvim'
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
     Plug 'tpope/vim-surround'
     "Plug 'machakann/vim-highlightedyank'
-    "Plug 'romgrk/barbar.nvim'
+    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'romgrk/barbar.nvim'
     Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
     Plug 'dense-analysis/ale'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline-themes'
+    Plug 'nvim-lualine/lualine.nvim'
     Plug 'mhinz/vim-startify'
 call plug#end()
+
+lua << END
+    require('gitsigns').setup()
+    require('lualine').setup()
+END
+
+" Set colorscheme
+"
+"colorscheme ir_black
+"
+"colorscheme dracula
+"
+"colorscheme tokyonight-night
+"
+colorscheme kanagawa-dragon
+
+"let g:airline_theme = "simple"
+"
 
 au TextYankPost * silent! lua vim.highlight.on_yank()
 
@@ -138,6 +164,7 @@ inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]
 inoremap { {}<Left>
 inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 " Visual Mode:
+"
 vnoremap ( s()<Esc>P<Right>%
 vnoremap [ s[]<Esc>P<Right>%
 " vnoremap { s{}<Esc>P<Right>%
@@ -146,29 +173,34 @@ vnoremap [ s[]<Esc>P<Right>%
 nnoremap <silent> <c-n> :NERDTreeToggle<CR>
 
 " Auto delete trailing whitespace on lines when opening or saving a file
+"
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 set wildmode=longest,full
 
 " Make searches case-insensitive (only if searching with all lowercase)
+"
 set smartcase
 
 " Map jj to return to Normal mode
+"
 inoremap jj <Esc>
 nnoremap JJJJ <Nop>
 
 " Remap command history to f:
+"
 nnoremap f: q:
 nnoremap q: 1
 
 " Search mappings:  These will make it so that going to the next one in a
-" search will center the line it's found in.
+" search will center the line its found in.
 nnoremap N Nzz
 nnoremap n nzz
 xnoremap N Nzz
 xnoremap n nzz
 
 " PHP short tag remapping
+"
 inoremap <??    <?php echo  ?><Left><Left><Left>
 inoremap <?     <?php  ?><Left><Left><Left>
 
@@ -178,6 +210,7 @@ set complete-=k complete+=k
 set completeopt=longest,menuone,preview
 
 " Space will toggle folds!
+"
 nnoremap <space> za
 
 " Use mouse
@@ -185,56 +218,65 @@ nnoremap <space> za
 "set mouse=nvi
 "set mousemodel=popup_setpos
 
-" Set colorscheme
-"colorscheme dracula
-colorscheme ir_black
-let g:airline_theme = "simple"
-
 " Comments are italic
+"
 highlight Comment cterm=italic gui='italic'
 
 " Change the leader from \ to ,
+"
 let g:C_MapLeader  = ','
-let mapleader = ","
+let mapleader = ','
 
 " Set the terminal title
+"
 set title
 
 set runtimepath+=$HOME/.config/nvim
 
 " avoid auto-indenting pound signs
+"
 inoremap # x<C-H>#
 
 " Always set Very Magic when searching
+"
 nnoremap / /\v
 vnoremap / /\v
 
 " OMNICOMPLETE
 " Enable OmniComplete
 "set completefunc=syntaxcomplete#Complete
+"
 set ofu=syntaxcomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
 
 " OmniCppComplete
+"
 let OmniCpp_NamespaceSearch = 2
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1
 let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+"
 let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+"
 let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+"
 let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+"
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
+"
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 " Popup menu colorscheme
+"
 highlight Pmenu ctermbg=13 guibg=LightGray
 highlight PmenuSel ctermbg=7 guibg=DarkBlue guifg=White
 highlight PmenuSbar ctermbg=7 guibg=DarkGray
 highlight PmenuThumb guibg=Black
 
 " cscope support
+"
 if has('cscope')
   set cscopetag cscopeverbose
 
@@ -256,10 +298,11 @@ endif
 " Write the contents of the file, if it has been modified, on
 " each :next, :rewind, :last, :first, :previous, :stop, :suspend, :tag, :!,
 " :make, CTRL-] and CTRL-^ command; and when a :buffer, CTRL-O, CTRL-I,
-" '{A-Z0-9}, or `{A-Z0-9} command takes one to another file.
+" '{A-Z0-9}, or `{A-Z0-9} command takes one to another file. '
 set autowrite
 
 " FileType based compilation support from within vim
+"
 autocmd FileType c setlocal makeprg=gcc\ -O2\ -Wall\ -pedantic\ -o\ %<\ %
 autocmd FileType ruby setlocal makeprg=ruby\ -w\ %
 autocmd FileType php setlocal makeprg=php\ %
@@ -289,8 +332,8 @@ autocmd BufReadPost quickfix setlocal wrap | setlocal linebreak
 " NOTE:  I am making omnicomplete happen either via ., ->, or ::
 " Otherwise, I must use <c-x><c-o> to do it
 " Supertab
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+"let g:SuperTabDefaultCompletionType = "context"
 
 " Tagbar
 map <Leader>tb :TagbarToggle<CR>
@@ -306,6 +349,7 @@ au BufRead,BufNewFile {*.md,*.mkd,*.markdown} set ft=markdown
 au BufWinEnter *.txt if &ft == 'help' | if &columns > 156 | wincmd H | else | wincmd J | endif | endif
 
 " Fix some command typing mistakes
+"
 command! -bang E e<bang>
 command! -bang Q q<bang>
 command! -bang W w<bang>
@@ -317,21 +361,26 @@ command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
 
 " Remap Ctrl+(directions) to sane values
+"
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Paste toggle
+"
 set pastetoggle=<F2>
 
 " Suppress intro
+"
 set shortmess=I
 
 " Set signature
+"
 iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
 
 " Clear all registers
+"
 fun! Clearregs()
   let regs = split('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/-"', '\zs')
   for r in regs
@@ -349,6 +398,7 @@ endfun
 command! -bar Clearregs :call Clearregs()
 
 " Don't automatically insert comments on a new line in vim, zsh mode
+"
 au FileType vim,zsh,sh setlocal formatoptions-=r
 
 " Persistent undo
@@ -356,27 +406,34 @@ au FileType vim,zsh,sh setlocal formatoptions-=r
 set undofile
 
 " Add spaces after comment delimiters by default
+"
 let g:NERDSpaceDelims = 1
 
 " Use compact syntax for prettified multi-line comments
+"
 let g:NERDCompactSexyComs = 1
 
 " Enable trimming of trailing whitespace when uncommenting
+"
 let g:NERDTrimTrailingWhitespace = 1
 
 " more Go syntax highlighting
+"
 let g:go_highlight_types = 1
 
 " unhighlight search term
+"
 nnoremap <leader>h :nohlsearch<CR>
 
 " delete to black hole register
+"
 nnoremap <leader>d "_d
 
 " map fzf
 nnoremap <C-p> :<C-u>FZF<CR>
 
 " ALE config
+"
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
 \    'python': ['ruff'],
@@ -397,5 +454,6 @@ au VimEnter,VimResume * set guicursor=n-v-c:block,i-ci-ve:hor50,r-cr:hor50,o:hor
 " | 4     | Steady underscore      |
 " | 5     | Blinking bar           |
 " | 6     | Steady bar             |
+"
 au VimLeave,VimSuspend * set guicursor=a:hor50-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
 
