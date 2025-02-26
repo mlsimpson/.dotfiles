@@ -431,7 +431,6 @@ nnoremap <leader>h :nohlsearch<CR>
 nnoremap <leader>d "_d
 
 " map fzf
-
 nnoremap <C-p> :<C-u>FZF<CR>
 
 " ALE config
