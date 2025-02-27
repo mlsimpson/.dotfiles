@@ -3,6 +3,8 @@
 # Don't forget to install mouseterm for vim!
 #####
 
+# https://www.bash2zsh.com/zsh_refcard/refcard.pdf
+# https://grml.org/zsh/zsh-lovers.html
 # https://unix.stackexchange.com/questions/117331/in-zsh-how-can-i-dump-all-configuration
 
 #####
@@ -32,7 +34,8 @@ plugins=(ssh-agent pass git fuck zsh-autosuggestions obliquestrategies colorize 
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
 # source homebrew completions
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+#"FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+eval "$(brew shellenv)"
 
 source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh
