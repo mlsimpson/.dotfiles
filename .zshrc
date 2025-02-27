@@ -3,6 +3,8 @@
 # Don't forget to install mouseterm for vim!
 #####
 
+# https://www.bash2zsh.com/zsh_refcard/refcard.pdf
+# https://grml.org/zsh/zsh-lovers.html
 # https://unix.stackexchange.com/questions/117331/in-zsh-how-can-i-dump-all-configuration
 
 #####
