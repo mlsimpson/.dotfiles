@@ -40,6 +40,7 @@ source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh
 #####
 . ~/.oh-my-zsh/custom/plugins/zsh-functional/functional.plugin.zsh
+. <(fzf --zsh)
 
 # Locale
 export LC_CTYPE="en_US.UTF-8"
@@ -288,6 +289,7 @@ alias eza="eza --group-directories-first --icons=auto"
 alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsigned -r 4k - test.wav trim 0 10"
 #alias history="history -iD"
 alias allexec="compgen -c | sort -u"
+alias fzf="fzf --preview 'bat --color=always {}' --preview-window '~3'"
 
 ####
 # bindkey

@@ -2,4 +2,9 @@
 --smart-case
 --hidden
 --glob
+--column
+--line-number
+--no-heading
+--color=always
+--smart-case'
 !.git
