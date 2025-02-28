@@ -395,6 +395,9 @@ nnoremap <leader>d "_d
 let &t_SI = "\e[3 q"
 let &t_EI = "\e[1 q"
 
+" Use fzf in vim
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+
 " change cursor back to terminal setting on exit
 " | Digit | Result                 |
 " |-------|------------------------|
