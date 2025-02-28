@@ -411,6 +411,9 @@ nnoremap <leader>h :nohlsearch<CR>
 " delete to black hole register
 nnoremap <leader>d "_d
 
+" Use fzf in vim
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+
 " Use a line cursor within insert mode and a block cursor everywhere else.
 let &t_SI = "\e[3 q"
 let &t_EI = "\e[1 q"
