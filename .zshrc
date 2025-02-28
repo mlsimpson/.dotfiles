@@ -41,6 +41,7 @@ source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh
 #####
 . ~/.oh-my-zsh/custom/plugins/zsh-functional/functional.plugin.zsh
+. <(fzf --zsh)
 
 # Set LS_COLORS variable for cross-platform sanity.
 # Mac OS X uses $LSCOLORS, defined within the shell.
@@ -403,6 +404,7 @@ alias eza="eza --group-directories-first --icons=auto"
 alias ipython="ipython --colors Linux"
 #alias history="history -iD"
 alias allexec="compgen -c | sort -u"
+alias fzf="fzf --preview 'batcat --color=always {}' --preview-window '~3'"
 
 ####
 # bindkey
