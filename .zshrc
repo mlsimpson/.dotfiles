@@ -36,6 +36,11 @@ plugins=(ssh-agent pass git fuck zsh-autosuggestions colored-man-pages colorize 
 # source homebrew completions
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
+# enable pipx completion
+autoload -U bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete pipx)"
+
 source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh
 #####
@@ -290,6 +295,7 @@ alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsign
 #alias history="history -iD"
 alias allexec="compgen -c | sort -u"
 alias fzf="fzf --preview 'bat --color=always {}' --preview-window '~3'"
+alias bat="bat --color=always"
 
 ####
 # bindkey
@@ -378,4 +384,13 @@ RPROMPT="[%{$fg[cyan]%}%D{%m/%d/%y} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%
 
 # make the cursor blink like i want god damn it
 echo -ne "\e[3 q"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/threv/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/threv/.google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/threv/.google-cloud-sdk/completion.zsh.inc'; fi
+
+# Created by `pipx` on 2025-03-01 08:07:23
+export PATH="$PATH:/home/threv/.local/bin"
 
