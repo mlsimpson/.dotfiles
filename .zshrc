@@ -392,5 +392,5 @@ if [ -f '/home/threv/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/threv/.goo
 if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/threv/.google-cloud-sdk/completion.zsh.inc'; fi
 
 # Created by `pipx` on 2025-03-01 08:07:23
-export PATH="$PATH:/home/threv/.local/bin"
+#export PATH="$PATH:/home/threv/.local/bin"
 
