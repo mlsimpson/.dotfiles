@@ -49,7 +49,7 @@ https://antares.dribbcast.com/proxy/kpop?mp=/s
 http://bitreich.org:3232/live
 #EXTINF:0,Boot Liquor: Americana roots music for Cowhands0, Cowpokes and Cowtippers.
 http://ice1.somafm.com/bootliquor-128-aac
-#EXTINF:Boss Radio 66
+#EXTINF:0,Boss Radio 66
 https://rfcm.streamguys1.com/bossradio66-mp3
 #EXTINF:0,CGM UK Demoscene Radio
 http://www.lmp.d2g.com:8003/
@@ -131,11 +131,11 @@ http://95.143.216.164:8082/
 https://kohina.duckdns.org/icecast/stream.ogg
 #EXTINF:0,KXCI
 https://ais-sa1.streamon.fm/7005_48k.aac
-#EXTINF:The Lot Radio
+#EXTINF:0,The Lot Radio
 https://mia-prod-catalyst-0.lp-playback.studio/hls/video+85c28sa2o8wppm58/0_1/index.m3u8
 #EXTINF:0,Lush: Mostly female vocals with an electronic influence.
 http://ice.somafm.com/lush
-#EXTINF:Mission Control: Celebrating NASA and space explorers everywhere.
+#EXTINF:0,Mission Control: Celebrating NASA and space explorers everywhere.
 http://ice.somafm.com/missioncontrol
 #EXTINF:0,n5md Radio. Emotional Experiments in Music.
 http://ice4.somafm.com/n5md-128-mp3
@@ -145,9 +145,9 @@ http://nectarine.ers35.net:8000/necta192.mp3
 https://q2stream.wqxr.org/q2.aac
 #EXTINF:0,NPR Program Stream
 https://npr-ice.streamguys1.com/live.mp3
-#EXTINF:NTS Radio 1
+#EXTINF:0,NTS Radio 1
 https://stream-relay-geo.ntslive.net/stream?client=NTSWebApp&t=1561130538011
-#EXTINF:NTS Radio 2
+#EXTINF:0,NTS Radio 2
 https://stream-relay-geo.ntslive.net/stream2?client=NTSWebApp&t=1561130774212
 #EXTINF:0,Otaku Music Radio
 https://kathy.torontocast.com:2880/1.mp3
@@ -159,29 +159,29 @@ http://radio.pungas.space:8001/pungasradio
 http://78.129.202.200:8030/
 #EXTINF:0,Radio Hyrule
 http://listen.radiohyrule.com:8000/listen
-#EXTINF:RadioSEGA
+#EXTINF:0,RadioSEGA
 http://content.radiosega.net:8006/live
-#EXTINF:Rainwave All
+#EXTINF:0,Rainwave All
 http://allstream.rainwave.cc:8000/all.mp3
-#EXTINF:Rainwave Chiptunes
+#EXTINF:0,Rainwave Chiptunes
 http://chipstream.rainwave.cc:8000/chiptune.mp3
-#EXTINF:Rainwave Covers
+#EXTINF:0,Rainwave Covers
 http://coverstream.rainwave.cc:8000/covers.mp3
 #EXTINF:0,Rainwave Game Music
 http://gamestream.rainwave.cc:8000/game.mp3
-#EXTINF:realitycheckBBS Radio
+#EXTINF:0,realitycheckBBS Radio
 http://radio.realitycheckbbs.org:8000/
-#EXTINF:Resonance 104.4FM
+#EXTINF:0,Resonance 104.4FM
 http://stream.resonance.fm:8000/resonance
 #EXTINF:0,Retro PC Game Music Streaming Radio for Gyusyabu
 http://gyusyabu.ddo.jp:8000/
 #EXTINF:0,Rinse FM
 http://206.189.117.157:8000/stream
-#EXTINF:RNI Radio Northesea International
+#EXTINF:0,RNI Radio Northesea International
 http://radionorthsea.zapto.org:8008/stream
 #EXTINF:0,RolandRadioYour Amstrad CPC chiptune radio
 http://streaming.rolandradio.net/rolandradio
-#EXTINF:Roots Legacy Radio
+#EXTINF:0,Roots Legacy Radio
 http://rootslegacy.fr:8080/stream/1/
 #EXTINF:0,RPGN Radio
 http://stream.rpgamers.net:8000/rpgn
@@ -201,7 +201,7 @@ http://relay1.slayradio.org:8000/
 http://sc13.shoutcaststreaming.us:8218/seb
 #EXTINF:0,Smooth Chill
 http://media-ice.musicradio.com/ChillMP3
-#EXTINF:SomaFM presents: Indie Pop Rocks!
+#EXTINF:0,SomaFM presents: Indie Pop Rocks!
 http://ice.somafm.com/indiepop
 #EXTINF:0,SomaFM's Black Rock FM: From the Playa to the world0, where every Saturday night is Burn Night
 http://ice.somafm.com/brfm
@@ -215,7 +215,7 @@ https://radio.stereoanime.net/listen/stereoanime/
 http://subfm.radioca.st/Sub.FM
 #EXTINF:0,Suburbs of Goa: Desi-influenced Asian world beats.
 http://ice1.somafm.com/suburbsofgoa-128-mp3
-#EXTINF:The SID Station
+#EXTINF:0,The SID Station
 http://185.80.220.12:8054/stream
 #EXTINF:0,threv.net music
 http://threv.net:8006/
@@ -235,19 +235,19 @@ http://threv.net:8004/
 https://azuracast.tilderadio.org/radio/8000/radio.ogg
 #EXTINF:0,Underground Eighties: UK Synthpop and a bit of New Wave.
 http://ice.somafm.com/u80s
-#EXTINF:UrbanMusicDaily.net
+#EXTINF:0,UrbanMusicDaily.net
 http://london-dedicated.myautodj.com:8862/stream
 #EXTINF:0,Vaporwaves
 http://ice4.somafm.com/vaporwaves-128-aac
-#EXTINF:VGM Radio
+#EXTINF:0,VGM Radio
 http://radio.vgmradio.com:8040/stream
 #EXTINF:0,Vintage Obscura Radio
 https://radio.vintageobscura.net/stream
 #EXTINF:0,Vocaloid Radio
 http://curiosity.shoutca.st:8019/stream
-#EXTINF:WABE-FM-HD1
+#EXTINF:0,WABE-FM-HD1
 https://26253.live.streamtheworld.com/WABEFM_HD1.mp3
-#EXTINF:WABE-FM-HD2 Classical
+#EXTINF:0,WABE-FM-HD2 Classical
 https://15233.live.streamtheworld.com/WABE_HD2_CLASSICAL.mp3
 #EXTINF:0,WBAI Stereo Stream
 http://stream.wbai.org:8000/wbai_128
