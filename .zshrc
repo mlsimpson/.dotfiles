@@ -394,3 +394,6 @@ if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/thre
 # Created by `pipx` on 2025-03-01 08:07:23
 # export PATH="$PATH:/home/threv/.local/bin"
 
+# fix wayland issues on wsl
+. .wsl-wayland-fix.sh
+
