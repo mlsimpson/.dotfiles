@@ -417,7 +417,7 @@ alias ipython="ipython --colors Linux"
 #alias history="history -iD"
 alias allexec="compgen -c | sort -u"
 alias fzf="fzf --preview 'batcat --color=always {}' --preview-window '~3'"
-alias batcat="batcat --color=always"
+alias bat="batcat --color=always"
 
 ####
 # bindkey
