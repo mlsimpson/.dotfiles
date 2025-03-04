@@ -195,6 +195,13 @@ function allexec1 () {
     print -rC1 -- $commands
 }
 
+# display supported colours
+function colours () {
+   for colour in {1..255}
+                do echo -en "\033[38;5;${colour}m38;5;${colour} \n"
+        done | column -x
+}
+
 #function media_sum() {
 #  mi="/usr/bin/mediainfo"
 #  tot_sz=$(
@@ -538,4 +545,5 @@ if [ -f '/home/threv/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/threv/.goo
 if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/threv/.google-cloud-sdk/completion.zsh.inc'; fi
 
 # Created by `pipx` on 2025-03-01 08:07:21
-export PATH="$PATH:/home/threv/.local/bin"
+#export PATH="$PATH:/home/threv/.local/bin"
+
