@@ -152,6 +152,12 @@ function randminor {
     cat /dev/urandom | hexdump -v -e '/1 "%u\n"' | awk '{ split("0,2,3,5,7,8,10,12",a,","); for (i = 0; i < 1; i+= 0.0001) printf("%08X\n", 100*sin(1382*exp((a[$1 % 8]/12)*log(2))*i)) }' | xxd -r -p | sox -t raw -r 44.1k -c 1 -e unsigned -b 16 - test.wav trim 0 15
 }
 
+function colours () {
+   for colour in {1..255}
+		do echo -en "\033[38;5;${colour}m38;5;${colour} \n"
+	done | column -x
+}
+
 # Display series of dots during completion
 function expand-or-complete-with-dots () {
   echo -n "\e[31m......\e[0m"
@@ -395,5 +401,5 @@ if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/thre
 # export PATH="$PATH:/home/threv/.local/bin"
 
 # fix wayland issues on wsl
-. .wsl-wayland-fix.sh
+. /home/threv/.wsl-wayland-fix.sh
 
