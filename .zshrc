@@ -391,12 +391,6 @@ RPROMPT="[%{$fg[cyan]%}%D{%m/%d/%y} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%
 # make the cursor blink like i want god damn it
 echo -ne "\e[3 q"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/threv/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/threv/.google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/threv/.google-cloud-sdk/completion.zsh.inc'; fi
-
 # Created by `pipx` on 2025-03-01 08:07:23
 # export PATH="$PATH:/home/threv/.local/bin"
 
