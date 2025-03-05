@@ -85,19 +85,19 @@ http://ice1.somafm.com/dubstep-128-mp3
 http://stream.dubstep.fm/128mp3
 #EXTINF:0,EBM-Radio.com
 https://14223.live.streamtheworld.com/SP_R4191951_SC
-#EXTINF:0,electro-music.com  radio 1Primary Stream
+#EXTINF:0,electro-music.com radio 1 Primary Stream
 https://electro-music.com/stream_1
-#EXTINF:0,electro-music.com  radio 2MKII
+#EXTINF:0,electro-music.com radio 2 MKII
 https://electro-music.com/stream_2
-#EXTINF:0,electro-music.com  radio 3Ambience
+#EXTINF:0,electro-music.com radio 3 Ambience
 https://electro-music.com/stream_3
-#EXTINF:0,electro-music.com  radio 4Intense
+#EXTINF:0,electro-music.com radio 4 Intense
 https://electro-music.com/stream_4
-#EXTINF:0,electro-music.com  radio 5Experimental
+#EXTINF:0,electro-music.com radio 5 Experimental
 https://electro-music.com/stream_5
-#EXTINF:0,electro-music.com  radio 6Noodle Radio
+#EXTINF:0,electro-music.com radio 6 Noodle Radio
 https://electro-music.com/stream_6
-#EXTINF:0,electro-music.com  radio 7Music from Chez Mosc
+#EXTINF:0,electro-music.com radio 7 Music from Chez Mosc
 https://electro-music.com/stream_7
 #EXTINF:0,FavoritesClassical Minnesota Public Radio
 https://favorites.stream.publicradio.org/favorites.mp3?cb=9932342365
@@ -119,7 +119,7 @@ https://17843.live.streamtheworld.com/CC8_S01AAC_96.aac
 https://25043.live.streamtheworld.com/KDFCFMAAC.aac
 #EXTINF:0,KDFC Glissando
 https://25003.live.streamtheworld.com/CC9_S01AAC_96.aac
-#EXTINF:0,KDFC Nuestra Música
+#EXTINF:0,KDFC Nuestra Musica
 https://25003.live.streamtheworld.com/CC7_S01AAC_96.aac
 #EXTINF:0,KDFC The Great Escape
 https://17843.live.streamtheworld.com/CC4_S01AAC_96.aac
@@ -251,6 +251,8 @@ https://26253.live.streamtheworld.com/WABEFM_HD1.mp3
 https://15233.live.streamtheworld.com/WABE_HD2_CLASSICAL.mp3
 #EXTINF:0,WBAI Stereo Stream
 http://stream.wbai.org:8000/wbai_128
+#EXTINF:0,WETA Classical
+https://26113.live.streamtheworld.com/WETAFM.mp3
 #EXTINF:0,WFMU Freeform Radio
 http://stream0.wfmu.org/freeform-128k
 #EXTINF:0,WFMU Rock'N'Soul
