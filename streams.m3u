@@ -261,7 +261,7 @@ http://stream0.wfmu.org/ichiban
 http://22113.live.streamtheworld.com/WRASFM_SC
 #EXTINF:0,WREK Atlanta 91.1
 http://streaming.wrek.org:8000/wrek_live-128kb
-#EXTINF:0,WREK Atlanta 91.1
+#EXTINF:0,WREK Atlanta 91.1 HD2
 http://streaming.wrek.org:8000/hd2/128kb.mp3
 #EXTINF:0,WVUM 90.5 FM
 https://s7.voscast.com:8693/stream
