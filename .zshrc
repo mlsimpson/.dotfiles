@@ -361,9 +361,10 @@ alias screen="systemd-run --user --scope screen"
 # alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 # alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 # Make GNU fileutils more verbose
-for c in cp mv chmod chown prename rm; do
+for c in cp mv chmod chown prename rename rm; do
     alias $c="$c -v"
 done
+
 alias cp='cp -r -v'
 alias rm='rm -v -i'
 alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
