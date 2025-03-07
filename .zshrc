@@ -115,7 +115,7 @@ export LC_ALL="en_US.UTF-8"
 # RANDOM=$RANDOM; command glob(oe:'REPLY=$RANDOM':[1,x])
 
 # Convert coverart
-function coverart () {
+function ca () {
   convert $1 -adaptive-resize 400x400 -adaptive-sharpen 0x1.0 cover.png
   rm $1
   optipng -o2 cover.png
@@ -548,3 +548,4 @@ if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/thre
 # Created by `pipx` on 2025-03-01 08:07:21
 #export PATH="$PATH:/home/threv/.local/bin"
 
+. "/home/threv/.deno/env"
