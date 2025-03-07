@@ -258,7 +258,7 @@ http://stream0.wfmu.org/freeform-128k
 #EXTINF:0,WFMU Rock'N'Soul
 http://stream0.wfmu.org/ichiban
 #EXTINF:0,WRASFM
-http://22113.live.streamtheworld.com/WRASFM_SC
+https://26423.live.streamtheworld.com/WRASFM.mp3
 #EXTINF:0,WREK Atlanta 91.1
 http://streaming.wrek.org:8000/wrek_live-128kb
 #EXTINF:0,WREK Atlanta 91.1 HD2
@@ -266,6 +266,6 @@ http://streaming.wrek.org:8000/hd2/128kb.mp3
 #EXTINF:0,WVUM 90.5 FM
 https://s7.voscast.com:8693/stream
 #EXTINF:0,XWave Radio
-http://ns319459.ip-91-121-67.eu:8000/
+http://vps-260b74e9.vps.ovh.net:8000
 #EXTINF:0,Yggdrasil Radio
 http://yggdrasilradio.net:8000/;stream.nsv
