@@ -271,7 +271,7 @@ alias scp='scp -r'
 alias tree='tree -aCh'
 alias dtree='tree -aChd -L 1'
 # Make GNU fileutils more verbose
-for c in cp mv chmod chown prename rm; do
+for c in cp mv chmod chown prename rename rm; do
     alias $c="$c -v"
 done
 alias cp='cp -r -v'
