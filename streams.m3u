@@ -251,6 +251,8 @@ https://26253.live.streamtheworld.com/WABEFM_HD1.mp3
 https://15233.live.streamtheworld.com/WABE_HD2_CLASSICAL.mp3
 #EXTINF:0,WBAI Stereo Stream
 http://stream.wbai.org:8000/wbai_128
+#EXTINF:0,Weather for the Blind
+https://partneraudio.wavefarm.org/weatherfortheblind.mp3
 #EXTINF:0,WETA Classical
 https://26113.live.streamtheworld.com/WETAFM.mp3
 #EXTINF:0,WFMU Freeform Radio
