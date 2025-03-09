@@ -322,7 +322,7 @@ alias lsa='ls -ah'
 # Show only directories
 #alias lsd='ls -d */'
 # Only directories, sorted by size
-alias lsds='ls -dS */'
+#alias lsds='ls -dS */'
 # Show only files, sorted by size
 alias lss='ls -aSh *(.)'
 alias larsh="ls -larSh"
@@ -364,7 +364,6 @@ alias screen="systemd-run --user --scope screen"
 for c in cp mv chmod chown prename rename rm; do
     alias $c="$c -v"
 done
-
 alias cp='cp -r -v'
 alias rm='rm -v -i'
 alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
@@ -419,6 +418,8 @@ alias ipython="ipython --colors Linux"
 alias allexec="compgen -c | sort -u"
 alias fzf="fzf --preview 'batcat --color=always {}' --preview-window '~3'"
 alias bat="batcat --color=always"
+alias lsd="lsd -lah"
+alias eza="eza -lah"
 
 ####
 # bindkey
