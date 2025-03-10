@@ -388,7 +388,7 @@ alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/fooba
 # clipit alias to suppress messages
 #alias clipit="clipit 2> /dev/null"
 # check Downloads dir
-alias latrd="ls -latr /var/lib/deluge/Downloads"
+alias latrd="ls -latr /var/lib/deluged/Downloads"
 # when running locate, check if file on disk
 alias locate="locate -e"
 # byobu alias
