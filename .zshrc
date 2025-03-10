@@ -129,7 +129,7 @@ function hhist () {
 
 # git reup
 function gitreup () {
-  find . -maxdepth 2 -name .git -print -execdir git fetch \; -execdir git pull \; -execdir git submodule update --init --recursive \;
+  ls | xargs -I{} git -C {} pull
 }
 
 # du -sh sorted
