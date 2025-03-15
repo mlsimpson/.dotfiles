@@ -397,5 +397,7 @@ echo -ne "\e[3 q"
 # export PATH="$PATH:/home/threv/.local/bin"
 
 # fix wayland issues on wsl
-. /home/threv/.wsl-wayland-fix.sh
+if [[ ! -d /run/user/1000 ]]; then
+    . /home/threv/.wsl-wayland-fix.sh
+fi
 
