@@ -5,5 +5,7 @@ if [[ ! -d /run/user/1000 ]]; then
     sudo chmod a+w /run/user
     mkdir /run/user/1000
     ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000/
+    sudo chmod 0755 /run
+    sudo chmod 0755 /run/user
 fi
 
