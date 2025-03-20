@@ -113,6 +113,8 @@ https://kathy.torontocast.com:3060/;
 http://stream5.jungletrain.net:8000/
 #EXTINF:0,KALW
 https://kalw-live.streamguys1.com/kalw.aac?uuid=sexs0fex
+#EXTINF:0,KCRW Live
+https://streams.kcrw.com/kcrw_mp3
 #EXTINF:0,KDFC Arcade
 https://17843.live.streamtheworld.com/CC8_S01AAC_96.aac
 #EXTINF:0,KDFC California Classical
