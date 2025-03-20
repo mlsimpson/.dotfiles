@@ -412,7 +412,7 @@ alias mpca="mpc -p 6608"
 # and a count how often this unique line appears (-c parameter).
 alias mostdirs="find . -type d | cut -d/ -f 2 | uniq -c | sort -g"
 alias lsd="lsd --group-directories-first --hyperlink=auto"
-alias eza="eza --group-directories-first --icons=auto"
+alias eza="eza --group-directories-first --icons=always"
 alias ipython="ipython --colors Linux"
 #alias history="history -iD"
 alias allexec="compgen -c | sort -u"
