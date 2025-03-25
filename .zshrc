@@ -549,5 +549,9 @@ if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/thre
 
 . "/home/threv/.deno/env"
 
+if [[ -d '/tmp/runtime-threv' ]]; then
+    mkdir /tmp/runtime-threv
+    touch /tmp/runtime-threv/gvfsd
+fi
 export XDG_RUNTIME_DIR='/tmp/runtime-threv'
 
