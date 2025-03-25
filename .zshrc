@@ -548,5 +548,6 @@ if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/thre
 #export PATH="$PATH:/home/threv/.local/bin"
 
 . "/home/threv/.deno/env"
-export XDG_RUNTIME_DIR='tmp/runtime-threv'
+
+export XDG_RUNTIME_DIR='/tmp/runtime-threv'
 
