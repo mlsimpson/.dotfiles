@@ -283,7 +283,7 @@ alias psa='ps auxww | ag '
 alias locate="locate -e"
 # start gdb in tui mode
 alias gdb="gdb -tui"
-alias weather="curl -s wttr.in/Atlanta"
+alias weather="curl -s wttr.in"
 alias rcopy="rsync -av --info=progress2"
 alias ssh='ssh -X'
 alias t.n='ssh threv@threv.net'
@@ -398,4 +398,3 @@ echo -ne "\e[3 q"
 if [[ ! -d /run/user/1000 ]]; then
     . /home/threv/.wsl-wayland-fix.sh
 fi
-
