@@ -381,14 +381,14 @@ alias psa='ps auxww | ag '
 # Boy, do I type mid3v2 a lot
 alias m32="mid3v2"
 # for weather command
-alias weather="curl -s wttr.in/Atlanta"
+alias weather="curl -s wttr.in"
 # Wine aliases
 alias winamp="wine /home/threv/.wine/drive_c/Program\ Files/Winamp/winamp.exe > /dev/null 2>&1 &"
 alias foobar2000="wine /home/threv/.wine/drive_c/Program\ Files/foobar2000/foobar2000.exe > /dev/null 2>&1 &"
 # clipit alias to suppress messages
 #alias clipit="clipit 2> /dev/null"
 # check Downloads dir
-alias latrd="ls -latr /var/lib/deluged/Downloads"
+alias latrd="ls -latrh /var/lib/deluged/Downloads"
 # when running locate, check if file on disk
 alias locate="locate -e"
 # byobu alias
@@ -411,15 +411,13 @@ alias mpca="mpc -p 6608"
 # "./", so your first field would be ".") and then only outputs unique lines,
 # and a count how often this unique line appears (-c parameter).
 alias mostdirs="find . -type d | cut -d/ -f 2 | uniq -c | sort -g"
-alias lsd="lsd --group-directories-first --hyperlink=auto"
-alias eza="eza --group-directories-first --icons=always"
+alias lsd="lsd -lah --group-directories-first --hyperlink=auto"
+alias eza="eza -lah --group-directories-first --icons=always"
 alias ipython="ipython --colors Linux"
 #alias history="history -iD"
 alias allexec="compgen -c | sort -u"
 alias fzf="fzf --preview 'batcat --color=always {}' --preview-window '~3'"
 alias bat="batcat --color=always"
-alias lsd="lsd -lah"
-alias eza="eza -lah"
 
 ####
 # bindkey
@@ -550,3 +548,5 @@ if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/thre
 #export PATH="$PATH:/home/threv/.local/bin"
 
 . "/home/threv/.deno/env"
+export XDG_RUNTIME_DIR='tmp/runtime-threv'
+
