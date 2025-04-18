@@ -29,7 +29,7 @@ export ZSH_THEME="half-life-threv"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent pass git fuck zsh-autosuggestions colored-man-pages colorize fast-syntax-highlighting zsh-completions fzf) # fzf-tab F-Sy-H ripgrep
+plugins=(ssh-agent pass git fuck zsh-autosuggestions colored-man-pages colorize fast-syntax-highlighting zsh-completions fzf uv) # fzf-tab F-Sy-H ripgrep
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -249,7 +249,7 @@ alias gd='git diff'
 alias gitclog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias grep='grep --color=always'
 #alias gvim='gvim -f -geom 75x35'
-alias latr="ls -latr"
+alias latr="ls -latrh"
 alias less='less -mR'
 # Overwrite oh-my-zsh's lsa behavior (remove the -l flag)
 alias lsa='ls -ah'
@@ -396,5 +396,5 @@ echo -ne "\e[3 q"
 
 # fix wayland issues on wsl
 if [[ ! -d /run/user/1000 ]]; then
-    . /home/threv/.wsl-wayland-fix.sh
+    /home/threv/.wsl-wayland-fix.sh
 fi
