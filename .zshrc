@@ -377,7 +377,7 @@ alias htop='htop -d 10'
 # Silly random cowsay fun
 #alias cowfun='fortune -a | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n;'
 # ps auxww | ack "thingy" alias
-alias psa='ps auxww | ag '
+alias psa='ps aux | rg '
 # Boy, do I type mid3v2 a lot
 alias m32="mid3v2"
 # for weather command
