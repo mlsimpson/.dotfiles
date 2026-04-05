@@ -384,8 +384,6 @@ autoload -U zmv
 # source ~/.rvm/scripts/rvm
 #export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
-hash -d steampunk=/mnt/c/Users/threv/Documents/Steampunk
-
 RPROMPT="[%{$fg[cyan]%}%D{%m/%d/%y} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%{$reset_color%}]"
 
 # make the cursor blink like i want god damn it
