@@ -124,7 +124,7 @@ call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'machakann/vim-highlightedyank'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'romgrk/barbar.nvim'
-    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+    "#Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
     Plug 'dense-analysis/ale'
     "Plug 'vim-airline/vim-airline'
     "Plug 'vim-airline/vim-airline-themes'
@@ -370,7 +370,9 @@ map <C-l> <C-w>l
 
 " Paste toggle
 "
-set pastetoggle=<F2>
+"set pastetoggle=<F2>
+nnoremap <silent> <f5> :set paste!<cr>
+inoremap <silent> <f5> <esc>:set paste!<cr>i
 
 " Suppress intro
 "
