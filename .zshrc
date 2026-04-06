@@ -302,6 +302,7 @@ alias randspeech="cat /dev/urandom | sox -tlpc - -p | sox -t raw -b 16 -e unsign
 alias allexec="compgen -c | sort -u"
 alias fzf="fzf --preview 'bat --color=always {}' --preview-window '~3'"
 alias bat="bat --color=always"
+alias glow='glow -p'
 
 ####
 # bindkey

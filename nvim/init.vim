@@ -106,9 +106,13 @@ set nowrap
 call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'dracula/vim'
     "Plug 'folke/tokyonight.nvim'
+    "Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline-themes'
+    "Plug 'hrsh9th/nvim-cmp'
+    "Plug 'machakann/vim-highlightedyank'
+    Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'rebelot/kanagawa.nvim'
     Plug 'neovim/nvim-lspconfig'
-    "Plug 'hrsh9th/nvim-cmp'
     Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     Plug 'ryanoasis/vim-devicons'
     Plug 'nvim-lua/plenary.nvim'
@@ -121,21 +125,29 @@ call plug#begin("$HOME/.config/nvim/plugged")
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
     Plug 'tpope/vim-surround'
-    "Plug 'machakann/vim-highlightedyank'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'romgrk/barbar.nvim'
-    "#Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
     Plug 'dense-analysis/ale'
-    "Plug 'vim-airline/vim-airline'
-    "Plug 'vim-airline/vim-airline-themes'
     Plug 'nvim-lualine/lualine.nvim'
+    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'nvim-mini/mini.icons'
+    Plug 'stevearc/oil.nvim'
     Plug 'mhinz/vim-startify'
 call plug#end()
 
 lua << END
     require('gitsigns').setup()
     require('lualine').setup()
+    require('mini.icons').setup()
+
+    local builtin = require('telescope.builtin')
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+    vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 END
+
 
 " Set colorscheme
 "
@@ -158,17 +170,17 @@ au TextYankPost * silent! lua vim.highlight.on_yank()
 
 " Autocomplete Parentheses & Brackets
 " Insert Mode:
-inoremap (  ()<Left>
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-inoremap [ []<Left>
-inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-inoremap { {}<Left>
-inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-" Visual Mode:
-"
-vnoremap ( s()<Esc>P<Right>%
-vnoremap [ s[]<Esc>P<Right>%
-" vnoremap { s{}<Esc>P<Right>%
+"inoremap (  ()<Left>
+"inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+"inoremap [ []<Left>
+"inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+"inoremap { {}<Left>
+"inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+"" Visual Mode:
+""
+"vnoremap ( s()<Esc>P<Right>%
+"vnoremap [ s[]<Esc>P<Right>%
+"" vnoremap { s{}<Esc>P<Right>%
 
 " Map ctrl-n to toggle NERDTree Plugin
 nnoremap <silent> <c-n> :NERDTreeToggle<CR>
