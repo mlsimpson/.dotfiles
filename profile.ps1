@@ -16,6 +16,8 @@ function dirsizes () {
 	Get-ChildItem . -directory -force | ForEach-Object { $_.FullName + ": " + [math]::Round((Get-ChildItem $_.FullName -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB,2) + " MB" }
 }
 
+function lsda { lsd -lah --group-directories-first --hyperlink=auto }
+
 Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView

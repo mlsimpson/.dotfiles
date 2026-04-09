@@ -1,0 +1,6 @@
+CompletionPredictor
+Microsoft.WinGet.Client
+Microsoft.WinGet.CommandNotFound
+PSReadLine
+Terminal-Icons
+WslCompact
