@@ -321,7 +321,8 @@ export HISTSIZE=5000
 export SAVEHIST=10000
 #export DISPLAY=localhost:0.0
 #export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-export DISPLAY=$(ip route list default | awk '{print $3}'):0
+#export DISPLAY=$(ip route list default | awk '{print $3}'):0
+export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
 export LIBGL_ALWAYS_INDIRECT=1
 # GPG
 eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
@@ -389,7 +390,7 @@ autoload -U zmv
 RPROMPT="[%{$fg[cyan]%}%D{%m/%d/%y} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%{$reset_color%}]"
 
 # make the cursor blink like i want god damn it
-echo -ne "\e[3 q"
+# echo -ne "\e[3 q"
 
 # Created by `pipx` on 2025-03-01 08:07:23
 # export PATH="$PATH:/home/threv/.local/bin"
