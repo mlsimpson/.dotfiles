@@ -283,10 +283,8 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 " Popup menu colorscheme
 "
-highlight Pmenu ctermbg=13 guibg=LightGray
-highlight PmenuSel ctermbg=7 guibg=DarkBlue guifg=White
-highlight PmenuSbar ctermbg=7 guibg=DarkGray
-highlight PmenuThumb guibg=Black
+highlight Pmenu ctermbg=Black ctermfg=Grey
+highlight PmenuSel ctermbg=Cyan ctermfg=Black
 
 " cscope support
 "
