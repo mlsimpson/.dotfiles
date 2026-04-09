@@ -419,6 +419,7 @@ alias allexec="compgen -c | sort -u"
 alias fzf="fzf --preview 'batcat --color=always {}' --preview-window '~3'"
 alias bat="batcat --color=always"
 alias glow='glow -p'
+alias vim='nvim'
 
 ####
 # bindkey
