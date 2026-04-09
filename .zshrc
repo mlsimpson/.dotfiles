@@ -303,6 +303,7 @@ alias allexec="compgen -c | sort -u"
 alias fzf="fzf --preview 'bat --color=always {}' --preview-window '~3'"
 alias bat="bat --color=always"
 alias glow='glow -p'
+alias vim='nvim'
 
 ####
 # bindkey
@@ -311,8 +312,8 @@ bindkey "^[" undo
 
 ####
 # export
-# Editor = vim
-export EDITOR=vim
+# Editor = nvim
+export EDITOR=nvim
 # Sets ANSI color for man pages, and the pager in general.  Also ensures % display on bottom.
 export PAGER=less
 # export PAGER=vimpager
