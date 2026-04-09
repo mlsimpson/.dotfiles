@@ -46,7 +46,7 @@ source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh
 #####
 . ~/.oh-my-zsh/custom/plugins/zsh-functional/functional.plugin.zsh
-. <(fzf --zsh)
+# . <(fzf --zsh)
 
 # Set LS_COLORS variable for cross-platform sanity.
 # Mac OS X uses $LSCOLORS, defined within the shell.
