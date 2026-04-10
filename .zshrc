@@ -395,7 +395,7 @@ alias locate="locate -e"
 alias byobu="TERM=xterm-256color byobu"
 # start gdb in tui mode
 alias gdb="gdb -tui"
-alias rcopy="rsync -av --info=progress2"
+alias rcopy="rsync -av --info=progress2 --ignore-existing"
 alias wine32="WINEARCH=win32 wine"
 alias cleanpkgs="dpkg -l | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge"
 #mpc
