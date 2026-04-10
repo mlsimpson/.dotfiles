@@ -284,7 +284,7 @@ alias locate="locate -e"
 # start gdb in tui mode
 alias gdb="gdb -tui"
 alias weather="curl -s wttr.in"
-alias rcopy="rsync -av --info=progress2"
+alias rcopy="rsync -av --info=progress2 --ignore-existing"
 alias ssh='ssh -X'
 alias t.n='ssh threv@threv.net'
 alias cb='ssh -Y threv@192.168.1.76'
@@ -322,7 +322,7 @@ export SAVEHIST=10000
 #export DISPLAY=localhost:0.0
 #export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 #export DISPLAY=$(ip route list default | awk '{print $3}'):0
-export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
+# export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
 export LIBGL_ALWAYS_INDIRECT=1
 # GPG
 eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
