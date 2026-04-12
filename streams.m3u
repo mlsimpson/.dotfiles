@@ -1,17 +1,17 @@
 #EXTM3U
-#EXTINF:,1.FMAlternative Rock X Hits
+#EXTINF:,1.FM - Alternative Rock X Hits
 https://strm112.1.fm/x_mobile_mp3
-#EXTINF:,1.FMAmsterdam Trance Radio
+#EXTINF:,1.FM - Amsterdam Trance Radio
 https://strm112.1.fm/atr_mobile_mp3
-#EXTINF:,1.FMBlues
+#EXTINF:,1.FM - Blues
 https://strm112.1.fm/blues_mobile_mp3
-#EXTINF:,costadelmarchillout
+#EXTINF:,1.FM - Costa del Mar Chillout
 https://strm112.1.fm/costadelmarchillout_mobile_mp3
-#EXTINF:,1.FMDeep Techno & Deep House
+#EXTINF:,1.FM - Deep Techno & Deep House
 https://strm112.1.fm/deeptech_mobile_mp3
-#EXTINF:,1.FMReggae
+#EXTINF:,1.FM - Reggae
 https://strm112.1.fm/reggae_mobile_mp3
-#EXTINF:,1.FMTropical House
+#EXTINF:,1.FM - Tropical House
 https://strm112.1.fm/ibizachill_mobile_mp3
 #EXTINF:,181.FM 90s Alternative
 http://181fm-edge1.cdnstream.com/181-90salt_128k.mp3
@@ -53,11 +53,13 @@ http://ice1.somafm.com/bootliquor-128-aac
 https://rfcm.streamguys1.com/bossradio66-mp3
 #EXTINF:,CGM UK Demoscene Radio
 http://www.lmp.d2g.com:8003/
+#EXTINF:,Classical Minnesota Public Radio
+https://favorites.stream.publicradio.org/favorites.mp3?cb=9932342365
 #EXTINF:,<-cliqhop--> blips'n'bleeps backed w/ beats.
 http://ice.somafm.com/cliqhop
 #EXTINF:,Country A-Go-go
 https://rfcm.streamguys1.com/countryagogo-mp3
-#EXTINF:,CVGM.netOldschool Video Game And Demoscene Music
+#EXTINF:,CVGM.net - Oldschool Video Game And Demoscene Music
 http://radio.cvgm.net:8000/cvgm192
 #EXTINF:,=Dark Asylum Radio= For The Digitally Insane
 http://94.23.218.80:8020/
@@ -99,8 +101,6 @@ https://electro-music.com/stream_5
 https://electro-music.com/stream_6
 #EXTINF:,electro-music.com radio 7 Music from Chez Mosc
 https://electro-music.com/stream_7
-#EXTINF:,Classical Minnesota Public Radio
-https://favorites.stream.publicradio.org/favorites.mp3?cb=9932342365
 #EXTINF:,GPB Atlanta
 https://gpb.streamguys1.com/im/gpb-atlanta-aac-website
 #EXTINF:,GPB Atlanta Classical
@@ -113,7 +113,7 @@ https://stream-test.hkcr.live/hls/main.m3u8
 http://ice.somafm.com/illstreet
 #EXTINF:,J-Pop Powerplay Kawaii
 https://kathy.torontocast.com:3060/;
-#EXTINF:,jungletrain.net24/7 drum and bass
+#EXTINF:,jungletrain.net - 24/7 drum and bass
 http://stream5.jungletrain.net:8000/
 #EXTINF:,KALW
 https://kalw-live.streamguys1.com/kalw.aac?uuid=sexs0fex
@@ -237,7 +237,7 @@ http://ice.somafm.com/u80s
 http://london-dedicated.myautodj.com:8862/stream
 #EXTINF:,Vaporwaves [SomaFM]
 http://ice4.somafm.com/vaporwaves-128-aac
-#EXTINF:,Stream Name
+#EXTINF:,VGM Radio
 http://radio.vgmradio.com:8040/stream
 #EXTINF:,Vintage Obscura Radio
 https://radio.vintageobscura.net/stream
