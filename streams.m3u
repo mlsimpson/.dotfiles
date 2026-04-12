@@ -146,10 +146,40 @@ https://radio.plaza.one/aac_hifi.m3u8
 #EXTINF:,NPR Program Stream
 https://npr-ice.streamguys1.com/live.mp3
 #EXTINF:,NTS Radio 1
-https://stream-relay-geo.ntslive.net/stream?client=NTSWebApp&t=1561130538011
+https://stream-relay-geo.ntslive.net/stream
 #EXTINF:,NTS Radio 2
-https://stream-relay-geo.ntslive.net/stream2?client=NTSWebApp&t=1561130774212
-#EXTINF:,Otaku Music Radio
+https://stream-relay-geo.ntslive.net/stream2
+#EXTINF:,NTS 4 to the Floor
+https://stream-mixtape-geo.ntslive.net/mixtape5
+#EXTINF:,NTS Expansions
+https://stream-mixtape-geo.ntslive.net/mixtape3
+#EXTINF:,NTS Feelings
+https://stream-mixtape-geo.ntslive.net/mixtape27
+#EXTINF:,NTS Field Recordings
+https://stream-mixtape-geo.ntslive.net/mixtape23
+#EXTINF:,NTS Island Time
+https://stream-mixtape-geo.ntslive.net/mixtape21
+#EXTINF:,NTS Labyrinth
+https://stream-mixtape-geo.ntslive.net/mixtape31
+#EXTINF:,NTS Low Key
+https://stream-mixtape-geo.ntslive.net/mixtape
+#EXTINF:,NTS Memory Lane
+https://stream-mixtape-geo.ntslive.net/mixtape6
+#EXTINF:,NTS Otaku
+https://stream-mixtape-geo.ntslive.net/mixtape36
+#EXTINF:,NTS Poolside
+https://stream-mixtape-geo.ntslive.net/mixtape34
+#EXTINF:,NTS Rap House
+https://stream-mixtape-geo.ntslive.net/mixtape22
+#EXTINF:,NTS Sheet Music
+https://stream-mixtape-geo.ntslive.net/mixtape2
+#EXTINF:,NTS Slow Focus
+https://stream-mixtape-geo.ntslive.net/mixtape4
+#EXTINF:,NTS Sweat
+https://stream-mixtape-geo.ntslive.net/mixtape26
+#EXTINF:,NTS The Pit
+https://stream-mixtape-geo.ntslive.net/mixtape24
+#EXTINF:,NTS The Tube
 https://kathy.torontocast.com:2880/1.mp3
 #EXTINF:,OverClocked Remix Radio
 http://ocrstream.rainwave.cc:8000/ocremix.mp3
