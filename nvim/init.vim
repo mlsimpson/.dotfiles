@@ -106,34 +106,35 @@ set nowrap
 call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'dracula/vim'
     "Plug 'folke/tokyonight.nvim'
-    "Plug 'vim-airline/vim-airline'
-    "Plug 'vim-airline/vim-airline-themes'
     "Plug 'hrsh9th/nvim-cmp'
     "Plug 'machakann/vim-highlightedyank'
-    Plug 'nvim-treesitter/nvim-treesitter'
-    Plug 'rebelot/kanagawa.nvim'
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
-    Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.8' }
+    Plug 'dense-analysis/ale'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'lewis6991/gitsigns.nvim'
+    Plug 'MeanderingProgrammer/render-markdown.nvim'
+    Plug 'mhinz/vim-startify'
+    Plug 'MunifTanjim/nui.nvim'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'nvim-mini/mini.icons'
+    Plug 'nvim-telescope/telescope.nvim', {'branch': 'master' }
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
+    Plug 'nvim-telescope/telescope-symbols.nvim'
+    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
-    Plug 'tpope/vim-surround'
-    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'rebelot/kanagawa.nvim'
     Plug 'romgrk/barbar.nvim'
-    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
-    Plug 'dense-analysis/ale'
-    Plug 'nvim-lualine/lualine.nvim'
-    Plug 'nvim-tree/nvim-web-devicons'
-    Plug 'nvim-mini/mini.icons'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     Plug 'stevearc/oil.nvim'
-    Plug 'mhinz/vim-startify'
+    Plug 'tpope/vim-surround'
+    "Plug 'yetone/avante.nvim'
 call plug#end()
 
 lua << END
@@ -148,19 +149,13 @@ lua << END
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 END
 
-
 " Set colorscheme
-"
-"colorscheme ir_black
-"
-"colorscheme dracula
-"
-"colorscheme tokyonight-night
-"
 colorscheme kanagawa-dragon
 
-"let g:airline_theme = "simple"
-"
+"autocmd! User avante.nvim
+"lua << EOF
+"require('avante').setup({})
+"EOF
 
 au TextYankPost * silent! lua vim.highlight.on_yank()
 
@@ -237,7 +232,7 @@ highlight Comment cterm=italic gui='italic'
 
 " Change the leader from \ to ,
 "
-let g:C_MapLeader  = ','
+"let g:C_MapLeader  = ','
 let mapleader = ','
 
 " Set the terminal title
@@ -381,8 +376,8 @@ map <C-l> <C-w>l
 " Paste toggle
 "
 "set pastetoggle=<F2>
-nnoremap <silent> <f5> :set paste!<cr>
-inoremap <silent> <f5> <esc>:set paste!<cr>i
+"nnoremap <silent> <f5> :set paste!<cr>
+"inoremap <silent> <f5> <esc>:set paste!<cr>i
 
 " Suppress intro
 "
