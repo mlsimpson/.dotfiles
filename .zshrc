@@ -29,7 +29,7 @@ export ZSH_THEME="half-life-threv"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent pass git fuck zsh-autosuggestions colored-man-pages colorize fast-syntax-highlighting zsh-completions fzf uv) # fzf-tab F-Sy-H ripgrep
+plugins=(ssh-agent pass git fuck zsh-autosuggestions colored-man-pages colorize fast-syntax-highlighting zsh-completions fzf uv zoxide) # fzf-tab F-Sy-H ripgrep
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -104,7 +104,7 @@ function coverart {
 
 # Search .allhistory
 function hhist {
-  ag --no-numbers $1 /home/threv/.allhistory
+  RIPGREP_CONFIG_PATH=/home/threv/.ripgreprc rg --no-line-number $1 /home/threv/.allhistory
 }
 
 # git reup
@@ -343,7 +343,7 @@ less_termcap[us]="${fg[cyan]}"
 # autojump support
 # [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 # For Linux
-. /usr/local/bin/z.sh
+#. /usr/local/bin/z.sh
 
 ####
 # setopt
