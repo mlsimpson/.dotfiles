@@ -30,11 +30,21 @@ http://anonradio.net:8000/anonradio
 #EXTINF:,ARTxFM
 https://patmos.cdnstream.com/proxy/artfmin1/?mp=/stream
 #EXTINF:,Asia Dream Radio: Japan Hits
-https://cast1.torontocast.com/JapanHits
-#EXTINF:,Asia Dream radio: JRock
-https://kathy.torontocast.com:3340/;?type=http&nocache=1614591283
+http://quincy.torontocast.com:2020/;
+#EXTINF:,Asia Dream Radio: J-Club Bandstand
+http://igor.torontocast.com:3220/;
 #EXTINF:,Asia Dream radio: JClub Hip Hop
-https://kathy.torontocast.com:3350/;?type=http&nocache=1614591312
+https://kathy.torontocast.com:3350/;
+#EXTINF:,Asia Dream Radio: J-Rock Powerplay
+http://kathy.torontocast.com:3340/;
+#EXTINF:,Asia Dream Radio: J-Pop Powerplay
+http://kathy.torontocast.com:3560/;
+#EXTINF:,Asia Dream Radio: J-Pop Powerplay Kawaii
+http://kathy.torontocast.com:3060/;
+#EXTINF:,Asia Dream Radio: J-Pop Sakura 懐かしい
+http://quincy.torontocast.com:2070/
+#EXTINF:,Asia Dream Radio: Jazz Sakura
+http://kathy.torontocast.com:3330/;
 #EXTINF:,BAGeL Radio
 http://ais-sa3.cdnstream1.com/2606_128.mp3
 #EXTINF:,Beat Blender: A late night blend of deep-house & downtempo chill.
