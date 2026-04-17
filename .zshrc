@@ -331,7 +331,7 @@ GPG_TTY=$(tty)
 export GPG_TTY
 # view percentage of man page viewed
 export MANPAGER='less -s -M +Gg'
-export PATH=$PATH:.
+export PATH=$PATH:/home/threv/.local/share/nvim/site/:.
 
 # with colored-man-pages omz plugin, this works
 less_termcap[md]="${fg_bold[white]}"
