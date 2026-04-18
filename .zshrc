@@ -284,7 +284,7 @@ alias locate="locate -e"
 # start gdb in tui mode
 alias gdb="gdb -tui"
 alias weather="curl -s wttr.in"
-alias rcopy="rsync -av --info=progress2 --ignore-existing"
+alias rcopy="rsync -avz --info=progress2 --ignore-existing"
 alias ssh='ssh -X'
 alias t.n='ssh threv@threv.net'
 alias cb='ssh -Y threv@192.168.1.76'
