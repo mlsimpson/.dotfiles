@@ -19,8 +19,6 @@ http://181fm-edge1.cdnstream.com/181-90salt_128k.mp3
 http://181fm-edge1.cdnstream.com/181-awesome80s_128k.mp3
 #EXTINF:,181.FM The Beatles
 http://listen.181fm.com/181-beatles_128k.mp3?cb=898254.mp3
-#EXTINF:,Abnormally Dead AirRadio from the Grave
-http://199.101.51.168:8006/
 #EXTINF:,a.m. ambient
 http://radio.stereoscenic.com/ama-s
 #EXTINF:,Ambient Sleeping Pill
@@ -33,7 +31,7 @@ https://patmos.cdnstream.com/proxy/artfmin1/?mp=/stream
 http://quincy.torontocast.com:2020/;
 #EXTINF:,Asia Dream Radio: J-Club Bandstand
 http://igor.torontocast.com:3220/;
-#EXTINF:,Asia Dream radio: JClub Hip Hop
+#EXTINF:,Asia Dream Radio: JClub Hip Hop
 https://kathy.torontocast.com:3350/;
 #EXTINF:,Asia Dream Radio: J-Rock Powerplay
 http://kathy.torontocast.com:3340/;
@@ -49,12 +47,14 @@ http://kathy.torontocast.com:3330/;
 http://ais-sa3.cdnstream1.com/2606_128.mp3
 #EXTINF:,Beat Blender: A late night blend of deep-house & downtempo chill.
 http://ice.somafm.com/beatblender
+#EXTINF:,Big B Radio #APOP
+https://antares.dribbcast.com/proxy/apop
 #EXTINF:,Big B Radio #CPOP
-https://antares.dribbcast.com/proxy/cpop?mp=/s
+https://antares.dribbcast.com/proxy/cpop
 #EXTINF:,Big B Radio #JPOP
-https://antares.dribbcast.com/proxy/jpop?mp=/s
-#EXTINF:,Big B Radio #CPOP
-https://antares.dribbcast.com/proxy/kpop?mp=/s
+https://antares.dribbcast.com/proxy/jpop
+#EXTINF:,Big B Radio #KPOP
+https://antares.dribbcast.com/proxy/kpop
 #EXTINF:,Bitreich Radio
 http://bitreich.org:3232/live
 #EXTINF:,Boot Liquor: Americana roots music for Cowhands0, Cowpokes and Cowtippers.
@@ -67,8 +67,6 @@ http://www.lmp.d2g.com:8003/
 https://favorites.stream.publicradio.org/favorites.mp3?cb=9932342365
 #EXTINF:,<-cliqhop--> blips'n'bleeps backed w/ beats.
 http://ice.somafm.com/cliqhop
-#EXTINF:,Country A-Go-go
-https://rfcm.streamguys1.com/countryagogo-mp3
 #EXTINF:,CVGM.net - Oldschool Video Game And Demoscene Music
 http://radio.cvgm.net:8000/cvgm192
 #EXTINF:,=Dark Asylum Radio= For The Digitally Insane
@@ -79,8 +77,6 @@ http://trace.dnbradio.com:8000/dnbradio_darkstep.mp3
 http://ice1.somafm.com/deepspaceone-128-mp3
 #EXTINF:,DEF CON Radio: SomaFM's year-round channel for DEF CON [SomaFM]
 http://ice1.somafm.com/defcon-128.mp3
-#EXTINF:,[ DigitalGunfire.com ]INDUSTRIAL0, EBM AND SYNTHPOP 24/7
-http://dg.darkonline.org:8080/listen
 #EXTINF:,Digitalis. Analog rock, digitally-affected, to calm the agitated heart. [SomaFM]
 http://ice1.somafm.com/digitalis-128-aac
 #EXTINF:,Discover Trance Radio
@@ -89,14 +85,12 @@ http://paris.discovertrance.com:8006/
 http://ildnb1.dnbradio.com:8000/dnbradio_main.mp3
 #EXTINF:,Drone Zone: Atmospheric ambient space music. Serve Best Chilled. Safe with most medications. [SomaFM]
 http://ice1.somafm.com/dronezone-128.mp3
-#EXTINF:,Darth Radio
-http://www.darthradio.tk:8001/dstream
 #EXTINF:,Dub Step Beyond: Dubstep0, Dub and Deep Bass. May damage speakers at high volume.
 http://ice1.somafm.com/dubstep-128-mp3
 #EXTINF:,Dubstep.fm
 http://stream.dubstep.fm/128mp3
 #EXTINF:,EBM-Radio.com
-https://14223.live.streamtheworld.com/SP_R4191951_SC
+https://djstream.live/listen/ebmr/256
 #EXTINF:,electro-music.com radio 1 Primary Stream
 https://electro-music.com/stream_1
 #EXTINF:,electro-music.com radio 2 MKII
@@ -135,12 +129,12 @@ http://live-aacplus-64.kexp.org/kexp64.aac
 http://95.143.216.164:8082/
 #EXTINF:,KFJC
 https://netcast.kfjc.org/kfjc-128k-mp3
-#EXTINF:,KohinaOld School Game and Demo Music
+#EXTINF:,Kohina - Old School Game and Demo Music
 https://kohina.duckdns.org/icecast/stream.ogg
 #EXTINF:,KXCI
 https://kxci.broadcasttool.stream/play
 #EXTINF:,The Lot Radio
-https://mia-prod-catalyst-0.lp-playback.studio/hls/video+85c28sa2o8wppm58/0_1/index.m3u8
+https://nyc-prod-catalyst-0.lp-playback.studio/hls/video+85c28sa2o8wppm58/1_0/index.m3u8
 #EXTINF:,Lush: Mostly female vocals with an electronic influence. [SomaFM]
 http://ice.somafm.com/lush
 #EXTINF:,Mission Control: Celebrating NASA and space explorers everywhere.
@@ -197,8 +191,6 @@ https://stream-mixtape-geo.ntslive.net/mixtape26
 https://kathy.torontocast.com:2880/1.mp3
 #EXTINF:,OverClocked Remix Radio
 http://ocrstream.rainwave.cc:8000/ocremix.mp3
-#EXTINF:,Pungas Radio
-http://radio.pungas.space:8001/pungasradio
 #EXTINF:,Radio Caroline
 http://78.129.202.200:8030/
 #EXTINF:,Radio Hyrule
@@ -220,13 +212,11 @@ http://stream.resonance.fm:8000/resonance
 #EXTINF:,Retro PC Game Music Streaming Radio for Gyusyabu
 http://gyusyabu.ddo.jp:8000/
 #EXTINF:,Rinse FM
-http://206.189.117.157:8000/stream
+https://admin.stream.rinse.fm/proxy/rinse_uk/stream
 #EXTINF:,RNI Radio Northesea International
 http://radionorthsea.zapto.org:8008/stream
-#EXTINF:,RolandRadio Your Amstrad CPC chiptune radio
-http://streaming.rolandradio.net/rolandradio
 #EXTINF:,Roots Legacy Radio
-http://rootslegacy.fr:8080/stream/1/
+https://l.rootslegacy.fr/jah
 #EXTINF:,RPGN Radio
 http://stream.rpgamers.net:8000/rpgn
 #EXTINF:,Sanctuary Radio Retro Channel
@@ -235,14 +225,14 @@ http://192.111.140.6:9772/stream2
 http://192.111.140.6:9772/stream
 #EXTINF:,SceneSat
 http://sc.scenesat.com:8000/
-#EXTINF:,Secret Agent: The soundtrack for your stylish0, mysterious0, dangerous life. For Spys and P.I.'s too!
+#EXTINF:,Secret Agent: The soundtrack for your stylish, mysterious, dangerous life. For Spys and P.I.'s too!
 http://ice.somafm.com/secretagent
 #EXTINF:,Sheena's Jungle Room
 http://stream0.wfmu.org/sheena
 #EXTINF:,SLAY Radio
 http://relay1.slayradio.org:8000/
-#EXTINF:,Sleepbot Environmental Broadcastsleepbot.com/seb/
-http://sc13.shoutcaststreaming.us:8218/seb
+#EXTINF:,Sleepbot Environmental Broadcast
+http://primarystream.sleepbot.com:8218/seb
 #EXTINF:,Smooth Chill
 http://media-ice.musicradio.com/ChillMP3
 #EXTINF:,SomaFM presents: Indie Pop Rocks!
@@ -253,8 +243,6 @@ http://ice.somafm.com/brfm
 http://ice.somafm.com/sonicuniverse
 #EXTINF:,Space Station Soma: Tune in0, turn on0, space out. Ambient and mid-tempo electronica.
 http://ice.somafm.com/spacestation
-#EXTINF:,stereoanime.net
-https://radio.stereoanime.net/listen/stereoanime/128
 #EXTINF:,Sub FM
 http://subfm.radioca.st/Sub.FM
 #EXTINF:,Suburbs of Goa: Desi-influenced Asian world beats.
@@ -287,16 +275,18 @@ http://radio.vgmradio.com:8040/stream
 https://radio.vintageobscura.net/stream
 #EXTINF:,Vocaloid Radio
 http://curiosity.shoutca.st:8019/stream
+#EXTINF:,WABE BBC News Service
+https://19313.live.streamtheworld.com/WABE_HD3_NEWS.mp3
 #EXTINF:,WABE-FM-HD1
-https://26253.live.streamtheworld.com/WABEFM_HD1.mp3
+https://14843.live.streamtheworld.com/WABEFM_HD1.mp3
 #EXTINF:,WABE-FM-HD2 Classical
-https://15233.live.streamtheworld.com/WABE_HD2_CLASSICAL.mp3
+https://26113.live.streamtheworld.com/WABE_HD2_CLASSICAL.mp3
 #EXTINF:,WBAI Stereo Stream
 http://stream.wbai.org:8000/wbai_128
 #EXTINF:,Weather for the Blind
 https://partneraudio.wavefarm.org/weatherfortheblind.mp3
 #EXTINF:,WETA Classical
-https://26113.live.streamtheworld.com/WETAFM.mp3
+https://weta.streamguys1.com/wetaclassical-icy
 #EXTINF:,WFMU Freeform Radio
 http://stream0.wfmu.org/freeform-128k
 #EXTINF:,WFMU Rock'N'Soul
@@ -313,3 +303,5 @@ https://s7.voscast.com:8693/stream
 http://vps-260b74e9.vps.ovh.net:8000/
 #EXTINF:,Yggdrasil Radio
 http://yggdrasilradio.net:8000/;stream.nsv
+#EXTINF:,Beesball
+https://georgiatech.leanstream.co/GT0103-MP3
