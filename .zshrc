@@ -29,7 +29,7 @@ export ZSH_THEME="half-life"
 # Mac
 # SLOW!!
 # plugins=(brew bundler rvm gem github git gnu-utils heroku npm osx python rails3 rake ruby ssh-agent textmate nyan zargs zsh-syntax-highlighting fbcmd pgsql pip cpanm)
-plugins=(ssh-agent pass git fuck zsh-autosuggestions obliquestrategies colorize fast-syntax-highlighting zsh-completions fzf uv zoxide) # fzf-tab F-Sy-H
+plugins=(ssh-agent pass git fuck zsh-autosuggestions obliquestrategies colorize fast-syntax-highlighting zsh-completions fzf uv zoxide colored-man-pages) # fzf-tab F-Sy-H
 # Debian
 # plugins=(rvm bundler debian gem github git gnu-utils heroku python rails3 rake ruby ssh-agent nyan)
 
@@ -166,17 +166,17 @@ function capitalize () {
 
 #####
 # Set colors for man pages.
-function man () {
-  env \
-    LESS_TERMCAP_mb=$(printf "\e[1;37m") \
-    LESS_TERMCAP_md=$(printf "\e[1;37m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;47;30m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[0;36m") \
-    man "$@"
-}
+#function man () {
+#  env \
+#    LESS_TERMCAP_mb=$(printf "\e[1;37m") \
+#    LESS_TERMCAP_md=$(printf "\e[1;37m") \
+#    LESS_TERMCAP_me=$(printf "\e[0m") \
+#    LESS_TERMCAP_se=$(printf "\e[0m") \
+#    LESS_TERMCAP_so=$(printf "\e[1;47;30m") \
+#    LESS_TERMCAP_ue=$(printf "\e[0m") \
+#    LESS_TERMCAP_us=$(printf "\e[0;36m") \
+#    man "$@"
+#}
 
 # show percentage of man page viewed
 export MANPAGER='less -s -M +Gg'
@@ -456,6 +456,12 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 # export PIP_REQUIRE_VIRTUALENV=true
 #export PATH=/home/threv/.nimble/bin:$PATH
 export PATH=$PATH:.
+
+# with colored-man-pages omz plugin, this works
+less_termcap[md]="${fg_bold[white]}"
+less_termcap[md]="${fg_bold[white]}"
+less_termcap[so]="${bg_bold[white]}${fg_bold[grey]}"
+less_termcap[us]="${fg[cyan]}"
 
 # GPG
 eval $(cat /home/threv/.gnupg/gpg-agent-info-commiebastard )
