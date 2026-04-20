@@ -106,34 +106,38 @@ set nowrap
 call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'dracula/vim'
     "Plug 'folke/tokyonight.nvim'
-    "Plug 'vim-airline/vim-airline'
-    "Plug 'vim-airline/vim-airline-themes'
     "Plug 'hrsh9th/nvim-cmp'
     "Plug 'machakann/vim-highlightedyank'
+    "Plug 'yetone/avante.nvim'
     Plug 'dense-analysis/ale'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'lewis6991/gitsigns.nvim'
+    Plug 'MeanderingProgrammer/render-markdown.nvim'
     Plug 'mfussenegger/nvim-dap'
-    Plug 'romgrk/barbar.nvim'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+    Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'}
+    Plug 'mhinz/vim-startify'
+    Plug 'MunifTanjim/nui.nvim'
     Plug 'neovim/nvim-lspconfig'
+    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+    Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'nvim-mini/mini.icons'
-    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim', {'branch': 'master' }
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
-    Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.8' }
+    Plug 'nvim-telescope/telescope-symbols.nvim'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
+    Plug 'rcarriga/nvim-notify'
     Plug 'rebelot/kanagawa.nvim'
+    Plug 'romgrk/barbar.nvim'
+    Plug 'ryanoasis/vim-devicons'
     Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     Plug 'stevearc/oil.nvim'
     Plug 'tpope/vim-surround'
-    Plug 'mhinz/vim-startify'
 call plug#end()
 
 lua << END
@@ -148,6 +152,7 @@ lua << END
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
     vim.api.nvim_command('set runtimepath^=~/.local/share/nvim/site/')
+    vim.opt.termguicolors = true
 END
 
 
