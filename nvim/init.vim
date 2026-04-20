@@ -108,11 +108,14 @@ call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'folke/tokyonight.nvim'
     "Plug 'hrsh9th/nvim-cmp'
     "Plug 'machakann/vim-highlightedyank'
+    "Plug 'yetone/avante.nvim'
     Plug 'dense-analysis/ale'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'MeanderingProgrammer/render-markdown.nvim'
+    Plug 'mfussenegger/nvim-dap'
+    Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'}
     Plug 'mhinz/vim-startify'
     Plug 'MunifTanjim/nui.nvim'
     Plug 'neovim/nvim-lspconfig'
@@ -128,13 +131,13 @@ call plug#begin("$HOME/.config/nvim/plugged")
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
+    Plug 'rcarriga/nvim-notify'
     Plug 'rebelot/kanagawa.nvim'
     Plug 'romgrk/barbar.nvim'
     Plug 'ryanoasis/vim-devicons'
     Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     Plug 'stevearc/oil.nvim'
     Plug 'tpope/vim-surround'
-    "Plug 'yetone/avante.nvim'
 call plug#end()
 
 lua << END
