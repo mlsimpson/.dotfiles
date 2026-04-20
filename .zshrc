@@ -65,7 +65,7 @@ source $ZSH/oh-my-zsh.sh
 # export PATH=$PATH:~:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin
 
 # ffs
-setxkbmap -option ctrl:nocaps
+#setxkbmap -option ctrl:nocaps
 
 # Locale
 export LC_CTYPE="en_US.UTF-8"
