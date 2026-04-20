@@ -110,29 +110,29 @@ call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'vim-airline/vim-airline-themes'
     "Plug 'hrsh9th/nvim-cmp'
     "Plug 'machakann/vim-highlightedyank'
-    Plug 'nvim-treesitter/nvim-treesitter'
-    Plug 'rebelot/kanagawa.nvim'
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
-    Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.8' }
+    Plug 'dense-analysis/ale'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'lewis6991/gitsigns.nvim'
+    Plug 'mfussenegger/nvim-dap'
+    Plug 'romgrk/barbar.nvim'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'nvim-mini/mini.icons'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
+    Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.8' }
+    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
-    Plug 'tpope/vim-surround'
-    Plug 'nvim-tree/nvim-web-devicons'
-    Plug 'romgrk/barbar.nvim'
-    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
-    Plug 'dense-analysis/ale'
-    Plug 'nvim-lualine/lualine.nvim'
-    Plug 'nvim-tree/nvim-web-devicons'
-    Plug 'nvim-mini/mini.icons'
+    Plug 'rebelot/kanagawa.nvim'
+    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     Plug 'stevearc/oil.nvim'
+    Plug 'tpope/vim-surround'
     Plug 'mhinz/vim-startify'
 call plug#end()
 
