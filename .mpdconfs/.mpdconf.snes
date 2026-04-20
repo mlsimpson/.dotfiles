@@ -11,7 +11,8 @@
 # file:// protocol) or streaming files over an accepted protocol.
 #
 #music_directory		"/var/lib/mpd/music"
-music_directory		"/mnt/SkyHaw/Game\ Music/snes/spcsets"
+#music_directory		    "/mnt/SkyHawk/Game Music/snes"
+music_directory		    "/mnt/SkyHawk/Game\ Music/snes/spcsets"
 #
 # This setting sets the MPD internal playlist directory. The purpose of this
 # directory is storage for playlists created by MPD. The server will use
@@ -402,7 +403,7 @@ volume_normalization		"yes"
 #connection_timeout		"60"
 #max_connections		"10"
 #max_playlist_length		"16384"
-max_playlist_length		"100000"
+max_playlist_length		"35000"
 #max_command_list_size		"2048"
 #max_output_buffer_size		"8192"
 #
