@@ -1,5 +1,4 @@
 # XONSH WEBCONFIG START
+$XONSH_COLOR_STYLE = 'autumn'
 $PROMPT = '{YELLOW}{env_name}{RESET}{BOLD_GREEN}{user}@{hostname}{BOLD_BLUE} {cwd}{branch_color}{curr_branch: {}}{RESET} {RED}{last_return_code_if_nonzero:[{BOLD_INTENSE_RED}{}{RED}] }{RESET}{BOLD_BLUE}{prompt_end}{RESET} '
-xontrib load coreutils
-$XONSH_COLOR_STYLE = 'solarized-dark'
 # XONSH WEBCONFIG END

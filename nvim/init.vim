@@ -110,24 +110,29 @@ call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'machakann/vim-highlightedyank'
     "Plug 'yetone/avante.nvim'
     Plug 'dense-analysis/ale'
+    Plug 'ibhagwan/fzf-lua'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'MeanderingProgrammer/render-markdown.nvim'
     Plug 'mfussenegger/nvim-dap'
+    Plug 'mfussenegger/nvim-dap-python'
     Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'}
     Plug 'mhinz/vim-startify'
     Plug 'MunifTanjim/nui.nvim'
     Plug 'neovim/nvim-lspconfig'
-    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+    "Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'nvim-mini/mini.icons'
-    Plug 'nvim-telescope/telescope.nvim', {'branch': 'master' }
+    Plug 'nvim-neotest/neotest'
+    Plug 'nvim-telescope/telescope-dap.nvim'
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
+    Plug 'nvim-telescope/telescope.nvim', {'branch': 'master' }
     Plug 'nvim-telescope/telescope-symbols.nvim'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'nvim-treesitter/nvim-treesitter-context'
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
@@ -137,6 +142,7 @@ call plug#begin("$HOME/.config/nvim/plugged")
     Plug 'ryanoasis/vim-devicons'
     Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     Plug 'stevearc/oil.nvim'
+    Plug 'suketa/nvim-dap-ruby'
     Plug 'tpope/vim-surround'
 call plug#end()
 
@@ -153,6 +159,21 @@ lua << END
 
     vim.api.nvim_command('set runtimepath^=~/.local/share/nvim/site/')
     vim.opt.termguicolors = true
+
+    local dap = require('dap')
+    dap.configurations.python = {
+        {
+            type = 'debugpy';
+            request = 'launch';
+            name = "Launch file";
+            program = "${file}";
+            pythonPath = function()
+            return '/usr/bin/python'
+            end;
+        },
+    }
+
+    require('telescope').load_extension('dap')
 END
 
 
