@@ -119,7 +119,7 @@ call plug#begin("$HOME/.config/nvim/plugged")
     Plug 'mhinz/vim-startify'
     Plug 'MunifTanjim/nui.nvim'
     Plug 'neovim/nvim-lspconfig'
-    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+    "Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'nvim-mini/mini.icons'
