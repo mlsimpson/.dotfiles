@@ -188,6 +188,10 @@ function rgn() (
     rg "$1" /home/threv/notes
 )
 
+function prg() (
+    pass | rg "$1"
+)
+
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
 
