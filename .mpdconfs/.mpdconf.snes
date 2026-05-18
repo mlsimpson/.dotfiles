@@ -261,7 +261,7 @@ input {
 #
 audio_output {
   type		"httpd"
-  name		"threv.net music"
+  name		"threv.net snes"
   encoder		"lame"        # optional, vorbis or lame
   #encoder		"vorbis"		# optional, vorbis or lame
   #bind_to_address "0.0.0.0"

@@ -128,6 +128,7 @@ call plug#begin("$HOME/.config/nvim/plugged")
     Plug 'nvim-telescope/telescope-symbols.nvim'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'Olical/conjure'
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-indent-guides'
@@ -144,6 +145,7 @@ lua << END
     require('gitsigns').setup()
     require('lualine').setup()
     require('mini.icons').setup()
+    --vim.lsp.enable('oxfmt')
 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
