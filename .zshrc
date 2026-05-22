@@ -328,14 +328,9 @@ alias gcl='git clone'
 alias gd='git diff'
 alias gitclog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias grep='grep --color=always'
-#alias gvim='gvim -f -geom 75x35'
-alias gvim='XDG_RUNTIME_DIR=/tmp/runtime-threv nvim-qt'
+alias gvim='nvim-qt --geometry 768x968'
 alias latr="ls -latr"
 alias less='less -mR'
-# VLESS=$(find /usr/share/vim -name 'less.sh')
-# if [ ! -z $VLESS ]; then
-#   alias less=$VLESS
-# fi
 # Overwrite oh-my-zsh's lsa behavior (remove the -l flag)
 alias lsa='ls -ah'
 # Show only directories
@@ -346,8 +341,7 @@ alias lsa='ls -ah'
 alias lss='ls -aSh *(.)'
 alias larsh="ls -larSh"
 alias mkdir='mkdir -p'
-alias mpg123='mpg123 -v -C'
-#alias npm='npm -g'
+alias mpg123='mpg321 -v -C'
 alias perldoc='perldoc -t'
 alias pgrep='nocorrect pgrep -l'
 alias pkill='nocorrect pkill'
@@ -576,9 +570,12 @@ if [ -f '/home/threv/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/thre
 
 . "/home/threv/.deno/env"
 
-if [[ ! -d '/tmp/runtime-threv' ]]; then
-    mkdir /tmp/runtime-threv
-    touch /tmp/runtime-threv/gvfsd
-fi
-export XDG_RUNTIME_DIR='/tmp/runtime-threv'
+#if [[ ! -d '/tmp/runtime-threv' ]]; then
+#    mkdir /tmp/runtime-threv
+#    touch /tmp/runtime-threv/gvfsd
+#fi
+#export XDG_RUNTIME_DIR='/tmp/runtime-threv'
+
+export XDG_RUNTIME_DIR="/run/user/$UID"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
 
