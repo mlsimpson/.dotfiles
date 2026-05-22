@@ -278,9 +278,11 @@ https://radio.vintageobscura.net/stream
 #EXTINF:,Vocaloid Radio
 http://curiosity.shoutca.st:8019/stream
 #EXTINF:,WABE-FM-HD1
-https://26253.live.streamtheworld.com/WABEFM_HD1.mp3
+https://26113.live.streamtheworld.com/WABEFM_HD1.mp3
 #EXTINF:,WABE-FM-HD2 Classical
-https://15233.live.streamtheworld.com/WABE_HD2_CLASSICAL.mp3
+https://14023.live.streamtheworld.com/WABE_HD2_CLASSICAL.mp3
+#EXTINF:,WABE-FM-HD3 NEWS
+https://26113.live.streamtheworld.com/WABE_HD3_NEWS.mp3
 #EXTINF:,WBAI Stereo Stream
 http://stream.wbai.org:8000/wbai_128
 #EXTINF:,Weather for the Blind
@@ -303,6 +305,5 @@ https://s7.voscast.com:8693/stream
 http://vps-260b74e9.vps.ovh.net:8000/
 #EXTINF:,Yggdrasil Radio
 http://yggdrasilradio.net:8000/;stream.nsv
-#EXTINF:,
 #EXTINF:,Beesball
 https://georgiatech.leanstream.co/GT0103-MP3

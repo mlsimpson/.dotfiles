@@ -426,3 +426,5 @@ RPROMPT="[%{$fg[cyan]%}%D{%m/%d/%y} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%
 if [[ ! -d /run/user/1000 ]]; then
     /home/threv/.wsl-wayland-fix.sh
 fi
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
