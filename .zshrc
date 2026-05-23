@@ -366,6 +366,9 @@ less_termcap[md]="${fg_bold[white]}"
 less_termcap[so]="${bg_bold[white]}${fg_bold[grey]}"
 less_termcap[us]="${fg[cyan]}"
 
+# pyicloud completion
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
 ####
 # autojump support
 # [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
@@ -391,7 +394,7 @@ unsetopt hist_verify auto_name_dirs nomatch correctall share_history
 # Load zsh builtin functions
 # autoload -U zargs zmv zcalc tcp_open
 autoload -U zmv
-#
+
 #autoload -Uz copy-earlier-word
 #zle -N copy-earlier-word
 #bindkey "^[m" copy-earlier-word
@@ -414,6 +417,7 @@ autoload -U zmv
 # source ~/.rvm/scripts/rvm
 #export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
+# date/time as right prompt
 RPROMPT="[%{$fg[cyan]%}%D{%m/%d/%y} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%{$reset_color%}]"
 
 # make the cursor blink like i want god damn it
@@ -427,4 +431,3 @@ if [[ ! -d /run/user/1000 ]]; then
     /home/threv/.wsl-wayland-fix.sh
 fi
 
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
