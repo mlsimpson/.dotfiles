@@ -124,12 +124,12 @@ function ca () {
 
 # Search .allhistory
 function hhist () {
-    RIPGREP_CONFIG_PATH=/home/threv/.ripgreprc rg --no-line-number $1 /home/threv/.allhistory
+  RIPGREP_CONFIG_PATH=/home/threv/.ripgreprc rg --no-line-number $1 /home/threv/.allhistory
 }
 
 # git reup
 function gitreup () {
-  ls | xargs -I{} git -C {} pull
+  ls --color=tty | xargs -I{} sh -c 'echo {}; git -C {} pull'
 }
 
 # du -sh sorted
