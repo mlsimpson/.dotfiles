@@ -109,7 +109,7 @@ function hhist {
 
 # git reup
 function gitreup {
-  ls | xargs -I{} git -C {} pull
+  ls | xargs -I{} sh -c 'echo {}; git -C {} pull'
 }
 
 # du -sh sorted

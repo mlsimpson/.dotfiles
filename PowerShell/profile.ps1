@@ -12,11 +12,19 @@ function dirsizes () {
 }
 
 function gitreup () {
-	$gitRepos = Get-ChildItem -Recurse -Directory | Where-Object { Get-ChildItem $_.FullName -Directory -Hidden -Filter ".git" }
+	# Get all child directories that contain a .git folder
+	$gitRepos = Get-ChildItem -Directory -Recurse -Filter ".git" | ForEach-Object { $_.Parent.FullName }
+
+	# Iterate through each child repository and pull the latest changes
 	foreach ($gitRepo in $gitRepos) {
-		Write-Host "Pulling $($gitRepo.Fullname)"
+		Write-Host "Updating repository: $gitRepo" -ForegroundColor Cyan
 		Push-Location
-		Set-Location $gitRepo.Fullname
+		Set-Location -Path $gitRepo
+    
+		# Optional: Stash local changes if needed to prevent merge conflicts
+		# git stash 
+
+		# Pull the latest changes from the remote
 		git pull
 		Pop-Location
 	}
