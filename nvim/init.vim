@@ -98,8 +98,9 @@ set softtabstop=4
 " set smarttab
 
 set smartindent " Do smart indenting when starting a new line
-"set wrap
 set nowrap
+
+set cursorline
 
 " vim-plug
 " https://github.com/junegunn/vim-plug
