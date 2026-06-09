@@ -133,6 +133,7 @@ call plug#begin("$HOME/.config/nvim/plugged")
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
     Plug 'nvim-telescope/telescope.nvim', {'branch': 'master' }
     Plug 'nvim-telescope/telescope-symbols.nvim'
+    Plug 'nvim-tree/nvim-tree.lua'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'nvim-treesitter/nvim-treesitter-context'
@@ -143,7 +144,7 @@ call plug#begin("$HOME/.config/nvim/plugged")
     Plug 'rebelot/kanagawa.nvim'
     Plug 'romgrk/barbar.nvim'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+    "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     Plug 'stevearc/oil.nvim'
     Plug 'suketa/nvim-dap-ruby'
     Plug 'tpope/vim-surround'
@@ -154,15 +155,17 @@ lua << END
     require('lualine').setup()
     require('mini.icons').setup()
 
+    vim.api.nvim_command('set runtimepath^=~/.local/share/nvim/site/')
+    vim.opt.termguicolors = true
+
+    -- telescope setup
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
-    vim.api.nvim_command('set runtimepath^=~/.local/share/nvim/site/')
-    vim.opt.termguicolors = true
-
+    -- dap setup
     local dap = require('dap')
     dap.configurations.python = {
         {
@@ -177,11 +180,41 @@ lua << END
     }
 
     require('telescope').load_extension('dap')
+
+    -- nvim-tree setup
+    -- disable netrw at the very start of your init.lua
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
+
+    -- optionally enable 24-bit colour
+    vim.opt.termguicolors = true
+
+    -- empty setup using defaults
+    require("nvim-tree").setup()
+
+    -- OR setup with a config
+    --[[
+    ---@type nvim_tree.config
+    local config = {
+        sort = {
+        sorter = "case_sensitive",
+        },
+        view = {
+        width = 30,
+        },
+        renderer = {
+        group_empty = true,
+        },
+        filters = {
+        dotfiles = true,
+        },
+    }
+    require("nvim-tree").setup(config)
+    ]]
 END
 
 
 " Set colorscheme
-"
 "colorscheme ir_black
 "colorscheme dracula
 "colorscheme tokyonight-night
@@ -205,31 +238,28 @@ au TextYankPost * silent! lua vim.highlight.on_yank()
 "inoremap { {}<Left>
 "inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 "" Visual Mode:
-""
 "vnoremap ( s()<Esc>P<Right>%
 "vnoremap [ s[]<Esc>P<Right>%
 "" vnoremap { s{}<Esc>P<Right>%
 
-" Map ctrl-n to toggle NERDTree Plugin
-nnoremap <silent> <c-n> :NERDTreeToggle<CR>
+" Map ctrl-n to toggle NERDTree plugin
+"nnoremap <silent> <c-n> :NERDTreeToggle<CR>
+" Map ctrl-n to toggle nvim-tree plugin
+nnoremap <silent> <c-n> :NvimTreeOpen<CR>
 
 " Auto delete trailing whitespace on lines when opening or saving a file
-"
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 set wildmode=longest,full
 
 " Make searches case-insensitive (only if searching with all lowercase)
-"
 set smartcase
 
 " Map jj to return to Normal mode
-"
 inoremap jj <Esc>
 nnoremap JJJJ <Nop>
 
 " Remap command history to f:
-"
 nnoremap f: q:
 nnoremap q: 1
 
@@ -241,7 +271,6 @@ xnoremap N Nzz
 xnoremap n nzz
 
 " PHP short tag remapping
-"
 inoremap <??    <?php echo  ?><Left><Left><Left>
 inoremap <?     <?php  ?><Left><Left><Left>
 
@@ -251,7 +280,6 @@ set complete-=k complete+=k
 set completeopt=longest,menuone,preview
 
 " Space will toggle folds!
-"
 nnoremap <space> za
 
 " Use mouse
@@ -260,62 +288,49 @@ set mouse=nvi
 set mousemodel=popup_setpos
 
 " Comments are italic
-"
 highlight Comment cterm=italic gui='italic'
 
 " Change the leader from \ to ,
-"
 let g:C_MapLeader  = ','
 let mapleader = ','
 
 " Set the terminal title
-"
 set title
 
 set runtimepath+=$HOME/.config/nvim
 
 " avoid auto-indenting pound signs
-"
 inoremap # x<C-H>#
 
 " Always set Very Magic when searching
-"
 nnoremap / /\v
 vnoremap / /\v
 
 " OMNICOMPLETE
 " Enable OmniComplete
 "set completefunc=syntaxcomplete#Complete
-"
 set ofu=syntaxcomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
 
 " OmniCppComplete
-"
 let OmniCpp_NamespaceSearch = 2
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1
 let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-"
 let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-"
 let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-"
 let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-"
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+
 " automatically open and close the popup menu / preview window
-"
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 " Popup menu colorscheme
-"
 highlight Pmenu ctermbg=Black ctermfg=Grey
 highlight PmenuSel ctermbg=Cyan ctermfg=Black
 
 " cscope support
-"
 if has('cscope')
   set cscopetag cscopeverbose
 
@@ -341,7 +356,6 @@ endif
 set autowrite
 
 " FileType based compilation support from within vim
-"
 autocmd FileType c setlocal makeprg=gcc\ -O2\ -Wall\ -pedantic\ -o\ %<\ %
 autocmd FileType ruby setlocal makeprg=ruby\ -w\ %
 autocmd FileType php setlocal makeprg=php\ %
@@ -388,7 +402,6 @@ au BufRead,BufNewFile {*.md,*.mkd,*.markdown} set ft=markdown
 au BufWinEnter *.txt if &ft == 'help' | if &columns > 156 | wincmd H | else | wincmd J | endif | endif
 
 " Fix some command typing mistakes
-"
 command! -bang E e<bang>
 command! -bang Q q<bang>
 command! -bang W w<bang>
@@ -400,28 +413,23 @@ command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
 
 " Remap Ctrl+(directions) to sane values
-"
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Paste toggle
-"
 "set pastetoggle=<F2>
 nnoremap <silent> <f5> :set paste!<cr>
 inoremap <silent> <f5> <esc>:set paste!<cr>i
 
 " Suppress intro
-"
 set shortmess=I
 
 " Set signature
-"
 iabbrev ssig --<cr>Matt Simpson<cr>maui@threv.net
 
 " Clear all registers
-"
 fun! Clearregs()
   let regs = split('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/-"', '\zs')
   for r in regs
@@ -439,42 +447,35 @@ endfun
 command! -bar Clearregs :call Clearregs()
 
 " Don't automatically insert comments on a new line in vim, zsh mode
-"
 au FileType vim,zsh,sh setlocal formatoptions-=r
 
 " Persistent undo
 " nvim - default is $HOME/.local/state/nvim/undo
 set undofile
 
+" NERDCommenter
 " Add spaces after comment delimiters by default
-"
 let g:NERDSpaceDelims = 1
 
 " Use compact syntax for prettified multi-line comments
-"
 let g:NERDCompactSexyComs = 1
 
 " Enable trimming of trailing whitespace when uncommenting
-"
 let g:NERDTrimTrailingWhitespace = 1
 
 " more Go syntax highlighting
-"
 let g:go_highlight_types = 1
 
 " unhighlight search term
-"
 nnoremap <leader>h :nohlsearch<CR>
 
 " delete to black hole register
-"
 nnoremap <leader>d "_d
 
 " map fzf
 nnoremap <C-p> :<C-u>FZF<CR>
 
 " ALE config
-"
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
 \    'python': ['ruff'],
