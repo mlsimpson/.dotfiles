@@ -111,6 +111,7 @@ call plug#begin("$HOME/.config/nvim/plugged")
     "Plug 'hrsh9th/nvim-cmp'
     "Plug 'machakann/vim-highlightedyank'
     "Plug 'yetone/avante.nvim'
+    Plug 'boningmaple/mac-clear'
     Plug 'dense-analysis/ale'
     Plug 'ibhagwan/fzf-lua'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -182,15 +183,12 @@ END
 " Set colorscheme
 "
 "colorscheme ir_black
-"
 "colorscheme dracula
-"
 "colorscheme tokyonight-night
-"
-colorscheme kanagawa-dragon
+"colorscheme kanagawa-dragon
+colorscheme mac-clear
 
 "let g:airline_theme = "simple"
-"
 
 au TextYankPost * silent! lua vim.highlight.on_yank()
 
