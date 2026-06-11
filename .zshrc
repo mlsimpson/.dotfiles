@@ -95,7 +95,7 @@ export LC_ALL="en_US.UTF-8"
 # RANDOM=$RANDOM; command glob(oe:'REPLY=$RANDOM':[1,x])
 
 # Convert coverart
-function coverart {
+function coverart () {
   convert $1 -adaptive-resize 400x400 -adaptive-sharpen 0x1.0 cover.png
   rm $1
   optipng -o2 cover.png
@@ -103,12 +103,12 @@ function coverart {
 }
 
 # Search .allhistory
-function hhist {
+function hhist () {
   RIPGREP_CONFIG_PATH=/home/threv/.ripgreprc rg --no-line-number $1 /home/threv/.allhistory
 }
 
 # git reup
-function gitreup {
+function gitreup () {
   ls | xargs -I{} sh -c 'echo {}; git -C {} pull'
 }
 
@@ -184,13 +184,17 @@ function rfv() (
       --query "$*"
 )
 
-function rgn() (
+function rgn () (
     rg "$1" /home/threv/notes
 )
 
-function prg() (
+function prg () (
     pass | rg "$1"
 )
+
+function icnotes () {
+    icloud notes get $(icloud notes search --title-contains $1 | awk NR==5 | awk '{print $2}')
+}
 
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
@@ -430,4 +434,3 @@ RPROMPT="[%{$fg[cyan]%}%D{%m/%d/%y} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%
 if [[ ! -d /run/user/1000 ]]; then
     /home/threv/.wsl-wayland-fix.sh
 fi
-
