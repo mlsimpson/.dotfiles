@@ -418,8 +418,13 @@ autoload -U zmv
 #add-zsh-hook chpwd load-nvmrc
 #load-nvmrc
 
+eval "$(mise activate zsh)"
+
 # source ~/.rvm/scripts/rvm
 #export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+# Created by `pipx` on 2025-03-01 08:07:23
+# export PATH="$PATH:/home/threv/.local/bin"
 
 # date/time as right prompt
 RPROMPT="[%{$fg[cyan]%}%D{%m/%d/%y} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%{$reset_color%}]"
@@ -427,10 +432,8 @@ RPROMPT="[%{$fg[cyan]%}%D{%m/%d/%y} %{$reset_color%}| %{$fg[cyan]%}%D{%L:%M:%S}%
 # make the cursor blink like i want god damn it
 # echo -ne "\e[3 q"
 
-# Created by `pipx` on 2025-03-01 08:07:23
-# export PATH="$PATH:/home/threv/.local/bin"
-
 # fix wayland issues on wsl
 if [[ ! -d /run/user/1000 ]]; then
     /home/threv/.wsl-wayland-fix.sh
 fi
+
