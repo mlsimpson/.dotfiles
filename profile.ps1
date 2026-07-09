@@ -18,7 +18,7 @@ function dirsizes () {
 
 function gitreup () {
 	# Get all child directories that contain a .git folder
-	$gitRepos = Get-ChildItem -Directory -Recurse -Filter ".git" | ForEach-Object { $_.Parent.FullName }
+	$gitRepos = Get-ChildItem -Directory -Recurse -Force -Filter ".git" | ForEach-Object { $_.Parent.FullName }
 
 	# Iterate through each child repository and pull the latest changes
 	foreach ($gitRepo in $gitRepos) {
