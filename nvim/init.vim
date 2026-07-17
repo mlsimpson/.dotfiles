@@ -213,7 +213,6 @@ lua << END
     ]]
 END
 
-
 " Set colorscheme
 "colorscheme ir_black
 "colorscheme dracula
