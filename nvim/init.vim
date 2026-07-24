@@ -120,7 +120,7 @@ call plug#begin("$HOME/.config/nvim/plugged")
     Plug 'MeanderingProgrammer/render-markdown.nvim'
     Plug 'mfussenegger/nvim-dap'
     Plug 'mfussenegger/nvim-dap-python'
-    Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'}
+    "Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'}
     Plug 'mhinz/vim-startify'
     Plug 'MunifTanjim/nui.nvim'
     Plug 'neovim/nvim-lspconfig'
