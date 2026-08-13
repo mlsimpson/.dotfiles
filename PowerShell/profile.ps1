@@ -7,13 +7,18 @@ function vim ($File) {
 	bash -c “nvim $File”
 }
 
+function gvim ($File) {
+	$File = $File -replace “\\”, “/” -replace “ “, “\ “
+	bash -c “nvim-qt --geometry 768x968 $File”
+}
+
 function dirsizes () {
 	Get-ChildItem . -directory -force | ForEach-Object { $_.FullName + ": " + [math]::Round((Get-ChildItem $_.FullName -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB, 2) + " MB" }
 }
 
 function gitreup () {
 	# Get all child directories that contain a .git folder
-	$gitRepos = Get-ChildItem -Directory -Recurse -Filter ".git" | ForEach-Object { $_.Parent.FullName }
+	$gitRepos = Get-ChildItem -Directory -Recurse -Force -Filter ".git" | ForEach-Object { $_.Parent.FullName }
 
 	# Iterate through each child repository and pull the latest changes
 	foreach ($gitRepo in $gitRepos) {
@@ -28,6 +33,15 @@ function gitreup () {
 		git pull
 		Pop-Location
 	}
+}
+
+function repair-system {
+	sfc /scannow
+	dism /Online /Cleanup-Image /CheckHealth
+	dism /Online /Cleanup-Image /ScanHealth
+	dism /Online /Cleanup-Image /RestoreHealth
+	dism /Online /Cleanup-Image /AnalyzeComponentStore
+	dism /Online /Cleanup-Image /StartComponentCleanup
 }
 
 function gcam { git commit -a -m }
