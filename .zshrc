@@ -314,7 +314,7 @@ alias psa='ps auxww | ag '
 alias locate="locate -e"
 # start gdb in tui mode
 alias gdb="gdb -tui"
-alias weather="curl -s wttr.in"
+#alias weather="curl -s wttr.in"
 alias rcopy="rsync -avz --info=progress2 --ignore-existing"
 alias ssh='ssh -X'
 alias t.n='ssh threv@threv.net'
