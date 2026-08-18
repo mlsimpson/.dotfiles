@@ -37,9 +37,9 @@ plugins=(ssh-agent pass git fuck zsh-autosuggestions colored-man-pages colorize 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 # enable pipx completion
-autoload -U bashcompinit
-bashcompinit
-eval "$(register-python-argcomplete pipx)"
+#autoload -U bashcompinit
+#bashcompinit
+#eval "$(register-python-argcomplete pipx)"
 
 source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh
